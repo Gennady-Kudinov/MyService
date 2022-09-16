@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Makes</h1>
+
+<div id="makes">
+  <% @makes.each do |make| %>
+    <%= render make %>
+    <p>
+      <%= link_to "Show this make", make %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New make", new_make_path %>

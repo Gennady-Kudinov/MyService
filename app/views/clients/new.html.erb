@@ -1,0 +1,21 @@
+<%= form_for :client, data: { turbo: false }, url: clients_path do |form| %> 
+
+<div class="hstack gap-3" style="height: 100px;">
+  <div class="bg-light border text-center ms-5"><%= form.label :licence, 'Гос Номер а/м' %><br><%= form.text_field :licence %></div>
+  <div class="bg-light border text-center ms-5"><%= form.label :phone, 'Номер телефона' %><br><%= form.telephone_field :phone %></div>
+  <div class="bg-light border text-center ms-3"><%= form.label :name, 'Имя владельца а/м' %><br><%= form.text_field :name %></div>
+</div>
+
+<br>
+
+  <div class="hstack gap-3" style="height: 10px;">
+    <div class="bg-light border text-center ms-5"><%= form.submit %></div>
+  </div>
+
+<br>
+  
+<div>
+  <%= link_to "Back to cars Показать список клиентов", clients_path %>
+</div>
+
+<% end%>

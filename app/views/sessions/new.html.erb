@@ -1,0 +1,27 @@
+
+<section class="depot_form">
+  <% if flash[:alert] %>
+    <aside class="notice"><%= flash[:alert] %></aside>
+  <% end %>
+
+  <%= form_tag do %>
+    <h2>Пожалуйста авторизируйтесь</h2>
+
+    <div class="field">
+      <%= label_tag :name,  'Имя: ' %>
+      <%= text_field_tag :name, params[:name], class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password, 'Пароль:' %>
+      <%= password_field_tag :password, params[:password], class: "form-control"%>
+    </div>
+
+    <div class="actions mt-4">
+      <%= submit_tag "Войти", class: "btn" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Я не зарегистрирован", new_user_path %> 
+
+</section>

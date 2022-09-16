@@ -1,0 +1,38 @@
+<div id="<%= dom_id car %>">
+    
+    <p>
+      <strong>Гос. номер а/м:</strong>
+      <%= car.client.licence.upcase %>
+    </p>
+
+    <p>
+      <strong>Марка:</strong>
+      <%= car.make.name %>
+    </p>
+
+    <p>
+      <strong>Модель:</strong>
+      <%= car.model.name %>
+    </p>
+
+    <p> 
+      <strong>Пробег а/м:</strong>
+      <%= car.mileage %>
+    </p>
+
+    <p> 
+      <strong>Вин номер а/м:</strong>
+      <%= car.vin %>
+    </p>
+
+    <p> 
+      <strong>ЭБУ а/м:</strong>
+      <%= sanitize(car.ecm.name) %>
+    </p>
+
+    <p> 
+      <strong>Имя клиента:</strong>
+      <%= sanitize(car.client.name) %>
+    </p>
+
+</div>

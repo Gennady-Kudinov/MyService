@@ -1,0 +1,48 @@
+<h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+
+<div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+<%= form_tag clients_path, :method => 'get' do %>
+
+    <div class="text-dark bg-warning">
+        <p> Введите номер автомобиля для поиска</p>
+    </div>
+  <%= text_field_tag sanitize(:search), params[:search] %>
+  <%= submit_tag "Поиск" %>
+  <% end %><br />
+</div>
+
+        <% if @clients.present? %>
+            <% @clients.each_with_index do |client, index| %>
+            <thead>
+                <table class="table table-bordered border-primary" style="max-width: 540px;">
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Телефон</th>
+                    <th scope="col">Машина (car)</th>
+                    <th scope="col">Ордер</th>
+                </tr>
+            </thead>
+
+                <tbody class="table-group-divider" class="align-top">
+                    <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td><p class="text-success"><%= client.name %></p></td>
+                    <td><p class="text-success"><%= client.phone %></p></td>
+                    <td><p class="text-success"><%= client.cars.name %></p></td>
+                    <td><p class="text-success"><%= link_to "Ссылка на ордер", order_path(client.order.id)  %> </p></td>
+                    </tr>
+                </table>
+
+                <p>
+                    <%= link_to  "Показать клиента", client_path(client) %> |
+                    <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+                    <%= link_to "New car", new_car_path %></div>
+                </p>
+                
+                <%= button_to "Destroy this car", client, method: :delete %>
+
+            <% end %>
+        <% end %>
+
+</div>

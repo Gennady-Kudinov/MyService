@@ -1,0 +1,33 @@
+<section class="section">
+  
+<%= form_for @order do |order_form| %> 
+
+  <div class="field">
+    <%= order_form.label :Клиент  %>
+      <%= order_form.collection_select(:client_id, 
+                                 Client.all, 
+                                 :id,
+                                 :licence, { prompt: 'Select', selected: @client },
+                                 { data: { source: 'clients' }}) %>
+      
+    <div class="field">
+      <%= order_form.label :problem, 'Проблемы' %>
+      <%= order_form.text_area :problem, { class: "form-control" } %>
+    </div>
+    <div class="field">
+      <%= order_form.label :work_description, 'Ремонт' %>
+      <%= order_form.text_area :work_description, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= order_form.label :price, 'Стоимость услуг' %>
+      <%= order_form.number_field :price, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="field mt-3">
+    <%= order_form.submit %>
+  </div>
+
+<% end %>
+
+</section>

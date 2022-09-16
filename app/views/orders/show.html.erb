@@ -1,0 +1,20 @@
+<h1>Просмотр ордера</h1>
+
+    <p>
+    Заказ для: <%= @order.client.licence %> 
+    </p>
+
+        <p>
+            <strong>Проблемы а/м:</strong>
+            <%= @order.problem %> 
+        </p>
+
+        <p>
+            <strong>Выполненые работы на а/м:</strong>
+            <%= @order.work_description %> 
+        </p>
+
+        <p>
+            <strong>Стоимость:</strong>
+            <%= @order.price %> 
+        </p>

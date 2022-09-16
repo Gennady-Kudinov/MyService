@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @make %>
+
+<div>
+  <%= link_to "Edit this make", edit_make_path(@make) %> |
+  <%= link_to "Back to makes", makes_path %>
+
+  <%= button_to "Destroy this make", @make, method: :delete %>
+</div>

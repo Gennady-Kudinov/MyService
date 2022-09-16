@@ -1,0 +1,60 @@
+<%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
+  <% if car.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+      <ul>
+        <% car.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+    <div class="form-group">
+      <%= form.label :make_id  %>
+      <%= form.collection_select(:make_id, 
+                                 Make.all, 
+                                 :id,
+                                 :name, { prompt: 'Select', selected: @car.make_id }, 
+                                 { data: { source: 'makes' }}) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :model_id  %>
+      <%= form.collection_select(:model_id, 
+                                 @car.make&.models || [], 
+                                 :id, 
+                                 :name, { prompt: 'Select', selected: @car.model_id }, 
+                                 { data: { parent_id: 'car_make_id', source: 'models'}}) %>
+
+    </div>
+
+    <div class="form-group">
+      <%= form.label :mileage, 'Пробег в км' %>
+      <%= form.text_field :mileage, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :vin, 'Вин номер' %>
+      <%= form.text_field :vin, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :ecm, 'ECM' %>
+      <%= form.collection_select :ecm_id, Ecm.order(:name), :id, :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :Клиент  %>
+      <%= form.collection_select(:client_id, 
+                                 Client.all, 
+                                 :id,
+                                 :licence, { prompt: 'Select', selected: @client },
+                                 { data: { source: 'clients' }}) %>
+    </div>
+    <div class="form-group">
+      <%= form.submit  %>
+    </div>
+  </form> 
+<% end %>

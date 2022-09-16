@@ -1,0 +1,22 @@
+<h1>Admin#index</h1>
+<p>Find me in app/views/admin/index.html.erb</p>
+
+<h1>Welcome</h1>
+    <p>
+        Дата/Время <% @time = Time.now %>
+        <%= @time.strftime('%D %B %Y %H:%M') %>.
+        В списке <%= pluralize(@total_cars, "а/м") %>.
+        и <%= pluralize(@total_clients, "слиент") %>.
+    </p>
+
+        <div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+            <%= form_tag cars_path, :method => 'get' do %>
+                <div class="text-dark bg-warning">
+                <p> Введите номер автомобиля для поиска</p>
+                </div>
+            <%= text_field_tag sanitize(:search), params[:search] %>
+            <%= submit_tag "Поиск" %>
+            <br><br>
+            <%= link_to "New car", new_car_path %></div>
+        <% end %>
+   
