@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h1>История ордеров клиента <%= @client.name %></h1>
+  <%= link_to "Добавить новый ордер", new_order_path, class: "btn" %>
+  <% @client.orders.each do |order| %>  
+
+    <table>
+      <td>
+        <th>Проблемы</th>
+        <th>Выполненая работа</th>
+        <th>Стоимость</th>
+      </td>
+      <tr>
+        <td>
+          <%= order.id %>
+        </td>
+        <td>
+          <%= order.problem %> 
+        </td>
+        <td>
+          <%= order.work_description %> 
+        </td>
+        <td>
+          <%= order.price %>    
+        </td>
+      </tr>
+    </table>
+  <% end %> 
+
+</div>

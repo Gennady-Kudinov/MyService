@@ -20,6 +20,12 @@
           <th scope="col">Имя</th>
           <th scope="col">Телефон</th>
           <th scope="col">Машина (car)</th>
+<<<<<<< HEAD
+||||||| c2124ce
+          <th scope="col">Ордер</th>
+=======
+          <th scope="col">Ордеры</th>
+>>>>>>> origin/master
         </tr>
     </thead>
 
@@ -29,13 +35,13 @@
         <td><p class="text-success"><%= client.name %></p></td>
         <td><p class="text-success"><%= client.phone %></p></td>
         <td><p class="text-success"><%= client.cars.name %></p></td>
-        <% if client.order? %> 
+        <% if client.orders? %> 
           <td>
-            <p class="text-success"><%= link_to "Ссылка на ордер", order_path(client.order.id)%> </p>
+            <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
           </td>
         <% else %> 
           <td>
-            <p class="text"><%= link_to "Добавить ордер", new_order_path %> </p>
+            <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
           </td> 
         <% end %> 
       </tr>

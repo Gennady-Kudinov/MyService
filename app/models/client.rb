@@ -1,11 +1,11 @@
 class Client < ApplicationRecord
     has_many :cars, dependent: :destroy
-    has_one :order 
+    has_many :orders
 
 
     
-    def order? 
-      self.order ? true : false 
+    def orders? 
+      true if self.orders.present?   
     end
 end
 

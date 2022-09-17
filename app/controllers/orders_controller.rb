@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   end
   
   def show 
-    @order = Order.find(params[:id])
+    @client = Client.find(params[:id])
   end
 
   def edit

@@ -1,14 +1,33 @@
-<h1>Просмотр ордера</h1>
+<div class="container">
 
-    <p>
-    Заказ для: <%= @order.client.licence %> 
-    </p>
+  <h1>История ордеров клиента <%= @client.name %></h1>
+  <%= link_to "Добавить новый ордер", new_order_path, class: "btn btn-primary" %>
+  <% @client.orders.each do |order| %>  
 
-        <p>
-            <strong>Проблемы а/м:</strong>
-            <%= @order.problem %> 
-        </p>
+    <table>
+      <td>
+        <th>Проблемы</th>
+        <th>Выполненая работа</th>
+        <th>Стоимость</th>
+      </td>
+      <tr>
+        <td>
+          <%= order.id %>
+        </td>
+        <td>
+          <%= order.problem %> 
+        </td>
+        <td>
+          <%= order.work_description %> 
+        </td>
+        <td>
+          <%= order.price %>    
+        </td>
+      </tr>
+    </table>
+  <% end %> 
 
+<<<<<<< HEAD
         <p>
             <strong>Выполненые работы на а/м:</strong>
             <%= @order.work_description %> 
@@ -20,3 +39,16 @@
         </p>
 
          <p>
+||||||| c2124ce
+        <p>
+            <strong>Выполненые работы на а/м:</strong>
+            <%= @order.work_description %> 
+        </p>
+
+        <p>
+            <strong>Стоимость:</strong>
+            <%= @order.price %> 
+        </p>
+=======
+</div>
+>>>>>>> origin/master
