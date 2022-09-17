@@ -33,11 +33,11 @@ class CarsController < ApplicationController
         format.json { render json: @car.errors, status: :unprocessable_entity }
       end
     end
-               if @ecm == ""
-                exit
-               else
-                folder_create
-               end
+          #     if @ecm == ""
+           #     exit
+          #     else
+          #      folder_create
+          #     end
   end
 
   # PATCH/PUT /cars/1 or /cars/1.json
