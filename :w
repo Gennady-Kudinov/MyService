@@ -1,7 +1,7 @@
 <div class="container">
 
   <h1>История ордеров клиента <%= @client.name %></h1>
-  <%= link_to "Добавить новый ордер", new_order_path, class: "btn btn-primary" %>
+  <%= link_to "Добавить новый ордер", new_order_path, class: "btn" %>
   <% @client.orders.each do |order| %>  
 
     <table>
