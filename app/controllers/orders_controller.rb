@@ -20,13 +20,27 @@ class OrdersController < ApplicationController
   end
   
   def show 
-    @client = Client.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def edit
+    @order = Order.find(params[:id])
+  end
+
+  def update 
+    @order = Order.find(params[:id]) 
+
+    if @order.update order_params 
+      redirect_to client_orders_path(@order.client_id) 
+    else 
+      render :edit 
+    end 
   end
 
   def destroy
+    @order = Order.find(params[:id])
+    @order.destroy 
+    redirect_to client_orders_path(@order)
   end
 
     private

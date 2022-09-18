@@ -33,7 +33,7 @@
         <td>
           <%= link_to "Посмотреть", order_path(order) %> 
           <%= link_to "Редактировать", edit_order_path(order) %>
-          <%= link_to "Удалить" %> 
+          <%= button_to "Удалить", order , method: :delete,form: { data: { confirm: "Хотите удалить ?"  }} %> 
 
         </td>
       </tr>
