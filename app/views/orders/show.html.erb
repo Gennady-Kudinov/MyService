@@ -1,30 +1,22 @@
-<div class="container">
+<p>
+  <%= @order.id %> 
+</p>
+<p>
+  Проблема
+  <%= @order.problem %> 
+</p>
 
-  <h1>История ордеров клиента <%= @client.name %></h1>
-  <%= link_to "Добавить новый ордер", new_order_path, class: "btn btn-primary" %>
-  <% @client.orders.each do |order| %>  
+<p>
+  Описание
+  <%= @order.work_description %> 
+</p>
 
-    <table>
-      <td>
-        <th>Проблемы</th>
-        <th>Выполненая работа</th>
-        <th>Стоимость</th>
-      </td>
-      <tr>
-        <td>
-          <%= order.id %>
-        </td>
-        <td>
-          <%= order.problem %> 
-        </td>
-        <td>
-          <%= order.work_description %> 
-        </td>
-        <td>
-          <%= order.price %>    
-        </td>
-      </tr>
-    </table>
-  <% end %> 
+<p>
+  Цена
+  <%= @order.price %> 
+</p>
 
-</div>
+<p>
+  Статус
+  <%= @order.status %> 
+</p>
