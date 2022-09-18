@@ -20312,3 +20312,1696 @@ Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:20:43 +0700
   
 ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
   
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:21:18 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2686)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 10011)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.7ms | Allocations: 11113)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:19 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/3" for 127.0.0.1 at 2022-09-18 16:21:21 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 250)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 7372)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.5ms | Allocations: 8205)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/3/edit" for 127.0.0.1 at 2022-09-18 16:21:25 +0700
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/edit.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/edit.html.erb:9
+  Rendered orders/edit.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3009)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 9511)
+Completed 200 OK in 32ms (Views: 27.1ms | ActiveRecord: 0.8ms | Allocations: 10328)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:26 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:21:27 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 19.7ms | Allocations: 2794)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 9304)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.5ms | Allocations: 9679)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:27 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:21:43 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 5978)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 12598)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 1.3ms | Allocations: 13544)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:44 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:21:45 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1651)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 8151)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.6ms | Allocations: 8500)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:45 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:48 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:21:48 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2791)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 93.2ms | Allocations: 40260)
+Completed 200 OK in 96ms (Views: 94.6ms | ActiveRecord: 0.3ms | Allocations: 41407)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:48 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:21:49 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 5067)
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:49 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 80.0ms | Allocations: 28135)
+Completed 200 OK in 84ms (Views: 80.9ms | ActiveRecord: 1.2ms | Allocations: 28579)
+
+
+Started GET "/clients/3/orders/new" for 127.0.0.1 at 2022-09-18 16:21:54 +0700
+Processing by OrdersController#new as HTML
+  Parameters: {"client_id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2466)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8976)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.3ms | Allocations: 9295)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:54 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:56 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for 127.0.0.1 at 2022-09-18 16:21:58 +0700
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1775)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 8193)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 8573)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:58 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:21:59 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 5087)
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:21:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 28180)
+Completed 200 OK in 78ms (Views: 75.5ms | ActiveRecord: 1.0ms | Allocations: 28642)
+
+
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:22:00 +0700
+Processing by OrdersController#index as HTML
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:00 +0700
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1648)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 71.5ms | Allocations: 27676)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 1.3ms | Allocations: 28300)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:04 +0700
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:22:04 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 5421)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 91.7ms | Allocations: 42827)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.9ms | Allocations: 43575)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:06 +0700
+Started GET "/clients/3/orders/new" for 127.0.0.1 at 2022-09-18 16:22:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Processing by OrdersController#new as HTML
+  Parameters: {"client_id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2487)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 98.8ms | Allocations: 37324)
+Completed 200 OK in 101ms (Views: 99.4ms | ActiveRecord: 0.3ms | Allocations: 37800)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:07 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:22:08 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1982)
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:22:08 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 25099)
+Completed 200 OK in 76ms (Views: 73.7ms | ActiveRecord: 0.6ms | Allocations: 25642)
+
+
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:10 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2682)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 10005)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.5ms | Allocations: 11109)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:10 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:25 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2726)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 9963)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.5ms | Allocations: 11088)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:35 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2723)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 9947)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.6ms | Allocations: 11072)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:35 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:41 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2745)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 10067)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.4ms | Allocations: 11191)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:41 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:50 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2750)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 10074)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.8ms | Allocations: 11198)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:50 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:23:58 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2741)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 9978)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.9ms | Allocations: 11102)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:23:58 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:24:13 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2730)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 9960)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.9ms | Allocations: 11084)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:24:25 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1623)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 9697)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.9ms | Allocations: 10822)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:24:34 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 993)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 8180)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.7ms | Allocations: 8531)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/4" for 127.0.0.1 at 2022-09-18 16:24:36 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 248)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 7380)
+Completed 200 OK in 48ms (Views: 39.9ms | ActiveRecord: 0.8ms | Allocations: 8197)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:36 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:24:39 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 994)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 8210)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.6ms | Allocations: 8540)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:24:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:26:15 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1587)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 9670)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.7ms | Allocations: 10773)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:15 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/4" for 127.0.0.1 at 2022-09-18 16:26:17 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 248)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7465)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.5ms | Allocations: 8300)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:17 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:18 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:26:18 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 963)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 8179)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.7ms | Allocations: 8514)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:19 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:26:20 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 964)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 8185)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.7ms | Allocations: 8515)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:26:40 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1565)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 9645)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.8ms | Allocations: 10747)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/4" for 127.0.0.1 at 2022-09-18 16:26:41 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 248)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 7467)
+Completed 200 OK in 38ms (Views: 30.8ms | ActiveRecord: 0.6ms | Allocations: 8300)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:41 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:26:43 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 952)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 8165)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.7ms | Allocations: 8500)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:26:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:27:41 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1583)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 9670)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.8ms | Allocations: 10772)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:42 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started DELETE "/orders/4" for 127.0.0.1 at 2022-09-18 16:27:43 +0700
+Processing by OrdersController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+Redirected to http://127.0.0.1:3000/clients/4/orders
+Completed 302 Found in 18ms (ActiveRecord: 8.6ms | Allocations: 2861)
+
+
+Started DELETE "/clients/4/orders" for 127.0.0.1 at 2022-09-18 16:27:43 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/clients/4/orders"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:27:43 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 789)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7996)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms | Allocations: 8346)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:27:45 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 789)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 7984)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.6ms | Allocations: 8314)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:45 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:27:47 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5965)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 12585)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.9ms | Allocations: 13528)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:47 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:27:48 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 791)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 8007)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.4ms | Allocations: 8356)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:48 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/1" for 127.0.0.1 at 2022-09-18 16:27:51 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 247)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 7369)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms | Allocations: 8187)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:51 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:52 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/1/edit" for 127.0.0.1 at 2022-09-18 16:27:53 +0700
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/edit.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/edit.html.erb:9
+  Rendered orders/edit.html.erb within layouts/application (Duration: 18.0ms | Allocations: 3012)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 9514)
+Completed 200 OK in 41ms (Views: 35.4ms | ActiveRecord: 0.8ms | Allocations: 10329)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:53 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:54 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started DELETE "/orders/1" for 127.0.0.1 at 2022-09-18 16:27:55 +0700
+Processing by OrdersController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+Redirected to http://127.0.0.1:3000/clients/1/orders
+Completed 302 Found in 22ms (ActiveRecord: 8.9ms | Allocations: 2830)
+
+
+Started DELETE "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:27:55 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/clients/1/orders"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:27:55 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 615)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7807)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 8136)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:56 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:27:57 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 2806)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 9216)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.5ms | Allocations: 9591)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:27:57 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for 127.0.0.1 at 2022-09-18 16:28:02 +0700
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"123", "work_description"=>"123", "price"=>"123"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id", "status") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["problem", "123"], ["work_description", "123"], ["price", 123], ["created_at", "2022-09-18 09:28:02.352422"], ["updated_at", "2022-09-18 09:28:02.352422"], ["client_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 23ms (ActiveRecord: 7.0ms | Allocations: 3384)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 16:28:02 +0700
+Processing by UsersController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 2139)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2547)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 9364)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms | Allocations: 10308)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:02 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:28:03 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 5107)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 11606)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 1.2ms | Allocations: 11994)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:03 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:28:04 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 789)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 7903)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.5ms | Allocations: 8237)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:04 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:28:10 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 5046)
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:11 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 75.3ms | Allocations: 28588)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 1.1ms | Allocations: 28970)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:12 +0700
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:28:12 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1006)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 104.7ms | Allocations: 41095)
+Completed 200 OK in 107ms (Views: 105.4ms | ActiveRecord: 0.5ms | Allocations: 41690)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:12 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:28:29 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1414)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 9492)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.5ms | Allocations: 10594)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:28:33 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 2922)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 9346)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.7ms | Allocations: 9736)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:28:45 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 5956)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 12663)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 1.6ms | Allocations: 13609)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:45 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:46 +0700
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:28:46 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 820)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 90.7ms | Allocations: 40314)
+Completed 200 OK in 93ms (Views: 91.3ms | ActiveRecord: 0.4ms | Allocations: 41066)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:28:46 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:29:03 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3590)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 24436)
+Completed 200 OK in 63ms (Views: 57.5ms | ActiveRecord: 2.6ms | Allocations: 27064)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:03 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:29:04 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 40.3ms | Allocations: 6989)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 13649)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 1.2ms | Allocations: 14019)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:04 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for 127.0.0.1 at 2022-09-18 16:29:11 +0700
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"7777", "work_description"=>"7777", "price"=>"777"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id", "status") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["problem", "7777"], ["work_description", "7777"], ["price", 777], ["created_at", "2022-09-18 09:29:11.515663"], ["updated_at", "2022-09-18 09:29:11.515663"], ["client_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 9.8ms | Allocations: 7449)
+
+
+  
+NoMethodError (undefined method `clients_order_path' for #<OrdersController:0x000000000cff08>
+Did you mean?  client_order_path
+               client_orders_path
+               client_order_url
+               client_car_path
+               edit_order_path):
+  
+app/controllers/orders_controller.rb:15:in `create'
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:29:27 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 21.9ms | Allocations: 7003)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 75.3ms | Allocations: 27257)
+Completed 200 OK in 90ms (Views: 74.1ms | ActiveRecord: 5.3ms | Allocations: 32331)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:27 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:29:28 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 36.8ms | Allocations: 12899)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 19629)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 2.0ms | Allocations: 20596)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:29:30 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1022)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 8141)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.5ms | Allocations: 8505)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:30 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started DELETE "/orders/5" for 127.0.0.1 at 2022-09-18 16:29:32 +0700
+Processing by OrdersController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mOrder Destroy (0.3ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+Redirected to http://127.0.0.1:3000/clients/5/orders
+Completed 302 Found in 20ms (ActiveRecord: 9.0ms | Allocations: 3470)
+
+
+Started DELETE "/clients/5/orders" for 127.0.0.1 at 2022-09-18 16:29:32 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/clients/5/orders"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:29:32 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 788)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 7992)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.5ms | Allocations: 8322)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:32 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:29:33 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2527)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 9037)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.7ms | Allocations: 9359)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:33 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for 127.0.0.1 at 2022-09-18 16:29:37 +0700
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"777", "work_description"=>"777", "price"=>"777"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id", "status") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["problem", "777"], ["work_description", "777"], ["price", 777], ["created_at", "2022-09-18 09:29:37.540145"], ["updated_at", "2022-09-18 09:29:37.540145"], ["client_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/clients/5/orders
+Completed 302 Found in 24ms (ActiveRecord: 7.2ms | Allocations: 4065)
+
+
+Started GET "/clients/5/orders" for 127.0.0.1 at 2022-09-18 16:29:37 +0700
+Processing by OrdersController#index as TURBO_STREAM
+  Parameters: {"client_id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 5)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 615)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 7737)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.5ms | Allocations: 8120)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:37 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/5/orders" for 127.0.0.1 at 2022-09-18 16:29:54 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 5)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 965)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 21940)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 1.8ms | Allocations: 24563)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:54 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:29:56 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 45.1ms | Allocations: 16909)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | Allocations: 23639)
+Completed 200 OK in 71ms (Views: 61.2ms | ActiveRecord: 3.3ms | Allocations: 26869)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:56 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:29:57 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 997)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 8192)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.4ms | Allocations: 8544)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:57 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started DELETE "/orders/5" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+Processing by OrdersController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:42:in `destroy'
+Redirected to http://127.0.0.1:3000/clients/5/orders
+Completed 302 Found in 27ms (ActiveRecord: 9.5ms | Allocations: 3449)
+
+
+Started DELETE "/clients/5/orders" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/clients/5/orders"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 787)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7997)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 8326)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2637)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 9149)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.7ms | Allocations: 9481)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:29:58 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for 127.0.0.1 at 2022-09-18 16:30:03 +0700
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"777", "work_description"=>"777", "price"=>"777"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id", "status") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["problem", "777"], ["work_description", "777"], ["price", 777], ["created_at", "2022-09-18 09:30:03.496926"], ["updated_at", "2022-09-18 09:30:03.496926"], ["client_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/clients/1/orders
+Completed 302 Found in 18ms (ActiveRecord: 8.0ms | Allocations: 4080)
+
+
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:30:03 +0700
+Processing by OrdersController#index as TURBO_STREAM
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 952)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 8145)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.5ms | Allocations: 8480)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:03 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/4" for 127.0.0.1 at 2022-09-18 16:30:25 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 291)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 24647)
+Completed 200 OK in 86ms (Views: 68.0ms | ActiveRecord: 2.8ms | Allocations: 31083)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:26 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/4/edit" for 127.0.0.1 at 2022-09-18 16:30:28 +0700
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/edit.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/edit.html.erb:9
+  Rendered orders/edit.html.erb within layouts/application (Duration: 28.9ms | Allocations: 7416)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 14064)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 1.6ms | Allocations: 14922)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:28 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:30:49 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 12795)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 19525)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 2.5ms | Allocations: 20491)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:49 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/orders" for 127.0.0.1 at 2022-09-18 16:30:50 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 2)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 833)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 7919)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.5ms | Allocations: 8274)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:50 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:30:52 +0700
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:52 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2530)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 97.0ms | Allocations: 39878)
+Completed 200 OK in 126ms (Views: 125.1ms | ActiveRecord: 0.3ms | Allocations: 50855)
+
+
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:30:53 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:53 +0700
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5116)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 79.5ms | Allocations: 30316)
+Completed 200 OK in 83ms (Views: 80.2ms | ActiveRecord: 1.0ms | Allocations: 30978)
+
+
+Started GET "/clients/3/orders/new" for 127.0.0.1 at 2022-09-18 16:30:55 +0700
+Processing by OrdersController#new as HTML
+  Parameters: {"client_id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2463)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 8973)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.4ms | Allocations: 9291)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:30:55 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for 127.0.0.1 at 2022-09-18 16:31:06 +0700
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"3", "problem"=>"новый ордер", "work_description"=>"сделали", "price"=>"1000"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id", "status") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["problem", "новый ордер"], ["work_description", "сделали"], ["price", 1000], ["created_at", "2022-09-18 09:31:06.253826"], ["updated_at", "2022-09-18 09:31:06.253826"], ["client_id", 3], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/clients/3/orders
+Completed 302 Found in 22ms (ActiveRecord: 8.6ms | Allocations: 4140)
+
+
+Started GET "/clients/3/orders" for 127.0.0.1 at 2022-09-18 16:31:06 +0700
+Processing by OrdersController#index as TURBO_STREAM
+  Parameters: {"client_id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 3)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 788)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 7886)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 8221)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/6" for 127.0.0.1 at 2022-09-18 16:31:10 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 16)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 7244)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.6ms | Allocations: 8007)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:10 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/6/edit" for 127.0.0.1 at 2022-09-18 16:31:14 +0700
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/edit.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/edit.html.erb:9
+  Rendered orders/edit.html.erb within layouts/application (Duration: 14.6ms | Allocations: 2533)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 9036)
+Completed 200 OK in 50ms (Views: 42.6ms | ActiveRecord: 1.1ms | Allocations: 9799)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:14 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:16 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for 127.0.0.1 at 2022-09-18 16:31:17 +0700
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:16
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 5043)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 11443)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 1.9ms | Allocations: 11803)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:17 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/orders" for 127.0.0.1 at 2022-09-18 16:31:20 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE (client_id == 1)[0m
+  ↳ app/views/orders/index.html.erb:5:in `each_with_index'
+  Rendered orders/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 953)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 8152)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 8483)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-09-18 16:31:28 +0700
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2463)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 8973)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.6ms | Allocations: 9291)
+
+
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:28 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 16:31:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  

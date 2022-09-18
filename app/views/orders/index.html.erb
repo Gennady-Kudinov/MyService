@@ -31,9 +31,9 @@
           <td>На выполнении</td>
         <% end %> 
         <td>
-          <%= link_to "Посмотреть", order_path(order) %> 
-          <%= link_to "Редактировать", edit_order_path(order) %>
-          <%= button_to "Удалить", order , method: :delete,form: { data: { confirm: "Хотите удалить ?"  }} %> 
+          <%= link_to "Посмотреть", order_path(order), class: "btn btn-info" %> 
+          <%= link_to "Редактировать", edit_order_path(order), class: "btn btn-primary" %>
+          <%= link_to "Удалить", order, data: { turbo_method: :delete  }, class: "btn btn-danger" %> 
 
         </td>
       </tr>

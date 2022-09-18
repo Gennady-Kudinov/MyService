@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @order = Order.new order_params 
     @order.client = @client 
     if @order.save
-      redirect_to root_path 
+      redirect_to client_orders_path(@order.client_id) 
     else 
       render :new 
     end 
