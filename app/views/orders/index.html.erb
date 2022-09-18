@@ -1,13 +1,43 @@
+<div class="container">
 
-<div id="<%= dom_id order %>">
+  <h1>История ордеров клиента</h1>
+  <%= link_to "Добавить новый ордер", new_order_path, class: "btn btn-primary" %>
+  <% @orders.each_with_index do |order, index| %>  
 
-  <p>
-  <strong>Гос. номер а/м:</strong>
-  <%= order.car.client.licence.upcase %>
-  </p>
+    <table>
+      <td>
+        <th>Проблемы</th>
+        <th>Выполненая работа</th>
+        <th>Стоимость</th>
+        <th>Статус</th>
+        <th>Действия</th>
+      </td>
+      <tr>
+        <td>
+          <%= index + 1 %>
+        </td>
+        <td>
+          <%= order.problem %> 
+        </td>
+        <td>
+          <%= order.work_description %> 
+        </td>
+        <td>
+          <%= order.price %>    
+        </td>
+        <% if order.status %> 
+          <td>Ордер выполнен</td>
+        <% else %> 
+          <td>На выполнении</td>
+        <% end %> 
+        <td>
+          <%= link_to "Посмотреть", order_path(order), class: "btn btn-info" %> 
+          <%= link_to "Редактировать", edit_order_path(order), class: "btn btn-primary" %>
+          <%= link_to "Удалить", order, data: { turbo_method: :delete  }, class: "btn btn-danger" %> 
 
-  <p>
-  <strong>Марка:</strong>
-  <%= order.car.make.name %>
-  </p>
+        </td>
+      </tr>
+    </table>
+  <% end %> 
 
+</div>

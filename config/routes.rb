@@ -20,7 +20,12 @@ Rails.application.routes.draw do
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end
-  
+
   resources :orders 
+  
+  resources :clients do 
+    resources :orders 
+  end
+
   resources :users, only: %i[new create edit update]
 end

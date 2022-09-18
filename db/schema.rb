@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_16_143148) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_18_072144) do
   create_table "cars", force: :cascade do |t|
     t.string "licence"
     t.string "vin"
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_16_143148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "client_id", null: false
+    t.boolean "status", default: false
     t.index ["client_id"], name: "index_orders_on_client_id"
   end
 
