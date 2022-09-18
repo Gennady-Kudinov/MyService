@@ -1,4 +1,5 @@
-<h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+
+<h2 class="my-4">Список клиентов</h2>
 
 <div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
   <%= form_tag clients_path, :method => 'get' do %>
@@ -8,7 +9,8 @@
     </div>
     <%= text_field_tag sanitize(:search), params[:search] %>
     <%= submit_tag "Поиск" %>
-  <% end %><br />
+  <% end %>
+  <br />
 </div>
 
 <% if @clients.present? %>
@@ -52,5 +54,3 @@
 
     <% end %>
   <% end %>
-
-  </div>
