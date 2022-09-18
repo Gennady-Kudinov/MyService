@@ -34,11 +34,11 @@
         <td><p class="text-success"><%= client.cars.name %></p></td>
         <% if client.orders? %> 
           <td>
-            <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+            <p class="text-success"><%= link_to "История ордеров", client_orders_path(client)%> </p>
           </td>
         <% else %> 
           <td>
-            <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
+            <p class="text"><%= link_to "Добавить новый  ордер", new_client_order_path(client) %> </p>
           </td> 
         <% end %> 
       </tr>

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    @orders = Order.all.where("client_id == #{params[:client_id]}")
   end
 
   def new
