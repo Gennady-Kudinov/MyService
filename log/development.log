@@ -17244,3 +17244,2650 @@ Started GET "/images/logo.jpg" for 127.0.0.1 at 2022-09-18 00:52:38 +0700
 ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
   
 >>>>>>> origin/master
+Started GET "/cars?search=911&commit=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" for ::1 at 2022-09-17 21:07:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  Parameters: {"search"=>"911", "commit"=>"Поиск"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.3ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.2ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 18.7ms | Allocations: 37204)
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.2ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.0ms | Allocations: 2807)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.6ms | Allocations: 2667)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.5ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.5ms | Allocations: 2702)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.5ms | Allocations: 2747)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.6ms | Allocations: 2747)
+  Rendered cars/index.html.erb within layouts/application (Duration: 37.6ms | Allocations: 73200)
+  Rendered layout layouts/application.html.erb (Duration: 1520.1ms | Allocations: 121051)
+Completed 200 OK in 1570ms (Views: 1519.6ms | ActiveRecord: 2.8ms | Allocations: 148737)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:07:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for ::1 at 2022-09-17 21:07:55 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2876)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 9744)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.1ms | Allocations: 10815)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:07:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars/new" for ::1 at 2022-09-17 21:07:57 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.2ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.4ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  Rendered cars/_form.html.erb (Duration: 22.3ms | Allocations: 10321)
+  Rendered cars/new.html.erb within layouts/application (Duration: 24.2ms | Allocations: 10630)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 16689)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.8ms | Allocations: 17776)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:07:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/contact" for ::1 at 2022-09-17 21:08:03 +0300
+Processing by StaticPagesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/show.html.erb within layouts/application
+  Rendered static_pages/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2089)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2174)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3131)
+
+
+  
+ActionView::Template::Error (The asset "foto.jpg" is not present in the asset pipeline.
+):
+     6:   <div class="row g-0">
+     7:     <div class="col-md-4">
+     8:       <!--            <img src="img_foto.jpg" class="img-fluid rounded-start" alt="...">   -->
+     9:       <%= image_tag "foto.jpg" %>
+    10:     </div>
+    11:     <div class="col-md-8">
+    12:       <div class="text-center">
+  
+app/views/static_pages/show.html.erb:9
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars/new" for ::1 at 2022-09-17 21:08:06 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.4ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.4ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  Rendered cars/_form.html.erb (Duration: 15.0ms | Allocations: 8627)
+  Rendered cars/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 8716)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 14917)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 1.3ms | Allocations: 15974)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-17 21:08:07 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.2ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 7.3ms | Allocations: 2821)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 5.0ms | Allocations: 2794)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.8ms | Allocations: 2658)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.7ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.7ms | Allocations: 2702)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.7ms | Allocations: 2747)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 1.6ms | Allocations: 2747)
+  Rendered cars/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 20710)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 26657)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 1.5ms | Allocations: 27615)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/admin" for ::1 at 2022-09-17 21:08:16 +0300
+Processing by AdminController#index as HTML
+  [1m[36mCar Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  ↳ app/controllers/admin_controller.rb:3:in `index'
+  [1m[36mClient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  ↳ app/controllers/admin_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 903)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 8054)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 10190)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-17 21:08:18 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:18 +0300
+Processing by CarsController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.8ms | Allocations: 3159)
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.0ms | Allocations: 3101)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.9ms | Allocations: 3132)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.2ms | Allocations: 3083)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.9ms | Allocations: 3169)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.2ms | Allocations: 3690)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.1ms | Allocations: 3668)
+  Rendered cars/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 25123)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 55935)
+Completed 200 OK in 57ms (Views: 39.8ms | ActiveRecord: 0.9ms | Allocations: 71702)
+
+
+Started GET "/clients" for ::1 at 2022-09-17 21:08:19 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 31.5ms | Allocations: 25842)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 32581)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 1.3ms | Allocations: 33043)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-17 21:08:31 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3157)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 10124)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 11126)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:08:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for ::1 at 2022-09-17 21:09:58 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1205)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 21329)
+Completed 200 OK in 28ms (Views: 14.2ms | ActiveRecord: 0.9ms | Allocations: 26816)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:09:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for ::1 at 2022-09-17 21:16:40 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1461)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 9147)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.5ms | Allocations: 10260)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:40 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for ::1 at 2022-09-17 21:16:42 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 952)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7391)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms | Allocations: 7727)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-17 21:16:44 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 35.3ms | Allocations: 18586)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 25325)
+Completed 200 OK in 45ms (Views: 40.5ms | ActiveRecord: 1.7ms | Allocations: 25849)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/edit" for ::1 at 2022-09-17 21:16:49 +0300
+Processing by ClientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:29:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/edit.html.erb within layouts/application
+  Rendered clients/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1315)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7931)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 0.7ms | Allocations: 9354)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars/new" for ::1 at 2022-09-17 21:16:53 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.3ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.3ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  Rendered cars/_form.html.erb (Duration: 22.8ms | Allocations: 15950)
+  Rendered cars/new.html.erb within layouts/application (Duration: 23.9ms | Allocations: 16311)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 22667)
+Completed 200 OK in 53ms (Views: 41.4ms | ActiveRecord: 2.1ms | Allocations: 27087)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-17 21:16:58 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2690)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 9577)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.3ms | Allocations: 10576)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:16:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-17 21:17:03 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:03 +0300
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4815)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 40433)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.7ms | Allocations: 40933)
+
+
+Started GET "/orders/1" for ::1 at 2022-09-17 21:17:05 +0300
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1083)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7802)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.7ms | Allocations: 8635)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:05 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-17 21:17:14 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:14 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1934)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 37703)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.5ms | Allocations: 38033)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/admin" for ::1 at 2022-09-17 21:17:21 +0300
+Processing by AdminController#index as HTML
+  [1m[36mCar Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  ↳ app/controllers/admin_controller.rb:3:in `index'
+  [1m[36mClient Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  ↳ app/controllers/admin_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 886)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 7993)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 10095)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-17 21:17:24 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 16.5ms | Allocations: 11468)
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.1ms | Allocations: 2803)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.9ms | Allocations: 2658)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.3ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.6ms | Allocations: 2702)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.7ms | Allocations: 2747)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.2ms | Allocations: 2747)
+  Rendered cars/index.html.erb within layouts/application (Duration: 40.7ms | Allocations: 30033)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 36286)
+Completed 200 OK in 54ms (Views: 45.4ms | ActiveRecord: 2.2ms | Allocations: 37378)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-17 21:17:29 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:29 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2019)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 37901)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.3ms | Allocations: 38259)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-17 21:17:39 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:39 +0300
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 8.6ms | Allocations: 2838)
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 5.8ms | Allocations: 2822)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  Rendered cars/_car.html.erb (Duration: 4.1ms | Allocations: 2701)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.6ms | Allocations: 3223)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.3ms | Allocations: 3284)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.8ms | Allocations: 3201)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.1ms | Allocations: 3272)
+  Rendered cars/index.html.erb within layouts/application (Duration: 52.6ms | Allocations: 37627)
+  Rendered layout layouts/application.html.erb (Duration: 70.2ms | Allocations: 67670)
+Completed 200 OK in 77ms (Views: 72.6ms | ActiveRecord: 1.7ms | Allocations: 68934)
+
+
+Started GET "/clients" for ::1 at 2022-09-17 21:17:41 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:17:41 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4648)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 48712)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.9ms | Allocations: 49120)
+
+
+Started GET "/clients?search=911&commit=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" for ::1 at 2022-09-17 21:18:15 +0300
+Processing by ClientsController#index as HTML
+  Parameters: {"search"=>"911", "commit"=>"Поиск"}
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%911%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 863)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7490)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.7ms | Allocations: 7848)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-17 21:18:20 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:20 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.3ms | Allocations: 2858)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 14.9ms | Allocations: 17275)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.4ms | Allocations: 3164)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.3ms | Allocations: 3127)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.3ms | Allocations: 3237)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.7ms | Allocations: 3553)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.1ms | Allocations: 3704)
+  Rendered cars/index.html.erb within layouts/application (Duration: 47.8ms | Allocations: 39285)
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 71279)
+Completed 200 OK in 70ms (Views: 64.3ms | ActiveRecord: 2.8ms | Allocations: 72341)
+
+
+Started GET "/cars?search=912&commit=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" for ::1 at 2022-09-17 21:18:27 +0300
+Processing by CarsController#index as HTML
+  Parameters: {"search"=>"912", "commit"=>"Поиск"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 6.1ms | Allocations: 2783)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.1ms | Allocations: 2794)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.6ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.3ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.8ms | Allocations: 2702)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.9ms | Allocations: 2747)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.9ms | Allocations: 2747)
+  Rendered cars/index.html.erb within layouts/application (Duration: 33.5ms | Allocations: 20658)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 26706)
+Completed 200 OK in 51ms (Views: 37.7ms | ActiveRecord: 2.6ms | Allocations: 27663)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-17 21:18:37 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:37 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 16079)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 47741)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.2ms | Allocations: 48520)
+
+
+Started GET "/cars/new" for ::1 at 2022-09-17 21:18:42 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:42 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.8ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.3ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  Rendered cars/_form.html.erb (Duration: 12.2ms | Allocations: 8941)
+  Rendered cars/new.html.erb within layouts/application (Duration: 27.4ms | Allocations: 22945)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 37705)
+Completed 200 OK in 49ms (Views: 41.6ms | ActiveRecord: 1.5ms | Allocations: 44703)
+
+
+Started GET "/cars" for ::1 at 2022-09-17 21:18:51 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:51 +0300
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  Rendered cars/_car.html.erb (Duration: 8.7ms | Allocations: 2904)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 21.5ms | Allocations: 17273)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.2ms | Allocations: 3223)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.3ms | Allocations: 3253)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.5ms | Allocations: 3152)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.7ms | Allocations: 3028)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 5.2ms | Allocations: 3345)
+  Rendered cars/index.html.erb within layouts/application (Duration: 53.8ms | Allocations: 38559)
+  Rendered layout layouts/application.html.erb (Duration: 74.1ms | Allocations: 70643)
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 1.7ms | Allocations: 71999)
+
+
+Started GET "/clients/new" for ::1 at 2022-09-17 21:18:53 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 945)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7520)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.2ms | Allocations: 7837)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-17 21:18:54 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4541)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 11156)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 1.2ms | Allocations: 11514)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:18:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars/new" for ::1 at 2022-09-17 21:19:01 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.2ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.3ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  Rendered cars/_form.html.erb (Duration: 8.5ms | Allocations: 8498)
+  Rendered cars/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 8586)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 14716)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 0.8ms | Allocations: 15689)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2/edit" for ::1 at 2022-09-17 21:19:05 +0300
+Processing by ClientsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:29:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/edit.html.erb within layouts/application
+  Rendered clients/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 970)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7586)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 8351)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:05 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/2" for ::1 at 2022-09-17 21:19:08 +0300
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 750)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 7366)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.5ms | Allocations: 8187)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:19:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/1" for ::1 at 2022-09-17 21:20:41 +0300
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 770)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 7571)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 8335)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:20:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:21:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/2" for ::1 at 2022-09-17 21:21:12 +0300
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 747)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7569)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.6ms | Allocations: 8332)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:21:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-17 21:21:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:37:36 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mMake Pluck (0.5ms)[0m  [1m[34mSELECT "model_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 32.6ms | Allocations: 11572)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 19062)
+Completed 200 OK in 49ms (Views: 42.2ms | ActiveRecord: 2.7ms | Allocations: 20350)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:37:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:38:03 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mMake Pluck (0.1ms)[0m  [1m[34mSELECT "make_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "make_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "make_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 6813)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 14210)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.8ms | Allocations: 15374)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:38:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:39:14 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mMake Pluck (0.1ms)[0m  [1m[34mSELECT "client_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "client_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Make Pluck (0.0ms)[0m  [1m[34mSELECT "client_id" FROM "makes"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 6822)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 14232)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.8ms | Allocations: 15396)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:39:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:39:38 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.7ms)[0m  [1m[34mSELECT "client_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "client_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "client_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 7539)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 14936)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 1.8ms | Allocations: 16099)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:39:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:40:10 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.3ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 7081)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 14491)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.8ms | Allocations: 15655)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:40:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:41:02 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 5794)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5875)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms | Allocations: 7007)
+
+
+  
+ActionView::Template::Error (undefined method `Make' for Client:Class):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= Client.Make.where(id: Model.pluck(:make_id).uniq) %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:41:13 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.4ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 7083)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 14493)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 1.2ms | Allocations: 15664)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:41:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:41:29 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.4ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 7258)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 14668)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 1.0ms | Allocations: 15831)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:41:29 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:42:34 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3089)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3170)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms | Allocations: 4295)
+
+
+  
+ActionView::Template::Error (undefined method `Make' for nil:NilClass):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= @client.Make.where(id: Model.pluck(:make_id).uniq).name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:43:54 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.5ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (2.1ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 7056)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 14473)
+Completed 200 OK in 34ms (Views: 29.6ms | ActiveRecord: 3.4ms | Allocations: 15645)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:43:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:44:17 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.3ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "models"."make_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 7254)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 14478)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 1.0ms | Allocations: 15641)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:44:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:44:37 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.6ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 7493)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 14903)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.4ms | Allocations: 16066)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:44:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:44:52 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Pluck (0.4ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mCACHE Model Pluck (0.0ms)[0m  [1m[34mSELECT "model_id" FROM "models"[0m
+  ↳ app/views/clients/index.html.erb:32
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 7494)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 14718)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 1.0ms | Allocations: 15881)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:44:52 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:45:19 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  Rendered clients/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1529)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2668)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+
+<div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+  <%= form_tag clients_path, :method => 'get' do %>
+
+    <div class="text-dark bg-warning">
+      <p> Введите номер автомобиля для поиска</p>
+    </div>
+    <%= text_field_tag sanitize(:search), params[:search] %>
+    <%= submit_tag "Поиск" %>
+  <% end %><br />
+</div>
+
+<% if @clients.present? %>
+  <% @clients.each_with_index do |client, index| %>
+    <thead>
+      <table class="table table-bordered border-primary" style="max-width: 540px;">
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Телефон</th>
+          <th scope="col">Машина (car)</th>
+          <th scope="col">Ордеры</th>
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider" class="align-top">
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><p class="text-success"><%= client.name %></p></td>
+        <td><p class="text-success"><%= client.phone %></p></td>
+        <td><p class="text-success"><%= Model.where(:model_id).uniq) %></p></td>
+        <% if client.orders? %> 
+          <td>
+            <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+          </td>
+        <% else %> 
+          <td>
+            <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
+          </td> 
+        <% end %> 
+      </tr>
+      </table>
+
+      <p>
+      <%= link_to  "Показать клиента", client_path(client) %> |
+      <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+      <%= link_to "New car", new_car_path %></div>
+      </p>
+
+      <%= button_to "Destroy this car", client, method: :delete %>
+
+    <% end %>
+  <% end %>
+
+  </div>
+
+):
+1:    <h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+2:    
+3:    <div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+4:      <%= form_tag clients_path, :method => 'get' do %>
+5:    
+6:        <div class="text-dark bg-warning">
+7:          <p> Введите номер автомобиля для поиска</p>
+8:        </div>
+9:        <%= text_field_tag sanitize(:search), params[:search] %>
+10:        <%= submit_tag "Поиск" %>
+11:      <% end %><br />
+12:    </div>
+13:    
+14:    <% if @clients.present? %>
+15:      <% @clients.each_with_index do |client, index| %>
+16:        <thead>
+17:          <table class="table table-bordered border-primary" style="max-width: 540px;">
+18:            <tr>
+19:              <th scope="col">№</th>
+20:              <th scope="col">Имя</th>
+21:              <th scope="col">Телефон</th>
+22:              <th scope="col">Машина (car)</th>
+23:              <th scope="col">Ордеры</th>
+24:            </tr>
+25:        </thead>
+26:    
+27:        <tbody class="table-group-divider" class="align-top">
+28:          <tr>
+29:            <th scope="row"><%= index + 1 %></th>
+30:            <td><p class="text-success"><%= client.name %></p></td>
+31:            <td><p class="text-success"><%= client.phone %></p></td>
+32:            <td><p class="text-success"><%= Model.where(:model_id).uniq) %></p></td>
+33:            <% if client.orders? %> 
+34:              <td>
+35:                <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+36:              </td>
+37:            <% else %> 
+38:              <td>
+39:                <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
+40:              </td> 
+41:            <% end %> 
+42:          </tr>
+43:          </table>
+44:    
+45:          <p>
+46:          <%= link_to  "Показать клиента", client_path(client) %> |
+47:          <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+48:          <%= link_to "New car", new_car_path %></div>
+49:          </p>
+50:    
+51:          <%= button_to "Destroy this car", client, method: :delete %>
+52:    
+53:        <% end %>
+54:      <% end %>
+55:    
+56:      </div>
+  
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/clients" for ::1 at 2022-09-18 09:45:40 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  Rendered clients/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1432)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1517)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2665)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+
+<div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+  <%= form_tag clients_path, :method => 'get' do %>
+
+    <div class="text-dark bg-warning">
+      <p> Введите номер автомобиля для поиска</p>
+    </div>
+    <%= text_field_tag sanitize(:search), params[:search] %>
+    <%= submit_tag "Поиск" %>
+  <% end %><br />
+</div>
+
+<% if @clients.present? %>
+  <% @clients.each_with_index do |client, index| %>
+    <thead>
+      <table class="table table-bordered border-primary" style="max-width: 540px;">
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Телефон</th>
+          <th scope="col">Машина (car)</th>
+          <th scope="col">Ордеры</th>
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider" class="align-top">
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><p class="text-success"><%= client.name %></p></td>
+        <td><p class="text-success"><%= client.phone %></p></td>
+        <td><p class="text-success"><%= Model.where(:model).uniq) %></p></td>
+        <% if client.orders? %> 
+          <td>
+            <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+          </td>
+        <% else %> 
+          <td>
+            <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
+          </td> 
+        <% end %> 
+      </tr>
+      </table>
+
+      <p>
+      <%= link_to  "Показать клиента", client_path(client) %> |
+      <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+      <%= link_to "New car", new_car_path %></div>
+      </p>
+
+      <%= button_to "Destroy this car", client, method: :delete %>
+
+    <% end %>
+  <% end %>
+
+  </div>
+
+):
+1:    <h3>Вывод страницы app/views/clients/index.html.erb файл index.html.erb</h3>
+2:    
+3:    <div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
+4:      <%= form_tag clients_path, :method => 'get' do %>
+5:    
+6:        <div class="text-dark bg-warning">
+7:          <p> Введите номер автомобиля для поиска</p>
+8:        </div>
+9:        <%= text_field_tag sanitize(:search), params[:search] %>
+10:        <%= submit_tag "Поиск" %>
+11:      <% end %><br />
+12:    </div>
+13:    
+14:    <% if @clients.present? %>
+15:      <% @clients.each_with_index do |client, index| %>
+16:        <thead>
+17:          <table class="table table-bordered border-primary" style="max-width: 540px;">
+18:            <tr>
+19:              <th scope="col">№</th>
+20:              <th scope="col">Имя</th>
+21:              <th scope="col">Телефон</th>
+22:              <th scope="col">Машина (car)</th>
+23:              <th scope="col">Ордеры</th>
+24:            </tr>
+25:        </thead>
+26:    
+27:        <tbody class="table-group-divider" class="align-top">
+28:          <tr>
+29:            <th scope="row"><%= index + 1 %></th>
+30:            <td><p class="text-success"><%= client.name %></p></td>
+31:            <td><p class="text-success"><%= client.phone %></p></td>
+32:            <td><p class="text-success"><%= Model.where(:model).uniq) %></p></td>
+33:            <% if client.orders? %> 
+34:              <td>
+35:                <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+36:              </td>
+37:            <% else %> 
+38:              <td>
+39:                <p class="text"><%= link_to "Добавить новый  ордер", new_order_path %> </p>
+40:              </td> 
+41:            <% end %> 
+42:          </tr>
+43:          </table>
+44:    
+45:          <p>
+46:          <%= link_to  "Показать клиента", client_path(client) %> |
+47:          <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
+48:          <%= link_to "New car", new_car_path %></div>
+49:          </p>
+50:    
+51:          <%= button_to "Destroy this car", client, method: :delete %>
+52:    
+53:        <% end %>
+54:      <% end %>
+55:    
+56:      </div>
+  
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+app/views/clients/index.html.erb:32: syntax error, unexpected ')', expecting `end'
+app/views/clients/index.html.erb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/clients" for ::1 at 2022-09-18 09:46:04 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mModel Load (0.3ms)[0m  [1m[34mSELECT "models".* FROM "models" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered clients/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 5362)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5443)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms | Allocations: 6581)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<ActiveRecord::QueryMethods::WhereChain:0x000000011714daa8 @scope=#<ActiveRecord::Relation [#<Model id: 1, name: "A3", make_id: 1, created_at: "2022-09-17 08:31:21.440791000 +0000", updated_at: "2022-09-17 08:31:21.440791000 +0000">, #<Model id: 2, name: "A4", make_id: 1, created_at: "2022-09-17 08:31:21.442431000 +0000", updated_at: "2022-09-17 08:31:21.442431000 +0000">, #<Model id: 3, name: "A5", make_id: 1, created_at: "2022-09-17 08:31:21.443887000 +0000", updated_at: "2022-09-17 08:31:21.443887000 +0000">, #<Model id: 4, name: "A6", make_id: 1, created_at: "2022-09-17 08:31:21.445315000 +0000", updated_at: "2022-09-17 08:31:21.445315000 +0000">, #<Model id: 5, name: "A7", make_id: 1, created_at: "2022-09-17 08:31:21.446734000 +0000", updated_at: "2022-09-17 08:31:21.446734000 +0000">, #<Model id: 6, name: "A8", make_id: 1, created_at: "2022-09-17 08:31:21.448193000 +0000", updated_at: "2022-09-17 08:31:21.448193000 +0000">, #<Model id: 7, name: "S3", make_id: 1, created_at: "2022-09-17 08:31:21.449584000 +0000", updated_at: "2022-09-17 08:31:21.449584000 +0000">, #<Model id: 8, name: "S6", make_id: 1, created_at: "2022-09-17 08:31:21.450992000 +0000", updated_at: "2022-09-17 08:31:21.450992000 +0000">, #<Model id: 9, name: "S8", make_id: 1, created_at: "2022-09-17 08:31:21.452416000 +0000", updated_at: "2022-09-17 08:31:21.452416000 +0000">, #<Model id: 10, name: "SQ5", make_id: 1, created_at: "2022-09-17 08:31:21.453734000 +0000", updated_at: "2022-09-17 08:31:21.453734000 +0000">, ...]>>):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= Model.where.name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:46:39 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3092)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3173)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 4302)
+
+
+  
+ActionView::Template::Error (undefined method `Model' for nil:NilClass):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= @client.Model.where.name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:47:03 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 4878)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4959)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms | Allocations: 6092)
+
+
+  
+ActionView::Template::Error (undefined method `Model' for #<Client id: 1, licence: "k911he71", name: "", phone: "", created_at: "2022-09-17 08:30:28.369214000 +0000", updated_at: "2022-09-17 08:30:28.369214000 +0000">):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= client.Model.make.name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:47:21 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5756)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5837)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 6970)
+
+
+  
+ActionView::Template::Error (undefined method `make' for Client:Class):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= Client.make.name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:47:34 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  Rendered clients/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 4828)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4909)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms | Allocations: 6042)
+
+
+  
+ActionView::Template::Error (undefined method `make' for #<Client id: 1, licence: "k911he71", name: "", phone: "", created_at: "2022-09-17 08:30:28.369214000 +0000", updated_at: "2022-09-17 08:30:28.369214000 +0000">):
+    29:         <th scope="row"><%= index + 1 %></th>
+    30:         <td><p class="text-success"><%= client.name %></p></td>
+    31:         <td><p class="text-success"><%= client.phone %></p></td>
+    32:         <td><p class="text-success"><%= client.make.name %></p></td>
+    33:         <% if client.orders? %> 
+    34:           <td>
+    35:             <p class="text-success"><%= link_to "История ордеров", order_path(client.id)%> </p>
+  
+app/views/clients/index.html.erb:32
+app/views/clients/index.html.erb:15:in `each_with_index'
+app/views/clients/index.html.erb:15
+Started GET "/clients" for ::1 at 2022-09-18 09:47:54 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5209)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 12619)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 0.7ms | Allocations: 13790)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:47:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:48:06 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5524)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 12748)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 2.6ms | Allocations: 13912)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:48:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/1" for ::1 at 2022-09-18 09:48:10 +0300
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1284)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8365)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 1.1ms | Allocations: 9760)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:48:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-18 09:48:15 +0300
+Processing by OrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 28.0ms | Allocations: 2477)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 9104)
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 0.4ms | Allocations: 9500)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:48:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started POST "/orders" for ::1 at 2022-09-18 09:49:22 +0300
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"машина приехала были проблемы\nпропусков\nплохо заводится по утрам\nкогда едет иногда глохнет\nплохо наборает скорость\nне показывает скорость", "work_description"=>"", "price"=>""}, "commit"=>"Create Order"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3266)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 10080)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 12740)
+
+
+Started POST "/orders" for ::1 at 2022-09-18 09:49:31 +0300
+Processing by OrdersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "order"=>{"client_id"=>"1", "problem"=>"машина приехала были проблемы\nпропусков\nплохо заводится по утрам\nкогда едет иногда глохнет\nплохо наборает скорость\nне показывает скорость", "work_description"=>"2", "price"=>"2"}, "commit"=>"Create Order"}
+  [1m[36mClient Load (1.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("problem", "work_description", "price", "created_at", "updated_at", "client_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["problem", "машина приехала были проблемы\nпропусков\nплохо заводится по утрам\nкогда едет иногда глохнет\nплохо наборает скорость\nне показывает скорость"], ["work_description", "2"], ["price", 2], ["created_at", "2022-09-18 06:49:31.346027"], ["updated_at", "2022-09-18 06:49:31.346027"], ["client_id", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 4.4ms | Allocations: 3610)
+
+
+Started GET "/" for ::1 at 2022-09-18 09:49:31 +0300
+Processing by UsersController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.6ms | Allocations: 1829)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2258)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9013)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 10072)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:49:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-18 09:49:35 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.2ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.7ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 7.3ms | Allocations: 3273)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.3ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.2ms | Allocations: 2794)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.1ms | Allocations: 2658)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.6ms | Allocations: 2657)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.1ms | Allocations: 2702)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.6ms | Allocations: 2747)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.2ms | Allocations: 2747)
+  Rendered cars/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 21859)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 28218)
+Completed 200 OK in 48ms (Views: 38.5ms | ActiveRecord: 2.7ms | Allocations: 29801)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:49:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients" for ::1 at 2022-09-18 09:49:37 +0300
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 4577)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 11201)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.7ms | Allocations: 11585)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:49:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/1" for ::1 at 2022-09-18 09:49:38 +0300
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 797)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 7600)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.9ms | Allocations: 8367)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:49:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-18 09:50:54 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:50:54 +0300
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 7.4ms | Allocations: 3109)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.6ms | Allocations: 2824)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.3ms | Allocations: 2716)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  Rendered cars/_car.html.erb (Duration: 3.9ms | Allocations: 3090)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 5.1ms | Allocations: 3100)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.5ms | Allocations: 3102)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.4ms | Allocations: 2978)
+  Rendered cars/index.html.erb within layouts/application (Duration: 47.3ms | Allocations: 36835)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 66858)
+Completed 200 OK in 69ms (Views: 65.0ms | ActiveRecord: 1.3ms | Allocations: 68196)
+
+
+Started GET "/cars" for ::1 at 2022-09-18 09:51:10 +0300
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:10 +0300
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 7.1ms | Allocations: 2818)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 4.3ms | Allocations: 2839)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.4ms | Allocations: 2701)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  Rendered cars/_car.html.erb (Duration: 3.5ms | Allocations: 3060)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.1ms | Allocations: 3102)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.4ms | Allocations: 3102)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.4ms | Allocations: 3109)
+  Rendered cars/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 36525)
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 65805)
+Completed 200 OK in 69ms (Views: 64.8ms | ActiveRecord: 1.4ms | Allocations: 67114)
+
+
+Started GET "/admin" for ::1 at 2022-09-18 09:51:12 +0300
+Processing by AdminController#index as HTML
+  [1m[36mCar Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  ↳ app/controllers/admin_controller.rb:3:in `index'
+  [1m[36mClient Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  ↳ app/controllers/admin_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 884)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7998)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.9ms | Allocations: 9872)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/new" for ::1 at 2022-09-18 09:51:16 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1308)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7781)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 8173)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars/new" for ::1 at 2022-09-18 09:51:41 +0300
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  [1m[36mMake Load (0.3ms)[0m  [1m[34mSELECT "makes".* FROM "makes"[0m
+  ↳ app/views/cars/_form.html.erb:17
+  [1m[36mEcm Load (0.5ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms"[0m
+  ↳ app/views/cars/_form.html.erb:46
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/cars/_form.html.erb:55
+  Rendered cars/_form.html.erb (Duration: 14.5ms | Allocations: 9257)
+  Rendered cars/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 9552)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 15682)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 1.3ms | Allocations: 16703)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/orders/new" for ::1 at 2022-09-18 09:51:44 +0300
+Processing by OrdersController#new as HTML
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:44 +0300
+  Rendering layout layouts/application.html.erb
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/orders/new.html.erb:7
+  Rendered orders/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1966)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 27487)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.2ms | Allocations: 28195)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:45 +0300
+Started GET "/clients" for ::1 at 2022-09-18 09:51:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE (phone LIKE '%%')[0m
+  ↳ app/views/clients/index.html.erb:14
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/models/client.rb:8:in `orders?'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/models/client.rb:8:in `orders?'
+  Rendered clients/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 5024)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 38319)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.4ms | Allocations: 39156)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/clients/1/edit" for ::1 at 2022-09-18 09:51:54 +0300
+Processing by ClientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:29:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/edit.html.erb within layouts/application
+  Rendered clients/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1257)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7873)
+Completed 200 OK in 21ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 8695)
+
+
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:51:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+Started GET "/cars" for ::1 at 2022-09-18 09:52:05 +0300
+Processing by CarsController#index as HTML
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:52:05 +0300
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.erb:17
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.1ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.1ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 5.9ms | Allocations: 2809)
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.1ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.7ms | Allocations: 2827)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.4ms | Allocations: 2692)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mCACHE Ecm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 18.1ms | Allocations: 16984)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mCACHE Make Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 3.2ms | Allocations: 3209)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.9ms | Allocations: 3136)
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:5
+  [1m[36mMake Load (0.0ms)[0m  [1m[34mSELECT "makes".* FROM "makes" WHERE "makes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:10
+  [1m[36mModel Load (0.0ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."id" = ? LIMIT ?[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:15
+  [1m[36mEcm Load (0.0ms)[0m  [1m[34mSELECT "ecms".* FROM "ecms" WHERE "ecms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cars/_car.html.erb:30
+  Rendered cars/_car.html.erb (Duration: 2.7ms | Allocations: 3227)
+  Rendered cars/index.html.erb within layouts/application (Duration: 44.0ms | Allocations: 36816)
+  Rendered layout layouts/application.html.erb (Duration: 62.6ms | Allocations: 66516)
+Completed 200 OK in 67ms (Views: 62.3ms | ActiveRecord: 1.3ms | Allocations: 68299)
+
+
+Started GET "/clients/new" for ::1 at 2022-09-18 09:52:11 +0300
+Started GET "/images/logo.jpg" for ::1 at 2022-09-18 09:52:11 +0300
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 925)
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.jpg"):
+  
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 27516)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.1ms | Allocations: 28166)
+
+
