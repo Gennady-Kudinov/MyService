@@ -1,38 +1,5 @@
 <div class="container">
 
   <h1>История ордеров клиента</h1>
-  <% @orders.each_with_index do |order, index| %>  
-
-    <table>
-      <td>
-        <th>Проблемы</th>
-        <th>Выполненая работа</th>
-        <th>Стоимость</th>
-        <th>Статус</th>
-        <th>Действия</th>
-      </td>
-      <tr>
-        <td>
-          <%= index + 1 %>
-        </td>
-        <td>
-          <%= order.problem %> 
-        </td>
-        <td>
-          <%= order.work_description %> 
-        </td>
-        <td>
-          <%= order.price %>    
-        </td>
-        <% if order.status %> 
-          <td>Ордер выполнен</td>
-        <% else %> 
-          <td>На выполнении</td>
-        <% end %> 
-        <td>
-        </td>
-      </tr>
-    </table>
-  <% end %> 
-
+  <%= render @orders %>
 </div>
