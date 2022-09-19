@@ -27,7 +27,7 @@
 
     <p> 
       <strong>ЭБУ а/м:</strong>
-      <%= sanitize(car.ecm.name) %>
+      <%= sanitize(car.ecm.name) if car.ecm.present? %>
     </p>
 
     <p> 
