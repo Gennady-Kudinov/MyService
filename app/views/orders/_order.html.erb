@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Проблемы</th>
+    <th>Выполненая работа</th>
+    <th>Стоимость</th>
+    <th>Действия</th>
+  </tr>
+  <tr>
+    <td>
+      <%= order.problem %> 
+    </td>
+    <td>
+      <%= order.work_description %> 
+    </td>
+    <td>
+      <%= order.price %>    
+    </td>
+    <td>
+      <%= link_to "Открыть", client_order_path(order.client, order), class: "btn btn-info" %>
+      <%= link_to "Редактировать", edit_client_order_path(order.client, order), class: "btn btn-warning"  %> 
+      <%= link_to "Удалить", client_order_path(order.client, order), method: :delete, 
+          data: { turbo_method: :delete }, 
+          class: "btn btn-danger" %>
+    </td>
+  </tr>
+</table>
