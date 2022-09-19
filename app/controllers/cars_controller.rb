@@ -25,7 +25,14 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     respond_to do |format|
+      
       if @car.save
+        
+        # если мы выбрали ecm, тогда метод будет вызываться
+        # 
+        
+        folder_create unless @car.ecm_id.blank?    
+        
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :show, status: :created, location: @car }
       else
@@ -34,8 +41,8 @@ class CarsController < ApplicationController
       end
     end
 
-    
-      
+
+
   end
 
   # PATCH/PUT /cars/1 or /cars/1.json
