@@ -21,8 +21,6 @@ Rails.application.routes.draw do
     get 'logout' =>  :destroy
   end
 
-  resources :orders 
-  
   resources :clients do 
     resources :orders 
   end
