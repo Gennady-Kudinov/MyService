@@ -1,4 +1,5 @@
 <div class="container">
   <h1>История ордеров клиента</h1>
+  <%= link_to "Добавить новый ордер", new_client_order_path(@client), class: "btn btn-primary" %>
   <%= render @orders %>
 </div>

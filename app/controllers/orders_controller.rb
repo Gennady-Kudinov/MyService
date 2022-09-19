@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit destroy update]
 
   def index
+    @client = Client.find params[:client_id]
     @orders = Order.all.where("client_id == #{params[:client_id]}")
   end
 
