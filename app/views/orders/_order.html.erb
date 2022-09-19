@@ -1,11 +1,10 @@
 <table>
-  <td>
+  <tr>
     <th>Проблемы</th>
     <th>Выполненая работа</th>
     <th>Стоимость</th>
-    <th>Статус</th>
     <th>Действия</th>
-  </td>
+  </tr>
   <tr>
     <td>
       <%= order.problem %> 
@@ -16,12 +15,10 @@
     <td>
       <%= order.price %>    
     </td>
-    <% if order.status %> 
-      <td>Ордер выполнен</td>
-    <% else %> 
-      <td>На выполнении</td>
-    <% end %> 
     <td>
+      <%= link_to "Открыть", client_order_path(order.client, order) %>
+      <%= link_to "Редактировать", edit_client_order_path(order.client, order)  %> 
+      <%= link_to "Удалить", client_order_path(order.client, order), method: :delete, data: { turbo_method: :delete  } %>
     </td>
   </tr>
 </table>
