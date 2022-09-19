@@ -1,0 +1,29 @@
+
+<%= form_for [client, order], url: new_client_order_path  do |order_form| %> 
+
+  <div class="field">
+    <div class="field">
+      <%= order_form.label :Клиент, value: Client.find(params[:client_id]).name  %>
+      <%= order_form.text_field :client_id, class: "form-control" , value: params[:client_id] %> 
+    </div>
+
+    <div class="field">
+      <%= order_form.label :problem, 'Проблемы' %>
+      <%= order_form.text_area :problem, { class: "form-control" } %>
+    </div>
+    <div class="field">
+      <%= order_form.label :work_description, 'Ремонт' %>
+      <%= order_form.text_area :work_description, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= order_form.label :price, 'Стоимость услуг' %>
+      <%= order_form.number_field :price, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="field mt-3">
+    <%= order_form.submit %>
+  </div>
+
+<% end %>
+
