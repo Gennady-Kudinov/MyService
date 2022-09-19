@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_18_072144) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_19_054440) do
   create_table "cars", force: :cascade do |t|
     t.string "licence"
     t.string "vin"
     t.string "mileage"
-    t.integer "ecm_id", null: false
+    t.integer "ecm_id"
     t.integer "sum"
     t.integer "model_id", null: false
     t.integer "make_id", null: false
