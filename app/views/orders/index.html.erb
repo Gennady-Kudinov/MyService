@@ -1,7 +1,6 @@
 <div class="container">
 
   <h1>История ордеров клиента</h1>
-  <%= link_to "Добавить новый ордер", new_order_path, class: "btn btn-primary" %>
   <% @orders.each_with_index do |order, index| %>  
 
     <table>
@@ -31,10 +30,6 @@
           <td>На выполнении</td>
         <% end %> 
         <td>
-          <%= link_to "Посмотреть", order_path(order), class: "btn btn-info" %> 
-          <%= link_to "Редактировать", edit_order_path(order), class: "btn btn-primary" %>
-          <%= link_to "Удалить", order, data: { turbo_method: :delete  }, class: "btn btn-danger" %> 
-
         </td>
       </tr>
     </table>

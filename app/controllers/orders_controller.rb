@@ -14,8 +14,9 @@ class OrdersController < ApplicationController
     @client = Client.find_by(id: order_params[:client_id])
     @order = Order.new order_params 
     @order.client = @client 
+
     if @order.save
-      redirect_to client_orders_path(@order.client_id) 
+      redirect_to clients_path 
     else 
       render :new 
     end 
@@ -26,6 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @client = Client.find params[:client_id]
   end
 
   def update 

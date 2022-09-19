@@ -1,5 +1,5 @@
 
-<%= form_for [client, order], url: new_client_order_path  do |order_form| %> 
+<%= form_for [client, order], url: client_orders_path  do |order_form| %> 
 
   <div class="field">
     <div class="field">
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="field mt-3">
-    <%= order_form.submit %>
+    <%= order_form.submit "Добавить" %>
   </div>
 
 <% end %>
