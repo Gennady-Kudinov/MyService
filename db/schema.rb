@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_19_054440) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_23_074034) do
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.text "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "licence"
     t.string "vin"
@@ -33,8 +41,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_054440) do
     t.string "licence"
     t.string "name"
     t.string "phone"
+    t.date "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.string "author"
+    t.text "body"
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "ecms", force: :cascade do |t|
@@ -80,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_054440) do
   add_foreign_key "cars", "ecms"
   add_foreign_key "cars", "makes"
   add_foreign_key "cars", "models"
+  add_foreign_key "comments", "articles"
   add_foreign_key "models", "makes"
   add_foreign_key "orders", "clients"
 end

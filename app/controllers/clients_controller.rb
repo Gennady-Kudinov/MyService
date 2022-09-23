@@ -20,6 +20,7 @@ class ClientsController < ApplicationController
        @client.licence = params[:client][:licence]
        @client.name = params[:client][:name].capitalize
        @client.phone = params[:client][:phone]
+       @client.data = params[:client][:data]
        @client.save
       
        redirect_to :controller => 'cars', :action => 'new'
@@ -49,7 +50,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:phone, :name, :id, :licence, :car_id, :make, :make_id, :models)
+        params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id, :make, :make_id, :models)
     end
 
 end
