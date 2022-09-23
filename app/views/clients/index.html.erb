@@ -19,7 +19,7 @@
       <table class="table table-bordered border-primary" style="max-width: 540px;">
         <tr>
           <th scope="col">№</th>
-          <th scope="col">Имя</th>
+          <th scope="col">Гос. Номер</th>
           <th scope="col">Телефон</th>
           <th scope="col">Машина (car)</th>
           <th scope="col">Ордеры</th>
@@ -29,7 +29,7 @@
     <tbody class="table-group-divider" class="align-top">
       <tr>
         <th scope="row"><%= index + 1 %></th>
-        <td><p class="text-success"><%= client.name %></p></td>
+        <td><p class="text-success"><%= client.licence %></p></td>
         <td><p class="text-success"><%= client.phone %></p></td>
         <td><p class="text-success"><%= client.cars.name %></p></td>
         <% if client.orders? %> 
@@ -47,7 +47,8 @@
       <p>
       <%= link_to  "Показать клиента", client_path(client) %> |
       <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
-      <%= link_to "New car", new_car_path %></div>
+      <%= link_to "New car", new_car_path %></div> |
+      <%= link_to "Машины", cars_path %>
       </p>
 
       <%= button_to "Destroy this car", client, method: :delete %>
