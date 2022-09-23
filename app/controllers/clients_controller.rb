@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
 
     def index
       @clients = Client.all
-      @clients = Client.where(["phone LIKE ?", "%#{params[:search]}%"])
+      @clients = Client.where(["phone LIKE ?", "%#{params[:search]}%"]).order(created_at: :desc)
     end
 
     def show
