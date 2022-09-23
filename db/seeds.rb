@@ -11,7 +11,6 @@ Car.destroy_all
 Model.destroy_all
 Make.destroy_all
 
-Ecm.create(name: '-')
 Ecm.create(name: 'Delphi AcDelco E37')
 Ecm.create(name: 'Delphi AcDelco E38')
 Ecm.create(name: 'Delphi AcDelco E39/E39a')
@@ -59,13 +58,14 @@ Ecm.create(name: 'Bosch MED17.5.5 VAG')
 Ecm.create(name: 'Bosch MED17.5.25 VAG')
 Ecm.create(name: 'Bosch MED17.5.21 VAG')
 Ecm.create(name: 'Bosch MED17.5.2 VAG')
+Ecm.create(name: 'Bosch MED17.5.21 VAG')
+Ecm.create(name: 'Denso Jaguar')
 Ecm.create(name: 'Siemens Simtec 70')
 Ecm.create(name: 'Siemens Simtec 71')
 Ecm.create(name: 'Siemens Simtec 75')
 Ecm.create(name: 'Siemens Simtec 76')
 Ecm.create(name: 'Siemens Simtec 81')
 Ecm.create(name: 'Siemens MSE3.5')
-Ecm.create(name: 'Bosch MED17.5.21 VAG')
 Ecm.create(name: 'SIM2K-24x (SIM2K-241/242/245)')
 Ecm.create(name: 'SIM2K-25x (SIM2K-250/251/253)')
 Ecm.create(name: 'Siemens SIM2K-141/341')
@@ -334,6 +334,9 @@ Model.create(make: make, name: 'QX70')
 Model.create(make: make, name: 'QX80')
 Model.create(make: make, name: 'G25')
 Model.create(make: make, name: 'ESQ')
+
+make = Make.create(name: 'JAGUAR')
+Model.create(make: make, name: 'XF 3.0')
 
 make = Make.create(name: 'KIA')
 Model.create(make: make, name: 'RIO')
