@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <div class="hstack gap-3" style="height: 100px;">
   <form>
     <div class="form-group">
       <%= form.label :make_id  %>
@@ -28,7 +29,6 @@
                                  :id, 
                                  :name, { prompt: 'Select', selected: @car.model_id }, 
                                  { data: { parent_id: 'car_make_id', source: 'models'}}) %>
-
     </div>
 
     <div class="form-group">
@@ -40,6 +40,7 @@
       <%= form.label :vin, 'Вин номер' %>
       <%= form.text_field :vin, class: "form-control" %>
     </div>
+  </div> 
 
      <div class="form-group">
       <%= form.label :ЭБУ  %>

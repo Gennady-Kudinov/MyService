@@ -30,7 +30,6 @@ class CarsController < ApplicationController
         
         # если мы выбрали ecm, тогда метод будет вызываться
         # 
-        
         folder_create unless @car.ecm_id.blank?    
         
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
@@ -40,9 +39,6 @@ class CarsController < ApplicationController
         format.json { render json: @car.errors, status: :unprocessable_entity }
       end
     end
-
-
-
   end
 
   # PATCH/PUT /cars/1 or /cars/1.json
