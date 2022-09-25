@@ -28,11 +28,11 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @client = Client.find params[:client_id]
+   @client = Client.find params[:client_id]
   end
 
   def update 
-    if @order.update order_params 
+    if @order.update(order_params)
       redirect_to client_orders_path(@order.client_id) 
     else 
       render :edit 
