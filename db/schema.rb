@@ -41,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_074034) do
     t.string "licence"
     t.string "name"
     t.string "phone"
-    t.date "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
