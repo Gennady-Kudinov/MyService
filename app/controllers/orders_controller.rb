@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new 
-    @client = Client.new 
   end
 
   def create

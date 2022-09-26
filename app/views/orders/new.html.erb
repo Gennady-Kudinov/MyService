@@ -1,5 +1,5 @@
 <section class="section">
   <h1>Добавить ордер</h1>
-  <%= render "form", order: @order, client: @client %>  
+  <%= render "form", order: @order, client: Client.find(params[:client_id])  %>  
 </section>
 
