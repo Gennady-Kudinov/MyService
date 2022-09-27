@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'contact', to:  'static_pages#show'
   
   resources :cars
+  get 'models', to: 'models#new'
+  resources :models, only: %i[new create edit update]
 
   resources :makes do
     resources :models, only: :index
