@@ -19,6 +19,7 @@
       <table class="table table-bordered border-primary" style="max-width: 540px;">
         <tr>
           <th scope="col">№</th>
+           <th scope="col">Дата</th>
           <th scope="col">Гос. Номер</th>
           <th scope="col">Телефон</th>
           <th scope="col">Машина (car)</th>
@@ -29,6 +30,7 @@
     <tbody class="table-group-divider" class="align-top">
       <tr>
         <th scope="row"><%= index + 1 %></th>
+        <td><p class="text-success"><%= client.data %></p></td>
         <td><p class="text-success"><%= client.licence %></p></td>
         <td><p class="text-success"><%= client.phone %></p></td>
         <td><p class="text-success"><%= client.cars.name %></p></td>
