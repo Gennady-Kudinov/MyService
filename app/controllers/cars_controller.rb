@@ -4,7 +4,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.all.order(created_at: :desc)
     # @cars = Car.where(["licence LIKE ?", "%#{params[:search]}%"])
   end
 
