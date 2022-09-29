@@ -54,7 +54,7 @@
     <div class="form-group">
       <%= form.label :Клиент  %>
       <%= form.collection_select(:client_id, 
-                                 Client.all, 
+                                 Client.all.order(created_at: :desc), 
                                  :id,
                                  :licence, { prompt: 'Select', selected: @client },
                                  { data: { source: 'clients' }}) %>
