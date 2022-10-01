@@ -1,0 +1,2 @@
+module EcmsHelper
+end

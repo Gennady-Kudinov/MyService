@@ -28,4 +28,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[new create edit update]
+
+  get 'ecms', to: 'ecms#new'
+  post 'ecms', to: 'ecms#create'
+
 end

@@ -1,0 +1,12 @@
+<h1>Ecms#new</h1>
+<p>Find me in app/views/ecms/new.html.erb</p>
+
+<%= form_for :ecm, data: { turbo: false }, url: ecms_path do |form| %> 
+
+
+  <div class="bg-light border text-center ms-5"><%= form.label :name, 'ЭБУ' %><br><%= form.text_field :name %>
+
+    <div class="bg-light border text-center ms-5"><%= form.submit %></div>
+    <%= link_to "Редактировать", ecms_path(@ecm), class: "btn btn-warning"  %> 
+
+<% end%>
