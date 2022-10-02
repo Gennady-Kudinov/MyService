@@ -30,10 +30,11 @@ class CarsController < ApplicationController
         
         # если мы выбрали ecm, тогда метод будет вызываться
         # 
-        folder_create unless @car.ecm_id.blank?    
+        folder_create unless @car.ecm_id.blank?   
         
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :show, status: :created, location: @car }
+     
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @car.errors, status: :unprocessable_entity }

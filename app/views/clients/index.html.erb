@@ -51,7 +51,9 @@
       <%= link_to "Машины", cars_path %> |
       </p>
 
-      <%= button_to "Destroy this car", client, method: :delete %>
+      <%= button_to "Удалить", client_path(client), method: :delete, 
+          data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
+          class: "btn btn-danger" %>
 
     <% end %>
   <% end %>

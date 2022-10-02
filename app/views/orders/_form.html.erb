@@ -10,15 +10,17 @@
   </div>
 
     <div class="field text-center">
+    <br>
       <%= order_form.label :problem, 'Проблемы' %>
-      <%= order_form.text_area :problem, { class: "form-control" } %>
+      <%= order_form.text_area :problem, { class: "form-control", size: "52x10" } %>
     </div>
 
   <div class="hstack gap-3" style="height: 100px;">
       <div class="field text-center">
+      <br>
         <%= order_form.label :work_description, 'Ремонт' %>
-        <%= order_form.text_area :work_description, {class: "form-control"} %>
-      </div>
+        <%= order_form.text_area :work_description, {class: "form-control", size: "52x10"} %>
+  </div>
 
       <div class="field">
         <%= order_form.label :price, 'Стоимость услуг' %>
@@ -28,6 +30,7 @@
 
   </div>
   <div class="field mt-3">
+  <br><br><br><br><br>
     <%= order_form.submit "Добавить" %>
   </div>
 

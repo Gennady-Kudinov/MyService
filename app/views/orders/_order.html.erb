@@ -23,7 +23,7 @@
       <%= link_to "Открыть", client_order_path(order.client, order), class: "btn btn-info" %>
       <%= link_to "Редактировать", edit_client_order_path(order.client, order), class: "btn btn-warning"  %> 
       <%= link_to "Удалить", client_order_path(order.client, order), method: :delete, 
-          data: { turbo_method: :delete }, 
+          data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
           class: "btn btn-danger" %>
     </td>
   </tr>
