@@ -29,7 +29,7 @@ module Test
     config.autoload_paths += %W(#{config.root}/lib)
     # config.i18n.avialable_locales = %i[en ru]
     # config.i18n.default_locate = :en
-   
+    config.hosts << "carservice71.ru"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
