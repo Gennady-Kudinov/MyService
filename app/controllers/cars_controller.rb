@@ -30,8 +30,8 @@ class CarsController < ApplicationController
         
         # если мы выбрали ecm, тогда метод будет вызываться
         # 
-        folder_create unless @car.ecm_id.blank?   
-        
+        folder_create unless @car.ecm_id.blank?
+
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :show, status: :created, location: @car }
      
@@ -74,7 +74,7 @@ class CarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id)
+                                :ecm_id, :mileage_km)
   end
 
   def client_params
@@ -83,6 +83,13 @@ class CarsController < ApplicationController
 
   def ecm_params
     params.require(:ecm).permit!(:name, :ecm_id)
+  end
+
+  def mileage_create
+    @licence = Client.find_by_id(car_params[:client_id]).licence
+    @make = Make.find_by_id(car_params[:make_id]).name
+    @model = Model.find_by_id(car_params[:model_id]).name
+    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
   end
 
   def folder_create

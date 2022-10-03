@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'logout' =>  :destroy
   end
 
+  post 'clients/:id', to: 'clients#update'
   resources :clients do 
     resources :orders 
   end

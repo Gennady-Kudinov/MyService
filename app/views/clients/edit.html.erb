@@ -1,4 +1,4 @@
-<%= form_for :client, data: { turbo: false }, url: clients_path do |form| %> 
+<%= form_for :client, data: { turbo: false }, url: client_path(@client) do |form| %> 
 
 <div class="hstack gap-3" style="height: 100px;">
   <div class="bg-light border text-center ms-5"><%= form.label :licence, 'Гос Номер а/м' %><br><%= form.text_field :licence %></div>

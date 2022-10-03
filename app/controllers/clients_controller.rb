@@ -31,7 +31,7 @@ class ClientsController < ApplicationController
     end
 
     def update
-      @client = Client.find(params[:client_id])
+      @client = Client.find(params[:id])
       if @client.update(client_params)
         redirect_to @client
       else
