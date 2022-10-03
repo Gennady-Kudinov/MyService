@@ -23,19 +23,16 @@ class CarsController < ApplicationController
 
   # POST /cars or /cars.json
   def create
-    @mileage_km = car_params[:name]
-
     @car = Car.new(car_params)
     respond_to do |format|
-      
       if @car.save
-        
-        mileage_create if @car.ecm_id == nil
-        
-        # если мы выбрали ecm, тогда метод будет вызываться
-        # 
-        folder_create unless @car.ecm_id.blank?
 
+        @works = car_params[:works]
+        @mileage_km = car_params[:mileage_km]
+         # если мы выбрали ecm, тогда метод будет вызываться # 
+          folder_create unless @car.ecm_id.blank?
+          mileage_create if @works == @mileage_km
+          
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :show, status: :created, location: @car }
      
