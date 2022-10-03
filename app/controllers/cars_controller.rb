@@ -23,10 +23,14 @@ class CarsController < ApplicationController
 
   # POST /cars or /cars.json
   def create
+    @mileage_km = car_params[:name]
+
     @car = Car.new(car_params)
     respond_to do |format|
       
       if @car.save
+        
+        mileage_create if @car.ecm_id == nil
         
         # если мы выбрали ecm, тогда метод будет вызываться
         # 
