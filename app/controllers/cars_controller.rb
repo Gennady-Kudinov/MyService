@@ -27,12 +27,9 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.save
 
-        @works = car_params[:works]
-        @mileage_km = car_params[:mileage_km]
-         # если мы выбрали ecm, тогда метод будет вызываться # 
-          folder_create unless @car.ecm_id.blank?
-          mileage_create if @works == @mileage_km
-          
+        # если мы выбрали ecm, тогда метод будет вызываться # 
+         folder_create unless @car.ecm_id.blank?
+       
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :show, status: :created, location: @car }
      
@@ -75,7 +72,7 @@ class CarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :mileage_km)
+                                :ecm_id, :works)
   end
 
   def client_params

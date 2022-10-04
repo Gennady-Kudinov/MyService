@@ -31,7 +31,7 @@
         <th scope="row"><%= index + 1 %></th>
         <td><p class="text-success"><%= client.data %></p></td>
         <td><p class="text-success"><%= client.licence %></p></td>
-        <td><p class="text-success"><%= client_cars_path(client) %></p></td>
+        <td><p class="text-success"><%= client.cars.first.make.name %></p></td>
         <% if client.orders? %> 
           <td>
             <p class="text-success"><%= link_to "История ордеров", client_orders_path(client)%> </p>

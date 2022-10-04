@@ -5,5 +5,5 @@ class Car < ApplicationRecord
   belongs_to :ecm, optional: true 
   belongs_to :client
 
-
+  attribute :works, :string
 end
