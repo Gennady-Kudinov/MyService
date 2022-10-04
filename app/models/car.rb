@@ -6,4 +6,7 @@ class Car < ApplicationRecord
   belongs_to :client
 
   attribute :works, :string
+  attribute :programm, :string
+  attribute :mileage_km, :string
+  attribute :diagnose, :string
 end

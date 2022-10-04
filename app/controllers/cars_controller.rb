@@ -27,30 +27,6 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.save
 
-<<<<<<< HEAD
-        # если мы выбрали ecm, тогда метод будет вызываться # 
-         folder_create unless @car.ecm_id.blank?
-       
-        format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
-        format.json { render :show, status: :created, location: @car }
-     
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-||||||| b276c25
-        @works = car_params[:works]
-        @mileage_km = car_params[:mileage_km]
-         # если мы выбрали ecm, тогда метод будет вызываться # 
-          folder_create unless @car.ecm_id.blank?
-          mileage_create if @works == @mileage_km
-          
-        format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
-        format.json { render :show, status: :created, location: @car }
-     
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-=======
         @works = params.dig(:car, :works)
 
         # @mileage_km = car_params[:mileage_km]
@@ -60,12 +36,12 @@ class CarsController < ApplicationController
         #mileage_create if @works == @mileage_km
 
         case @works 
-        when 'Diagnose'
-          puts 'method1'
-        when 'Programm'
-          puts 'method2'
-        when 'Mileage_km'
-          puts 'method3'
+          when 'Diagnose'
+            puts 'method1'
+          when 'Programm'
+            puts folder_create
+          when 'Mileage_km'
+            puts mileage_create
         end 
 
           format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
@@ -75,7 +51,6 @@ class CarsController < ApplicationController
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @car.errors, status: :unprocessable_entity }
         end
->>>>>>> origin/master
       end
     end
 
@@ -111,7 +86,7 @@ class CarsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def car_params
       params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                  :ecm_id, :mileage_km)
+                                  :ecm_id, :works)
     end
 
     def client_params
@@ -150,105 +125,3 @@ class CarsController < ApplicationController
     end
 
   end
-<<<<<<< HEAD
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_car
-    @car = Car.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def car_params
-    params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :works)
-  end
-
-  def client_params
-    params.require(:client).permit(:phone, :name, :client_id, :licence)
-  end
-
-  def ecm_params
-    params.require(:ecm).permit!(:name, :ecm_id)
-  end
-
-  def mileage_create
-    @licence = Client.find_by_id(car_params[:client_id]).licence
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
-  end
-
-  def folder_create
-    @datetime = Time.new
-    @licence = Client.find_by_id(car_params[:client_id]).licence
-    @mileage = car_params[:mileage]
-    @phone = car_params[:phone]
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
-    @ecm = Ecm.find_by_id(car_params[:ecm_id]).name
-
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}"
-
-    @database_file = File.new('D://BAZA/database.txt', 'a+')
-    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
-    @database_file.close
-
-    @id_client = File.new("D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
-    @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@ecm}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
-    @id_client.close
-  end
-
-end
-||||||| b276c25
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_car
-    @car = Car.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def car_params
-    params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :mileage_km)
-  end
-
-  def client_params
-    params.require(:client).permit(:phone, :name, :client_id, :licence)
-  end
-
-  def ecm_params
-    params.require(:ecm).permit!(:name, :ecm_id)
-  end
-
-  def mileage_create
-    @licence = Client.find_by_id(car_params[:client_id]).licence
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
-  end
-
-  def folder_create
-    @datetime = Time.new
-    @licence = Client.find_by_id(car_params[:client_id]).licence
-    @mileage = car_params[:mileage]
-    @phone = car_params[:phone]
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
-    @ecm = Ecm.find_by_id(car_params[:ecm_id]).name
-
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}"
-
-    @database_file = File.new('D://BAZA/database.txt', 'a+')
-    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
-    @database_file.close
-
-    @id_client = File.new("D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
-    @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@ecm}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
-    @id_client.close
-  end
-
-end
-=======
->>>>>>> origin/master
