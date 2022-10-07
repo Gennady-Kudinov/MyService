@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
     def create
        @client = Client.new(client_params)
        @client.licence = params[:client][:licence]
-       @client.name = params[:client][:name].capitalize
+       @client.username = params[:client][:username]
        @client.phone = params[:client][:phone]
        @client.data = params[:client][:data]
        @client.save
@@ -50,7 +50,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id, :make, :make_id, :models)
+        params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id, :make, :make_id, :models, :username)
     end
 
 end
