@@ -23,6 +23,12 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "sassc-rails"
 
+gem 'carrierwave', '~> 2.2'  
+gem 'simple_form', '~> 5.1' 
+gem 'bulma-rails', '~> 0.9.3' 
+gem 'gravatar_image_tag', '~> 1.2' 
+gem 'mini_magick', '~> 4.11' 
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
