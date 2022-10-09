@@ -4,8 +4,8 @@
   <div class="hstack gap-3" style="height: 100px;">
       <div class="field">
         <div class="field">
-          <%= order_form.label :Клиент, value: Client.find(params[:client_id]).name  %>
-          <%= order_form.text_field :client_id, class: "form-control" , value: params[:client_id] %> 
+         <!-- <%= order_form.label :Клиент, value: Client.find(params[:client_id]).name  %> -->
+          <%= order_form.hidden_field :client_id, class: "form-control" , value: params[:client_id] %> 
         </div>
       </div>
 
@@ -32,7 +32,7 @@
     <br><br><br><br><br>
 
     <div class="field">
-      <%= order_form.label :image %>
+      <%= order_form.label :image, 'Фото, Скрин' %>
       <%= order_form.file_field :image %>
     </div>
 
