@@ -79,8 +79,6 @@ GEM
       popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
-    bulma-rails (0.9.3)
-      sassc (~> 2.0)
     byebug (11.1.3)
     carrierwave (2.2.2)
       activemodel (>= 5.0.0)
@@ -195,9 +193,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    simple_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -240,7 +235,6 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   bootstrap (~> 5.2.0)
-  bulma-rails (~> 0.9.3)
   byebug
   carrierwave (~> 2.2)
   debug
@@ -252,7 +246,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   sassc-rails
-  simple_form (~> 5.1)
   sprockets-rails
   sqlite3 (~> 1.5.2)
   stimulus-rails

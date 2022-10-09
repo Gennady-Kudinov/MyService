@@ -2,9 +2,9 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.4"
-gem "rails", "~> 7.0.3", ">= 7.0.3.1"
-gem "sprockets-rails"
-gem "sqlite3", "~> 1.5.2"
+gem "rails", "~> 7.0.3", ">= 7.0.3.1" # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "sprockets-rails" # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sqlite3", "~> 1.5.2" # Use sqlite3 as the database for Active Record
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails", '~> 1.3.0'
@@ -23,15 +23,13 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "sassc-rails"
 
-gem 'carrierwave', '~> 2.2'  
-gem 'simple_form', '~> 5.1' 
-gem 'bulma-rails', '~> 0.9.3' 
-gem 'gravatar_image_tag', '~> 1.2' 
-gem 'mini_magick', '~> 4.11' 
-
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
+
+gem 'carrierwave', '~> 2.2' 
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'mini_magick', '~> 4.11'
 
 group :development do
   gem "web-console"

@@ -33,4 +33,9 @@
   <br><br><br><br><br>
     <%= order_form.submit "Добавить" %>
   </div>
+<div class="field">
+    <%= order_form.label :image %>
+    <%= order_form.file_field :image %>
+  </div>
+
 <% end %>

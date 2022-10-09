@@ -4,7 +4,7 @@ class Client < ApplicationRecord
 
     
     def orders? 
-      true if self.orders.present?   
+       true if self.orders.present?   
     end
 end
 

@@ -8,7 +8,7 @@
 </p>
 
 <p>
-  Описание
+  Выполненые работы
   <%= @order.work_description %> 
 </p>
 
@@ -20,4 +20,8 @@
 <p>
   Статус
   <%= @order.status %> 
+</p>
+
+<p>
+<%= image_tag(@order.image.url, alt: 'Image') if @order.image? %>
 </p>
