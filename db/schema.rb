@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_074034) do
   create_table "clients", force: :cascade do |t|
     t.string "licence"
     t.string "name"
+    t.string "username"
     t.string "phone"
     t.date "data"
     t.datetime "created_at", null: false
