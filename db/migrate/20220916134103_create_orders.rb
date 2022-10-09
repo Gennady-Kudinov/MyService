@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.text :problem
       t.text :work_description
       t.integer :price
-      t.string :image
 
       t.timestamps
     end
