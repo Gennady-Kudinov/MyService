@@ -33,7 +33,4 @@ Rails.application.routes.draw do
   get 'ecms', to: 'ecms#new'
   post 'ecms', to: 'ecms#create'
 
-  get 'orders', to: 'orders#show'
-  post 'orders', to: 'orders#show'
-
 end
