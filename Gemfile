@@ -30,6 +30,7 @@ end
 gem 'carrierwave', '~> 2.2' 
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'mini_magick', '~> 4.11'
+gem 'file_validators'
 
 group :development do
   gem "web-console"
