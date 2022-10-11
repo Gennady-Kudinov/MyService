@@ -4,7 +4,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
 
-
   # По умолчанию CarrierWave дважды копирует загруженный файл, 
   # сначала копируя файл в кеш, а затем копируя файл в хранилище. 
   # Для больших файлов это может занять слишком много времени.
@@ -13,7 +12,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   def move_to_cache
     true
   end
-
   def move_to_store
     true
   end

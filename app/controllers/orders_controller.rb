@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-   @client = Client.find params[:client_id]
+    @client = Client.find params[:client_id]
   end
 
   def update 
