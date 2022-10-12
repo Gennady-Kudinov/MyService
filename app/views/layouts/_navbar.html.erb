@@ -17,10 +17,19 @@
         <% if user_signed_in? %> 
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to "Панель администратора", '/', class: "navbar-link" %> 
-            <div class="navbar-dropdown is-right">
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
+            <div class="navbar-dropdown is-size-6">
+              <div class="navbar-item">
+                <%= link_to "Добавить клиента", new_client_path  %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "Список клиентов", clients_path %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "Список машин", cars_path  %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "Cписок дел", '/' %>
+              </div>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">

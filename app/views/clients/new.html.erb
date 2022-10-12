@@ -1,24 +1,41 @@
-<%= form_for :client, data: { turbo: false }, url: clients_path do |form| %> 
+<div class="columns is-centered">
+  <div class="column is-8">
+    <%= form_for @client do |client|  %> 
+      <div class="field">
+        <%= client.label :licence, 'Гос Номер а/м' %>
+        <div class="control">
+          <%= client.text_field :licence, class: "input" %>
+        </div>
+      </div>
 
-<div class="hstack gap-3" style="height: 100px;">
-  <div class="bg-light border text-center ms-5"><%= form.label :licence, 'Гос Номер а/м' %><br><%= form.text_field :licence %></div>
-  <div class="bg-light border text-center ms-5"><%= form.label :phone, 'Номер телефона' %><br><%= form.telephone_field :phone %></div>
-  <div class="bg-light border text-center ms-3"><%= form.label :username, 'Исполнитель' %><br><%= form.select :username, ["Игорь", "Гена"] %></div>
-</div>
+      <div class="field">
+        <%= client.label :phone, 'Номер телефона' %>
+        <div class="control">
+          <%= client.telephone_field :phone, class: "input" %>
+        </div>
 
- <div class="bg-light border text-center"><%= form.label :data, 'Дата и время'%><%= form.datetime_local_field :data %></div>
+        <div class="field">
+          <%= client.label :username, 'Исполнитель' %>
+          <div class="control">
+            <%= client.select :username, ["Игорь", "Гена"], class: "input" %>
+          </div>
+        </div>
 
-<br>
-<br>
+        <div class="field">
+          <%= client.label :data, 'Дата и время'%>
+          <div class="control">
+            <%= client.datetime_local_field :data, class: "input" %>
+          </div>
+        </div>
 
-  <div class="hstack gap-3" style="height: 10px;">
-    <div class="bg-light border text-center ms-5"><%= form.submit %></div>
+        <div class="field my-5">
+          <div class="control">
+            <%= client.submit "Добавить клиента", class: "button is-primary" %>
+          </div>
+        </div>
+
+      <% end%>   
+      </div>
   </div>
 
-<br>
-  
-<div>
-  <%= link_to "Back to cars Показать список клиентов", clients_path %>
-</div>
 
-<% end%>
