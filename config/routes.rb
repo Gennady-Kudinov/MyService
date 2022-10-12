@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   root 'users#new'
   get 'contact', to:  'static_pages#show'
   
-  resources :ecms, only: %i[new create] 
-
   # ???   
   resources :cars
-
+  
+  resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]
   resources :users, only: %i[new create edit update]
   
