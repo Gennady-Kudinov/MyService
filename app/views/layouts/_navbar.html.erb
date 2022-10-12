@@ -3,7 +3,6 @@
     <!-- logo brand --> 
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="/" alt="logo"  >
         <span class="title is-4 pl-3">Логотип</span>
       </a>
       <a class="navbar-burger burger"  data-target="nav-links">
@@ -16,6 +15,14 @@
     <div class="navbar-menu" id="nav-links">
       <div class="navbar-end">
         <% if user_signed_in? %> 
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to "Панель администратора", '/', class: "navbar-link" %> 
+            <div class="navbar-dropdown is-right">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+            </div>
+          </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
             <div class="navbar-dropdown is-right">
