@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:name])
+    @user = User.find_by(name: user_params[:name])
 
-    if @user.try(:authenticate, params[:password])
+    if @user.try(:authenticate, user_params[:password])
       session[:user_id] = @user.id
-      redirect_to admin_url
+      redirect_to root_path
     else
       redirect_to login_url 
     end
@@ -17,6 +17,12 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "До свидания"
+    redirect_to root_path
+  end
+
+  private 
+
+  def user_params  
+    params.require(:user).permit(:name, :password)
   end
 end

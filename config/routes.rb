@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   controller :sessions do
-  #  get 'login'  =>  :new
+    get 'login'  =>  :new
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end

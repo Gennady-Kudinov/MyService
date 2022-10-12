@@ -1,38 +1,31 @@
-<nav class="navbar navbar-expand bg-secondary p-3">
+<nav class="navbar px-4 has-shadow is-white">
+  <div class="container">
+    <!-- logo brand --> 
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/" alt="logo"  >
+        <span class="title is-4 pl-3">Логотип</span>
+      </a>
+      <a class="navbar-burger burger"  data-target="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
 
-  <%= link_to image_tag("/images/logo.jpg"), root_path, class: "navbar-brand" %>
-  <%= link_to "Введите владельца а/м", new_client_path, class: "navbar-brand text-light" %>
-
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <div class="nav-item">
-        <%= link_to "Ввод машин", new_car_path, class: "nav-link text-light" %>
-      </div>
-      <div class="nav-item">
-        <%= link_to "Клиенты", clients_path, class: "nav-link text-light" %>  
-      </div>
-      <div class="nav-item">
-        <%= link_to "Машины", cars_path,  class: "nav-link text-light" %>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link text-light" href="/contact">Контакты</a>
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <% if user_signed_in? %> 
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
+            <div class="navbar-dropdown is-right">
+              <%= link_to 'Выйти', logout_path, method: :delete, class: "navbar-item" %>
+            </div>
+          </div> 
+        <% else %>
+          <%= link_to 'Войти', login_path, class: "navbar-item" %>
+        <% end %>  
       </div>
     </div>
-  </div>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <% if user_signed_in? %> 
-        <div class="nav-item">
-          <%= link_to current_user.name, new_user_path, class: "nav-link text-light" %> 
-        </div>
-        <div class="nav-item">    
-          <%= link_to "Выйти", logout_path, method: "delete",  class: "nav-link text-light" %> 
-        </div>
-      <% else %>
-        <div class="nav-item">
-          <%= link_to 'Войти', login_path ,class: "navbar-brand text-light" %>   
-        </div>
-      <% end %> 
-    </ul>
   </div>
 </nav>
