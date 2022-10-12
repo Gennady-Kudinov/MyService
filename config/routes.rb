@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   
   # ???   
   resources :cars
-  
+    
+  resources :tasks   
   resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]
   resources :users, only: %i[new create edit update]
