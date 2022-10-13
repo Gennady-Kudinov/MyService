@@ -1,8 +1,8 @@
 <div class="columns is-centered">
   <div class="column is-8">
-    <h2 class="title is-3">Пожалуйста авторизируйтесь</h2>
+    <h2 class="title is-3 mb-6">Пожалуйста авторизируйтесь</h2>
     <%= form_for @user, url: login_path(@user) do |user| %> 
-      <div class="field">
+      <div class="field my-5">
         <div class="control">
           <%= user.text_field :name, class: "input", placeholder: 'логин' %>
         </div>
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="mt-4">
+      <div class="mt-5">
         <%= user.submit "Войти", class: "button is-primary"%>
       </div>
     <% end %>

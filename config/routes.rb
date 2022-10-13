@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#new'
-  get 'contact', to:  'static_pages#show'
+  root 'static_pages#show'
   
   # ???   
   resources :cars
