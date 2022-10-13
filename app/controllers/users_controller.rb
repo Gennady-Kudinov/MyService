@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    @users = User.all
-    @users = User.order(:name)
+    @users = User.all 
+    @users.first.admin = true 
+    @users.first.save 
   end
 
   def show; end
@@ -25,8 +26,11 @@ class UsersController < ApplicationController
   end
 
   def update
-
-
+    if @user.update user_params 
+      redirect_to users_path 
+    else
+     render :edit 
+    end 
   end
 
   def destroy
@@ -40,5 +44,5 @@ def set_user
 end
 
 def user_params
-  params.require(:user).permit(:name, :password, :password_confirmation)
+  params.require(:user).permit(:name, :password, :password_confirmation, :admin)
 end

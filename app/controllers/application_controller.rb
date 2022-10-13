@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :user_signed_in?, :current_user 
+    helper_method :user_signed_in?, :current_user, :superadmin?  
    
  
     private 
@@ -15,5 +15,9 @@ class ApplicationController < ActionController::Base
 
     def user_signed_in? 
       current_user
+    end
+
+    def superadmin? 
+      true if User.first == current_user  
     end
 end

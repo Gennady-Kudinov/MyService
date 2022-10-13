@@ -21,6 +21,13 @@
     </div>
   </div>
 
+  <div class="field">
+      <%= user.label :admin, 'Права доступа' %> 
+    <div class="control">
+      <%= user.check_box :admin %> 
+    </div>
+  </div>
+
   <div class="mt-4">
     <%= user.submit "Зарегистрироваться", class: 'button is-primary' %>
   </div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :tasks   
   resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]
-  resources :users, only: %i[new create edit update]
+  resources :users, only: %i[index show edit new create update]
   
   resources :makes do
     resources :models, only: :index

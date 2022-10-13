@@ -1,7 +1,15 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= user.name %>
-  </p>
 
-</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Права доступа</th>
+      </tr>  
+    </thead>
+    <tbody>
+     <tr>
+       <td> <%= user.name %></td> 
+       <td> <%= user.admin ? "Администратор" : "Пользователь" %> </td>
+     </tr>
+    </tbody>
+  </table>

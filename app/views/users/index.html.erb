@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="title is-3">Список пользователей</h1>
 
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New user", new_user_path %>
+<% @users.each do |user| %>
+  <div class="box">
+    <div class="columns is-vcentered">
+      <div class="column is-8">
+        <%= render user %>
+      </div>  
+      <div class="column">
+        <%= link_to "Посмотреть", user, class: "button mx-5" %>
+      </div>
+    </div>
+  </div>
+<% end %>

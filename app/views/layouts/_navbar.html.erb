@@ -30,6 +30,11 @@
               <div class="navbar-item">
                 <%= link_to "Cписок дел", tasks_path %>
               </div>
+              <% if superadmin? %> 
+              <div class="navbar-item">
+                <%= link_to "Список пользователей", users_path %> 
+              </div>
+            <% end %> 
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
