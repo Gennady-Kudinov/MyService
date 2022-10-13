@@ -1,0 +1,12 @@
+
+<h1 class="title is-2">Список задач</h1>
+
+<%= link_to "Новая задача",new_task_path,  class: "button is-primary", data: { turbo_frame: dom_id(Task.new) } %> 
+
+<%= turbo_frame_tag Task.new  %>
+
+<%= turbo_frame_tag "tasks" do %> 
+  <%= render @tasks %>
+<% end %> 
+
+</div>

@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "task_#{task.id}" do %> 
+  <div class="box my-5">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-clock"></i>
+            </span>
+            <span>
+              <%= convert_date(task.date) %> 
+            </span>
+          </span>
+        </div>
+        <div class="level-item mx-6">
+          <%= link_to truncate(task.name), edit_task_path(task) %>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <%= link_to task_path(task), data: {turbo_frame: dom_id(task)}  do  %>
+            <i class="fa fa-eye"></i>
+          <% end %>  
+        </div>
+        <div class="level-item pt-5">
+          <%= button_to task_path(task), method: :delete, class: "button is-white", style: "color:red;" do %>
+            <i class="fa fa-trash"></i>
+          <% end %> 
+        </div> 
+      </div>
+    </div>
+  </div>
+<% end %> 

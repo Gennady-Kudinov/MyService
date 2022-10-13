@@ -1,0 +1,27 @@
+<%= form_for client do |client| %> 
+      <div class="field">
+        <%= client.label :licence, 'Гос Номер а/м' %>
+        <div class="control">
+          <%= client.text_field :licence, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= client.label :phone, 'Номер телефона' %>
+        <div class="control">
+          <%= client.telephone_field :phone, class: "input" %>
+        </div>
+
+        <div class="field">
+          <%= client.label :data, 'Дата и время'%>
+          <div class="control">
+            <%= client.datetime_local_field :data, class: "input" %>
+          </div>
+        </div>
+
+        <div class="field my-5">
+          <div class="control">
+            <%= client.submit "Добавить клиента", class: "button is-primary" %>
+          </div>
+        </div>
+<% end %>
