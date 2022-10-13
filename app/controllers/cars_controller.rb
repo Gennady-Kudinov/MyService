@@ -2,38 +2,26 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
   before_action :authenticate_user! 
 
-  # GET /cars or /cars.json
   def index
-    @cars = Car.all.order(created_at: :desc)
-    # @cars = Car.where(["licence LIKE ?", "%#{params[:search]}%"])
+    @cars = Car.all.order(created_at: :desc) 
   end
 
-  # GET /cars/1 or /cars/1.json
   def show
   end
 
-  # GET /cars/new
   def new
     @car = Car.new
   end
 
-  # GET /cars/1/edit
   def edit
   end
 
-  # POST /cars or /cars.json
   def create
     @car = Car.new(car_params)
     respond_to do |format|
       if @car.save
 
         @works = params.dig(:car, :works)
-
-        # @mileage_km = car_params[:mileage_km]
-        # если мы выбрали ecm, тогда метод будет вызываться # 
-
-        #folder_create unless @car.ecm_id.blank?
-        #mileage_create if @works == @mileage_km
 
         case @works 
           when 'Diagnose'
@@ -54,7 +42,6 @@ class CarsController < ApplicationController
       end
     end
 
-    # PATCH/PUT /cars/1 or /cars/1.json
     def update
       respond_to do |format|
         if @car.update(car_params)
@@ -67,7 +54,6 @@ class CarsController < ApplicationController
       end
     end
 
-    # DELETE /cars/1 or /cars/1.json
     def destroy
       @car.destroy
 
@@ -78,12 +64,11 @@ class CarsController < ApplicationController
     end
 
     private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_car
       @car = Car.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def car_params
       params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
                                   :ecm_id, :works)

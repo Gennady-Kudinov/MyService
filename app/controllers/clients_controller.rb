@@ -17,6 +17,7 @@ class ClientsController < ApplicationController
 
     def create
        @client = Client.new(client_params)
+       @client.username = current_user.name 
 
        if @client.save 
          redirect_to clients_path 

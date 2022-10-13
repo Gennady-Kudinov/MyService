@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @car %>
-
-<div>
-  <%= link_to "Edit this car", edit_car_path(@car) %> |
-  <%= link_to "Back to cars", cars_path %>
-
-  <%= button_to "Destroy this car", @car, method: :delete %>
+<div class="box">
+  <%= render @car %>
+  <div class="columns is-11">
+    <div class="column is-4">
+      <%= link_to "Редактировать машину", edit_car_path(@car), class: "button mr-5" %>
+    </div>
+    <div class="column is-4">
+      <%= link_to "Посмотреть все машины", cars_path, class: "button" %>
+    </div>
+    <div class="column is-4">
+      <%= button_to "Удалить", @car, method: :delete, class: "button is-danger" %>  
+    </div>
+  </div>
 </div>

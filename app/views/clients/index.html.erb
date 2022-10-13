@@ -1,7 +1,13 @@
+<!--ПОИСК  КЛИЕНТА  --> 
+
+<input class="input is-rounded is-primary my-5" type="text" placeholder="Найти клиента">
+
+
 <div class="columns is-centered is-multiline">
   <div class="column">
     <% if @clients.present? %>
       <% @clients.each_with_index do |client, index| %>
+        <div class="box mb-6">
         <table class="table">
           <thead>
             <tr>
@@ -33,7 +39,7 @@
             </tr>
         </table>
 
-        <div class="columns">
+        <div class="columns mt-5">
           <div class="column is-5">
             <%= link_to  "Редактировать данные клиента", edit_client_path(client), class: "button is-warning" %>
           </div>
@@ -42,6 +48,7 @@
               data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
               class: "button is-danger" %>
           </div>
+        </div>
         </div>
       <% end %>
     <% end %>    
