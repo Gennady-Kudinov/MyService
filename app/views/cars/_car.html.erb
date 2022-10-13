@@ -19,7 +19,7 @@
       <td><%= car.mileage %></td>
       <td><%= car.vin %> </td>
       <td> <%= sanitize(car.ecm.name) if car.ecm.present? %></td>
-      <td> <%= sanitize(car.client.name) %> </td>
+      <td> <%= car.client.id if car.client.present?   %> </td>
     </tr>
   </tbody>
 </table>
