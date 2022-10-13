@@ -15,37 +15,40 @@
     <div class="navbar-menu" id="nav-links">
       <div class="navbar-end">
         <% if user_signed_in? %> 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%= link_to "Панель администратора", '/', class: "navbar-link" %> 
-            <div class="navbar-dropdown is-size-6">
-              <div class="navbar-item">
-                <%= link_to "Добавить клиента", new_client_path  %>
+          <% if admin? %> 
+            <div class="navbar-item has-dropdown is-hoverable">
+              <%= link_to "Панель администратора", '/', class: "navbar-link" %> 
+              <div class="navbar-dropdown is-size-6">
+                <div class="navbar-item">
+                  <%= link_to "Добавить клиента", new_client_path  %>
+                </div>
+                <div class="navbar-item">
+                  <%= link_to "Список клиентов", clients_path %>
+                </div>
+                <div class="navbar-item">
+                  <%= link_to "Список машин", cars_path  %>
+                </div>
+                <div class="navbar-item">
+                  <%= link_to "Cписок дел", tasks_path %>
+                </div>
+
+                <% if superadmin? %> 
+                  <div class="navbar-item">
+                    <%= link_to "Список пользователей", users_path %> 
+                  </div>
+                <% end %> 
+              <% end %> 
               </div>
-              <div class="navbar-item">
-                <%= link_to "Список клиентов", clients_path %>
-              </div>
-              <div class="navbar-item">
-                <%= link_to "Список машин", cars_path  %>
-              </div>
-              <div class="navbar-item">
-                <%= link_to "Cписок дел", tasks_path %>
-              </div>
-              <% if superadmin? %> 
-              <div class="navbar-item">
-                <%= link_to "Список пользователей", users_path %> 
-              </div>
-            <% end %> 
             </div>
-          </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
-            <div class="navbar-dropdown is-right">
-              <%= link_to 'Выйти', logout_path, method: :delete, class: "navbar-item" %>
-            </div>
-          </div> 
-        <% else %>
-          <%= link_to 'Войти', login_path, class: "navbar-item" %>
-        <% end %>  
+            <div class="navbar-item has-dropdown is-hoverable">
+              <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
+              <div class="navbar-dropdown is-right">
+                <%= link_to 'Выйти', logout_path, method: :delete, class: "navbar-item" %>
+              </div>
+            </div> 
+          <% else %>
+            <%= link_to 'Войти', login_path, class: "navbar-item" %>
+          <% end %>  
       </div>
     </div>
   </div>
