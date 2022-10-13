@@ -19,8 +19,7 @@ class OrdersController < ApplicationController
       redirect_to clients_path 
     else 
       render :new 
-    end 
-     
+    end    
   end
   
   def show 
