@@ -1,8 +1,13 @@
 <!--ПОИСК  КЛИЕНТА  --> 
 <h1 class="title is-3 has-text-centered">Список клиентов</h1>
 <%= link_to "Добавить клиента", new_client_path, class: "button" %>
+<br><br>
 
-<input class="input is-rounded is-primary my-5" type="text" placeholder="Найти клиента">
+  <%= form_tag clients_path, :method => 'get' do %>
+    <%= text_field_tag sanitize(:search), params[:search] %>
+    <%= submit_tag "Поиск" %>
+  <% end %>
+
 
 
 <div class="columns is-centered is-multiline">

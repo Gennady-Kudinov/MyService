@@ -68,6 +68,10 @@ yarn-debug.log*
 !/storage/.keep
 /public/uploads
 
+/tmp/
+
+/D:/
+
 D:/BAZA/CHEVROLET/AVEO/K913HE71.html
 D:/BAZA/database.txt
 tmp/cache/assets/sprockets/v4.0.0/-l/-lzyvOdp2TfuGrYrWn4FCJzosvFnPycicbI4HdkH2VA.cache
@@ -112,3 +116,11 @@ tmp/cache/assets/sprockets/v4.0.0/13/13wDLGPQGRnpC9-HKEZfoqbxJBYjLeiFBAEWWfwg_co
 tmp/cache/assets/sprockets/v4.0.0/-l/-lzyvOdp2TfuGrYrWn4FCJzosvFnPycicbI4HdkH2VA.cache
 D:/BAZA/CHEVROLET/ORLANDO/Delphi AcDelco E37/K911HE71.html
 D:/BAZA/AUDI/A4/Delphi AcDelco E37/3333/3333.html
+D:/BAZA/BMW/Fx 1/Delphi AcDelco E38/333/333.html
+D:/BAZA/AUDI/A3/Delphi AcDelco E37/213/213.html
+D:/BAZA/BMW/Fx 1/Delphi AcDelco E38/333/333.html
+D:/BAZA/AUDI/A3/Delphi AcDelco E37/213/213.html
+D:/BAZA/ACURA/MDX/Delphi AcDelco E38/555/555.html
+D:/BAZA/ACURA/MDX/Delphi AcDelco E38/555/555.html
+D:/BAZA/AUDI/A3/Delphi AcDelco E37/213/213.html
+D:/BAZA/BMW/Fx 1/Delphi AcDelco E38/333/333.html
