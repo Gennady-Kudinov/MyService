@@ -23,4 +23,7 @@ Rails.application.routes.draw do
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end
+  
+  get 'models', to: 'models#new'
+  get 'ecms', to: 'ecms#new'
 end
