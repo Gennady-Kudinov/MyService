@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # ???   
   resources :cars
     
+  get 'ecms', to: 'ecms#new'
+  get 'models', to: 'models#new'
   resources :tasks   
   resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]

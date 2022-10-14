@@ -9,9 +9,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Для больших файлов это может занять слишком много времени.
   # Вы можете изменить это поведение, переопределив один или 
   # оба метода move_to_cache и move_to_store:
-  def move_to_cache
-    true
-  end
   def move_to_store
     true
   end
