@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
+    before_action :check_user_admin! 
 
-  attr_accessor :clients
+    attr_accessor :clients
 
     def new
       @client = Client.new
@@ -17,13 +18,13 @@ class ClientsController < ApplicationController
 
     def create
        @client = Client.new(client_params)
-       @client.licence = params[:client][:licence]
-       @client.username = params[:client][:username]
-       @client.phone = params[:client][:phone]
-       @client.data = params[:client][:data]
-       @client.save
-      
-       redirect_to :controller => 'cars', :action => 'new'
+       @client.username = current_user.name 
+
+       if @client.save 
+         redirect_to clients_path 
+       else
+         render :new  
+       end 
     end
 
     def edit
@@ -32,18 +33,17 @@ class ClientsController < ApplicationController
 
     def update
       @client = Client.find(params[:id])
+
       if @client.update(client_params)
-        redirect_to @client
+        redirect_to clients_path
       else
-        render action: 'edit'
+        render :edit 
       end
     end
 
-        # DELETE /client/1 
     def destroy
       @client = Client.find(params[:id])
       @client.destroy
-
       redirect_to clients_path
     end
 

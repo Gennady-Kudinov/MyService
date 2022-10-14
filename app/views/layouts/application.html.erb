@@ -4,6 +4,7 @@
     <title>MyService</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
@@ -11,8 +12,13 @@
   </head>
 
   <body> 
-      <%= render "layouts/navbar" %> 
-      <%= yield %>
+    <%= render "layouts/navbar" %> 
+
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
   </body>
- 
+
 </html>

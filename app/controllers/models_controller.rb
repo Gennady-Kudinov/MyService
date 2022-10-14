@@ -1,5 +1,6 @@
 class ModelsController < ApplicationController
   before_action :set_model, only: %i[ show edit update destroy ]
+  before_action :check_user_admin! 
 
   # GET /models or /models.json
   def index

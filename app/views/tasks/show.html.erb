@@ -1,0 +1,22 @@
+<%= turbo_frame_tag dom_id(@task) do %> 
+  <div class="container">
+    <%= link_to "Вернуться", tasks_path, class: "button is-info is-light my-4" %> 
+
+    <div class="columns">
+      <div class="column">
+    
+        <h3 class="subtitle is-3"> <%= @task.name %> </h3>
+    
+        <p class="my-5 subtitle is-5">
+          <%= @task.description %> 
+        </p>
+    
+        <p class="is-size-5 has-text-centered">
+          Дата: <%= convert_date(@task.date) %>
+        </p>
+    
+      </div> 
+    </div>
+
+  </div>
+<% end %> 

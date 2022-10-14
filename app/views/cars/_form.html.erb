@@ -1,71 +1,99 @@
-<%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
-  <% if car.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+<%= form_for car do |form| %>
 
-      <ul>
-        <% car.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="columns mb-6">
 
-  <div class="hstack gap-3" style="height: 100px;">
-  <form>
-    <div class="form-group">
-      <%= form.label :make_id  %>
-      <%= form.collection_select(:make_id, 
-                                 Make.all, 
-                                 :id,
-                                 :name, { prompt: 'Select', selected: @car.make_id }, 
-                                 { data: { source: 'makes' }}) %>
+    <div class="column">
+      <div class="field">
+        <%= form.label :make_id  %>
+        <div class="control">
+          <%= form.collection_select(:make_id, 
+                                     Make.all, 
+                                     :id,
+                                     :name, { prompt: 'Select', selected: @car.make_id }, 
+                                     { data: { source: 'makes' }}) %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <%= form.label :model_id  %>
-      <%= form.collection_select(:model_id, 
-                                 @car.make&.models || [], 
-                                 :id, 
-                                 :name, { prompt: 'Select', selected: @car.model_id }, 
-                                 { data: { parent_id: 'car_make_id', source: 'models'}}) %>
+    <div class="column">
+      <div class="field">
+        <%= form.label :model_id  %>
+        <div class="control">
+          <%= form.collection_select(:model_id, 
+                                     @car.make&.models || [], 
+                                     :id, 
+                                     :name, { prompt: 'Select', selected: @car.model_id }, 
+                                     { data: { parent_id: 'car_make_id', source: 'models'}}) %>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <%= form.label :ЭБУ  %>
+        <div class="control">
+          <%= form.collection_select(:ecm_id,
+                                     Ecm.all, 
+                                     :id,
+                                     :name, { prompt: 'Select', selected: @name },
+                                     { data: { source: 'ecm' }}) %>      
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <%= form.label :mileage, 'Пробег в км' %>
-      <%= form.text_field :mileage, class: "form-control" %>
+
+    <div class="column">
+      <div class="field">
+        <%= form.label :works, 'Вид работ' %>
+        <div class="control">
+          <%= form.select :works, ["Diagnose", "Programm", "Mileage_km"] %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <%= form.label :vin, 'Вин номер' %>
-      <%= form.text_field :vin, class: "form-control" %>
+    <div class="column">
+      <div class="field">
+        <%= form.label :Клиент  %>
+        <div class="control">
+          <%= form.collection_select(:client_id, 
+                                     Client.all.order(created_at: :desc), 
+                                     :id,
+                                     :licence, { prompt: 'Select', selected: @client },
+                                     { data: { source: 'clients' }}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="columns">
+
+    <div class="column">
+      <div class="field">
+        <%= form.label :mileage, 'Пробег в км' %>
+        <div class="control">
+          <%= form.text_field :mileage, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <%= form.label :vin, 'Вин номер' %>
+        <div class="control">
+          <%= form.text_field :vin, class: "form-control" %>
+        </div>
+      </div>
     </div>
   </div> 
 
-     <div class="form-group">
-      <%= form.label :ЭБУ  %>
-      <%= form.collection_select(:ecm_id,
-                                 Ecm.all, 
-                                 :id,
-                                 :name, { prompt: 'Select', selected: @name },
-                                 { data: { source: 'ecm' }}) %>                               
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <div class="control">
+          <%= form.submit "Добавить"  %>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="form-group">
-      <%= form.label :works, 'Вид работ' %>
-      <%= form.select :works, ["Diagnose", "Programm", "Mileage_km"] %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :Клиент  %>
-      <%= form.collection_select(:client_id, 
-                                 Client.all.order(created_at: :desc), 
-                                 :id,
-                                 :licence, { prompt: 'Select', selected: @client },
-                                 { data: { source: 'clients' }}) %>
-    </div>
-    <div class="form-group">
-      <%= form.submit  %>
-    </div>
-  </form> 
 <% end %>

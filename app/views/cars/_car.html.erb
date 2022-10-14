@@ -1,38 +1,26 @@
-<div id="<%= dom_id car %>">
-    
-    <p>
-      <strong>Гос. номер а/м:</strong>
-      <%= car.client.licence.upcase %>
-    </p>
 
-    <p>
-      <strong>Марка:</strong>
-      <%= car.make.name %>
-    </p>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Гос. номер а/м</td>
+      <td>Марка</td>
+      <td>Модель</td>
+      <td>Пробег а/м</td>
+      <td>Вин номер а/м</td>
+      <td>ЭБУ а/м</td>
+      <td>Клиент</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= car.client.licence.upcase %></td>
+      <td> <%= car.make.name %></td>
+      <td><%= car.model.name %></td>
+      <td><%= car.mileage %></td>
+      <td><%= car.vin %> </td>
+      <td> <%= sanitize(car.ecm.name) if car.ecm.present? %></td>
+      <td> <%= car.client.id if car.client.present?   %> </td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>
-      <strong>Модель:</strong>
-      <%= car.model.name %>
-    </p>
-
-    <p> 
-      <strong>Пробег а/м:</strong>
-      <%= car.mileage %>
-    </p>
-
-    <p> 
-      <strong>Вин номер а/м:</strong>
-      <%= car.vin %>
-    </p>
-
-    <p> 
-      <strong>ЭБУ а/м:</strong>
-      <%= sanitize(car.ecm.name) if car.ecm.present? %>
-    </p>
-
-    <p> 
-      <strong>Имя клиента:</strong>
-      <%= sanitize(car.client.name) %>
-    </p>
-
-</div>
