@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
-  before_action :authenticate_user! 
+  before_action :authenticate_user!, :check_user_admin!  
 
   def index
     @cars = Car.all.order(created_at: :desc) 

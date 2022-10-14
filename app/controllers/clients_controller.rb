@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
+    before_action :check_user_admin! 
 
-  attr_accessor :clients
+    attr_accessor :clients
 
     def new
       @client = Client.new
