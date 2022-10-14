@@ -1,5 +1,6 @@
 class MakesController < ApplicationController
   before_action :set_make, only: %i[ show edit update destroy ]
+  before_action :check_user_admin! 
 
   # GET /makes or /makes.json
   def index

@@ -1,24 +1,8 @@
-<%= form_for :client, data: { turbo: false }, url: clients_path do |form| %> 
-
-<div class="hstack gap-3" style="height: 100px;">
-  <div class="bg-light border text-center ms-5"><%= form.label :licence, 'Гос Номер а/м' %><br><%= form.text_field :licence %></div>
-  <div class="bg-light border text-center ms-5"><%= form.label :phone, 'Номер телефона' %><br><%= form.telephone_field :phone %></div>
-  <div class="bg-light border text-center ms-3"><%= form.label :username, 'Исполнитель' %><br><%= form.select :username, ["Игорь", "Гена"] %></div>
-</div>
-
- <div class="bg-light border text-center"><%= form.label :data, 'Дата и время'%><%= form.datetime_local_field :data %></div>
-
-<br>
-<br>
-
-  <div class="hstack gap-3" style="height: 10px;">
-    <div class="bg-light border text-center ms-5"><%= form.submit %></div>
+<div class="columns is-centered">
+  <div class="column is-8">
+  <h1 class="title is-3 has-text-centered mb-6">Добавить клиента</h1>
+    <%= render "form", client: @client %> 
   </div>
-
-<br>
-  
-<div>
-  <%= link_to "Back to cars Показать список клиентов", clients_path %>
 </div>
 
-<% end%>
+

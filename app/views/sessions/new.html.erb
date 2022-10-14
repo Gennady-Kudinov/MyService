@@ -1,27 +1,25 @@
+<div class="columns is-centered">
+  <div class="column is-8">
+    <h2 class="title is-3 mb-6">Пожалуйста авторизируйтесь</h2>
+    <%= form_for @user, url: login_path(@user) do |user| %> 
+      <div class="field my-5">
+        <div class="control">
+          <%= user.text_field :name, class: "input", placeholder: 'логин' %>
+        </div>
+      </div>
 
-<section class="depot_form">
-  <% if flash[:alert] %>
-    <aside class="notice"><%= flash[:alert] %></aside>
-  <% end %>
+      <div class="field">
+        <div class="control">
+          <%= user.password_field :password, class: "input", placeholder: 'пароль'%>
+        </div>
+      </div>
 
-  <%= form_tag do %>
-    <h2>Пожалуйста авторизируйтесь</h2>
+      <div class="mt-5">
+        <%= user.submit "Войти", class: "button is-primary"%>
+      </div>
+    <% end %>
+    <%= link_to "Я не зарегистрирован", new_user_path %> 
+  </div>
+</div>
 
-    <div class="field">
-      <%= label_tag :name,  'Имя: ' %>
-      <%= text_field_tag :name, params[:name], class: "form-control" %>
-    </div>
 
-    <div class="field">
-      <%= label_tag :password, 'Пароль:' %>
-      <%= password_field_tag :password, params[:password], class: "form-control"%>
-    </div>
-
-    <div class="actions mt-4">
-      <%= submit_tag "Войти", class: "btn" %>
-    </div>
-  <% end %>
-
-  <%= link_to "Я не зарегистрирован", new_user_path %> 
-
-</section>

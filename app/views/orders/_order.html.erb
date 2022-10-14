@@ -1,12 +1,14 @@
-<table>
-  <tr>
-    <th>Дата создания</th>
-    <th>Проблемы</th>
-    <th>Выполненая работа</th>
-    <th>Стоимость</th>
-    <th>Действия</th>
-  </tr>
-  <tr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Дата создания</th>
+      <th>Проблемы</th>
+      <th>Выполненая работа</th>
+      <th>Стоимость</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
     <td>
       <%= order.created_at %> 
     </td>
@@ -20,11 +22,21 @@
       <%= order.price %>    
     </td>
     <td>
-      <%= link_to "Открыть", client_order_path(order.client, order), class: "btn btn-info" %>
-      <%= link_to "Редактировать", edit_client_order_path(order.client, order), class: "btn btn-warning"  %> 
-      <%= link_to "Удалить", client_order_path(order.client, order), method: :delete, 
-          data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
-          class: "btn btn-danger" %>
+      <div class="columns">
+        <div class="column">
+          <%= link_to "Открыть", client_order_path(order.client, order), class: "button is-info" %>
+        </div>
+        <div class="column">
+          <%= link_to "Редактировать", edit_client_order_path(order.client, order), class: "button is-warning"  %> 
+        </div>
+        <div class="column">
+          <%= link_to "Удалить", client_order_path(order.client, order), method: :delete, 
+            data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
+            class: "button is-danger" %>
+
+        </div>
+      </div>
     </td>
-  </tr>
+
+  </tbody>
 </table>

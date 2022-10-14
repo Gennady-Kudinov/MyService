@@ -1,12 +1,14 @@
-<h1>New car</h1>
 
-<%= render "form", car: @car %>
-
-<br>
-
-<div>
-  <%= link_to "Back to cars Показать список а/м", cars_path %> |
-  <%= link_to "Ввести новую модель а/м", models_path %> |
-  <%= link_to "Редактировать марку а/м", makes_path %> 
-
+<div class="columns is-centered is-multiline">
+  <div class="column is-10">
+    <h1 class="title is-2 mb-6 has-text-centered">Добавить машину</h1>
+    <%= render "form", car: @car %>
+  </div>
+  <div class="column is-10">
+  <%= link_to "Список машин", cars_path, class: "button" %>
+  <%= link_to "Ввести новую модель а/м", models_path, class: "button" %>
+  <%= link_to "Редактировать марку а/м", makes_path, class: "button" %> 
+  </div>
 </div>
+
+  

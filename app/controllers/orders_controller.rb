@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit destroy update]
+  before_action :check_user_admin! 
 
   def index
     @client = Client.find params[:client_id]

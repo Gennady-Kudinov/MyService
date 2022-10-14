@@ -1,36 +1,26 @@
 Rails.application.routes.draw do
-  root 'users#new'
-  get 'contact', to:  'static_pages#show'
+  root 'static_pages#show'
   
+  # ???   
   resources :cars
-  get 'models', to: 'models#new'
+    
+  resources :tasks   
+  resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]
-
+  resources :users, only: %i[index show edit new create update]
+  
   resources :makes do
     resources :models, only: :index
   end
 
-  get 'car', to: 'clients#index'
   resources :clients do
     resources :cars
+    resources :orders 
   end
-
-  get 'admin', to: 'admin#index'
 
   controller :sessions do
     get 'login'  =>  :new
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end
-
-  post 'clients/:id', to: 'clients#update'
-  resources :clients do 
-    resources :orders 
-  end
-
-  resources :users, only: %i[new create edit update]
-
-  get 'ecms', to: 'ecms#new'
-  post 'ecms', to: 'ecms#create'
-
 end

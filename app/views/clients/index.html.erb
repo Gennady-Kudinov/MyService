@@ -1,61 +1,59 @@
+<!--ПОИСК  КЛИЕНТА  --> 
+<h1 class="title is-3 has-text-centered">Список клиентов</h1>
+<%= link_to "Добавить клиента", new_client_path, class: "button" %>
 
-<h2 class="my-4">Список клиентов</h2>
+<input class="input is-rounded is-primary my-5" type="text" placeholder="Найти клиента">
 
-<div class="position-fixed position-absolute srart-50 end-0 translate-middle-y" style="max-width: 540px;">
-  <%= form_tag clients_path, :method => 'get' do %>
 
-    <div class="text-dark bg-warning">
-      <p> Введите номер автомобиля для поиска</p>
-    </div>
-    <%= text_field_tag sanitize(:search), params[:search] %>
-    <%= submit_tag "Поиск" %>
-  <% end %>
-  <br />
-</div>
+<div class="columns is-centered is-multiline">
+  <div class="column">
+    <% if @clients.present? %>
+      <% @clients.each_with_index do |client, index| %>
+        <div class="box mb-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">Дата</th>
+              <th scope="col">Исполнитель</th>
+              <th scope="col">Гос. Номер</th>
+              <th scope="col">Машина (car)</th>
+              <th scope="col">Ордеры</th>
+            </tr>
+          </thead>
 
-<% if @clients.present? %>
-  <% @clients.each_with_index do |client, index| %>
-    <thead>
-      <table class="table table-bordered border-primary" style="max-width: 540px;">
-        <tr>
-          <th scope="col">№</th>
-           <th scope="col">Дата</th>
-           <th scope="col">Исполнитель</th>
-          <th scope="col">Гос. Номер</th>
-          <th scope="col">Машина (car)</th>
-          <th scope="col">Ордеры</th>
-        </tr>
-    </thead>
+          <tbody>
+            <tr>
+              <th><%= index + 1 %></th>
+              <td><%= client.data %></p></td>
+              <td><%= client.username %></p></td>
+              <td><%= client.licence %></p></td>
+              <td><%= client_car(client) %></p></td>
+              <% if client.orders? %> 
+                <td>
+                  <p><%= link_to "История ордеров", client_orders_path(client)%> </p>
+                </td>
+              <% else %> 
+                <td>
+                  <p><%= link_to "Добавить новый  ордер", new_client_order_path(client) %> </p>
+                </td> 
+              <% end %> 
+            </tr>
+        </table>
 
-    <tbody class="table-group-divider" class="align-top">
-      <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><p class="text-success"><%= client.data %></p></td>
-        <td><p class="text-success"><%= client.username %></p></td>
-        <td><p class="text-success"><%= client.licence %></p></td>
-        <td><p class="text-success"><%= client_car(client) %></p></td>
-        <% if client.orders? %> 
-          <td>
-            <p class="text-success"><%= link_to "История ордеров", client_orders_path(client)%> </p>
-          </td>
-        <% else %> 
-          <td>
-            <p class="text"><%= link_to "Добавить новый  ордер", new_client_order_path(client) %> </p>
-          </td> 
-        <% end %> 
-      </tr>
-      </table>
+        <div class="columns mt-5">
+          <div class="column is-5">
+            <%= link_to  "Редактировать данные клиента", edit_client_path(client), class: "button is-warning" %>
+          </div>
+          <div class="column">
+            <%= button_to "Удалить", client_path(client), method: :delete, 
+              data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
+              class: "button is-danger" %>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    <% end %>    
+  </div>
 
-      <p>
-      <%= link_to  "Показать клиента", client_path(client) %> |
-      <%= link_to  "Редактировать данные клиента", edit_client_path(client) %> |
-      <%= link_to "New car", new_car_path %></div> |
-      <%= link_to "Машины", cars_path %> |
-      </p>
 
-      <%= button_to "Удалить", client_path(client), method: :delete, 
-          data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
-          class: "btn btn-danger" %>
-
-    <% end %>
-  <% end %>
