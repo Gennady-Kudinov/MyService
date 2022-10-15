@@ -23,16 +23,16 @@
         <div class="field">
           <%= order_form.label :price, 'Стоимость услуг' %>
           <div class="control">
-            <%= order_form.number_field :price, class: "input" %>
+            <%= order_form.number_field :price, step: 500, class: "input" %>
           </div>
         </div>
       </div>
   </div>
 
     <div class="field">
-      <%= order_form.label :image, 'Фото, Скрин' %>
+      <%= order_form.label :image, 'Фото, Скрин не исправностей при диагностике' %>
       <div class="control">
-        <%= order_form.file_field :image, class: "input" %>
+        <%= order_form.file_field :image, multipart: true, class: "input" %>
       </div>
     </div>
 
