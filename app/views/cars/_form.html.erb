@@ -1,5 +1,4 @@
-<%= form_for car do |form| %>
-
+<%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
   <div class="columns mb-6">
 
     <div class="column">
