@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all 
-    @users.first.admin = true 
-    @users.first.save 
   end
 
   def show; end
@@ -29,7 +27,7 @@ class UsersController < ApplicationController
     if @user.update user_params 
       redirect_to users_path 
     else
-     render :edit 
+      render :edit 
     end 
   end
 
