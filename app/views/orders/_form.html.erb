@@ -1,5 +1,5 @@
 
-<%= form_for [client, order] do |order_form| %> 
+<%= form_for [client, order], multipart: true do |order_form| %> 
 
   <div class="">
       <div class="field">
@@ -32,13 +32,13 @@
     <div class="field">
       <%= order_form.label :image, 'Фото, Скрин не исправностей при диагностике' %>
       <div class="control">
-        <%= order_form.file_field :image, multipart: true, class: "input" %>
+        <%= order_form.file_field :image, class: "input" %>
       </div>
     </div>
 
     <div class="field mt-3">
       <div class="control">
-        <%= order_form.submit "Добавитaь", class: "button is-primary" %>
+        <%= order_form.submit "Добавить", class: "button is-primary" %>
       </div>
     </div>
 

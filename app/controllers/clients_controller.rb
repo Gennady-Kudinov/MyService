@@ -8,8 +8,13 @@ class ClientsController < ApplicationController
     end
 
     def index
-      @clients = Client.all
-      @clients = Client.where(["licence LIKE ?", "%#{params[:search]}%"]).order(created_at: :desc)
+      respond_to do |format|
+        format.html do
+          @clients = Client.all
+          @clients = Client.where(["licence LIKE ?", "%#{params[:search]}%"]).order(created_at: :desc)
+        end
+          format.zip { respond_with_zipped_clients }
+      end
     end
 
     def show
@@ -53,4 +58,18 @@ class ClientsController < ApplicationController
         params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id, :make, :make_id, :models, :username)
     end
 
+    def respond_with_zipped_clients
+      compressed_filestream = Zip::OutputStream.write_buffer do |zos|
+        Client.order(created_at: :desc).each do |client|
+          zos.put_next_entry "client_#{client.id}.xlsx"
+          zos.print render_to_string(
+            layout: false, handlers: [:axlsx], formats: [:xlsx],
+            template: 'clients/client',
+            locals: {сlient: client}
+          )
+        end
+      end
+      compressed_filestream.rewind
+      send_data compressed_filestream.read, filename: 'clients.zip'
+    end
 end

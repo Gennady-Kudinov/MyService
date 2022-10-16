@@ -4,15 +4,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.4"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1" 
 gem "sprockets-rails" 
-gem "sqlite3", "~> 1.5.2"
+gem "sqlite3", "~> 1.5.3"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails", '~> 1.3.0'
+gem "turbo-rails", '~> 1.3.1'
 gem "stimulus-rails"
 gem "jbuilder"
 gem "pry"
+gem 'rubyzip', '~> 2'
+gem 'caxlsx', '~> 3.1'
+gem 'caxlsx_rails', '~> 0.6'
 
-#gem 'bootstrap', '~> 5.2.0'
+# gem 'bootstrap', '~> 5.2.0'
 # добавил булма 
 gem 'bulma-rails', '~> 0.9.3' 
 gem "bcrypt", "~> 3.1.7"
