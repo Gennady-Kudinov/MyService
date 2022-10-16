@@ -61,7 +61,7 @@ class ClientsController < ApplicationController
     def respond_with_zipped_clients
       compressed_filestream = Zip::OutputStream.write_buffer do |zos|
         Client.order(created_at: :desc).each do |client|
-          zos.put_next_entry "client_#{client.id}.xlsx"
+          zos.put_next_entry "client.xlsx"
           zos.print render_to_string(
             layout: false, handlers: [:axlsx], formats: [:xlsx],
             template: 'clients/client',

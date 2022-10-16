@@ -13,7 +13,7 @@ gem "jbuilder"
 gem "pry"
 gem 'rubyzip', '~> 2'
 gem 'caxlsx', '~> 3.1'
-gem 'caxlsx_rails', '~> 0.6'
+gem 'caxlsx_rails'
 
 # gem 'bootstrap', '~> 5.2.0'
 # добавил булма 
