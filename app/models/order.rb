@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  validates :problem,:work_description,  presence: true  
-  validates :price,:mileage,  numericality: { greater_than: 100 }
+  validates :problem, presence: true  
+  validates :mileage,  numericality: { greater_than: 100 }
 
   belongs_to :client
 
