@@ -4,19 +4,23 @@
       <th>Дата создания</th>
       <th>Проблемы</th>
       <th>Выполненая работа</th>
+      <th>Пробег</th>
       <th>Стоимость</th>
       <th>Действия</th>
     </tr>
   </thead>
   <tbody>
     <td>
-      <%= order.created_at %> 
+      <%= convert_date(order.created_at) %> 
     </td>
     <td>
-      <%= order.problem %> 
+      <%= truncate(order.problem, length: 10) %> 
     </td>
     <td>
-      <%= order.work_description %> 
+      <%= truncate(order.work_description, length:10)  %> 
+    </td>
+    <td>
+      <%= order.mileage %> 
     </td>
     <td>
       <%= order.price %>    

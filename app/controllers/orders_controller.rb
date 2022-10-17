@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
   def order_params
     params.
       require(:order).
-      permit(:problem, :work_description, :price, :client_id, :image)
+      permit(:problem, :work_description, :price, :client_id, :image, :mileage)
   end
 
 end

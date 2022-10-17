@@ -2,33 +2,39 @@
 <%= form_for [client, order], multipart: true do |order_form| %> 
 
   <div class="">
+    <div class="field">
       <div class="field">
-        <div class="field">
-          <%= order_form.hidden_field :client_id, class: "form-control" , value: params[:client_id] %> 
+        <%= order_form.hidden_field :client_id, class: "form-control" , value: params[:client_id] %> 
+      </div>
+    </div>
+
+    <div class="field text-center">
+      <%= order_form.label :problem, 'Проблемы' %>
+      <%= order_form.text_area :problem, class: "input"  %>
+    </div>
+
+    <div class="">
+      <div class="field text-center">
+        <br>
+        <%= order_form.label :work_description, 'Ремонт' %>
+        <%= order_form.text_area :work_description, class: "input" %>
+      </div>
+
+    <div class="field">
+        <%= order_form.label :mileage, 'Пробег' %>
+        <div class="control">
+          <%= order_form.number_field :mileage, class: "input" %>
         </div>
       </div>
 
-        <div class="field text-center">
-          <%= order_form.label :problem, 'Проблемы' %>
-          <%= order_form.text_area :problem, class: "input"  %>
-        </div>
 
-        <div class="">
-            <div class="field text-center">
-    <br>
-              <%= order_form.label :work_description, 'Ремонт' %>
-              <%= order_form.text_area :work_description, class: "input" %>
-        </div>
-
-        <div class="field">
-          <%= order_form.label :price, 'Стоимость услуг' %>
-          <div class="control">
-            <%= order_form.number_field :price, step: 500, class: "input" %>
-          </div>
+      <div class="field">
+        <%= order_form.label :price, 'Стоимость услуг' %>
+        <div class="control">
+          <%= order_form.number_field :price, step: 500, class: "input" %>
         </div>
       </div>
-  </div>
-
+    </div>
     <div class="field">
       <%= order_form.label :image, 'Фото, Скрин не исправностей при диагностике' %>
       <div class="control">
@@ -41,5 +47,6 @@
         <%= order_form.submit "Добавить", class: "button is-primary" %>
       </div>
     </div>
+  </div>
 
 <% end %>
