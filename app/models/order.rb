@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
-  validates :problem, presence: true  
+  validates :problem,:work_description,  presence: true  
+  validates :price,:mileage,  numericality: { greater_than: 100 }
+
   belongs_to :client
 
   mount_uploader :image, ImageUploader
