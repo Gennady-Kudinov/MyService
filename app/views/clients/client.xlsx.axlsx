@@ -2,15 +2,16 @@
     s = wb.styles
 
         highlight_cell = s.add_style(bg_color: "EFC376")
-     #   border: { style: :thin, color: 'FF808080' }
+        left_cell = s.add_style(border: Axlsx::STYLE_THIN_BORDER,
+                        alignment: { horizontal: :left })
+        # border: { style: :thin, color: 'FF808080' }
         
 
         wb.add_worksheet(name: "Client") do |sheet|   
             Client.find_each do |client|
                 sheet.add_row ["№", "Исполнитель", "Гос. Номер а/м", "Имя владельца а/м",
                                "Телефон владельца а/м", "Дата создания", "Дата обновления"],
-                                    style: [highlight_cell, highlight_cell, highlight_cell, highlight_cell,
-                                    highlight_cell, highlight_cell, highlight_cell]
+                                    style: highlight_cell
 
                 sheet.add_row [client.id, client.username, client.licence, client.name,
                                client.phone, client.created_at, client.updated_at]

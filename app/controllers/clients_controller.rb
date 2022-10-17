@@ -65,8 +65,7 @@ class ClientsController < ApplicationController
           zos.print render_to_string(
             layout: false, handlers: [:axlsx], formats: [:xlsx],
             template: 'clients/client',
-            locals: {сlient: client}
-          )
+            locals: {сlient: client})
         end
       end
       compressed_filestream.rewind
