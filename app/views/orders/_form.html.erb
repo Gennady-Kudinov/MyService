@@ -1,5 +1,5 @@
 
-<%= form_for [client, order], multipart: true do |order_form| %> 
+<%= form_for [client, order], html: { multipart: true } do |order_form| %> 
 
   <div class="">
     <div class="field">
@@ -42,11 +42,16 @@
       </div>
     </div>
 
+    <label>
+      <%= order_form.check_box :remove_image %>
+      Remove image
+    </label>
+  </p>
+
     <div class="field mt-3">
       <div class="control">
         <%= order_form.submit "Добавить", class: "button is-primary" %>
       </div>
     </div>
   </div>
-
 <% end %>
