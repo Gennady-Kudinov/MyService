@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
     create_table :orders do |t|
       t.text :problem
       t.text :work_description
-      t.integer :price
+      t.integer :price, default: 0
 
       t.timestamps
     end

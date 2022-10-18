@@ -45,6 +45,18 @@ class CarsController < ApplicationController
     def update
       respond_to do |format|
         if @car.update(car_params)
+
+          @works = params.dig(:car, :works)
+
+        case @works 
+          when 'Diagnose'
+            puts 'method1'
+          when 'Programm'
+            puts folder_create
+          when 'Mileage_km'
+            puts mileage_create
+        end 
+        
           format.html { redirect_to car_url(@car), notice: "Car was successfully updated." }
           format.json { render :show, status: :ok, location: @car }
         else
