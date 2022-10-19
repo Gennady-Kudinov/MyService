@@ -1,0 +1,8 @@
+<% unless flash[:notice].blank? %> 
+  <div class="notification is-danger">
+    <p class="is-size-5 has-text-centered"><%= flash[:notice] %></p> 
+  </div>
+<% end %> 
+
+<h1 class="title is-3">Cтраница загрузки файлов</h1>
+<%= link_to 'Скачать файл', '/upload_file', class: "button is-primary" %> 
