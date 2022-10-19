@@ -1,6 +1,6 @@
 module Files 
   extend ActiveSupport::Concern 
-  attr_accessor :file_name 
+  attr_accessor :file_name  
 
   def download_files 
     send_file(current_path, filename: @file_name)
@@ -16,5 +16,10 @@ module Files
   def search_file_name 
     @file_name = "First_folder.zip"
   end
+  
+  def file_found? 
+    true 
+  end
+
 
 end
