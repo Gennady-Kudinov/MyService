@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#show'
-  
+  get '/files', to: 'files#index'  
+
   # ???   
   resources :cars
     
