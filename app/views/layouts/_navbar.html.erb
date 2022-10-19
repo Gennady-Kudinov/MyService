@@ -39,6 +39,9 @@
                 <% end %> 
               <% end %> 
               </div>
+              <div class="navbar-item">
+                <%= link_to 'Файлы', '/files', class: "link px-4 has-text-black" %> 
+              </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
               <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
