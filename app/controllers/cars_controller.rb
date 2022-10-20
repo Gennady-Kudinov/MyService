@@ -20,7 +20,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     respond_to do |format|
       if @car.save
-        binding.pry
+      
         @works = params.dig(:car, :works)
 
         case @works 

@@ -9,13 +9,13 @@ module Files
   
   # определяем путь 
   def current_path 
-    path = "/home/dima/Desktop/Files/"
+    path = "D://BAZA/Files/"
     path + search_file_name
   end
   
   # определяем подходящий файл здесь будет поиск 
   def search_file_name 
-    @file_name = "First_folder.zip"
+    @file_name = "HW8200598393_8200661124_SW8201010375_10144315AA_X7LLSRABH8H197909_E2.bin.zip"
   end
   
   # если файл найден true  
