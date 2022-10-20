@@ -44,8 +44,12 @@
               <%= link_to 'Файлы', '/files', class: "link px-4 has-text-black" %> 
             </div>
 
+            <div class="navbar-item">
+              <%= link_to 'Написать админу', '/', class: "link px-4 has-text-black" %> 
+            </div>
+
             <div class="navbar-item has-dropdown is-hoverable">
-              <%= link_to current_user.name, new_user_path , class: "navbar-link" %> 
+              <%= link_to current_user.name, root_path, class: "navbar-link" %> 
               <div class="navbar-dropdown is-right">
                 <%= link_to 'Выйти', logout_path, method: :delete, class: "navbar-item" %>
               </div>
@@ -57,3 +61,4 @@
     </div>
   </div>
 </nav>
+
