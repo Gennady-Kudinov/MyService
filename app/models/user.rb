@@ -1,11 +1,12 @@
 class User < ApplicationRecord
   validates :name,
-            presence: true,
+            presence: { message: 'Имя не может быть пустым' },
             uniqueness: {
               message: 'Пользователь с таким именем уже существует'
             }
 
-  has_secure_password
+  validates :password, presence: { message: 'Необходимо ввести пароль' }
+  has_secure_password :password, validations: false
 
   has_many :tasks
 
@@ -13,5 +14,8 @@ class User < ApplicationRecord
             format: {
               with: URI::MailTo::EMAIL_REGEXP,
               message: 'email имеет некоректное значение'
+            },
+            uniqueness: {
+              message: 'Пользователь с таким @email уже существует'
             }
 end
