@@ -1,0 +1,7 @@
+<% if session[:errors_msg].present? %>
+  <div class="notification is-danger">
+    <% session[:errors_msg].each do |_, val|  %>
+      <p class="is-size-6 py-1"><%= val.join %></p>
+    <% end %> 
+  </div>
+<%  end %> 
