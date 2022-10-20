@@ -1,17 +1,17 @@
 class User < ApplicationRecord
-  validates :name, presence: true, uniqueness: true 
+  validates :name,
+            presence: true,
+            uniqueness: {
+              message: 'Пользователь с таким именем уже существует'
+            }
+
   has_secure_password
 
-  has_many :tasks 
+  has_many :tasks
 
-  after_destroy :ensure_an_admin_remains
-  class Error < StandardError 
-  end
-
-  private
-  def ensure_an_admin_remains
-    if User.count.zero?
-      raise Error.new "Can't delete last user"
-    end 
-  end
+  validates :email,
+            format: {
+              with: URI::MailTo::EMAIL_REGEXP,
+              message: 'email имеет некоректное значение'
+            }
 end

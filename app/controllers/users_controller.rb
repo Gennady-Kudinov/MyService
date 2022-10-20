@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  after_action :clear_session, only: %i[new]
 
   def index
     @users = User.all
@@ -21,7 +22,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to new_car_path
     else
-      render :new
+      session[:errors_msg] = @user.errors.messages
+      redirect_to new_user_path 
     end
   end
 
@@ -37,8 +39,13 @@ class UsersController < ApplicationController
 end
 
 private
+
 def set_user
   @user = User.find(params[:id])
+end
+
+def clear_session 
+  session.delete(:errors_msg)
 end
 
 def user_params
