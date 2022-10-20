@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_10_20_121958) do
+||||||| ff8b9c3
+ActiveRecord::Schema[7.0].define(version: 2022_10_17_162820) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_133523) do
+>>>>>>> origin/master
   create_table "articles", force: :cascade do |t|
     t.string "name"
     t.text "title"
@@ -42,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_121958) do
     t.string "name"
     t.string "username"
     t.string "phone"
-    t.date "data"
+    t.date "data", default: "2022-10-20"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

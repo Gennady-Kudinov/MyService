@@ -1,8 +1,16 @@
+
 <%= form_for @user do |user| %>
   <div class="field">
     <%= user.label :name, 'Имя:' %>
     <div class="control">
       <%= user.text_field :name, size: 40, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= user.label :email, 'Email(по желанию):' %>
+    <div class="control">
+      <%= user.text_field :email, size: 40, class: "input" %>
     </div>
   </div>
 

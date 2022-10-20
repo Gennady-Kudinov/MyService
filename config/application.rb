@@ -27,8 +27,8 @@ module Test
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.bin *.hex)
     config.eager_load_paths += %W(#{config.root}/lib)
     config.autoload_paths += %W(#{config.root}/lib)
-    # config.i18n.avialable_locales = %i[en ru]
-    # config.i18n.default_locate = :en
+    #config.i18n.available_locales = %i[en ru]
+    #config.i18n.default_locale = :ru
     config.hosts << "carservice71.ru"
     # Configuration for the application, engines, and railties goes here.
     #
