@@ -7,6 +7,13 @@
   </div>
 
   <div class="field">
+    <%= user.label :email, 'Email(по желанию):' %>
+    <div class="control">
+      <%= user.text_field :email, size: 40, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= user.label :password, 'Пароль:' %>
     <div class="control">
       <%= user.password_field :password, class: "input" %>
