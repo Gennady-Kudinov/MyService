@@ -22,6 +22,4 @@ module Files
   def file_found? 
     true 
   end
-
-
 end

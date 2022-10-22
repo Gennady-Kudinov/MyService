@@ -7,17 +7,17 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.5.3"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails", '~> 1.3.1'
+gem "turbo-rails", '~> 1.3.2'
 gem "stimulus-rails"
 gem "jbuilder"
 gem "pry"
 gem 'rubyzip', '~> 2'
-gem 'caxlsx', '~> 3.1'
+gem 'caxlsx', '~> 3.3.0'
 gem 'caxlsx_rails'
 
 # gem 'bootstrap', '~> 5.2.0'
 # добавил булма 
-gem 'bulma-rails', '~> 0.9.3' 
+gem 'bulma-rails', '~> 0.9.4' 
 gem "bcrypt", "~> 3.1.7"
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -26,7 +26,7 @@ gem "sassc-rails"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 6.0' 
+  gem 'rspec-rails', '~> 6.0.1' 
   gem 'factory_bot_rails' 
   gem 'faker'
 end

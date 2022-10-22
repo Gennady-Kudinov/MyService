@@ -55,7 +55,8 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id, :make, :make_id, :models, :username)
+        params.require(:client).permit(:phone, :name, :id, :licence, :data, :car_id,
+                                      :make, :make_id, :models, :username, :datetime)
     end
 
     def respond_with_zipped_clients

@@ -73,7 +73,7 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    bulma-rails (0.9.3)
+    bulma-rails (0.9.4)
       sassc (~> 2.0)
     byebug (11.1.3)
     carrierwave (2.2.2)
@@ -84,7 +84,7 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
-    caxlsx (3.2.0)
+    caxlsx (3.3.0)
       htmlentities (~> 4.3, >= 4.3.4)
       marcel (~> 1.0)
       nokogiri (~> 1.10, >= 1.10.4)
@@ -154,10 +154,10 @@ GEM
     net-smtp (0.3.2)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.8)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.8-x64-mingw32)
+    nokogiri (1.13.9-x64-mingw32)
       racc (~> 1.4)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -206,7 +206,7 @@ GEM
     rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-rails (6.0.0)
+    rspec-rails (6.0.1)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
@@ -244,13 +244,13 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
-    turbo-rails (1.3.1)
+    turbo-rails (1.3.2)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2022.4)
+    tzinfo-data (1.2022.5)
       tzinfo (>= 1.0.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -269,10 +269,10 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
-  bulma-rails (~> 0.9.3)
+  bulma-rails (~> 0.9.4)
   byebug
   carrierwave (~> 2.2)
-  caxlsx (~> 3.1)
+  caxlsx (~> 3.3.0)
   caxlsx_rails
   debug
   factory_bot_rails
@@ -285,13 +285,13 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
-  rspec-rails (~> 6.0)
+  rspec-rails (~> 6.0.1)
   rubyzip (~> 2)
   sassc-rails
   sprockets-rails
   sqlite3 (~> 1.5.3)
   stimulus-rails
-  turbo-rails (~> 1.3.1)
+  turbo-rails (~> 1.3.2)
   tzinfo-data
   web-console
 

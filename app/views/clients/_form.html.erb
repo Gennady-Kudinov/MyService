@@ -9,7 +9,7 @@
       <div class="field">
         <%= client.label :phone, 'Номер телефона' %>
         <div class="control">
-          <%= client.telephone_field :phone, class: "input" %>
+          <%= client.telephone_field :phone %>
         </div>
 
       <div class="field">
@@ -21,7 +21,7 @@
         <div class="field">
           <%= client.label :data, 'Дата и время'%>
           <div class="control">
-            <%= client.datetime_local_field :data, class: "input" %>
+            <%= client.datetime_local_field :data, value: :local_datetime %>
           </div>
         </div>
 
