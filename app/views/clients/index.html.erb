@@ -39,7 +39,7 @@
               <td><%= client.username %></p></td>
               <td><%= client.licence %></p></td>
               <td><%= mileage_km(client) %></p></td>
-              <td><%= order_mileage(client) %></p></td>
+              <td><%= get_max_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
               <% if client.orders? %> 
                 <td>
