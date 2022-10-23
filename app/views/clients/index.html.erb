@@ -26,6 +26,7 @@
               <th scope="col">Исполнитель</th>
               <th scope="col">Гос. Номер</th>
               <th scope="col">Пробег</th>
+              <th scope="col">Тест</th>
               <th scope="col">Машина (car)</th>
               <th scope="col">Ордеры</th>
             </tr>
@@ -38,6 +39,7 @@
               <td><%= client.username %></p></td>
               <td><%= client.licence %></p></td>
               <td><%= mileage_km(client) %></p></td>
+              <td><%= order_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
               <% if client.orders? %> 
                 <td>

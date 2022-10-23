@@ -21,4 +21,9 @@ module ClientsHelper
     first_car.make.name + ' ' +  first_car.model.name 
   end
 
+  def order_mileage(client)
+    first_mileage = @clients.order(@mileage)
+    client.orders.first_or_create.mileage
+  end
+
 end
