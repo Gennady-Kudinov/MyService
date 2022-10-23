@@ -1,7 +1,7 @@
 <h3 class="title is-2 has-text-centered">Список всех машин </h3>
 
 
-<%= link_to "Добавить новую машину", new_car_path, class: "button my-5" %>
+<%= link_to "Добавить новую машину", new_car_path, class: "button is-primary my-5" %>
 <% @cars.each do |car| %>
   <div class="box mb-6">
     <%= render car %> 

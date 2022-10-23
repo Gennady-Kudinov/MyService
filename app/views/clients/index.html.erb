@@ -39,7 +39,7 @@
               <td><%= client.username %></p></td>
               <td><%= client.licence %></p></td>
               <td><%= mileage_km(client) %></p></td>
-              <td><%= order_mileage(client) %></p></td>
+              <td><%= get_max_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
               <% if client.orders? %> 
                 <td>
@@ -53,8 +53,8 @@
             </tr>
         </table>
 
-        <div class="columns mt-5">
-          <div class="column is-5">
+        <div class="columns mt-5 is-variable is-2-desktop">
+          <div class="column is-3">
             <%= link_to  "Редактировать данные клиента", edit_client_path(client), class: "button is-warning" %>
           </div>
           <div class="column">

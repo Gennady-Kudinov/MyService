@@ -11,10 +11,6 @@ class User < ApplicationRecord
   has_many :tasks
 
   validates :email,
-            format: {
-              with: URI::MailTo::EMAIL_REGEXP,
-              message: 'email имеет некоректное значение'
-            },
             uniqueness: {
               message: 'Пользователь с таким @email уже существует'
             }
