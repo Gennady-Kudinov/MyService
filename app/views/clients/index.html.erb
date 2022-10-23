@@ -38,7 +38,7 @@
               <td><%= client.username %></p></td>
               <td><%= client.licence %></p></td>
               <td><%= mileage_km(client) %></p></td>
-              <td><%= client_car(client) %></p></td>
+              <td><%= link(client) %></p></td>
               <% if client.orders? %> 
                 <td>
                   <p><%= link_to "История ордеров", client_orders_path(client)%> </p>
