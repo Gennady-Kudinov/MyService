@@ -2,23 +2,23 @@
 <%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
 
 <p> 
-  <h1 class="title is-4">Когда производился ремонт</h1>
-  <%= @order.client.created_at %> 
+<h1 class="title is-4">Когда производился ремонт</h1>
+<%= @order.client.created_at %> 
 </p>
 
 <p> 
-  <h1 class="title is-4">Проблема</h1>
-  <%= @order.problem %> 
+<h1 class="title is-4">Проблема</h1>
+<%= @order.problem %> 
 </p>
 
 <p>
 <h1 class="title is-4 mt-4">Выполнено</h1>
-  <%= @order.work_description %> 
+<%= @order.work_description %> 
 </p>
 
 <p>
-  <h1 class="title is-4 mt-4">Цена</h1>
-  <%= @order.price %> 
+<h1 class="title is-4 mt-4">Цена</h1>
+<%= @order.price %> 
 </p>
 
 <p>
