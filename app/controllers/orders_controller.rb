@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
   end
 
   def save_image 
-
+    test_method
   end
 
   private

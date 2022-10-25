@@ -131,3 +131,5 @@ public/D:/BAZA/.DS_Store
 public/D:/BAZA/Image/.DS_Store
 public/.DS_Store
 .gitignore
+
+tmp/cache/bootsnap/load-path-cache
