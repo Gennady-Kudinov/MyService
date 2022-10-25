@@ -31,7 +31,7 @@ class CarsController < ApplicationController
         when 'Mileage_km'
           puts mileage_create
         when 'Airbag'
-          puts airbag_create
+          puts @airbag_create
         end 
 
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
