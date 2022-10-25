@@ -30,6 +30,8 @@ class CarsController < ApplicationController
           puts folder_create
         when 'Mileage_km'
           puts mileage_create
+        when 'Airbag'
+          puts airbag_create
         end 
 
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
@@ -55,6 +57,8 @@ class CarsController < ApplicationController
           puts folder_create
         when 'Mileage_km'
           puts mileage_create
+        when 'Airbag'
+          puts airbag_create
         end 
 
         format.html { redirect_to car_url(@car), notice: "Car was successfully updated." }
@@ -83,7 +87,7 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :works)
+                                :ecm_id, :works, :airbag)
   end
 
   def client_params
@@ -99,6 +103,13 @@ class CarsController < ApplicationController
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
     FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
+  end
+
+  def airbag_create
+    @licence = Client.find_by_id(car_params[:client_id]).licence
+    @make = Make.find_by_id(car_params[:make_id]).name
+    @model = Model.find_by_id(car_params[:model_id]).name
+    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Airbag(подушки)/#{@licence}"
   end
 
   def folder_create
