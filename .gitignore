@@ -129,5 +129,14 @@ public/BAZA/.DS_Store
 public/D:/.DS_Store
 public/D:/BAZA/.DS_Store
 public/D:/BAZA/Image/.DS_Store
+<<<<<<< HEAD
 public/.DS_Store
 public/.DS_Store
+||||||| bd2aab0
+public/.DS_Store
+=======
+public/.DS_Store
+.gitignore
+
+tmp/cache/bootsnap/load-path-cache
+>>>>>>> origin/master
