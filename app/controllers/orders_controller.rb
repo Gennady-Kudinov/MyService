@@ -1,7 +1,4 @@
 class OrdersController < ApplicationController
-    
-  include SaveImages 
-
   before_action :set_order, only: %i[show edit destroy update]
   before_action :check_user_admin!
 
@@ -45,15 +42,11 @@ class OrdersController < ApplicationController
     redirect_to client_orders_path(@order)
   end
 
-  def save_image 
-    test_method
-  end
-
   private
 
   def set_order
     @order = Order.find(params[:id])
-  end 
+  end
 
   def order_params
     params.require(:order).permit(
