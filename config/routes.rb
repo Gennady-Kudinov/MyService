@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#show'
   get '/upload_file', to: 'files#upload_file' 
+  get '/saveimages', to: 'orders#save_image'
   
   resources :files, only: %i[index]
 

@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+    
+  include SaveImages 
+
   before_action :set_order, only: %i[show edit destroy update]
   before_action :check_user_admin!
 
@@ -40,6 +43,10 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     redirect_to client_orders_path(@order)
+  end
+
+  def save_image 
+
   end
 
   private
