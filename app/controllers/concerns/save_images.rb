@@ -3,11 +3,11 @@ module SaveImages
 
   def get_path_for_client(car)
     licence = Client.find(car.client_id).licence
-    make = Make.find(car.make_id).name
-    model = Model.find(car.model_id).name
-    ecm = Ecm.find(car.ecm_id).name
+   # make = Make.find(car.make_id).name
+   # model = Model.find(car.model_id).name
+   # ecm = Ecm.find(car.ecm_id).name
 
-    path = "D://baza/#{make}/#{model}/#{ecm}/#{licence.upcase}"
+    path = "D://baza/Images/#{licence.upcase}"
   end
 
   def save_image_from_order(order, path) 
