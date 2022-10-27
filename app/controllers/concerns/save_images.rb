@@ -7,7 +7,7 @@ module SaveImages
    # model = Model.find(car.model_id).name
    # ecm = Ecm.find(car.ecm_id).name
 
-    path = "D://baza/Images/#{licence.upcase}"
+    path = "D://baza/Images/"
   end
 
   def save_image_from_order(order, path) 
