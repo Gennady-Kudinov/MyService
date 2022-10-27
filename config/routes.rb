@@ -29,4 +29,11 @@ Rails.application.routes.draw do
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end
+
+  get 'articles', to: 'articles#index'
+  get 'articles/new', to: 'articles#new'
+  resources :articles do
+    resources :articles, only: %i[index show edit new create update]
+    resources :comments, only: %i[index show edit new create update]
+  end
 end

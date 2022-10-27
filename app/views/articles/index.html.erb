@@ -1,0 +1,36 @@
+<h2>Список статей</h2>
+<body>
+
+  <%= link_to  "Добавить статью", new_article_path(@article) %> 
+
+  <% @articles.each do |article| %>
+
+  <table class="table table-bordered border-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Автор</th>
+      <th scope="col">Название статьи</th>
+    </tr>
+    </thead>
+
+    <tbody class="table-group-divider" class="align-top">
+    <tr>
+      <th scope="row">1</th>
+      <td><p><%= article.title %></p></td>
+      <td><p><%= article.text %></p></td>
+    </tr>
+  </table>
+
+      <p>
+        <%= link_to  "Показать статью", article_path(article) %> |
+        <%= link_to  "Редактировать статью", edit_article_path(article) %> |
+        <%= button_to "Удалить", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+      </p>
+  <% end %>
+</body>
+
+
+
+
+
+

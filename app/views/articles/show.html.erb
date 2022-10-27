@@ -1,0 +1,37 @@
+<h3>Страница вывода текста статьи и автора</h3>
+<body class="Secondary" >
+
+<h2>
+  <p class="text-success" ><%= @article.title %></p>
+</h2>
+  <p class="text-dark"><%= @article.text %></p>
+
+<h2>Комментарии</h2>
+
+<% @article.comments.each do |comment| %>
+<p>
+  <i><%= comment.author %></i><br />
+  <%= comment.body %>
+</p>
+<% end %>
+
+<h2>Добавить Комментарий</h2>
+<p>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+
+  <p class="text-success" ><%= f.label :author %><br />
+  <p class="text-success" ><%= f.text_field :author %><br />
+</p>
+
+  <p class="text-success" ><%= f.label :body %><br />
+  <p class="text-success" ><%= f.text_field :body %><br />
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+</body>
+
+<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
+<!- иначе не будет отображаться результат на странице -->
+<% end %>
