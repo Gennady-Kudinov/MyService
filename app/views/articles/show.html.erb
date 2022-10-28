@@ -19,14 +19,14 @@
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
 
-  <p class="text-success" ><%= f.label :author %><br />
+  <p class="text-success" ><%= f.label :Автор %><br />
   <p class="text-success" ><%= f.text_field :author %><br />
 </p>
 
-  <p class="text-success" ><%= f.label :body %><br />
-  <p class="text-success" ><%= f.text_field :body %><br />
+  <p class="text-success" ><%= f.label :Введите_текст %><br />
+  <p class="text-success" ><%= f.text_area :body, class: "input" %><br />
   </p>
-
+<br>
   <p>
     <%= f.submit %>
   </p>

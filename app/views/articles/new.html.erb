@@ -1,8 +1,5 @@
 <h1>Новая статья</h1>
 
-<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
-<!- иначе не будет отображаться результат на странице -->
-
 <%= form_for :article, data: { turbo: false }, url: articles_path do |f| %>
 
   <!-  # вывод сообщения об ошибке -->
@@ -22,12 +19,12 @@
   </p>
 
   <p>
-    <%= f.label :Название %>
-    <%= f.text_area :text %>
+    <%= f.label :Введите_текст %>
+    <%= f.text_area :text, class: "input" %>
   </p>
-
+<br>
   <p>
-    <%= f.submit 'Send message' %>
+    <%= f.submit 'Отправить сообщение' %>
   </p>
 
 <% end %>
