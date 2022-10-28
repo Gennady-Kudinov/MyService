@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   get 'articles', to: 'articles#index'
   get 'articles/new', to: 'articles#new'
   resources :articles do
-    resources :articles, only: %i[index show edit new create update]
-    resources :comments, only: %i[index show edit new create update]
+    resources :comments, shallow: true
   end
 end
