@@ -1,22 +1,19 @@
 <h1>Редактирование статьи</h1>
 
-<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
-<!- иначе не будет отображаться результат на странице -->
-
   <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :put do |f| %>
 
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
 
-  <p>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-  </p>
+    <p>
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </p>
 
-  <p>
-    <%= f.submit 'Send message' %>
-  </p>
+    <p>
+      <%= f.submit 'Send message' %>
+    </p>
 
-<% end %>
+  <% end %>

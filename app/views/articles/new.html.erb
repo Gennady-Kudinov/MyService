@@ -5,11 +5,11 @@
   <!-  # вывод сообщения об ошибке -->
   <% if @article && @article.errors.any? %>
     <p>
-    <ul>
-      <%= @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <%= @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </p>
   <% end %>
 
@@ -22,7 +22,15 @@
     <%= f.label :Введите_текст %>
     <%= f.text_area :text, class: "input" %>
   </p>
-<br>
+
+    <div class="field">
+      <%= f.label :image, 'Фото, Скрин не исправностей при диагностике' %>
+      <div class="control">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+  <br>
   <p>
     <%= f.submit 'Отправить сообщение' %>
   </p>

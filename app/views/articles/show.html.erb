@@ -1,37 +1,38 @@
 <h3>Страница вывода текста статьи и автора</h3>
-<body class="Secondary" >
 
-<h2>
-  <p class="text-success" ><%= @article.title %></p>
-</h2>
-  <p class="text-dark"><%= @article.text %></p>
+  <h2>
+    <p class="text-success" ><%= @article.title %></p>
+  </h2>
+    <p class="text-dark"><%= @article.text %></p>
+
+    <p>
+      <h1 class="title is-4 mt-4">Изображение</h1>
+      <%= image_tag(@article.image.url, alt: 'Image') if @article.image? %>
+    </p>
 
 <h2>Комментарии</h2>
 
 <% @article.comments.each do |comment| %>
-<p>
-  <i><%= comment.author %></i><br />
-  <%= comment.body %>
-</p>
+  <p>
+    <i><%= comment.author %></i><br />
+        <%= comment.body %>
+  </p>
 <% end %>
 
 <h2>Добавить Комментарий</h2>
-<p>
-  <%= form_for([@article, @article.comments.build]) do |f| %>
-
-  <p class="text-success" ><%= f.label :Автор %><br />
-  <p class="text-success" ><%= f.text_field :author %><br />
-</p>
-
-  <p class="text-success" ><%= f.label :Введите_текст %><br />
-  <p class="text-success" ><%= f.text_area :body, class: "input" %><br />
-  </p>
-<br>
   <p>
-    <%= f.submit %>
-  </p>
-</body>
+    <%= form_for([@article, @article.comments.build]) do |f| %>
 
-<!- обязательно добaвлять  data: { turbo: false } - так как изменились Релься, -->
-<!- иначе не будет отображаться результат на странице -->
+    <p class="text-success" ><%= f.label :Автор %><br />
+    <p class="text-success" ><%= f.text_field :author %><br />
+  </p>
+
+    <p class="text-success" ><%= f.label :Введите_текст %><br />
+    <p class="text-success" ><%= f.text_area :body, class: "input" %><br />
+    </p>
+  <br>
+    <p>
+      <%= f.submit %>
+    </p>
+
 <% end %>

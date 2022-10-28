@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_133523) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_28_174825) do
   create_table "articles", force: :cascade do |t|
     t.string "name"
     t.text "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "cars", force: :cascade do |t|
@@ -42,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_133523) do
     t.string "name"
     t.string "username"
     t.string "phone"
-    t.date "data", default: "2022-10-25"
+    t.date "data", default: "2022-10-21"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_133523) do
   create_table "orders", force: :cascade do |t|
     t.text "problem"
     t.text "work_description"
-    t.integer "price", default: 0
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "client_id", null: false
