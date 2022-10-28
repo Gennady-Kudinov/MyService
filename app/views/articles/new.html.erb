@@ -1,4 +1,4 @@
-<h1>Новая статья</h1>
+<h1>Новый вопрос</h1>
 
 <%= form_for :article, data: { turbo: false }, url: articles_path do |f| %>
 
@@ -24,7 +24,7 @@
   </p>
 
     <div class="field">
-      <%= f.label :image, 'Фото, Скрин не исправностей при диагностике' %>
+      <%= f.label :image, 'Можно приложить Фото, Скрин до 5мгб' %>
       <div class="control">
         <%= f.file_field :image %>
       </div>
