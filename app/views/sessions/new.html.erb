@@ -18,7 +18,9 @@
         <%= user.submit "Войти", class: "button is-primary"%>
       </div>
     <% end %>
-    <%= link_to "Я не зарегистрирован", new_user_path %> 
+      <div class="button is-warning">
+        <%= link_to "Я не зарегистрирован", new_user_path %>
+      </div>
   </div>
 </div>
 
