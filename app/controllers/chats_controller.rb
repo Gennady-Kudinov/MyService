@@ -15,6 +15,9 @@ class ChatsController < ApplicationController
     @current_user = current_user 
     @single_chat = Chat.find(params[:id])
     @chats = Chat.all
+    @message = Message.new
+    @messages = @single_chat.messages
+    
     render :index 
   end
   

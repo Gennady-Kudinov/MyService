@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   
   resources :files, only: %i[index]
 
-  resources :chats 
+  resources :chats do 
+    resources :messages 
+  end
 
   # ???   
   resources :cars
