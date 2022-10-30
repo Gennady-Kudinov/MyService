@@ -4,5 +4,14 @@
   </div>
 <% end %> 
 
+<!-- Вывод из дериктории файлов с расширением .тхт
+    <% @sw_path = Dir.glob("D:/BAZA/**/#{:name}.bin") %>
+
+     Присвоение каждому пути найденного файла индекса  
+    <%= @sw_path.each_with_index { |path, i| puts "#{i + 1} => #{path}" } %>
+       <%= selected = 1 %>
+    <%= @sw_path[selected - 1]%> -->
+
+
 <h1 class="title is-3">Cтраница загрузки файлов</h1>
 <%= link_to 'Скачать файл', '/upload_file', class: "button is-primary" %> 
