@@ -1,0 +1,15 @@
+<div class="">
+  <% if @single_chat && @message %> 
+    <%= form_with(model: [@single_chat ,@message], remote: true, class: "" ) do |f| %>
+      <div class="columns is-vcentered">
+        <div class="column is-10">
+          <%= f.text_area :content, id: '', class: "", autocomplete: 'off', class: "input" %>
+        </div>
+        <div class="column">
+          <%= f.submit "Отправить", data: { disable_with: false }, class: "button is-primary" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
