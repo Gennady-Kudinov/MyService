@@ -1,6 +1,7 @@
 <div class="columns is-centered">
   <div class="column is-4">
     <h1 class="subtitle is-2">Список чатов</h1>
+    <%= link_to "Добавить чат", new_chat_path, class: "link" %>
     <ul>
       <% @chats.each do |chat| %> 
         <li class="my-2"><%= link_to chat.name, chat_path(chat), class: "link" %></li>  
@@ -13,7 +14,7 @@
       <div class="column">
         <div class="">
           <% if @single_chat %> 
-            <h4 class="subtitle is-5 mb-5 has-text-centered">Чат с <%= @single_chat.name %></h4>
+            <h4 class="subtitle is-5 mb-5 has-text-centered">Чат <%= @single_chat.name %></h4>
             <%= render @messages %> 
           <% end %> 
         </div> 
@@ -23,5 +24,6 @@
     <div class="column">
       <%= render 'new_message_form' %>
     </div>
+
   </div> 
 </div>

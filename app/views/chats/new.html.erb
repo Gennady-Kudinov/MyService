@@ -1,1 +1,4 @@
-<%= button_to "Написать администратору", @chat, class: "button is-primary" %>
+<%= form_for @chat do |form_chat| %> 
+  <%= form_chat.text_field :name, class: "input" %>
+  <%= form_chat.submit "Создать", class: "button is-primary" %>
+<% end %> 

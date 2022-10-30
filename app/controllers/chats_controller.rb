@@ -6,9 +6,17 @@ class ChatsController < ApplicationController
   end 
 
   def new 
+    @chat = Chat.new 
   end
 
   def create 
+    @chat = Chat.new chat_params 
+
+    if @chat.save 
+      redirect_to chat_path @chat 
+    else 
+      render :new 
+    end 
   end
   
   def show 
@@ -18,7 +26,13 @@ class ChatsController < ApplicationController
     @message = Message.new
     @messages = @single_chat.messages
     
-    render :index 
+    render :index
+  end
+
+  private 
+
+  def chat_params 
+    params.require(:chat).permit(:name)
   end
   
 end
