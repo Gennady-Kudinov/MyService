@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_secure_password :password, validations: false
 
   has_many :tasks
+  has_many :messages
 
   validates :email,
             uniqueness: {
