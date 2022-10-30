@@ -1,2 +1,10 @@
-<h1>Chats#index</h1>
-<p>Find me in app/views/chats/index.html.erb</p>
+<% if @chats.present? && admin? %> 
+  <h1 class="subtitle is-2">Список чатов</h1>
+  <ul>
+  <% @chats.each do |chat| %> 
+    <li><%= chat.name %></li>  
+  <% end %> 
+  </ul>
+<% else %> 
+  <%= button_to "Написать администратору", "/", class: "button is-primary" %>
+<% end %> 
