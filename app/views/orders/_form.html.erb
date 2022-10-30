@@ -38,7 +38,7 @@
     <div class="field">
       <%= order_form.label :image, 'Фото, Скрин не исправностей при диагностике' %>
       <div class="control">
-        <%= order_form.file_field :image %>
+        <%= order_form.file_field :image, html: { multiple: true }, direct_upload: true %>
       </div>
     </div>
 

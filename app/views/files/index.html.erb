@@ -4,6 +4,11 @@
   </div>
 <% end %> 
 
+<%= form_with url: "/uploads", html: { multipart: true } do |form| %>
+<%= form.file_field :attachments, direct_upload: true %>
+
+<% end %>
+
     <!-- Вывод из дериктории файлов с расширением .тхт
     <% @sw_path = Dir.glob("D:/BAZA/**/#{:name}.bin") %>
 
