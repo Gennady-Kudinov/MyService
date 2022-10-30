@@ -6,7 +6,7 @@
 
 <%= form_with url: "/uploads", html: { multipart: true } do |form| %>
 <%= form.file_field :attachments, direct_upload: true %>
-
+<%= form.submit "Добавить", class: "button is-primary" %>
 <% end %>
 
     <!-- Вывод из дериктории файлов с расширением .тхт
