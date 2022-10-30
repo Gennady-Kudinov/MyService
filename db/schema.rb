@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_094921) do
     t.string "name"
     t.string "username"
     t.string "phone"
-    t.date "data", default: "2022-10-25"
+    t.date "data", default: "2022-10-21"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -98,7 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_094921) do
   create_table "orders", force: :cascade do |t|
     t.text "problem"
     t.text "work_description"
-    t.integer "price", default: 0
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "client_id", null: false
