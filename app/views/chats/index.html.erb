@@ -1,10 +1,6 @@
-<% if @chats.present? && admin? %> 
-  <h1 class="subtitle is-2">Список чатов</h1>
-  <ul>
+<h1 class="subtitle is-2">Список чатов</h1>
+<ul>
   <% @chats.each do |chat| %> 
-    <li><%= chat.name %></li>  
+    <li class="my-2"><%= link_to chat.name, chat_path(chat), class: "link" %></li>  
   <% end %> 
-  </ul>
-<% else %> 
-  <%= button_to "Написать администратору", "/", class: "button is-primary" %>
-<% end %> 
+</ul>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_29_151314) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_094921) do
   create_table "articles", force: :cascade do |t|
     t.string "name"
     t.text "title"
@@ -77,6 +77,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_151314) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "chat_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "name"
     t.integer "make_id", null: false
@@ -123,6 +133,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_151314) do
   add_foreign_key "cars", "makes"
   add_foreign_key "cars", "models"
   add_foreign_key "comments", "articles"
+  add_foreign_key "messages", "chats"
+  add_foreign_key "messages", "users"
   add_foreign_key "models", "makes"
   add_foreign_key "orders", "clients"
   add_foreign_key "tasks", "users"
