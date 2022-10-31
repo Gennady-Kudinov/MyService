@@ -1,0 +1,12 @@
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+  test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+  # По умолчанию Active Storage предполагает приватный доступ к сервисам. 
+  # Это означает генерацию подписанных одноразовых URL для бинарных объектов. 
+  # Если вы предпочитаете сделать бинарные объекты публично доступными, укажите
+  # public: true

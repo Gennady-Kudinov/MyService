@@ -1,6 +1,6 @@
 <h1>Новый вопрос</h1>
 
-<%= form_for :article, data: { turbo: false }, html: { multipart: true }, url: articles_path do |f| %>
+<%= form_for :article, data: { turbo: false }, html: { multipart: true }, url: articles_path, local: true do |f| %>
 
   <!-  # вывод сообщения об ошибке -->
   <% if @article && @article.errors.any? %>
@@ -26,10 +26,9 @@
     <div class="field">
       <%= f.label :image, 'Можно приложить Фото, Скрин до 5мгб' %>
       <div class="control">
-        <%= f.file_field :image, direct_upload: true %>
+        <%= f.file_field :image, html: { multiple: true }, direct_upload: true %>
       </div>
     </div>
-
   <br>
   <p>
     <%= f.submit 'Отправить сообщение' %>
