@@ -12,15 +12,10 @@
       <%= f.text_area :text %>
     </p>
 
- <p>
+    <p>
       <h1 class="title is-6 mt-4">Изображение</h1>
       <%= image_tag(@article.image.url, alt: 'Image') if @article.image? %>
     </p>
-
-    <label>
-      <%= f.check_box :remove_image %>
-      Удалить картинку
-    </label>
 
     <p>
       <%= f.submit 'Send message' %>

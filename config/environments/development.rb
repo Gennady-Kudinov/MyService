@@ -63,4 +63,7 @@ Rails.application.configure do
   # Хранение файлов локально.
   config.active_storage.service
   config.active_storage.service = :local
+
+  # отключит маршруты Active Storage по умолчанию с помощью:
+  # config.active_storage.draw_routes = false
 end
