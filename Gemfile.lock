@@ -279,6 +279,7 @@ DEPENDENCIES
   faker
   file_validators
   gravatar_image_tag (~> 1.2)
+  image_processing (>= 1.2)
   importmap-rails
   jbuilder
   mini_magick (~> 4.11)

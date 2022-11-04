@@ -34,10 +34,10 @@ Rails.application.routes.draw do
     get 'logout' =>  :destroy
   end
 
-  get 'articles', to: 'articles#index'
-  get 'articles/new', to: 'articles#new'
+    get 'articles', to: 'articles#index'
+    get 'articles/new', to: 'articles#new'
  
   resources :articles do
-    resources :comments, shallow: true
-  end
+   resources :comments, shallow: true
+   end
 end

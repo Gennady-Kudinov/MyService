@@ -1,38 +1,9 @@
-<h1>Новый вопрос</h1>
+<h1>New article</h1>
 
-<%= form_with model: @article, data: { turbo: false }, html: { multipart: true }, url: articles_path, local: true do |f| %>
+<%= render "form", article: @article %>
 
-  <!-  # вывод сообщения об ошибке -->
-  <% if @article && @article.errors.any? %>
-    <p>
-      <ul>
-        <%= @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </p>
-  <% end %>
+<br>
 
-  <p>
-    <%= f.label :Автор %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :Введите_текст %>
-    <%= f.text_area :text, class: "input" %>
-  </p>
-
-    <div class="field">
-      <%= f.label :images, 'Можно приложить Фото, Скрин до 5мгб' %>
-      <div class="control">
-        <%= f.file_field :images, multiple: true, direct_upload: true %>
-      </div>
-    </div>
-
-  <br>
-  <p>
-    <%= f.submit 'Отправить сообщение' %>
-  </p>
-
-<% end %>
+<div>
+  <%= link_to "Back to articles", articles_path %>
+</div>

@@ -1,24 +1,10 @@
-<h1>Редактирование статьи</h1>
+<h1>Editing article</h1>
 
-  <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :put do |f| %>
+<%= render "form", article: @article %>
 
-    <p>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </p>
+<br>
 
-    <p>
-      <%= f.label :text %>
-      <%= f.text_area :text %>
-    </p>
-
-    <p>
-      <h1 class="title is-6 mt-4">Изображение</h1>
-      <%= image_tag(@article.image.url, alt: 'Image') if @article.image? %>
-    </p>
-
-    <p>
-      <%= f.submit 'Send message' %>
-    </p>
-
-  <% end %>
+<div>
+  <%= link_to "Show this article", @article %> |
+  <%= link_to "Back to articles", articles_path %>
+</div>

@@ -1,0 +1,30 @@
+<div id="<%= dom_id article %>">
+
+  <p>
+    <strong>Картинки:</strong>
+      <% article.images.each do |image| %>
+        <%= link_to image.filename, image %> 
+      <% end %>
+  </p> 
+
+  <p>
+    <strong>Имя:</strong>
+    <%= article.name %>
+  </p>
+
+  <p>
+    <strong>Название темы:</strong>
+    <%= article.title %>
+  </p>
+
+  <p>
+    <strong>Текст:</strong>
+    <%= article.text %>
+  </p>
+  <br>
+  
+  <% article.images.each do |image| %>
+    <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
+  <% end %>
+
+</div>

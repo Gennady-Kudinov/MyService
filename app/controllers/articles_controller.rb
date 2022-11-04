@@ -1,61 +1,70 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: %i[ show edit update destroy ]
 
+  # GET /articles or /articles.json
+  def index
+    @articles = Article.all
+  end
+
+  # GET /articles/1 or /articles/1.json
+  def show
+  end
+
+  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  def index
-    @articles = Article.all.with_attached_images
-  end
-
-  def show
-    @article = Article.find(params[:id])
-  end
-
+  # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id]) # Для того что бы отредактировать , нужно получить Сущьность (переменная обьект)
-    # И передать ей все ее свойства, только после этого сущьность можно изменить. Представление edit.html.erb
   end
 
+  # POST /articles or /articles.json
   def create
+    @article = Article.new(article_params)
 
- 
-    pp "=================="
-    pp params[:blobs]
-    pp "=================="
-   
-
-    @article = Article.create!(article_params)
-    @article.images.attach(params[:article][:images])
-   # @article.save
-    if @article.save
-      redirect_to @article
-    else
-      render action: 'new'
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
 
+  # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    @article = Article.find(params[:id])
-    if @article.update(article_params)
-      redirect_to @article  #  если использовать Редирект - то  вывод представления из create  отображатьсяя не будет
-      # будет делаться редирект на роутер SHOW - файл Креате можно удалить с редиректом он не используется
-    else
-      render action: 'edit'
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
 
+  # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_to articles_path
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_article
+      @article = Article.find(params[:id])
+    end
 
-  def article_params
-    params.require(:article).permit(:title, :text, :name, images: [])
-  end
-
+    # Only allow a list of trusted parameters through.
+    def article_params
+      params.require(:article).permit(:name, :title, :text, images: [])
+    end
 end

@@ -15,4 +15,6 @@ class User < ApplicationRecord
             uniqueness: {
               message: 'Пользователь с таким @email уже существует'
             }
+
+  has_one_attached :avatar
 end
