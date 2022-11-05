@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_184606) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_154107) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -144,6 +144,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_184606) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
+  create_table "the_files", force: :cascade do |t|
+    t.text "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

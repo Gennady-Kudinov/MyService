@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   resources :articles do
    resources :comments, shallow: true
    end
+
+   resources :the_files
 end
