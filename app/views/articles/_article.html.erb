@@ -2,8 +2,8 @@
 
   <p>
     <strong>Картинки:</strong>
-      <% article.images.each do |image| %>
-        <%= link_to image.filename, image %> 
+      <% article.files.each do |file| %>
+        <%= link_to file.filename, file %> 
       <% end %>
   </p> 
 

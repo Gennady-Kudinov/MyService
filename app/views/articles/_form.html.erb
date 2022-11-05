@@ -12,10 +12,14 @@
   <% end %>
 
   <div>
+    <%= form.label :Файл, style: "display: block" %>
+    <%= form.file_field :files, multiple: true, direct_upload: true %>
+  </div>
+
+  <div>
     <%= form.label :Фото, style: "display: block" %>
     <%= form.file_field :images, multiple: true, direct_upload: true %>
   </div>
-
   <div>
     <%= form.label :Имя, style: "display: block" %>
     <%= form.text_field :name %>
