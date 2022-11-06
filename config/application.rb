@@ -24,7 +24,7 @@ module Test
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.bin *.hex *.zip *.rar)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.bin *.hex *.zip *.rar *.mp4)
     config.eager_load_paths += %W(#{config.root}/lib)
     config.autoload_paths += %W(#{config.root}/lib)
     #config.i18n.available_locales = %i[en ru]

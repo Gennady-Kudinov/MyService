@@ -1,0 +1,22 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <strong>Image:</strong>
+    <%= link_to comment.image.filename, comment.image if comment.image.attached? %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= comment.author %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <strong>Articles:</strong>
+    <%= comment.articles_id %>
+  </p>
+
+</div>

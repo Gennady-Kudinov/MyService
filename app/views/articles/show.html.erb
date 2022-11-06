@@ -3,8 +3,10 @@
 <%= render @article %>
 
 <div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
+  <%= link_to "Редактировать сообщение", edit_article_path(@article), style: "color: blue", class: "button is-warning" %>
+  <%= link_to "Показать сообщение", articles_path, style: "color: blue", class: "button is-primary" %>
 </div>
+
+<br>
+
+<%= button_to "Удалить сообщение", @article, method: :delete, class: "button is-danger" %>

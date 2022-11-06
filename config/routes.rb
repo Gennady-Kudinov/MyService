@@ -33,13 +33,10 @@ Rails.application.routes.draw do
     post 'login' =>  :create 
     get 'logout' =>  :destroy
   end
-
-    get 'articles', to: 'articles#index'
-    get 'articles/new', to: 'articles#new'
- 
+  
   resources :articles do
    resources :comments, shallow: true
-   end
+  end
 
    resources :the_files
 end

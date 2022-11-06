@@ -1,0 +1,11 @@
+<% if article.files.attached? %>
+    <div class="row">
+        <% if article.files.image? %>
+            <div class="message-image-container">
+                <%= image_tag(article.files, class:"massage-image") %>
+            </div>
+        <% elsif article.files.video? %>
+            <%= video_tag(url_for(article.files), class:"massage-video") %>   
+        <% end %>
+    </div>
+<% end %>

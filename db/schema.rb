@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_154107) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_213117) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -82,13 +82,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_154107) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "name"
     t.string "author"
     t.text "body"
-    t.integer "article_id", null: false
+    t.integer "articles_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["articles_id"], name: "index_comments_on_articles_id"
   end
 
   create_table "ecms", force: :cascade do |t|
@@ -168,7 +167,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_154107) do
   add_foreign_key "cars", "ecms"
   add_foreign_key "cars", "makes"
   add_foreign_key "cars", "models"
-  add_foreign_key "comments", "articles"
+  add_foreign_key "comments", "articles", column: "articles_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "models", "makes"
