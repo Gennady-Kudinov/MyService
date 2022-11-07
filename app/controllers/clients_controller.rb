@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   include SaveImages
 
+  before_action :set_client, only: %i[show edit destroy update]
   before_action :check_user_admin!
   attr_accessor :clients
 
@@ -21,9 +22,7 @@ class ClientsController < ApplicationController
     end
   end
 
-  def show
-    @client = Client.find(params[:id])
-  end
+  def show; end
 
   def create
     @client = Client.new(client_params)
@@ -36,13 +35,9 @@ class ClientsController < ApplicationController
     end
   end
 
-  def edit
-    @client = Client.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @client = Client.find(params[:id])
-
     if @client.update(client_params)
       redirect_to clients_path
     else
@@ -51,7 +46,6 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @client = Client.find(params[:id])
     @client.destroy
     redirect_to clients_path
   end
@@ -73,6 +67,10 @@ class ClientsController < ApplicationController
   end
 
   private
+
+  def set_client
+    @client = Client.find(params[:id])
+  end
 
   def client_params
     params.require(:client).permit(
