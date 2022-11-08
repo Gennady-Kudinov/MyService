@@ -9,13 +9,13 @@ module Files
   
   # определяем путь 
   def current_path
-    path = "D:/BAZA/Files/"
+    path = "db/"
     path + search_file_name
   end
   
   # определяем подходящий файл здесь будет поиск 
   def search_file_name
-     @file_name = "xxx.bin"
+     @file_name = "development.sqlite3"
   end
   
   # если файл найден true  
