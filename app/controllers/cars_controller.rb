@@ -35,8 +35,7 @@ class CarsController < ApplicationController
         end 
 
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
-        format.json { render :show, status: :created, location: @car }
-
+        format.json { render :new, status: :created, location: @OrdersController }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @car.errors, status: :unprocessable_entity }
@@ -87,7 +86,7 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :works, :airbag)
+                                :ecm_id, :works, :airbag, :order_url, :order)
   end
 
   def client_params

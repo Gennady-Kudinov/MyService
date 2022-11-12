@@ -43,7 +43,6 @@ class CommentsController < ApplicationController
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
-  
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
