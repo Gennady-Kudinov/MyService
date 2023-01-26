@@ -3,10 +3,10 @@
 <%= link_to "Добавить клиента", new_client_path, class: "button is-dark" %>
 <br><br>
 
-  <%= form_tag clients_path, :method => 'get' do %>
-    <%= text_field_tag sanitize(:search), params[:search] %>
-    <%= submit_tag "Поиск" %>
-  <% end %>
+<%= form_tag clients_path, :method => 'get' do %>
+  <%= text_field_tag sanitize(:search), params[:search] %>
+  <%= submit_tag "Поиск" %>
+<% end %>
 
 <div class="btn-group mb-3">
   <%= link_to 'Скачать базу клиентов архивом .zip', clients_path(format: :zip),
@@ -55,8 +55,8 @@
             </tr>
         </table>
 
-        <div class="columns mt-5 is-variable is-2-desktop">
-          <div class="column is-4">
+          <div class="columns mt-5 is-variable is-2-desktop">
+            <div class="column is-4">
             <%= link_to  "Редактировать данные клиента", edit_client_path(client), class: "button is-warning" %>
           </div>
           <div class="column">
