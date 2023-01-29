@@ -8,12 +8,35 @@
 <br>
 Для кодирования запоминание кондиционера и памяти <br>
 положения режима рециркуляции<br>
-<font size="3" color="#fa8e47" face="serif" IHKA | IHKA_Codierdaten → aktiv</font><br>
+<font size="3" color="green" face="serif"> IHKA | </font><font color=red>IHKA_Codierdaten</font> → aktiv<br>
 IHKA | 3002 | AC_NICHT_EIN_BEI_AUTO - AKTIV<br>
 IHKA | 3002 | OFF_MEMORY - AKTIV<br>
 <br>
 Дилерская история ТО (если поддерживается/или записана)<br>
-HU_NBT/CIC > 3000 > SERVICE_HISTORY -> aktiv
+HU_NBT | CIC | 3000 | SERVICE_HISTORY -> aktiv<br>
+<br>
+Запоминает последнее состояние:<br>
+CAS | FEM_BODY | TC_MSA_MEMORY | TCM_MSA_MEMORY → aktiv<br>
+
+При включении двигателя принудительно отключен:<br>
+CAS | FEM_BODY | TC_MSA_DEFAULT_OFF | TCM_MSA_DEFAULT_OFF → aktiv<br>
+
+
+Подскажите, как активировать автоматическое складывание зеркал при закрытие авто 
+и возможно ли включить режим просмотра боковых камер, а не только перед/зад?
+BDC_BODY -- 3056 -- KOMFORT_SCHLIESSEN werte = 0F (по умолчанию, это 2 секунды), мне нравится ставить одну секунду werte = 08.
+Поставить 00, будет сразу складывать.
+
+Отключение NBT при открытии двери: BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — aktiv отключается при открытии двери
+BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — nicht_aktiv отключается по таймауту или при закрытии автомобиля.
+В f25 и f10 необходимо искать в блоке CAS.
+
+Ответ на 2-й вопрос. надо прописать режим фаркоп
+HU_NBT > 3001 > MACRO_TRAILER_COUPING > aktiv
+
+Подсветка пола BDC_Body -- 3070 AMBIENTE_FARBE_ENSEMBLE_1_LAYER_3 по умолчанию orange; можно дать 12 цветов 
+hellrot, blue, green, violet, pink и т.д.
+остальные уровни в группе ни на что не влияют.
 
 <font color=green>  </font><font color=red>  </font>  <br>
 <br>
