@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   resources :chats do 
     resources :messages 
   end
-
-  # ???   
+ 
   resources :cars
     
   get 'ecms', to: 'ecms#new'
@@ -39,4 +38,7 @@ Rails.application.routes.draw do
   end
 
    resources :the_files
+
+   get 'static_pages', to: 'static_pages#index'
+
 end

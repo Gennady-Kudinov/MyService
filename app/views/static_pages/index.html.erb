@@ -1,0 +1,19 @@
+<font color=blue>"Приведу основные кодировки которые на мой вгляд необходимо активировать на своем а/м,</font><br>
+<font color=blue>они ни как не перегружают навигацию и меню вашего автомобиля."</font><br>
+<br>
+Что бы отключить весь свет в положении “0” на F и G-series, необходимо закодировать:<br>
+<font color=green>ECU BDC_01 | firstCAFD(17BD) | </font><font color=red>FLC_AKTIV</font> – Werte=01<br>
+Чтобы появилась галка в меню отключения в NBT, кодируем:<br>
+<font color=green>HU_NBT_EVO | </font><font color=red>DAYDRIVING_LIGHT</font> – standart(werte=02)<br>
+<br>
+Для кодирования запоминание кондиционера и памяти <br>
+положения режима рециркуляции<br>
+<font size="3" color="#fa8e47" face="serif" IHKA | IHKA_Codierdaten → aktiv</font><br>
+IHKA | 3002 | AC_NICHT_EIN_BEI_AUTO - AKTIV<br>
+IHKA | 3002 | OFF_MEMORY - AKTIV<br>
+<br>
+Дилерская история ТО (если поддерживается/или записана)<br>
+HU_NBT/CIC > 3000 > SERVICE_HISTORY -> aktiv
+
+<font color=green>  </font><font color=red>  </font>  <br>
+<br>

@@ -12,11 +12,11 @@ class ClientsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @clients = Client.all
+       # @clients = Client.last(10)
         @clients =
           Client.where(['licence LIKE ?', "%#{params[:search]}%"]).order(
             created_at: :desc
-          )
+          ).first(5)
       end
       format.zip { respond_with_zipped_clients }
     end
