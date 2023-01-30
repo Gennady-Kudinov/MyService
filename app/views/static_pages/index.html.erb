@@ -38,5 +38,53 @@ HU_NBT > 3001 > MACRO_TRAILER_COUPING > aktiv
 hellrot, blue, green, violet, pink и т.д.
 остальные уровни в группе ни на что не влияют.
 
+Kombi -- 3000 -- BC_DIGITAL_V --> aktiv
+
+Плавное закрытие багажника:
+HKFM DREHZAL_SEGMENT_SCHL
+Значения меняем на 20.30.40.58.58.58.58.58.58
+
+- Гонг при системных событиях
+HU_NBT -- 3002 -- SOUND_SIGNAL_SET выпадающее меню на выбор "bmw, bmw_i, mini, rolls royce"
+
+- Температура в шинах, если датчики уже включены и показывают давление, то достаточно потрогать вот эту функцию в NBT:
+HU_NBT -- 3001 -- RDC_DRUCK_TEMP вместо "druck" поставить "druck_und_temperatur"
+
+BDC_BODY -- 3130 -- RLS_DEF_FLC_SCHWELLWERT_SATZ там обычно стоит "standard" можно выбрать "empfindlich" - более чувствительный, или "unempfindlich" - малочувствительный.
+
+- Закодировать чтобы кнопка на ключе закрывала багажник с короткого нажатия, а не держать пока не закроется.
+BDC_BODY -- 3010 -- SCH_FBD поставить в aktiv - в одно касание закрыть изнутри кнопкой
+BDC_BODY -- 3010 -- SCH_TOEHKI поставить в aktiv - в одно касание закрыть с брелока
+BDC_BODY -- 3010 -- TASTER_FBD поставить в aktiv - нужен для включения этих самых возможностей.
+
+- Для тех, кто затонировал автомобиль и потерял функцию авто затемнения зеркал
+BDC_ BODY -- 3120 -- ISP_HECKSCHEIBE dunkel вместо hell
+
+- Для новых NBT EVO разблокируем видео в движении
+HU_NBT2 –- 3000HMI –- SPEEDLOCK_FREISCHALTMENU – aktiv
+После завершения кодирования и перегрузки NBT, в любом меню нажимаем шайбу вверх, не отпуская шайбу нажимаем по очереди MEDIA - MENU - MEDIA, появляется меню
+Выбираем CD/MM: деактивировать Speedlock.
+
+можно закодировать, чтобы при открытии двери выключалась музыка...
+BDC_BODY 3020 TCM_LOGIC_R_OFF_DOOR aktiv
+
+В предпоследней версии, когда NBT был уже EVO но ID4, все работало, просто ключей требовалось побольше:
+HU_NBT2 => VIDEO_HANDBRAKE => nicht_aktiv
+HU_NBT2 => VIDEO_FRONT_LOCKED => nicht_aktiv
+HU_NBT2 => VIDEO_SPEEDLOCK_CONDITION => none
+HU_NBT2 => SPEEDLOCK_X_KMH_MAX => Werte = FF
+HU_NBT2 => SPEEDLOCK_X_KMH_MIN => Werte = FF
+HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MIN => nicht_aktiv
+HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MAX => nicht_aktiv
+HU_NBT2 => SPEEDLOCK_CAR_STANDSTILL => none
+
+Если речь про LDW (Lane Departure Warning - ассистент покидания полосы), то вот тут он лежит:
+KAFAS2
+3020 TLC_CODING, B
+THRV_AVAI_TLC_HIGH (LDW on speed) по умолчанию 3C=60km/h
+THRV_AVAI_TLC_LOW (LDW off speed) по умолчанию 37=55km/h
+Попробуй что из значений будет работать и поделись опытом - будет полезно!
+
+
 <font color=green>  </font><font color=red>  </font>  <br>
 <br>

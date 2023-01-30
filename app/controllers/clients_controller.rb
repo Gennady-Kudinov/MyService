@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
           Client.where(['licence LIKE ?', "%#{params[:search]}%"]).order(
             created_at: :desc
           ).first(5)
-      end
+    end
       format.zip { respond_with_zipped_clients }
     end
   end
