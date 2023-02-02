@@ -33,7 +33,7 @@
           <%= form.collection_select(:ecm_id,
                                      Ecm.all, 
                                      :id,
-                                     :name, { prompt: 'Select', selected: @name },
+                                     :name, { prompt: 'Select', selected: @car.ecm_id },
                                      { data: { source: 'ecm' }}) %>      
         </div>
       </div>
@@ -56,7 +56,7 @@
           <%= form.collection_select(:client_id, 
                                      Client.all.order(created_at: :desc), 
                                      :id,
-                                     :licence, { prompt: 'Select', selected: @client },
+                                     :licence, { prompt: 'Select', selected: @car.client_id },
                                      { data: { source: 'clients' }}) %>
         </div>
       </div>

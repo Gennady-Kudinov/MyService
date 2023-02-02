@@ -7,7 +7,7 @@ class CarsController < ApplicationController
     @cars =
           Car.where(['vin LIKE ?', "%#{params[:search]}%"]).order(
             created_at: :desc
-          )
+          ).first(5)
   end
 
   def show
