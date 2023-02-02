@@ -20,70 +20,76 @@ CAS | FEM_BODY | TC_MSA_MEMORY | TCM_MSA_MEMORY → aktiv<br>
 
 При включении двигателя принудительно отключен:<br>
 CAS | FEM_BODY | TC_MSA_DEFAULT_OFF | TCM_MSA_DEFAULT_OFF → aktiv<br>
+<br>
+Подскажите, как активировать автоматическое складывание зеркал при закрытие авто <br>
+и возможно ли включить режим просмотра боковых камер, а не только перед/зад?<br>
+BDC_BODY -- 3056 -- KOMFORT_SCHLIESSEN werte = 0F (по умолчанию, это 2 секунды),<br>
+ мне нравится ставить одну секунду werte = 08.<br>
+Поставить 00, будет сразу складывать.<br>
+<br>
+Отключение NBT при открытии двери: BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — aktiv отключается при открытии двери<br>
+BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — nicht_aktiv отключается по таймауту или при закрытии автомобиля.<br>
+В f25 и f10 необходимо искать в блоке CAS.<br>
+<br>
+Ответ на 2-й вопрос. надо прописать режим фаркоп<br>
+HU_NBT > 3001 > MACRO_TRAILER_COUPING > aktiv<br>
+<br>
+Подсветка пола BDC_Body -- 3070 AMBIENTE_FARBE_ENSEMBLE_1_LAYER_3 по умолчанию orange; можно дать 12 цветов <br>
+hellrot, blue, green, violet, pink и т.д.<br>
+остальные уровни в группе ни на что не влияют.<br>
+<br>
+Kombi -- 3000 -- BC_DIGITAL_V --> aktiv<br>
+<br>
+Плавное закрытие багажника:<br>
+HKFM DREHZAL_SEGMENT_SCHL<br>
+Значения меняем на 20.30.40.58.58.58.58.58.58<br>
+<br>
+- Гонг при системных событиях<br>
+HU_NBT -- 3002 -- SOUND_SIGNAL_SET выпадающее меню на выбор "bmw, bmw_i, mini, rolls royce"<br>
+<br>
+- Температура в шинах, если датчики уже включены и показывают давление, то достаточно потрогать вот эту функцию в NBT:<br>
+HU_NBT -- 3001 -- RDC_DRUCK_TEMP вместо "druck" поставить "druck_und_temperatur"<br>
+<br>
+BDC_BODY -- 3130 -- RLS_DEF_FLC_SCHWELLWERT_SATZ там обычно стоит "standard" <br>
+можно выбрать "empfindlich" - более чувствительный, или "unempfindlich" - малочувствительный.<br>
+<br>
+- Закодировать чтобы кнопка на ключе закрывала багажник с короткого нажатия, а не держать пока не закроется.<br>
+BDC_BODY -- 3010 -- SCH_FBD поставить в aktiv - в одно касание закрыть изнутри кнопкой<br>
+BDC_BODY -- 3010 -- SCH_TOEHKI поставить в aktiv - в одно касание закрыть с брелока<br>
+BDC_BODY -- 3010 -- TASTER_FBD поставить в aktiv - нужен для включения этих самых возможностей.<br>
+<br>
+- Для тех, кто затонировал автомобиль и потерял функцию авто затемнения зеркал<br>
+BDC_ BODY -- 3120 -- ISP_HECKSCHEIBE dunkel вместо hell<br>
+<br>
+- Для новых NBT EVO разблокируем видео в движении<br>
+HU_NBT2 –- 3000HMI –- SPEEDLOCK_FREISCHALTMENU – aktiv<br>
+После завершения кодирования и перегрузки NBT, в любом меню нажимаем шайбу вверх, <br>
+не отпуская шайбу нажимаем по очереди MEDIA - MENU - MEDIA, появляется меню<br>
+Выбираем CD/MM: деактивировать Speedlock.<br>
 
-
-Подскажите, как активировать автоматическое складывание зеркал при закрытие авто 
-и возможно ли включить режим просмотра боковых камер, а не только перед/зад?
-BDC_BODY -- 3056 -- KOMFORT_SCHLIESSEN werte = 0F (по умолчанию, это 2 секунды), мне нравится ставить одну секунду werte = 08.
-Поставить 00, будет сразу складывать.
-
-Отключение NBT при открытии двери: BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — aktiv отключается при открытии двери
-BDC_BODY — 3020 — TCM_LOGIC_R_OFF_DOOR — nicht_aktiv отключается по таймауту или при закрытии автомобиля.
-В f25 и f10 необходимо искать в блоке CAS.
-
-Ответ на 2-й вопрос. надо прописать режим фаркоп
-HU_NBT > 3001 > MACRO_TRAILER_COUPING > aktiv
-
-Подсветка пола BDC_Body -- 3070 AMBIENTE_FARBE_ENSEMBLE_1_LAYER_3 по умолчанию orange; можно дать 12 цветов 
-hellrot, blue, green, violet, pink и т.д.
-остальные уровни в группе ни на что не влияют.
-
-Kombi -- 3000 -- BC_DIGITAL_V --> aktiv
-
-Плавное закрытие багажника:
-HKFM DREHZAL_SEGMENT_SCHL
-Значения меняем на 20.30.40.58.58.58.58.58.58
-
-- Гонг при системных событиях
-HU_NBT -- 3002 -- SOUND_SIGNAL_SET выпадающее меню на выбор "bmw, bmw_i, mini, rolls royce"
-
-- Температура в шинах, если датчики уже включены и показывают давление, то достаточно потрогать вот эту функцию в NBT:
-HU_NBT -- 3001 -- RDC_DRUCK_TEMP вместо "druck" поставить "druck_und_temperatur"
-
-BDC_BODY -- 3130 -- RLS_DEF_FLC_SCHWELLWERT_SATZ там обычно стоит "standard" можно выбрать "empfindlich" - более чувствительный, или "unempfindlich" - малочувствительный.
-
-- Закодировать чтобы кнопка на ключе закрывала багажник с короткого нажатия, а не держать пока не закроется.
-BDC_BODY -- 3010 -- SCH_FBD поставить в aktiv - в одно касание закрыть изнутри кнопкой
-BDC_BODY -- 3010 -- SCH_TOEHKI поставить в aktiv - в одно касание закрыть с брелока
-BDC_BODY -- 3010 -- TASTER_FBD поставить в aktiv - нужен для включения этих самых возможностей.
-
-- Для тех, кто затонировал автомобиль и потерял функцию авто затемнения зеркал
-BDC_ BODY -- 3120 -- ISP_HECKSCHEIBE dunkel вместо hell
-
-- Для новых NBT EVO разблокируем видео в движении
-HU_NBT2 –- 3000HMI –- SPEEDLOCK_FREISCHALTMENU – aktiv
-После завершения кодирования и перегрузки NBT, в любом меню нажимаем шайбу вверх, не отпуская шайбу нажимаем по очереди MEDIA - MENU - MEDIA, появляется меню
-Выбираем CD/MM: деактивировать Speedlock.
-
-можно закодировать, чтобы при открытии двери выключалась музыка...
-BDC_BODY 3020 TCM_LOGIC_R_OFF_DOOR aktiv
-
-В предпоследней версии, когда NBT был уже EVO но ID4, все работало, просто ключей требовалось побольше:
-HU_NBT2 => VIDEO_HANDBRAKE => nicht_aktiv
-HU_NBT2 => VIDEO_FRONT_LOCKED => nicht_aktiv
-HU_NBT2 => VIDEO_SPEEDLOCK_CONDITION => none
-HU_NBT2 => SPEEDLOCK_X_KMH_MAX => Werte = FF
-HU_NBT2 => SPEEDLOCK_X_KMH_MIN => Werte = FF
-HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MIN => nicht_aktiv
-HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MAX => nicht_aktiv
-HU_NBT2 => SPEEDLOCK_CAR_STANDSTILL => none
-
-Если речь про LDW (Lane Departure Warning - ассистент покидания полосы), то вот тут он лежит:
-KAFAS2
-3020 TLC_CODING, B
-THRV_AVAI_TLC_HIGH (LDW on speed) по умолчанию 3C=60km/h
-THRV_AVAI_TLC_LOW (LDW off speed) по умолчанию 37=55km/h
-Попробуй что из значений будет работать и поделись опытом - будет полезно!
+можно закодировать, чтобы при открытии двери выключалась музыка...<br>
+BDC_BODY 3020 TCM_LOGIC_R_OFF_DOOR aktiv<br>
+<br>
+В предпоследней версии, когда NBT был уже EVO но ID4, все работало, просто ключей требовалось побольше:<br>
+HU_NBT2 => VIDEO_HANDBRAKE => nicht_aktiv<br>
+HU_NBT2 => VIDEO_FRONT_LOCKED => nicht_aktiv<br>
+HU_NBT2 => VIDEO_SPEEDLOCK_CONDITION => none<br>
+HU_NBT2 => SPEEDLOCK_X_KMH_MAX => Werte = FF<br>
+HU_NBT2 => SPEEDLOCK_X_KMH_MIN => Werte = FF<br>
+HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MIN => nicht_aktiv<br>
+HU_NBT2 => SPEEDLOCK_SPEEDVALUE_MAX => nicht_aktiv<br>
+HU_NBT2 => SPEEDLOCK_CAR_STANDSTILL => none<br>
+<br>
+Если речь про LDW (Lane Departure Warning - ассистент покидания полосы), то вот тут он лежит:<br>
+KAFAS2<br>
+3020 TLC_CODING, B<br>
+THRV_AVAI_TLC_HIGH (LDW on speed) по умолчанию 3C=60km/h<br>
+THRV_AVAI_TLC_LOW (LDW off speed) по умолчанию 37=55km/h<br>
+Попробуй что из значений будет работать и поделись опытом - будет полезно!<br>
+<br>
+Отображение давления шин на панели приборов MGU<br>
+HU_MGU/ M_VEHICLE_SP2018_RUEKO: aktiv<br>
+<br>
 
 
 <font color=green>  </font><font color=red>  </font>  <br>
