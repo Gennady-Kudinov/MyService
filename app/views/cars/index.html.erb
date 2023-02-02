@@ -2,16 +2,18 @@
 
 <%= link_to "Добавить новую машину", new_car_path, class: "button is-primary my-5" %>
 
-<%= form_tag clients_path, :method => 'get' do %>
+<%= form_tag cars_path, :method => 'get' do %>
     <%= text_field_tag sanitize(:search), params[:search] %>
-    <%= submit_tag "Поиск введите гос.номер" %>
+    <%= submit_tag "Поиск введите VIN a/м" %>
 <% end %>
 
-<% @cars.each do |car| %>
-  <div class="box mb-6">
-    <%= render car %> 
-    <%= link_to "Показать машину", car, class: "button is-info" %>
-  </div>
+<% if @cars.present? %>
+  <% @cars.each do |car| %>
+    <div class="box mb-6">
+      <%= render car %> 
+      <%= link_to "Показать машину", car, class: "button is-info" %>
+    </div>
+  <% end %>
 <% end %>
 </div>
 

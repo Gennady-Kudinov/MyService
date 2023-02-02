@@ -3,10 +3,15 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, :check_user_admin!  
 
   def index
-    @cars = Car.all.order(created_at: :desc) 
+   # @cars = Car.all.order(created_at: :desc)
+    @cars =
+          Car.where(['vin LIKE ?', "%#{params[:search]}%"]).order(
+            created_at: :desc
+          )
   end
 
   def show
+   
   end
 
   def new
