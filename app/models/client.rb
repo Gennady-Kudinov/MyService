@@ -9,6 +9,11 @@ class Client < ApplicationRecord
     true if self.orders.present?
   end
 
+  def work_performer(user)
+    self.username = user.name if user
+    self
+  end
+  
 #  def max_mileag
 #   self.orders.last.mileage if self.orders.present?
 #  end

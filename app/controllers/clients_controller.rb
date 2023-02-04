@@ -24,18 +24,14 @@ class ClientsController < ApplicationController
   def show; end
 
   def create
-    @licence = client_params[:licence]
-    @client = Client.find_or_create_by(licence: @licence)
+    licence = client_params[:licence]
+    client  = Client.find_by(licence: licence)
 
-   # @client = Client.new(client_params)
-    @client.username = current_user.name
-
-    if @client.save
-      redirect_to clients_path
-   # if @client.present?
-   #   redirect_to curent_client_show
+    if client
+      redirect_to client_orders_path(client)
     else
-      render :new
+      Client.new(client_params).work_performer(current_user).save
+      redirect_to clients_path
     end
   end
 
