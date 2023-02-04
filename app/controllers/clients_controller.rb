@@ -24,7 +24,10 @@ class ClientsController < ApplicationController
   def show; end
 
   def create
-    @client = Client.new(client_params)
+    @licence = client_params[:licence]
+    @client = Client.find_or_create_by(licence: @licence)
+
+   # @client = Client.new(client_params)
     @client.username = current_user.name
 
     if @client.save

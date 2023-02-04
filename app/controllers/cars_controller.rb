@@ -4,14 +4,11 @@ class CarsController < ApplicationController
 
   def index
    # @cars = Car.all.order(created_at: :desc)
-    @cars =
-          Car.where(['vin LIKE ?', "%#{params[:search]}%"]).order(
-            created_at: :desc
-          ).first(5)
+    @cars = Car.where(['vin LIKE ?', "%#{params[:search]}%"]).
+    order(created_at: :desc).first(5)
   end
 
   def show
-   
   end
 
   def new
