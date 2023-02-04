@@ -32,6 +32,8 @@ class ClientsController < ApplicationController
 
     if @client.save
       redirect_to clients_path
+   # if @client.present?
+   #   redirect_to curent_client_show
     else
       render :new
     end
