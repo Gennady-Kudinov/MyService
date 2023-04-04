@@ -26,6 +26,16 @@
         </div>
       </div>
     </div>
+
+    <div class="column">
+      <div class="field">
+        <%= form.label :works, 'Вид работ' %>
+          <div class="control">
+            <%= form.select :works, ["Diagnose", "Programm", "Mileage_km", "Airbag"] %>
+          </div>
+      </div>
+    </div>
+
     <div class="column">
       <div class="field">
         <%= form.label :ЭБУ  %>
@@ -35,16 +45,6 @@
                                      :id,
                                      :name, { prompt: 'Select', selected: @car.ecm_id },
                                      { data: { source: 'ecm' }}) %>      
-        </div>
-      </div>
-    </div>
-
-
-    <div class="column">
-      <div class="field">
-        <%= form.label :works, 'Вид работ' %>
-        <div class="control">
-          <%= form.select :works, ["Diagnose", "Programm", "Mileage_km", "Airbag"] %>
         </div>
       </div>
     </div>

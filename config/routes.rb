@@ -24,9 +24,9 @@ Rails.application.routes.draw do
 
   resources :clients do
     resources :cars
-    resources :orders 
+    resources :orders
   end
-  resources :client, only: %i[index show edit new create update]
+  resources :client, only: %i[index edit new create update]
 
   controller :sessions do
     get 'login'  =>  :new
