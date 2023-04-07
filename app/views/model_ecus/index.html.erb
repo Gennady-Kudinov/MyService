@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Model ecus</h1>
+
+<div id="model_ecus">
+  <% @model_ecus.each do |model_ecu| %>
+    <%= render model_ecu %>
+    <p>
+      <%= link_to "Show this model ecu", model_ecu %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New model ecu", new_model_ecu_path %>

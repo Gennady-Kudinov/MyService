@@ -1,0 +1,2 @@
+module ModelEcusHelper
+end

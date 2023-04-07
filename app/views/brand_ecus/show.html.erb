@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @brand_ecu %>
+
+<div>
+  <%= link_to "Edit this brand ecu", edit_brand_ecu_path(@brand_ecu) %> |
+  <%= link_to "Back to brand ecus", brand_ecus_path %>
+
+  <%= button_to "Destroy this brand ecu", @brand_ecu, method: :delete %>
+</div>

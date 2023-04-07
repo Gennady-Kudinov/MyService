@@ -42,4 +42,9 @@ Rails.application.routes.draw do
 
    get 'static_pages', to: 'static_pages#index'
 
+  resources :brand_ecus
+  resources :model_ecus, only: [:index]
+
+  get '/brand_ecus/:brand_ecu_id/model_ecus', to: 'model_ecus#index'
+
 end

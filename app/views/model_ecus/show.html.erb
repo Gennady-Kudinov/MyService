@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @model_ecu %>
+
+<div>
+  <%= link_to "Edit this model ecu", edit_model_ecu_path(@model_ecu) %> |
+  <%= link_to "Back to model ecus", model_ecus_path %>
+
+  <%= button_to "Destroy this model ecu", @model_ecu, method: :delete %>
+</div>

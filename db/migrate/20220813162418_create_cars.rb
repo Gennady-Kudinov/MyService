@@ -9,7 +9,6 @@ class CreateCars < ActiveRecord::Migration[7.0]
       t.references :model, null: false, foreign_key: true
       t.references :make, null: false, foreign_key: true
       t.references :client, null: false, foreign_key: true
-
       t.timestamps
     end
   end

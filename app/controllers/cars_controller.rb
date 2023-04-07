@@ -88,7 +88,7 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :works, :airbag, :order_url, :order)
+                                :ecm_id, :works, :airbag, :order_url, :order, :brand_ecu_id, :model_ecu_id)
   end
 
   def client_params

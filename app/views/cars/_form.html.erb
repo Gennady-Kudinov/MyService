@@ -1,6 +1,32 @@
 <%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
   <div class="columns mb-6">
 
+          <div class="column">
+            <div class="field">
+              <%= form.label :brand_ecu_id %>
+                <div class="control">
+                  <%= form.collection_select(:brand_ecu_id, 
+                                              BrandEcu.all,
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.brand_ecu_id}, 
+                                              { data: { source: 'brand_ecus' }}) %>
+                </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <%= form.label :model_ecu_id %>
+                <div class="control">
+                  <%= form.collection_select(:model_ecu_id,
+                                              @car.brand_ecu&.model_ecus || [],
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.model_ecu_id }, 
+                                              { data: { parent_id: 'car_brand_ecu_id', source: 'model_ecus', }}) %>
+                </div>
+            </div>
+          </div>
+
     <div class="column">
       <div class="field">
         <%= form.label :make_id  %>
@@ -64,16 +90,16 @@
   </div>
 
 
-  <div class="columns">
+    <div class="columns">
 
-    <div class="column">
-      <div class="field">
-        <%= form.label :mileage, 'Пробег в км' %>
-        <div class="control">
-          <%= form.text_field :mileage, class: "form-control" %>
+      <div class="column">
+        <div class="field">
+          <%= form.label :mileage, 'Пробег в км' %>
+          <div class="control">
+            <%= form.text_field :mileage, class: "form-control" %>
+          </div>
         </div>
       </div>
-    </div>
 
     <div class="column">
       <div class="field">
@@ -94,5 +120,4 @@
       </div>
     </div>
   </div>
-
 <% end %>
