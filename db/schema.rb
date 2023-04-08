@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_06_043650) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_192134) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -55,8 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043650) do
 
   create_table "cars", force: :cascade do |t|
     t.string "licence"
-    t.string "vin"
     t.string "mileage"
+    t.string "vin"
     t.integer "ecm_id"
     t.integer "sum"
     t.integer "model_id", null: false
@@ -64,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043650) do
     t.integer "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "brand_ecu_id"
+    t.integer "model_ecu_id"
     t.index ["client_id"], name: "index_cars_on_client_id"
     t.index ["ecm_id"], name: "index_cars_on_ecm_id"
     t.index ["licence"], name: "index_cars_on_licence"
