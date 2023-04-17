@@ -1,557 +1,476 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Car.destroy_all
+# Model.destroy_all
+# Make.destroy_all
+# BrandEcu.destroy_all
+# ModelEcu.destroy_all
+# SoftEcu.destroy_all
 
-Ecm.destroy_all
-Car.destroy_all
-Model.destroy_all
-Make.destroy_all
+# soft_ecu = SoftEcu.create(name: 'SoftEcu', brand_ecu: brand_ecu, model_ecu: model_ecu)
 
-Ecm.create(name: 'Delphi AcDelco E37')
-Ecm.create(name: 'Delphi AcDelco E38')
-Ecm.create(name: 'Delphi AcDelco E39_E39a')
-Ecm.create(name: 'Delphi AcDelco E69')
-Ecm.create(name: 'Delphi AcDelco E78')
-Ecm.create(name: 'Delphi AcDelco E83')
-Ecm.create(name: 'Delphi MT20')
-Ecm.create(name: 'Delphi MT21_22')
-Ecm.create(name: 'Delphi MT60')
-Ecm.create(name: 'Delphi MT80')
-Ecm.create(name: 'Delphi MT92 GDI')
-Ecm.create(name: 'Delphi MP140_MP240')
-Ecm.create(name: 'Bosch M1.5.4')
-Ecm.create(name: 'Bosch M7.0')
-Ecm.create(name: 'Bosch M7.4.4')
-Ecm.create(name: 'Bosch M7.4.5')
-Ecm.create(name: 'Bosch M7.9.7')
-Ecm.create(name: 'Bosch M7.9.7+')
-Ecm.create(name: 'KEFICO (Bosch M7.9.7)')
-Ecm.create(name: 'KEFICO (Bosch M7.9.7+)')
-Ecm.create(name: 'Bosch M7.8')
-Ecm.create(name: 'Bosch M7.8.8')
-Ecm.create(name: 'Bosch M17.9.1')
-Ecm.create(name: 'Bosch M17.9.2')
-Ecm.create(name: 'Bosch M17.9.7')
-Ecm.create(name: 'Bosch M17.9.7.1')
-Ecm.create(name: 'Bosch M17.9.11')
-Ecm.create(name: 'Bosch M17.5')
-Ecm.create(name: 'Bosch M17.5.5')
-Ecm.create(name: 'Bosch MEVD17.2.7 BMW')
-Ecm.create(name: 'Bosch MEVD17.2.2 BMW')
-Ecm.create(name: 'Bosch MEV17.4.2 PSA')
-Ecm.create(name: 'Bosch MEV17.4.6 BMW')
-Ecm.create(name: 'Bosch MEV17.2.2 BMW')
-Ecm.create(name: 'Bosch MEG17.9.21 HK')
-Ecm.create(name: 'Bosch MEG17.9.2 HK')
-Ecm.create(name: 'Bosch MEDG17.9.8 HK')
-Ecm.create(name: 'Bosch MED9.6.1 GM (E69)')
-Ecm.create(name: 'Bosch MED9.5.10 VAG')
-Ecm.create(name: 'Bosch MED9.1.x VAG')
-Ecm.create(name: 'Bosch MED9.1 VAG')
-Ecm.create(name: 'Bosch MED17.9.8 HK')
-Ecm.create(name: 'Bosch MED17.9.63 SUZUKI')
-Ecm.create(name: 'Bosch MED17.5.5 VAG')
-Ecm.create(name: 'Bosch MED17.5.25 VAG')
-Ecm.create(name: 'Bosch MED17.5.21 VAG')
-Ecm.create(name: 'Bosch MED17.5.2 VAG')
-Ecm.create(name: 'Bosch MED17.5.21 VAG')
-Ecm.create(name: 'Denso')
-Ecm.create(name: 'Denso Toyota')
-Ecm.create(name: 'Denso Jaguar')
-Ecm.create(name: 'Denso Mazda')
-Ecm.create(name: 'Mitsubishi')
-Ecm.create(name: 'Ford Visteon ESU 131_411_418')
-Ecm.create(name: 'Ford Sim28_Sim29')
-Ecm.create(name: 'Siemens Simtec 70')
-Ecm.create(name: 'Siemens Simtec 71')
-Ecm.create(name: 'Siemens Simtec 75')
-Ecm.create(name: 'Siemens Simtec 76')
-Ecm.create(name: 'Siemens Simtec 81')
-Ecm.create(name: 'Siemens MSE3.5')
-Ecm.create(name: 'SIM2K-24x (SIM2K-241/242/245)')
-Ecm.create(name: 'SIM2K-25x (SIM2K-250/251/253)')
-Ecm.create(name: 'Siemens SIM2K-141_341')
-Ecm.create(name: 'Siemens SIMK41_43')
-Ecm.create(name: 'GM ISFI-2S')
-Ecm.create(name: 'GM ITMS-6F')
-Ecm.create(name: 'GM EFI-4')
-Ecm.create(name: 'Январь 5.1_5.1.1_5.1.2')
-Ecm.create(name: 'Январь 7.2')
-Ecm.create(name: 'Микас 10.3')
-Ecm.create(name: 'Микас 11')
-Ecm.create(name: 'Микас 12')
-Ecm.create(name: 'М74')
-Ecm.create(name: 'М75')
-Ecm.create(name: 'М86')
-Ecm.create(name: 'VS5.1')
-Ecm.create(name: 'VS9.2')
-Ecm.create(name: 'Magneti Marelli 4HV')
-Ecm.create(name: 'Magneti Marelli 7GV')
-Ecm.create(name: 'Simos 12')
-Ecm.create(name: 'Valeo V42')
-Ecm.create(name: 'Sirius D3_4')
-Ecm.create(name: 'Sirius D32_42')
-Ecm.create(name: 'Continental EMS3125')
-Ecm.create(name: 'Continental EMS3132')
-Ecm.create(name: 'Continental EMS3120')
-Ecm.create(name: 'Continental EMS3130')
+brand_ecu = BrandEcu.create(name: 'Delphi')
+  model_ecus = ['AcDelco E37', 'AcDelco E38', 'AcDelco E39', 'AcDelco E39a',
+  'AcDelco E66', 'AcDelco E67', 'AcDelco E77', 'AcDelco E78',
+  'AcDelco E79', 'AcDelco E80', 'AcDelco E86', 'AcDelco E87',
+  'AcDelco E89', 'AcDelco E99', 'Delphi MT05', 'Delphi MT20U', 'Delphi MT20U2',
+  'Delphi MT22.5', 'Delphi MT22.x', 'Delphi MT22.1', 'Delphi MT34',
+  'Delphi MT34 China', 'Delphi MT35E', 'Delphi MT60', 'Delphi MT74',
+  'Delphi MT74.5', 'Delphi MT80', 'Delphi MT80.x', 'Delphi MT86', 'Delphi MT92', 'Delphi MT92.1(E)',
+  'Delphi MT92 Great Wall', 'Delphi MR140_HV240 Ext', 'Delphi DCM3.7 GreatWall', 'Delphi DCM3.7 GM', 
+  'Delphi DCM3.7 SsangYong', 'Delphi DCM3.7 Hyundai_Kia', 'Delphi DCM3.7 VAG', 'Delphi DCM6.2 PSA']
+model_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
 
-make = Make.create(name: 'AUDI')
-Model.create(make: make, name: 'A3')
-Model.create(make: make, name: 'A4')
-Model.create(make: make, name: 'A5')
-Model.create(make: make, name: 'A6')
-Model.create(make: make, name: 'A7')
-Model.create(make: make, name: 'A8')
-Model.create(make: make, name: 'S3')
-Model.create(make: make, name: 'S6')
-Model.create(make: make, name: 'S8')
-Model.create(make: make, name: 'SQ5')
-Model.create(make: make, name: 'Q3')
-Model.create(make: make, name: 'Q5')
-Model.create(make: make, name: 'Q7')
-Model.create(make: make, name: 'E-TRON')
-Model.create(make: make, name: 'RS3')
-Model.create(make: make, name: 'RS4')
-Model.create(make: make, name: 'RS5')
-Model.create(make: make, name: 'RS6')
-Model.create(make: make, name: 'RS7')
-Model.create(make: make, name: 'RSQ8')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E37')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'ACURA')
-Model.create(make: make, name: 'MDX')
-Model.create(make: make, name: 'RDX')
-Model.create(make: make, name: 'CDX')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E38')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'BMW')
-Model.create(make: make, name: 'Ex 1')
-Model.create(make: make, name: 'Fx 1')
-Model.create(make: make, name: 'Fx 2')
-Model.create(make: make, name: 'Ex 3')
-Model.create(make: make, name: 'Fx 3')
-Model.create(make: make, name: 'Gx 3')
-Model.create(make: make, name: 'Fx 4')
-Model.create(make: make, name: 'Ex 5')
-Model.create(make: make, name: 'Fx 5')
-Model.create(make: make, name: 'Gx 5')
-Model.create(make: make, name: 'Ex 6')
-Model.create(make: make, name: 'Fx 6')
-Model.create(make: make, name: 'Gx 6')
-Model.create(make: make, name: 'Ex 7')
-Model.create(make: make, name: 'Fx 7')
-Model.create(make: make, name: 'Gx 7')
-Model.create(make: make, name: 'MINI')
-Model.create(make: make, name: 'I3')
-Model.create(make: make, name: 'I8')
-Model.create(make: make, name: 'IX')
-Model.create(make: make, name: 'Ex X1')
-Model.create(make: make, name: 'Fx X1')
-Model.create(make: make, name: 'Fx X2')
-Model.create(make: make, name: 'Ex X3')
-Model.create(make: make, name: 'Fx X3')
-Model.create(make: make, name: 'Gx X3')
-Model.create(make: make, name: 'Fx X4')
-Model.create(make: make, name: 'Gx X4')
-Model.create(make: make, name: 'Ex X5')
-Model.create(make: make, name: 'Fx X5')
-Model.create(make: make, name: 'Gx X5')
-Model.create(make: make, name: 'Ex X6')
-Model.create(make: make, name: 'Fx X6')
-Model.create(make: make, name: 'Gx X6')
-Model.create(make: make, name: 'Gx X7')
-Model.create(make: make, name: 'Ex Z4')
-Model.create(make: make, name: 'Gx Z4')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E39')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'CHEVROLET')
-Model.create(make: make, name: 'AVEO')
-Model.create(make: make, name: 'CRUZE')
-Model.create(make: make, name: 'CAPTIVA')
-Model.create(make: make, name: 'COBALT')
-Model.create(make: make, name: 'SPARK')
-Model.create(make: make, name: 'ORLANDO')
-Model.create(make: make, name: 'LACHETTI')
-Model.create(make: make, name: 'LANOS')
-Model.create(make: make, name: 'EPICA')
-Model.create(make: make, name: 'VOLT')
-Model.create(make: make, name: 'BOLT')
-Model.create(make: make, name: 'TAHOE')
-Model.create(make: make, name: 'COMARO')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E39a')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'CHERY')
-Model.create(make: make, name: 'AMULET')
-Model.create(make: make, name: 'ARRIZO')
-Model.create(make: make, name: 'BONUS')
-Model.create(make: make, name: 'EASTAR')
-Model.create(make: make, name: 'TIGO')
-Model.create(make: make, name: 'TIGO 2')
-Model.create(make: make, name: 'TIGO 3')
-Model.create(make: make, name: 'TIGO 4')
-Model.create(make: make, name: 'TIGO 5')
-Model.create(make: make, name: 'TIGO 7')
-Model.create(make: make, name: 'TIGO 8')
-Model.create(make: make, name: 'KIMO')
-Model.create(make: make, name: 'QQ')
-Model.create(make: make, name: 'QQ 6')
-Model.create(make: make, name: 'FORA')
-Model.create(make: make, name: 'VERY')
-Model.create(make: make, name: 'INDIS')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E66')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'CITROEN')
-Model.create(make: make, name: 'C1')
-Model.create(make: make, name: 'C3')
-Model.create(make: make, name: 'C4')
-Model.create(make: make, name: 'C6')
-Model.create(make: make, name: 'C-Elysée')
-Model.create(make: make, name: 'C5')
-Model.create(make: make, name: 'BERLINGO')
-Model.create(make: make, name: 'JUMPY')
-Model.create(make: make, name: 'JUMPER')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E67')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'DAEWOO')
-Model.create(make: make, name: 'NEXIA')
-Model.create(make: make, name: 'MATIZ')
-Model.create(make: make, name: 'GENTRA')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E77')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'DAIHATSU')
-Model.create(make: make, name: 'TREVIS')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E78')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'VAZ')
-Model.create(make: make, name: '2107')
-Model.create(make: make, name: '2109')
-Model.create(make: make, name: '2110')
-Model.create(make: make, name: '2111')
-Model.create(make: make, name: '2112')
-Model.create(make: make, name: '2114')
-Model.create(make: make, name: '2115')
-Model.create(make: make, name: 'GRANTA')
-Model.create(make: make, name: 'KALINA')
-Model.create(make: make, name: 'PRIORA')
-Model.create(make: make, name: 'VESTA')
-Model.create(make: make, name: 'XRAY')
-Model.create(make: make, name: 'LARGUS')
-Model.create(make: make, name: 'NIVA')
-Model.create(make: make, name: 'CHEVROLET NIVA')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E79')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'GAZ')
-Model.create(make: make, name: 'GAZEL')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E80')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'UAZ')
-Model.create(make: make, name: 'FERMER')
-Model.create(make: make, name: 'PATRIOT')
-Model.create(make: make, name: 'БУХАНКА')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E86')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'ZAZ')
-Model.create(make: make, name: 'CHANCE')
-Model.create(make: make, name: 'VIDA')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E87')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'FIAT')
-Model.create(make: make, name: 'ALBEA')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E89')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'FORD')
-Model.create(make: make, name: 'FOCUS')
-Model.create(make: make, name: 'FOCUS 2')
-Model.create(make: make, name: 'FOCUS 3')
-Model.create(make: make, name: 'FOCUS 4')
-Model.create(make: make, name: 'CMAX')
-Model.create(make: make, name: 'ECOSPORT')
-Model.create(make: make, name: 'EXPLORER')
-Model.create(make: make, name: 'FUSION')
-Model.create(make: make, name: 'KUGA')
-Model.create(make: make, name: 'KUGA 2')
-Model.create(make: make, name: 'MONDEO')
-Model.create(make: make, name: 'MONDEO 2')
-Model.create(make: make, name: 'MONDEO 3')
-Model.create(make: make, name: 'MONDEO 4')
-Model.create(make: make, name: 'TRANSIT')
+model_ecu = ModelEcu.find_by(name: 'AcDelco E99')
+  acdelco_ecus = ['xxx']
+acdelco_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'GEELE')
-Model.create(make: make, name: 'TUGELLA')
-Model.create(make: make, name: 'ATLAS')
-Model.create(make: make, name: 'COOLRAY')
-Model.create(make: make, name: 'EMGRAND')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT05')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'GREAT WALL')
-Model.create(make: make, name: 'HOVER H2')
-Model.create(make: make, name: 'HOVER H3')
-Model.create(make: make, name: 'HOVER H4')
-Model.create(make: make, name: 'HOVER H5')
-Model.create(make: make, name: 'SAFE')
-Model.create(make: make, name: 'POER')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT20U')
+  model_ecus = ['CZFL', 'MADO', 'MAEU', 'MAFG_36120100_40001377_028063065', 'MAGW', 'MAGR',
+    'PBKL_SMW250765_28152571_28230766', 'PBSS_SMW250765_28309319_28322173', 'PBPG_SMW250765_28152571_28292691',
+    'PBRH_SMW250974_28309319_28320584', 'CZFL_013770_09368529_2G3504', 'MAFJ',
+    'CZFL_013770_09368529_W90D7X', 'MAFN', 'MAEC_64013770_28040177', 'CZFL_1LF211', 'LF481_MAJH', 'LF479Q1_MAJK']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'HAVAL')
-Model.create(make: make, name: 'JOLION')
-Model.create(make: make, name: 'DARGO')
-Model.create(make: make, name: 'H2')
-Model.create(make: make, name: 'H6')
-Model.create(make: make, name: 'H8')
-Model.create(make: make, name: 'COUPE C')
-Model.create(make: make, name: 'F7')
-Model.create(make: make, name: 'H9')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT20U2')
+  model_ecus = ['PBJA_SMW251166_28152571_28221222', 'PBSR_SMW251166_28309319_28322176', 
+    'РВРЕ_SMW251166_28152571_28292559', 'GW_Cowry_4G64_MADO_P5V82A', 'PAGP_28114750_28197344_P5V82A',
+    'MADO', 'PAGZ', 'MAСВ', 'GW_Safe_UE20P031', 'PAFM', 'GW_Safe_UE20P050', 'GW_Sailor_UE20P050',
+    'PAFN', 'PAAT']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'HONDA')
-Model.create(make: make, name: 'ACCORD')
-Model.create(make: make, name: 'CRV')
-Model.create(make: make, name: 'HRV')
-Model.create(make: make, name: 'PILOT')
-Model.create(make: make, name: 'CIVIC')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT22.5')
+  model_ecus = ['28039847_B6001807_22p1Eg46p1', '28039847_B6202901_22p1Eg46p7', 
+    '28039847_B6001807_22p1Eg46p5', '28039847_B6002033_22p1Eg46p6', 'BAFP (BAFC)_28039847_B6001597_22p1Eg45p4',
+    '28480175_28603185_313756730']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'HYUNDAI')
-Model.create(make: make, name: 'ACCENT')
-Model.create(make: make, name: 'GETZ')
-Model.create(make: make, name: 'I10')
-Model.create(make: make, name: 'I20')
-Model.create(make: make, name: 'I30')
-Model.create(make: make, name: 'I40')
-Model.create(make: make, name: 'AURA')
-Model.create(make: make, name: 'CELESTA')
-Model.create(make: make, name: 'ELANTRA')
-Model.create(make: make, name: 'GRANDEUR')
-Model.create(make: make, name: 'HB20')
-Model.create(make: make, name: 'SOLARIS')
-Model.create(make: make, name: 'IONIQ')
-Model.create(make: make, name: 'SONATA')
-Model.create(make: make, name: 'XCENT')
-Model.create(make: make, name: 'CRETA')
-Model.create(make: make, name: 'TUCSON')
-Model.create(make: make, name: 'IX35')
-Model.create(make: make, name: 'KONA')
-Model.create(make: make, name: 'PALISADE')
-Model.create(make: make, name: 'SANTA FE')
-Model.create(make: make, name: 'VENUE')
-Model.create(make: make, name: 'STAREX')
-Model.create(make: make, name: 'VELOSTER')
-Model.create(make: make, name: 'GENESIS')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT22.x')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'INFINITI')
-Model.create(make: make, name: 'Q30')
-Model.create(make: make, name: 'Q50')
-Model.create(make: make, name: 'Q60')
-Model.create(make: make, name: 'Q70')
-Model.create(make: make, name: 'QX30')
-Model.create(make: make, name: 'QX50')
-Model.create(make: make, name: 'QX55')
-Model.create(make: make, name: 'QX60')
-Model.create(make: make, name: 'QX70')
-Model.create(make: make, name: 'QX80')
-Model.create(make: make, name: 'G25')
-Model.create(make: make, name: 'ESQ')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT22.1')
+  model_ecus = ['BACE_28039847_B6000452_22p1Eg43p2', 'BAEY_28039847_B6000452_22p1Eg43p4', 
+    'BADX_28039847_B600167_22p1Eg46p9', 'BACD_B6000558_28039847_22p1Eg453f', 
+    'BACD_B60010515_ 28039847_22p1Eg44p6', 'BACD_B60010512_28039847_22p1Eg44p6',
+    'BADL_B6000558_28039847_22p1Eg43p4', 'BACD_28039847_28044006_22p1Eg43p4', 'BAFP_28039847_B6000772_22p1Eg43p4',
+    'BACD_28039847_B6000773_22p1Eg44p4', 'BACD_28039847_B6000773_22p1Eg45p2', 'B6001032_28039847_22p1Eg43p4',
+    'BACD_28044006_28039847_22p1Eg43p4', 'BACD_28044006_28039847_22p1Eg43p3', 'BAFP_B60000576_28039847_22p1Eg43p4']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'JAGUAR')
-Model.create(make: make, name: 'XF 3.0')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT34')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'KIA')
-Model.create(make: make, name: 'RIO')
-Model.create(make: make, name: 'CEED')
-Model.create(make: make, name: 'SPORTAGE')
-Model.create(make: make, name: 'SORENTO')
-Model.create(make: make, name: 'CERATO')
-Model.create(make: make, name: 'PICANTO')
-Model.create(make: make, name: 'FORTE')
-Model.create(make: make, name: 'OPTIMA')
-Model.create(make: make, name: 'MOHAVE')
-Model.create(make: make, name: 'SOUL')
-Model.create(make: make, name: 'K4')
-Model.create(make: make, name: 'K5')
-Model.create(make: make, name: 'K7')
-Model.create(make: make, name: 'K8')
-Model.create(make: make, name: 'K9')
-Model.create(make: make, name: 'PEGAS')
-Model.create(make: make, name: 'NIRO')
-Model.create(make: make, name: 'SELTOS')
-Model.create(make: make, name: 'CARENS')
-Model.create(make: make, name: 'CARNIVAL')
-Model.create(make: make, name: 'KX5')
-Model.create(make: make, name: 'EV6')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT34 China')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'LEXUS')
-Model.create(make: make, name: 'CT')
-Model.create(make: make, name: 'IS')
-Model.create(make: make, name: 'ES')
-Model.create(make: make, name: 'LS')
-Model.create(make: make, name: 'LC')
-Model.create(make: make, name: 'RC')
-Model.create(make: make, name: 'UX')
-Model.create(make: make, name: 'NX')
-Model.create(make: make, name: 'RX')
-Model.create(make: make, name: 'RZ')
-Model.create(make: make, name: 'GX')
-Model.create(make: make, name: 'RX')
-Model.create(make: make, name: 'RM')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT35E')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'LIFAN')
-Model.create(make: make, name: 'SOLANO')
-Model.create(make: make, name: 'X50')
-Model.create(make: make, name: 'X60')
-Model.create(make: make, name: 'X70')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT60')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'MAZDA')
-Model.create(make: make, name: 'MAZDA 2')
-Model.create(make: make, name: 'MAZDA 3')
-Model.create(make: make, name: 'MAZDA 5')
-Model.create(make: make, name: 'MAZDA 6')
-Model.create(make: make, name: 'MAZDA CX3')
-Model.create(make: make, name: 'MAZDA CX5')
-Model.create(make: make, name: 'MAZDA CX7')
-Model.create(make: make, name: 'MAZDA CX8')
-Model.create(make: make, name: 'MAZDA CX9')
-Model.create(make: make, name: 'MAZDA BT50')
-Model.create(make: make, name: 'MAZDA MX30')
-Model.create(make: make, name: 'MAZDA MX5')
-Model.create(make: make, name: 'MAZDA CX60')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT74')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'MERCEDES-BENZ')
-Model.create(make: make, name: 'GLK')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT74.5')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'MITSUBISHI')
-Model.create(make: make, name: 'LANCER 9')
-Model.create(make: make, name: 'LANCER 10')
-Model.create(make: make, name: 'ASX')
-Model.create(make: make, name: 'OUTLANDER')
-Model.create(make: make, name: 'PAJERO')
-Model.create(make: make, name: 'PAJERO SPORT')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT80')
+  model_ecus = ['AADE_B6000511_28164665_28350398_8mg10p3p40', 'AADX_B6000981_28164665_28385688_8mg10p3p41',
+    'AADN_B6000981_28164665_28385688_8mg10p3p41', 'AADX_B6000981_28390205_28385688_8mg10p3p41',
+    'AADX_B6000511_28164665_28350398_8mg10p3p40', 'AAFE_B6000981_28390205_28385688_8mg10p3p41']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'NISSAN')
-Model.create(make: make, name: 'ALMERA')
-Model.create(make: make, name: 'ALMERA CLASSIC')
-Model.create(make: make, name: 'NOTE')
-Model.create(make: make, name: 'TIIDA')
-Model.create(make: make, name: 'JUKE')
-Model.create(make: make, name: 'MURANO')
-Model.create(make: make, name: 'PATHFINDER')
-Model.create(make: make, name: 'QASHQAI')
-Model.create(make: make, name: 'X-TRAL')
-Model.create(make: make, name: 'TERRANO')
-Model.create(make: make, name: 'LEAF')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT86')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'OPEL')
-Model.create(make: make, name: 'ASTRA G')
-Model.create(make: make, name: 'ASTRA H')
-Model.create(make: make, name: 'ASTRA J')
-Model.create(make: make, name: 'ANTARA')
-Model.create(make: make, name: 'MERIVA')
-Model.create(make: make, name: 'CORSA')
-Model.create(make: make, name: 'ISIGNIA')
-Model.create(make: make, name: 'MOKKA')
-Model.create(make: make, name: 'VECTRA')
-Model.create(make: make, name: 'ZAFIRA')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT92')
+  model_ecus = ['B6207102_28550084_A4TLAP3p30', 'BAKW_B6001354_0939AMR3GW013543',
+    'BAKW_B6001354_0939AMF7GW013541', 'B6000653A_0618AMS4G0150430', 'B62069012_28545004_A4TLAP3p20',
+    'BAKW_B6001218_0871AMR0G1160422', 'BAKW_B6001218_0871AMF1G114111188',
+    'EAAD_2835188514_B6001218A_0871AMF2G1150430', 'BAKW_B6001218_0871AMF7G1160206']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'PEUGEOT')
-Model.create(make: make, name: '107')
-Model.create(make: make, name: '1007')
-Model.create(make: make, name: '108')
-Model.create(make: make, name: '206')
-Model.create(make: make, name: '207')
-Model.create(make: make, name: '208')
-Model.create(make: make, name: '2008')
-Model.create(make: make, name: '301')
-Model.create(make: make, name: '308')
-Model.create(make: make, name: '3008')
-Model.create(make: make, name: '307')
-Model.create(make: make, name: '407')
-Model.create(make: make, name: '408')
-Model.create(make: make, name: '4008')
-Model.create(make: make, name: 'PARTNER')
-Model.create(make: make, name: 'EXPERT')
-Model.create(make: make, name: 'BOXER')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT92 Great Wall')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'RAVON')
-Model.create(make: make, name: 'R2')
-Model.create(make: make, name: 'R3')
-Model.create(make: make, name: 'R4')
+model_ecu = ModelEcu.find_by(name: 'Delphi MT92 Great Wall')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'RENAULT')
-Model.create(make: make, name: 'ARKANA')
-Model.create(make: make, name: 'LOGAN')
-Model.create(make: make, name: 'MEGAN')
-Model.create(make: make, name: 'DUSTER')
-Model.create(make: make, name: 'SANDERO')
-Model.create(make: make, name: 'FLUENS')
-Model.create(make: make, name: 'SCENIC')
-Model.create(make: make, name: 'SIMBOL')
-Model.create(make: make, name: 'CLIO')
-Model.create(make: make, name: 'KAPTUR')
-Model.create(make: make, name: 'CALEOS')
-Model.create(make: make, name: 'LAGUNA')
-Model.create(make: make, name: 'KANGOO')
+model_ecu = ModelEcu.find_by(name: 'Delphi MR140_HV240 Ext')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'ROVER')
-Model.create(make: make, name: 'DISCAVERY')
-Model.create(make: make, name: 'FREELANDER')
-Model.create(make: make, name: 'RANGE ROVER')
-Model.create(make: make, name: 'EVOQUE')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM3.7 GreatWall')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'SKODA')
-Model.create(make: make, name: 'FABIA')
-Model.create(make: make, name: 'KAROQ')
-Model.create(make: make, name: 'OKTAVIA')
-Model.create(make: make, name: 'RAPID')
-Model.create(make: make, name: 'SUPERB')
-Model.create(make: make, name: 'SCALA')
-Model.create(make: make, name: 'KODIAQ')
-Model.create(make: make, name: 'YETI')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM3.7 GM')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'SSANGYONG')
-Model.create(make: make, name: 'ACTYON')
-Model.create(make: make, name: 'KYRON')
-Model.create(make: make, name: 'REXTON')
-Model.create(make: make, name: 'RODIUS')
-Model.create(make: make, name: 'SIV EV')
-Model.create(make: make, name: 'XLV')
-Model.create(make: make, name: 'TIVOLI')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM3.7 SsangYong')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'SUZUKI')
-Model.create(make: make, name: 'GRAND VITARA')
-Model.create(make: make, name: 'IGNIS')
-Model.create(make: make, name: 'LIANA')
-Model.create(make: make, name: 'SWIFT')
-Model.create(make: make, name: 'SX4')
-Model.create(make: make, name: 'VITARA')
-Model.create(make: make, name: 'XL7')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM3.7 Hyundai_Kia')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'TOYOTA')
-Model.create(make: make, name: 'AURIS')
-Model.create(make: make, name: 'AVENSIS')
-Model.create(make: make, name: 'AVALON')
-Model.create(make: make, name: 'CAMRY')
-Model.create(make: make, name: 'LAND CRUISER')
-Model.create(make: make, name: 'LAND CRUISER PRADO')
-Model.create(make: make, name: 'HIGHLANDER')
-Model.create(make: make, name: 'COROLLA')
-Model.create(make: make, name: 'RAV4')
-Model.create(make: make, name: 'PRIUS')
-Model.create(make: make, name: 'YARIS')
-Model.create(make: make, name: 'VENZA')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM3.7 VAG')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'VOLKSWAGEN')
-Model.create(make: make, name: 'AMAROK')
-Model.create(make: make, name: 'ATLAS')
-Model.create(make: make, name: 'PASSAT')
-Model.create(make: make, name: 'POLO')
-Model.create(make: make, name: 'JETTA')
-Model.create(make: make, name: 'CADDY')
-Model.create(make: make, name: 'PASSAT CC')
-Model.create(make: make, name: 'ID.3')
-Model.create(make: make, name: 'ID.4')
-Model.create(make: make, name: 'GOLF PLUS')
-Model.create(make: make, name: 'GOLF R')
+model_ecu = ModelEcu.find_by(name: 'Delphi DCM6.2 PSA')
+  model_ecus = ['xxx']
+model_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
 
-make = Make.create(name: 'VOLVO')
-Model.create(make: make, name: 'C30')
-Model.create(make: make, name: 'S40')
-Model.create(make: make, name: 'V40')
-Model.create(make: make, name: 'XC40')
-Model.create(make: make, name: 'V50')
-Model.create(make: make, name: 'S60')
-Model.create(make: make, name: 'V60')
-Model.create(make: make, name: 'XC60')
-Model.create(make: make, name: 'C70')
-Model.create(make: make, name: 'V70')
-Model.create(make: make, name: 'XC70')
-Model.create(make: make, name: 'S80')
-Model.create(make: make, name: 'S90')
-Model.create(make: make, name: 'V90')
-Model.create(make: make, name: 'XC90')
+brand_ecu = BrandEcu.create(name: 'Bosch')
+ model_ecus = ['Bosch ME17', 'Bosch ME17.8.8', 'Bosch ME17.8.8.1', 'Bosch ME17.9.x', 'Bosch ME7.1',
+  'Bosch ME7.1.x', 'Bosch ME7.4.4', 'Bosch ME7.4.5', 'Bosch ME7.5', 'Bosch ME7.5.1', 'Bosch ME7.6.x',
+  'Bosch ME7.8.8', 'Bosch ME7.9.7', 'Bosch ME7.9.7.1', 'Bosch ME7.9.8', 'Bosch ME7.9.9', 'Bosch ME7.9.10',
+  'Bosch ME7.9.11', 'Bosch MED7.1', 'Bosch MED7.5', 'Bosch MED17.8.10', 'Bosch MEDC17', 'Bosch ME9.x',
+  'Bosch M1.5.4', 'Bosch M7.8 (7.0)', 'Bosch M7.9.7+', 'Bosch MG1US008 (Bosch_MG1UA008)', 'Bosch_МЕ17U6',
+  'EDC15C2', 'EDC15C7', 'EDC15M', 'EDC16C3', 'EDC16C31', 'EDC16C34', 'EDC16C35', 'EDC16C39', 'EDC16C8',
+  'EDC16CP', 'EDC16U1', 'EDC16U31', 'EDC16U34', 'EDC16U5', 'EDC16U7', 'EDC16U71', 'EDC16U8', 'EDC17C06',
+  'EDC17C08', 'EDC17C10', 'EDC17C11', 'EDC17C14', 'EDC17C42', 'EDC17C46', 'EDC17C53', 'EDC17C54', 'EDC17C64',
+  'EDC17C69', 'EDC17C74', 'EDC17C76', 'EDC17C84', 'EDC17CP02', 'EDC17CP09', 'EDC17CP14', 'EDC17CP20',
+  'EDC17CP44', 'EDC17CP45', 'EDC17CP46', 'EDC17CP54', 'EDC17CP57', 'EDC17CP65', 'EMS2000', 'EMS3132', 'EMS3134'
+ ]
+model_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
+  
+  model_ecu = ModelEcu.find_by(name: 'ME7.1.x')
+    bosch_ecus = ['066906032AD_0261207373_362524', '066906032BA_0261207644_363039']
+  bosch_ecus.each do |ecu|
+    SoftEcu.create(model_ecu: model_ecu, name: ecu)
+  end
+
+  model_ecu = ModelEcu.find_by(name: "ME7.4.4")
+    bosch_ecus = ['xxx']
+  bosch_ecus.each do |ecu|
+    SoftEcu.create(model_ecu: model_ecu, name: ecu)
+  end
+
+model_ecu = ModelEcu.find_by(name: 'Bosch ME17.8.8')
+  bosch_ecus = ['F01R00DG36_F01R0ADF11_LF479Q', 'F01R00DY76_F01R00DC44_LF479Q',
+    'F01R00DG36_F01R0ADS89_LF479Q', 'F01R00DY76_F01R0ADH46_LF479Q', 'F01R00DU85_F01R00DS97_LF479Q',
+    'F01R00DY76_F01R0SDH46_LF479Q', 'F01R00DU85_F01R00DY76_LF479Q', 'F01R00DG35_F01R00DCC4_LF479Q',
+    'F01R00DP24_F01R0ADS44_LF479Q', 'F01R00DG36_F01R00DP24_LF479Q', 'F01R00DS50_F01R00DCC4_LF479Q',
+    'F01R00DG37_F01R00DCC4_LF479Q', 'F01R00DV96_F01R00DP24', 'F01R00DG37_F01R00DP24_LF479Q',
+    'F01R0ADT27_F01R00DCC4_LF479Q', 'F01R00DU85_F01R00DBZ6_LF479Q', 'F01R00DU86_F01R0ADG88_LF479Q',
+    'F01R00DS50_F01R0ADG39_LF479Q', 'F01R00DG35_F01R0ADF12_LF479Q']
+bosch_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+
+model_ecu = ModelEcu.find_by(name: 'Bosch ME17.8.8')
+  soft_ecus = ['F01R0ADS94_F01R00DP46', 'F01R00DES1_F01R00DBN_LFB479_AKPP St-St',
+    'F01R00DES1_F01R00DBN_LFB479_MKPP St-St', 'F01R00DES1_F01R00DBN_LFB479_MKPP', 'F01R0ADA2P_F01R00DEL8_LF479Q',
+    'F01R0ADU68_F01R00DES17_LFB479', 'F01R00DES1_SAC3612100B1_US1615A100', 'US1B15A383_US1B15A302_F01R00DC2Y',
+    'F01R00DES1_SAC3612100B1_US1B15A200']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+
+brand_ecu = BrandEcu.create(name: 'Continental')
+  continental_ecus = ['SIM2K-140', 'SIM2K-141', 'SIM2K-160', 'SIM2K-161', 'SIM2K-163', 
+    'SIM2K-250', 'SIM2K-251', 'SIM2K-253', 'SIM2K-254', 'SIM2K-260', 'SIM2K-261', 'SIM2K-263',
+    'SIM2K-341', 'SIM2K-342', 'SIM2K-343']
+continental_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
+
+brand_ecu = BrandEcu.create(name: 'Siemens')
+  model_ecus = ['Sirius 32N', 'Sirius D32 D42', 'Siemens EMS 3120', 'Siemens EMS 3125', 'Siemens EMS 3132',
+    'Siemens EMS 3134']
+model_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
+
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3132')
+  soft_ecus = ['xxx']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3120')
+  soft_ecus = ['xxx']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3125')
+soft_ecus = ['xxx']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+
+
+  brand_ecu = BrandEcu.create(name: 'Denso')
+    denso_ecus = ['Toyota-Denso', 'Bosch']
+      denso_ecus.each do |ecu|
+        ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+      end
+        model_ecu = ModelEcu.find_by(name: 'Toyota-Denso')
+          toyota_denso_ecus = [
+            '89663-02443', '89663-05784', '89663-02445', '89663-05794', '89663-02454'
+                              ]
+      toyota_denso_ecus.each do |ecu|
+        SoftEcu.create(model_ecu: model_ecu, name: ecu)
+      end
+      brand_ecu = ModelEcu.find_by(name: 'Bosch')
+            model_ecus = [
+                    '0261201209_383989', '0261201371_383990', '0261207411_363961', '0261207547_363962',
+                    '0261207547_366703', '0261208518_374635', '0261208519_370344', '0261208519_391634',
+                    '0261206882_360761', '0261206882_362415', '0261206882_366700', '1037371949',
+                    '1037377212', '1037371950', '1037391927', '1037372707', '1037396136', '1037372708',
+                    '1037400446', '1037377211', '1037400178', '1037516709', '1037506368', '1037519525',
+                    '1037516299', '1037530848', '1037516700', '1037536723'             
+                          ]
+      model_ecus.each do |ecu|
+        SoftEcu.create(model_ecu: model_ecu, name: ecu)
+      end
+
+brand_ecu = BrandEcu.create(name: 'Magneti Marelli')
+  model_ecus = ['Marelli IAW5SF',   ]
+model_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
+
+brand_ecu = BrandEcu.create(name: 'ВАЗ (Lada)')
+  model_ecus = ['Bosch M(E)17.9.7 DBL', 'Bosch M(E)17.9.7 ВАЗ', 'Bosch M(E)17.9.71 DBL',
+    'Bosch M(E)17.9.71 ВАЗ', 'Bosch M7.9.7_M7.9.7+', 'Bosch MP7.0H', 'Siemens EMS 3120',
+    'Siemens EMS 3125', 'Siemens EMS 3132', 'VS5.1.x', 'M73', 'M74 (74.5)', 'M74М', 'M75',
+    'М86 CNG', 'М86 ПО ВАЗ', 'М86 ПО Ителма', 'Я5.1.(х)', 'Я72', 'Я72+', 'ИТЭЛМА M74.9']
+model_ecus.each do |ecu|
+  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Bosch M(E)17.9.7 ВАЗ')
+  soft_ecus = ['1037514537_В575СB03', '1037521405_B574CD03', '1037521254_B574DD04', 
+    '10SW004677_B515HJ04', '10SW056185_B515HL07', '1037513953_B574CB02', '1037513954_B574DB03',
+    '1037514437_B563CA01', '1037514513_B514HC04', '1037514532_B515HC02', '1037518465_B564CA02',
+    '1037523015_B564CD04', '1037523118_B514HD06', '1037524866_B574DD02', '1037524868_B575DD02',
+    '1037531259_B574DF02', '1037535690_B574DH04', '1037542732_B574DH05', '1037550113_B514HD07',
+    'B514HD07', 'B515HC02', 'B515HJ04', 'B563CA01_1037514437', 'B564CA02_1037518465', 'B564CD04',
+    'B564CD04_1037523015', 'B574CB02_1037513953', 'B574CD03', 'B574DD04', 'B574DF02', 'B575CB03',
+    'B575DB03', 'B575DD02']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Bosch M(E)17.9.71 ВАЗ')
+  soft_ecus = ['10SW003177_2123B4724S', '10SW009231_2123B4745S', '10SW013407_20170202_193652',
+    '10SW020364_103903', '10SW047106', '10SW059965']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Bosch M7.9.7_M7.9.7+')
+  soft_ecus = ['10SW003177_2123B4724S', '10SW009231_2123B4745S', '10SW013407_20170202_193652',
+    '10SW020364_103903', '10SW047106', '10SW059965', 'B102CR06', 'B102CQ05', 'B103CU03', 'B103EQ09',
+    'B103ER12', 'B104CR02', 'B104DP16', 'B104DR17', 'B105DP09', 'B105DR10', 'B109DR02', 'B114ER18',
+    'B119DR02', 'B120ER19', 'B121EN16', 'B122HR91', 'B126ER02', 'B13KSS02', 'B173DR01', 'B174CT04',
+    'B174DR03', 'B174DT05', 'B174DT07', 'b174dr04', 'B1C02Q05', '22YC041S', '22YB072S', '3Т1806'
+  ]
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Bosch MP7.0H')
+  soft_ecus = ['M7D02T29', 'M7D02T33', 'M7D22T29', 'M7D22T33', 'M7F03T10', 'M7F03T10-50', 'M7F08T10-50',
+    'M7F23T10', 'M7F23T10-50', 'M7F28T10-50']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3120')
+  soft_ecus = ['T90047_10338089AA', 'T90067_10338685AA', 'T90048_10338094AA']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3125')
+  soft_ecus = ['H6259S_10421586AA', 'D4223S_10410860AA', 'D8604R_37108604_10340251AA', 'D6852R_10340256AA',
+    'D8765R_37108765_10343230AA']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3132')
+  soft_ecus = ['LARGUS_ 1.6L 8V_RE045045_8201261286', 'LARGUS_1.6L 16V_RE045045_8201474331', 
+    'LARGUS_ 1.6L 8V_RE045045_8201264017', 'LARGUS_1.6L_16V_RE045045_8201474326',
+    'LARGUS_1.6L 16V_RE045045_8201264666', 'LARGUS_1.6L_8V_RE045045_8201264021']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+end
+model_ecu = ModelEcu.find_by(name: 'VS5.1.x')
+  soft_ecus = ['2104 1411020-02 V5R06T52-02', '2104 1411020-02 V5R16T52-02', '2111 1411020-72 V5F03T10-62',
+    '2111 1411020-72 V5F13T10-62', '2111 1411020-72 V5F13T10-72', '2112 1411020-42 V5F05T10-42',
+    '2112 1411020-42 V5F15T10-42']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'M73')
+  soft_ecus = ['11194 1411020-01(02) A(I)373xxx_0848', '21124 1411020-11(12) A(I)308ххх_0800',
+    '21067 1411020-21(22) A(I)327RD08', '21114-1411020-11(12)_0799 A317DFL07',
+    '21114-1411020-11(12)_0848 A317DFL07', '21126 1411020-31(32) A(I)308ххх_0800',
+    '21128 1411020-11 A3028ххх_0799', '21114 1411020-41(42) A(I)303CE05', '21114 1411020-41(42) A(I)303CF06']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end
+model_ecu = ModelEcu.find_by(name: 'M74 (74.5)')
+  soft_ecus = ['21067 1411020-32', '21067 1411020-47', 'Granta 11183 1411020-62', 'Granta 11186 1411020-12',
+    'Granta_Datsun 11186 1411020-06', 'Granta_Datsun 11186 1411020-08', 'Granta_Datsun 11186 1411020-22',
+    'Granta_Datsun 11186 1411020-23', 'Granta_Datsun 11186 1411020-43', 'Granta_Datsun 11186 1411020-46',
+    'Granta_Datsun 11186 1411020-47', 'Granta_Datsun 11186 1411020-48', 'Granta_Datsun 11186 1411020-49',
+    'Granta_Datsun 11186 1411020-50', 'Granta_Datsun 11186 1411020-90', 'Granta_Datsun 21126 1411020-08',
+    'Granta_Datsun 21126 1411020-13', 'Granta_Datsun 21126 1411020-67', 'Granta_Datsun 21126 1411020-90',
+    'Granta_Datsun 21127 1411020-38', 'Granta_Datsun 21127 1411020-39', 'Granta_Datsun 21127 1411020-44',
+    'Granta_Datsun 21127 1411020-46', 'Granta_Datsun 21127 1411020-54', 'Granta_Datsun 21127 1411020-58',
+    'Granta_Datsun 21127 1411020-63', 'Granta_Datsun 21127 1411020-90', 'Kalina 11183 1411020-52',
+    'Kalina 2 21127 1411020-22', 'Kalina 2, Priora 21127 1411020-12', 'Priora 21116 1411020-12',
+    'Priora 21116 1411020-22', 'Priora 21116 1411020-50', 'Priora 21128 1411020-12',
+    'Priora_Datsun 21127 1411020-46', 'Priora_Datsun 21127 1411020-90', 'Samara 11183 1411020-02',
+    'Granta Sport 21126 1411020-77']
+soft_ecus.each do |ecu|
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
+end

@@ -3,17 +3,17 @@ class ModelEcusController < ApplicationController
 
   # GET /model_ecus or /model_ecus.json
   def index
-   # @model_ecus = ModelEcu.all
-  
-    @model_ecus = ModelEcu.where(brand_ecu_id: params[:brand_ecu_id])
+      @model_ecus = ModelEcu.all
+
+      @model_ecus = ModelEcu.where(brand_ecu_id: params[:brand_ecu_id])
       respond_to do |format|
+        format.html # index.html.erb
         format.json { render json: @model_ecus }
       end
   end
 
   # GET /model_ecus/1 or /model_ecus/1.json
-  def show
-  end
+  def show; end
 
   # GET /model_ecus/new
   def new
@@ -21,8 +21,7 @@ class ModelEcusController < ApplicationController
   end
 
   # GET /model_ecus/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /model_ecus or /model_ecus.json
   def create

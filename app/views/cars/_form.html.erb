@@ -1,35 +1,10 @@
 <%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
+
   <div class="columns mb-6">
-
-          <div class="column">
-            <div class="field">
-              <%= form.label :brand_ecu_id %>
-                <div class="control">
-                  <%= form.collection_select(:brand_ecu_id, 
-                                              BrandEcu.all,
-                                              :id, 
-                                              :name, { prompt: 'Select', selected: @car.brand_ecu_id}, 
-                                              { data: { source: 'brand_ecus' }}) %>
-                </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="field">
-              <%= form.label :model_ecu_id %>
-                <div class="control">
-                  <%= form.collection_select(:model_ecu_id,
-                                              @car.brand_ecu&.model_ecus || [],
-                                              :id, 
-                                              :name, { prompt: 'Select', selected: @car.model_ecu_id }, 
-                                              { data: { parent_id: 'car_brand_ecu_id', source: 'model_ecus', }}) %>
-                </div>
-            </div>
-          </div>
 
     <div class="column">
       <div class="field">
-        <%= form.label :make_id  %>
+        <%= form.label :make_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:make_id, 
                                      Make.all, 
@@ -42,7 +17,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :model_id  %>
+        <%= form.label :model_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:model_id, 
                                      @car.make&.models || [], 
@@ -55,7 +30,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :works, 'Вид работ' %>
+        <%= form.label :works, 'Вид работ', style: "color: blue" %>
           <div class="control">
             <%= form.select :works, ["Diagnose", "Programm", "Mileage_km", "Airbag"] %>
           </div>
@@ -64,20 +39,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :ЭБУ  %>
-        <div class="control">
-          <%= form.collection_select(:ecm_id,
-                                     Ecm.all, 
-                                     :id,
-                                     :name, { prompt: 'Select', selected: @car.ecm_id },
-                                     { data: { source: 'ecm' }}) %>      
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="field">
-        <%= form.label :Клиент  %>
+        <%= form.label :Клиент, style: "color: blue"  %>
         <div class="control">
           <%= form.collection_select(:client_id, 
                                      Client.all.order(created_at: :desc), 
@@ -88,13 +50,53 @@
       </div>
     </div>
   </div>
+ 
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <%= form.label :brand_ecu_id, style: "color: blue" %>
+                <div class="control">
+                  <%= form.collection_select(:brand_ecu_id, 
+                                              BrandEcu.all,
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.brand_ecu_id}, 
+                                              { data: { source: 'brand_ecus' }}) %>
+                </div>
+            </div>
+          </div>
 
+          <div class="column">
+            <div class="field">
+              <%= form.label :model_ecu_id, style: "color: blue" %>
+                <div class="control">
+                  <%= form.collection_select(:model_ecu_id,
+                                              @car.brand_ecu&.model_ecus || [],
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.model_ecu_id }, 
+                                              { data: { parent_id: 'car_brand_ecu_id', source: 'model_ecus', }}) %>
+                </div>
+            </div>
+          </div>
+
+         <div class="column">
+            <div class="field">
+              <%= form.label :soft_ecu_id, style: "color: blue" %>
+                <div class="control">
+                  <%= form.collection_select(:soft_ecu_id,
+                                              @car.model_ecu&.soft_ecus || [],
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.soft_ecu_id }, 
+                                              { data: { parent_id: 'car_model_ecu_id', source: 'soft_ecus', }}) %>
+                </div>
+            </div>
+          </div>
+        </div>
 
     <div class="columns">
 
       <div class="column">
         <div class="field">
-          <%= form.label :mileage, 'Пробег в км' %>
+          <%= form.label :mileage, 'Пробег в км', style: "color: blue" %>
           <div class="control">
             <%= form.text_field :mileage, class: "form-control" %>
           </div>
@@ -103,7 +105,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :vin, 'Вин номер' %>
+        <%= form.label :vin, 'Вин номер', style: "color: blue" %>
         <div class="control">
           <%= form.text_field :vin, class: "form-control" %>
         </div>
@@ -121,4 +123,3 @@
     </div>
   </div>
 <% end %>
-

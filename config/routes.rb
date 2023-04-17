@@ -11,10 +11,8 @@ Rails.application.routes.draw do
  
   resources :cars
     
-  get 'ecms', to: 'ecms#new'
   get 'models', to: 'models#new'
   resources :tasks   
-  resources :ecms, only: %i[new create] 
   resources :models, only: %i[new create edit update]
   resources :users, only: %i[index show edit new create update]
   
@@ -43,8 +41,9 @@ Rails.application.routes.draw do
    get 'static_pages', to: 'static_pages#index'
 
   resources :brand_ecus
-  resources :model_ecus, only: [:index]
-
+  resources :model_ecus
+  resources :soft_ecus
   get '/brand_ecus/:brand_ecu_id/model_ecus', to: 'model_ecus#index'
+  get '/model_ecus/:model_ecu_id/soft_ecus', to: 'soft_ecus#index'
 
 end

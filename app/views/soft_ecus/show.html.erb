@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @soft_ecu %>
+
+<div>
+  <%= link_to "Edit this soft ecu", edit_soft_ecu_path(@soft_ecu) %> |
+  <%= link_to "Back to soft ecus", soft_ecus_path %>
+
+  <%= button_to "Destroy this soft ecu", @soft_ecu, method: :delete %>
+</div>

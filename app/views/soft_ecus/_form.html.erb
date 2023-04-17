@@ -1,0 +1,28 @@
+<%= form_with(model: soft_ecu) do |form| %>
+  <% if soft_ecu.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(soft_ecu.errors.count, "error") %> prohibited this soft_ecu from being saved:</h2>
+
+      <ul>
+        <% soft_ecu.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Версия_софта_ЭБУ, style: "color: purple; display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+  <%= form.label :Идентификатор_модели_ЭБУ, style: "color: purple; display: block;" %>
+  <%= form.text_field :model_ecu_id %>
+</div>
+
+<br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

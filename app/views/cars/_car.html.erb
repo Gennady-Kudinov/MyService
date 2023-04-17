@@ -7,9 +7,9 @@
       <th>Модель</th>
       <th>Пробег а/м</th>
       <th>Вин номер а/м</th>
-      <th>ECM ЭБУ</th>
       <th>Производитель ЭБУ</th>
       <th>Марка ЭБУ</th>
+      <th>Версия софта ЭБУ</th>
       <th>Клиент</th>
     </tr> 
   </thead>
@@ -20,9 +20,9 @@
       <td><%= car.model.name %></td>
       <td><%= car.mileage %></td>
       <td><%= car.vin %> </td>
-      <td> <%= sanitize(car.ecm.name) if car.ecm.present? %></td>
       <td> <%= sanitize(car.brand_ecu.name) if car.brand_ecu.present? %></td>
       <td> <%= sanitize(car.model_ecu.name) if car.model_ecu.present? %></td>
+      <td> <%= sanitize(car.soft_ecu.name) if car.soft_ecu.present? %></td>
       <td> <%= car.client.id if car.client.present?   %> </td>
     </tr>
   </tbody>

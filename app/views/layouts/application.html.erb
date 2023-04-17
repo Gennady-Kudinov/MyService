@@ -11,6 +11,17 @@
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'cars' %>
 
+<script type="text/javascript">
+    (function() {
+          var burger = document.querySelector('.burger');
+          var menu = document.querySelector('#'+burger.dataset.target);
+          burger.addEventListener('click', function() {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+              });
+        })();
+  </script>
+
   </head>
 
   <body> 
@@ -21,15 +32,6 @@
       </div>
   </body>
 
-   <script type="text/javascript">
-    (function() {
-          var burger = document.querySelector('.burger');
-          var menu = document.querySelector('#'+burger.dataset.target);
-          burger.addEventListener('click', function() {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-              });
-        })();
-  </script>
+
 
 </html>

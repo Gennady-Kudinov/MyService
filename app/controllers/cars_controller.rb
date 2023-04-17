@@ -3,7 +3,6 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, :check_user_admin!  
 
   def index
-   # @cars = Car.all.order(created_at: :desc)
     @cars = Car.where(['vin LIKE ?', "%#{params[:search]}%"]).
     order(created_at: :desc).first(5)
   end
@@ -20,6 +19,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+   # @car.soft_ecu_id = params[:soft_ecu_id]
     respond_to do |format|
       if @car.save
       
@@ -29,12 +29,12 @@ class CarsController < ApplicationController
         when 'Diagnose'
           puts 'method1'
         when 'Programm'
-          puts folder_create
+          puts programm_create
         when 'Mileage_km'
           puts mileage_create
         when 'Airbag'
           puts @airbag_create
-        end 
+        end
 
         format.html { redirect_to car_url(@car), notice: "Car was successfully created." }
         format.json { render :new, status: :created, location: @OrdersController }
@@ -55,7 +55,7 @@ class CarsController < ApplicationController
         when 'Diagnose'
           puts 'method1'
         when 'Programm'
-          puts folder_create
+          puts programm_create
         when 'Mileage_km'
           puts mileage_create
         when 'Airbag'
@@ -88,15 +88,12 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
-                                :ecm_id, :works, :airbag, :order_url, :order, :brand_ecu_id, :model_ecu_id)
+                                :works, :airbag, :order_url, :order,
+                                :brand_ecu_id, :model_ecu_id, :soft_ecu_id)
   end
 
   def client_params
     params.require(:client).permit(:phone, :name, :client_id, :licence)
-  end
-
-  def ecm_params
-    params.require(:ecm).permit!(:name, :ecm_id)
   end
 
   def mileage_create
@@ -113,23 +110,24 @@ class CarsController < ApplicationController
     FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Airbag(подушки)/#{@licence}"
   end
 
-  def folder_create
+  def programm_create
     @datetime = Time.new
     @licence = Client.find_by_id(car_params[:client_id]).licence
     @mileage = car_params[:mileage]
     @phone = car_params[:phone]
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
-    @ecm = Ecm.find_by_id(car_params[:ecm_id]).name
-
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}"
+    @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
+    @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
+    @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
+    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}"
 
     @database_file = File.new('D://BAZA/database.txt', 'a+')
-    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
+    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
 
-    @id_client = File.new("D://BAZA/#{@make}/#{@model}/#{@ecm}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
-    @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@ecm}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
+    @id_client = File.new("D://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
+    @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@brand_ecu}: Модель ЭБУ #{@model_ecu}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
     @id_client.close
   end
 

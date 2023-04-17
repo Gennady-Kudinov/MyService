@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Soft ecus</h1>
+
+<div id="soft_ecus">
+  <% @soft_ecus.each do |soft_ecu| %>
+    <%= render soft_ecu %>
+    <p>
+      <%= link_to "Show this soft ecu", soft_ecu %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New soft ecu", new_soft_ecu_path %>

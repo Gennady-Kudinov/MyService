@@ -18,8 +18,6 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-
-
 module Test
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -30,6 +28,7 @@ module Test
     #config.i18n.available_locales = %i[en ru]
     #config.i18n.default_locale = :ru
     config.hosts << "carservice71.ru"
+  
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -40,7 +39,7 @@ module Test
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
    
   end
+
 end
