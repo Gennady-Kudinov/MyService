@@ -11,6 +11,7 @@ class CreateCars < ActiveRecord::Migration[7.0]
       t.references :brand_ecu, null: true, foreign_key: true
       t.references :model_ecu, null: true, foreign_key: true
       t.references :soft_ecu, null: true, foreign_key: true
+      t.references :sw_ident, null: true, foreign_key: true
 
       t.timestamps
     end

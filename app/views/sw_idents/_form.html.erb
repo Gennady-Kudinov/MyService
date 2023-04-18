@@ -1,0 +1,22 @@
+<%= form_with(model: sw_ident) do |form| %>
+  <% if sw_ident.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sw_ident.errors.count, "error") %> prohibited this sw_ident from being saved:</h2>
+
+      <ul>
+        <% sw_ident.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

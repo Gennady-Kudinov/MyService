@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sw_ident %>
+
+<div>
+  <%= link_to "Edit this sw ident", edit_sw_ident_path(@sw_ident) %> |
+  <%= link_to "Back to sw idents", sw_idents_path %>
+
+  <%= button_to "Destroy this sw ident", @sw_ident, method: :delete %>
+</div>

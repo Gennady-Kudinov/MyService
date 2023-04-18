@@ -92,6 +92,20 @@
           </div>
         </div>
 
+         <div class="column">
+            <div class="field">
+              <%= form.label :sw_ident_id, style: "color: blue" %>
+                <div class="control">
+                  <%= form.collection_select(:sw_ident_id,
+                                              @car.soft_ecu&.sw_idents || [],
+                                              :id, 
+                                              :name, { prompt: 'Select', selected: @car.sw_ident_id }, 
+                                              { data: { parent_id: 'car_soft_ecu_id', source: 'sw_idents', }}) %>
+                </div>
+            </div>
+          </div>
+        </div>
+
     <div class="columns">
 
       <div class="column">

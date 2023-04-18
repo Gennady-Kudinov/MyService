@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
     t.integer "soft_ecu_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sw_ident_id"
     t.index ["brand_ecu_id"], name: "index_cars_on_brand_ecu_id"
     t.index ["client_id"], name: "index_cars_on_client_id"
     t.index ["licence"], name: "index_cars_on_licence"
@@ -73,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
     t.index ["model_ecu_id"], name: "index_cars_on_model_ecu_id"
     t.index ["model_id"], name: "index_cars_on_model_id"
     t.index ["soft_ecu_id"], name: "index_cars_on_soft_ecu_id"
+    t.index ["sw_ident_id"], name: "index_cars_on_sw_ident_id"
   end
 
   create_table "chats", force: :cascade do |t|
@@ -86,7 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
     t.string "name"
     t.string "username"
     t.string "phone"
-    t.date "data", default: "2023-04-16"
+    t.date "data", default: "2023-04-17"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -153,6 +155,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
     t.index ["model_ecu_id"], name: "index_soft_ecus_on_model_ecu_id"
   end
 
+  create_table "sw_idents", force: :cascade do |t|
+    t.string "name"
+    t.integer "soft_ecu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["soft_ecu_id"], name: "index_sw_idents_on_soft_ecu_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.boolean "status"
@@ -188,6 +198,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
   add_foreign_key "cars", "model_ecus"
   add_foreign_key "cars", "models"
   add_foreign_key "cars", "soft_ecus"
+  add_foreign_key "cars", "sw_idents"
   add_foreign_key "comments", "articles", column: "articles_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
@@ -195,5 +206,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_06_043655) do
   add_foreign_key "models", "makes"
   add_foreign_key "orders", "clients"
   add_foreign_key "soft_ecus", "model_ecus"
+  add_foreign_key "sw_idents", "soft_ecus"
   add_foreign_key "tasks", "users"
 end

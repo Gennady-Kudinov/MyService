@@ -22,7 +22,7 @@ class CarsController < ApplicationController
    # @car.soft_ecu_id = params[:soft_ecu_id]
     respond_to do |format|
       if @car.save
-      
+
         @works = params.dig(:car, :works)
 
         case @works 
@@ -89,7 +89,7 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:model_id, :make_id, :client_id, :licence, :mileage, :vin,
                                 :works, :airbag, :order_url, :order,
-                                :brand_ecu_id, :model_ecu_id, :soft_ecu_id)
+                                :brand_ecu_id, :model_ecu_id, :soft_ecu_id, :sw_ident_id)
   end
 
   def client_params
@@ -100,14 +100,14 @@ class CarsController < ApplicationController
     @licence = Client.find_by_id(car_params[:client_id]).licence
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
+    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
   end
 
   def airbag_create
     @licence = Client.find_by_id(car_params[:client_id]).licence
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@model}/Airbag(подушки)/#{@licence}"
+    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@model}/Airbag(подушки)/#{@licence}"
   end
 
   def programm_create
@@ -120,13 +120,13 @@ class CarsController < ApplicationController
     @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
     @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
-    FileUtils.mkdir_p "D://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}"
+    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}"
 
-    @database_file = File.new('D://BAZA/database.txt', 'a+')
+    @database_file = File.new('F://BAZA/database.txt', 'a+')
     @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
 
-    @id_client = File.new("D://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
+    @id_client = File.new("F://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
     @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@brand_ecu}: Модель ЭБУ #{@model_ecu}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
     @id_client.close
   end

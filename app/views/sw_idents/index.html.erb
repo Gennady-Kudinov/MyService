@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sw idents</h1>
+
+<div id="sw_idents">
+  <% @sw_idents.each do |sw_ident| %>
+    <%= render sw_ident %>
+    <p>
+      <%= link_to "Show this sw ident", sw_ident %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New sw ident", new_sw_ident_path %>
