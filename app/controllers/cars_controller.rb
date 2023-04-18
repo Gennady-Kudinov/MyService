@@ -120,14 +120,15 @@ class CarsController < ApplicationController
     @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
     @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
+    @sw_ident = SwIdent.find_by_id(car_params[:sw_ident_id]).name
   
-    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}"
+    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@brand_ecu}/#{@model_ecu}/#{@model}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
 
     @database_file = File.new('F://BAZA/database.txt', 'a+')
     @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
 
-    @id_client = File.new("F://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
+    @id_client = File.new("F://BAZA/#{@make}/#{@brand_ecu}/#{@model_ecu}/#{@model}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
     @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@brand_ecu}: Модель ЭБУ #{@model_ecu}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
     @id_client.close
   end
