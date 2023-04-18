@@ -120,6 +120,7 @@ class CarsController < ApplicationController
     @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
     @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
+  
     FileUtils.mkdir_p "F://BAZA/#{@make}/#{@brand_ecu}/#{@model}/#{@model_ecu}/#{@soft_ecu}/#{@licence.upcase}"
 
     @database_file = File.new('F://BAZA/database.txt', 'a+')

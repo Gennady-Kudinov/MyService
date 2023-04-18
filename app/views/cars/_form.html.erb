@@ -92,7 +92,8 @@
           </div>
         </div>
 
-         <div class="column">
+        <div class="columns">
+          <div class="column">
             <div class="field">
               <%= form.label :sw_ident_id, style: "color: blue" %>
                 <div class="control">
@@ -104,28 +105,26 @@
                 </div>
             </div>
           </div>
-        </div>
+        
 
-    <div class="columns">
+            <div class="column">
+              <div class="field">
+                <%= form.label :mileage, 'Пробег в км', style: "color: blue" %>
+                <div class="control">
+                  <%= form.text_field :mileage, class: "form-control" %>
+                </div>
+              </div>
+            </div>
 
-      <div class="column">
-        <div class="field">
-          <%= form.label :mileage, 'Пробег в км', style: "color: blue" %>
-          <div class="control">
-            <%= form.text_field :mileage, class: "form-control" %>
-          </div>
-        </div>
-      </div>
-
-    <div class="column">
-      <div class="field">
-        <%= form.label :vin, 'Вин номер', style: "color: blue" %>
-        <div class="control">
-          <%= form.text_field :vin, class: "form-control" %>
-        </div>
-      </div>
-    </div>
-  </div> 
+            <div class="column">
+              <div class="field">
+                <%= form.label :vin, 'Вин номер', style: "color: blue" %>
+                <div class="control">
+                  <%= form.text_field :vin, class: "form-control" %>
+                </div>
+              </div>
+            </div>
+        </div> 
 
   <div class="columns">
     <div class="column">
