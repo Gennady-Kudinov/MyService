@@ -9,6 +9,7 @@
       <th>Вин номер а/м</th>
       <th>Производитель ЭБУ</th>
       <th>Марка ЭБУ</th>
+      <th>Версия ЭБУ</th>
       <th>Версия софта ЭБУ</th>
       <th>Клиент</th>
     </tr> 
@@ -23,6 +24,7 @@
       <td> <%= sanitize(car.brand_ecu.name) if car.brand_ecu.present? %></td>
       <td> <%= sanitize(car.model_ecu.name) if car.model_ecu.present? %></td>
       <td> <%= sanitize(car.soft_ecu.name) if car.soft_ecu.present? %></td>
+      <td> <%= sanitize(car.sw_ident.name) if car.sw_ident.present? %></td>
       <td> <%= car.client.id if car.client.present?   %> </td>
     </tr>
   </tbody>
