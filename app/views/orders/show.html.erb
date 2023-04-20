@@ -1,22 +1,23 @@
 <h1 class="title is-3">Просмотр ордера</h1>
 <%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
 
-<p> 
+<p style="white-space: pre-wrap;">
   <h1 class="title is-4">Когда производился ремонт</h1>
   <%= @order.client.created_at %> 
 </p>
 
-<p> 
+<p style="white-space: pre-wrap;">
   <h1 class="title is-4">Проблема</h1>
   <%= @order.problem %> 
 </p>
 
 <p>
-<h1 class="title is-4 mt-4">Выполнено</h1>
-  <%= @order.work_description %> 
+  <h1 class="title is-4 mt-4">Выполнено</h1>
+  <%= content_tag :span, @order.work_description, style: "white-space: pre-wrap;" %>
 </p>
 
-<p>
+
+<p style="white-space: pre-wrap;">
   <h1 class="title is-4 mt-4">Цена</h1>
   <%= @order.price %> 
 </p>
