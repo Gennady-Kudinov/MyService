@@ -55,6 +55,7 @@ class OrdersController < ApplicationController
       :price,
       :client_id,
       :image,
+      :images,
       :remove_image,
       :mileage
     )

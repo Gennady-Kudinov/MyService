@@ -8,17 +8,17 @@
       </div>
     </div>
 
-     <div class="field text-center">
+    <div class="field text-center">
       <%= order_form.label :problem, 'Проблемы' %>
       <%= order_form.text_area :problem, class: "input", style: "height: 100px; width: 500px;"  %>
     </div>
 
-    <div class="">
-      <div class="field text-center" >
-        <br>
-        <%= order_form.label :work_description, 'Ремонт' %>
-        <%= order_form.text_area :work_description, class: "input", style: "height: 200px; width: 500px;" %>
-      </div>
+    <div class="field text-center">
+      <br>
+      <%= order_form.label :work_description, 'Ремонт' %>
+      <%= order_form.text_area :work_description, class: "input", style: "height: 200px; width: 500px; white-space: pre-wrap;" %>
+    </div>
+
 
     <div class="field">
         <%= order_form.label :mileage, 'Пробег' %>
@@ -35,12 +35,17 @@
         </div>
       </div>
     </div>
-    <div class="field">
-      <%= order_form.label :image, 'Фото, Скрин не исправностей при диагностике' %>
-      <div class="control">
-        <%= order_form.file_field :image, html: { multiple: true }, direct_upload: true %>
-      </div>
-    </div>
+  
+
+
+<div class="field">
+  <%= order_form.label :images, 'Фото, Скрин неисправностей при диагностике' %>
+  <div class="control">
+    <%= order_form.file_field :image, html: { multiple: true }, direct_upload: true %>
+  </div>
+</div>
+
+
 
     <label>
       <%= order_form.check_box :remove_image %>

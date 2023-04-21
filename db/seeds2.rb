@@ -386,7 +386,7 @@ brand_ecu = BrandEcu.create(name: 'ВАЗ (Lada)')
     'Siemens EMS 3125', 'Siemens EMS 3132', 'VS5.1.x', 'M73', 'M74 (74.5)', 'M74М', 'M75',
     'М86 CNG', 'М86 ПО ВАЗ', 'М86 ПО Ителма', 'Я5.1.(х)', 'Я72', 'Я72+', 'ИТЭЛМА M74.9']
 model_ecus.each do |ecu|
-  ModelEcu.create(brand_ecu: brand_ecu, name: ecu)
+  SoftEcu.create(model_ecu: model_ecu, name: ecu)
 end
 model_ecu = ModelEcu.find_by(name: 'Bosch M(E)17.9.7 ВАЗ')
   soft_ecus = ['1037514537_В575СB03', '1037521405_B574CD03', '1037521254_B574DD04', 

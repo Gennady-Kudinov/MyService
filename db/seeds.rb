@@ -1,17 +1,11 @@
-model_ecu = ModelEcu.find_by(name: 'M74M')
-  soft_ecus = ['Granta, Datsun 1.6 16V', 'Granta, Datsun 1.6 8V']
+model_ecu = ModelEcu.find_by(name: 'Siemens EMS 3132')
+  soft_ecus = ['Largus 1.6']
 soft_ecus.each do |ecu|
   SoftEcu.create(model_ecu: model_ecu, name: ecu)
 end
-soft_ecu = SoftEcu.find_by(name: 'Granta, Datsun 1.6 16V')
-sw_ident = ['8450106524_I535GL01c', '8450106847_I575GM01c', '8450106524_I535GL02c',
-  '8450106849_I565AH06c', '8450106524_I535GM02c', '8450106849_I565AI07c', '8450106847_I575GL00c']
-sw_ident.each do |ecu|
-  SwIdent.create(soft_ecu: soft_ecu, name: ecu)
-end
-soft_ecu = SoftEcu.find_by(name: 'Granta, Datsun 1.6 8V')
-sw_ident = ['8450106850_I445GDB1c3', '8450111210_I532GU04c', '8450106850_I545GDC1',
-  '8450111210_I532GV05c', '8450106850_I545GDD2']
+soft_ecu = SoftEcu.find_by(name: 'Largus 1.6')
+sw_ident = ['LARGUS_ 1.6L 8V_RE045045_8201261286', 'LARGUS_1.6L 16V_RE045045_8201474331', 'LARGUS_ 1.6L 8V_RE045045_8201264017',
+  'LARGUS_1.6L_16V_RE045045_8201474326', 'LARGUS_1.6L 16V_RE045045_8201264666', 'LARGUS_1.6L_8V_RE045045_8201264021']
 sw_ident.each do |ecu|
   SwIdent.create(soft_ecu: soft_ecu, name: ecu)
 end

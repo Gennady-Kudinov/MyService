@@ -5,6 +5,9 @@ class Client < ApplicationRecord
   validates :licence, :data, presence: true
   validates :licence, length: { in: 6..10 }
 
+  # store_accessor :images, :avatar, :background
+
+
   def orders?
     true if self.orders.present?
   end

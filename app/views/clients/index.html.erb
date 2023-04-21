@@ -2,10 +2,16 @@
 <%= link_to "Добавить клиента", new_client_path, class: "button is-dark" %>
 <br><br>
 
-<!--ПОИСК  КЛИЕНТА  --> 
+<!--ПОИСК  КЛИЕНТА по ГОС НОМЕРУ --> 
 <%= form_tag clients_path, :method => 'get' do %>
   <%= text_field_tag sanitize(:search), params[:search] %>
   <%= submit_tag "Поиск" %>
+<% end %>
+
+<!--ПОИСК  МАШИНЫ по ВИН --> 
+<%= form_tag cars_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search by make or model" %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <div class="btn-group mb-3">

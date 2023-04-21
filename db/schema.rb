@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_190803) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -56,24 +56,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
   create_table "cars", force: :cascade do |t|
     t.string "licence"
     t.string "vin"
-    t.string "mileage"
+    t.decimal "mileage"
+    t.integer "ecm_id"
     t.integer "sum"
-    t.integer "model_id"
-    t.integer "make_id"
-    t.integer "client_id"
+    t.integer "model_id", null: false
+    t.integer "make_id", null: false
+    t.integer "client_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "brand_ecu_id"
     t.integer "model_ecu_id"
     t.integer "soft_ecu_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "sw_ident_id"
-    t.index ["brand_ecu_id"], name: "index_cars_on_brand_ecu_id"
     t.index ["client_id"], name: "index_cars_on_client_id"
+    t.index ["ecm_id"], name: "index_cars_on_ecm_id"
     t.index ["licence"], name: "index_cars_on_licence"
     t.index ["make_id"], name: "index_cars_on_make_id"
-    t.index ["model_ecu_id"], name: "index_cars_on_model_ecu_id"
     t.index ["model_id"], name: "index_cars_on_model_id"
-    t.index ["soft_ecu_id"], name: "index_cars_on_soft_ecu_id"
     t.index ["sw_ident_id"], name: "index_cars_on_sw_ident_id"
   end
 
@@ -88,7 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
     t.string "name"
     t.string "username"
     t.string "phone"
-    t.date "data", default: "2023-04-17"
+    t.date "data", default: "2022-10-21"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -100,6 +99,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["articles_id"], name: "index_comments_on_articles_id"
+  end
+
+  create_table "ecms", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_ecms_on_name"
   end
 
   create_table "makes", force: :cascade do |t|
@@ -128,7 +134,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
 
   create_table "models", force: :cascade do |t|
     t.string "name"
-    t.integer "make_id"
+    t.integer "make_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["make_id"], name: "index_models_on_make_id"
@@ -137,13 +143,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
   create_table "orders", force: :cascade do |t|
     t.text "problem"
     t.text "work_description"
-    t.integer "price", default: 0
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "client_id", null: false
     t.boolean "status", default: false
     t.string "image"
     t.integer "mileage", default: 0
+    t.json "images"
     t.index ["client_id"], name: "index_orders_on_client_id"
   end
 
@@ -194,6 +201,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_193928) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cars", "brand_ecus"
   add_foreign_key "cars", "clients"
+  add_foreign_key "cars", "ecms"
   add_foreign_key "cars", "makes"
   add_foreign_key "cars", "model_ecus"
   add_foreign_key "cars", "models"

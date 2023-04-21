@@ -3,8 +3,17 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, :check_user_admin!  
 
   def index
-    @cars = Car.where(['vin LIKE ?', "%#{params[:search]}%"]).
-    order(created_at: :desc).first(5)
+      @cars = Car.where(['vin LIKE ?', "%#{params[:search]}%"]).
+      order(created_at: :desc).first(30)
+   
+
+   # if params[:search]
+   #   @cars = Car.joins(:make, :model).where("makes.name LIKE ? OR models.name LIKE ?",
+   #     "%#{params[:search]}%", "%#{params[:search]}%")
+  #  else
+   #   @cars = Car.all
+   # end
+
   end
 
   def show
@@ -121,11 +130,11 @@ class CarsController < ApplicationController
     @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
     @sw_ident = SwIdent.find_by_id(car_params[:sw_ident_id]).name
-  
-    FileUtils.mkdir_p "F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
+    
+      FileUtils.mkdir_p "F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
 
     @database_file = File.new('F://BAZA/database.txt', 'a+')
-    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu}  #{@soft_ecu}  #{@sw_ident} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
+    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
 
     @id_client = File.new("F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
