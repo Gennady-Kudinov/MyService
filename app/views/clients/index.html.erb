@@ -4,13 +4,13 @@
 
 <!--ПОИСК  КЛИЕНТА по ГОС НОМЕРУ --> 
 <%= form_tag clients_path, :method => 'get' do %>
-  <%= text_field_tag sanitize(:search), params[:search] %>
+  <%= text_field_tag sanitize(:search), params[:search], placeholder: "Поиск по гос/номеру" %>
   <%= submit_tag "Поиск" %>
 <% end %>
 
 <!--ПОИСК  МАШИНЫ по ВИН --> 
 <%= form_tag cars_path, method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search by make or vin" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Поиск по Vin" %>
   <%= submit_tag "Search" %>
 <% end %>
 

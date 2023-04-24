@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Soft ecus</h1>
+<%= link_to "New soft ecu", new_soft_ecu_path, style: "color: red;"  %>
 
 <div id="soft_ecus">
   <% @soft_ecus.each do |soft_ecu| %>
@@ -11,4 +12,3 @@
   <% end %>
 </div>
 
-<%= link_to "New soft ecu", new_soft_ecu_path %>

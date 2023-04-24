@@ -8,6 +8,7 @@
 </div>
 
 <h1>Sw idents</h1>
+<%= link_to "New sw ident", new_sw_ident_path, style: "color: red;"  %>
 
 <div id="sw_idents">
   <% @sw_idents.each do |sw_ident| %>
@@ -18,4 +19,4 @@
   <% end %>
 </div>
 
-<%= link_to "New sw ident", new_sw_ident_path %>
+<%= link_to "New sw ident", new_sw_ident_path, style: "color: red;"  %>
