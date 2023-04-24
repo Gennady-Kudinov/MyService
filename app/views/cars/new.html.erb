@@ -4,12 +4,15 @@
     <%= render "form", car: @car %>
   </div>
   <div class="column is-10">
-  <%= link_to "Список машин", cars_path, class: "button", style: "color: purple" %>
-  <%= link_to "Ввести новую модель а/м", models_path, class: "button", style: "color: purple" %>
-  <%= link_to "Редактировать марку а/м", makes_path, class: "button", style: "color: purple" %>
-  <%= link_to "Ввести новую модификацию ЭБУ", model_ecus_path, class: "button", style: "color: purple" %>
-  <br>
-  <br>
-  <%= link_to "Добавить новый софт ЭБУ", soft_ecus_path, class: "button", style: "color: purple" %> 
+    <%= link_to "Список машин", cars_path, class: "button", style: "color: purple" %>
+    <%= link_to "Ввести новую модель а/м", models_path, class: "button", style: "color: purple" %>
+    <%= link_to "Редактировать марку а/м", makes_path, class: "button", style: "color: purple" %>
+  <div>
+
+  <div class="column is-12">
+    <%= link_to "Добавить новый Бренд для ЭБУ", brand_ecus_path, class: "button", style: "color: purple" %> 
+    <%= link_to "Ввести новую модификацию ЭБУ", model_ecus_path, class: "button", style: "color: purple" %>
+    <%= link_to "Добавить а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: purple" %>
+    <%= link_to "Добавить SW для ЭБУ", sw_idents_path, class: "button", style: "color: purple" %> 
   </div>
 </div>

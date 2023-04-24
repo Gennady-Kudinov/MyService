@@ -47,5 +47,4 @@ Rails.application.routes.draw do
   get '/brand_ecus/:brand_ecu_id/model_ecus', to: 'model_ecus#index'
   get '/model_ecus/:model_ecu_id/soft_ecus', to: 'soft_ecus#index'
   get '/soft_ecus/:soft_ecu_id/sw_idents', to: 'sw_idents#index'
-
 end

@@ -14,6 +14,10 @@ class CarsController < ApplicationController
    #   @cars = Car.all
    # end
 
+
+  # @cars = Car.where("vin LIKE ? AND model LIKE ? AND make LIKE ? AND licence LIKE ?", 
+  #  "%#{params[:vin]}%", "%#{params[:model]}%", "%#{params[:make]}%", "%#{params[:licence]}%")
+  #  .order(created_at: :desc).first(30)
   end
 
   def show

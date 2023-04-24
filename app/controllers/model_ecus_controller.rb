@@ -10,6 +10,11 @@ class ModelEcusController < ApplicationController
         format.html # index.html.erb
         format.json { render json: @model_ecus }
       end
+
+        conditions = {}
+        conditions = { model_ecu_id: params[:model_ecu_id] } if params[:model_ecu_id]
+    
+        @model_ecus = SoftEcu.where(conditions)
   end
 
   # GET /model_ecus/1 or /model_ecus/1.json

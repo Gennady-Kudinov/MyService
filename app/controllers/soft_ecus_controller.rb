@@ -3,7 +3,8 @@ class SoftEcusController < ApplicationController
   
     # GET /soft_ecus or /model_ecus.json
     def index
-        # @soft_ecus = SoftEcu.all
+        @soft_ecus = SoftEcu.all
+        
         @soft_ecus = SoftEcu.where(model_ecu_id: params[:model_ecu_id])
         respond_to do |format|
           format.html # index.html.erb

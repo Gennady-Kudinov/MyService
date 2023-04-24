@@ -2,7 +2,11 @@ class ChatsController < ApplicationController
   after_action :authenticate_user!
 
   def index
+   
     @chats = Chat.all
+  
+
+  
   end 
 
   def new 
@@ -25,14 +29,15 @@ class ChatsController < ApplicationController
     @chats = Chat.all
     @message = Message.new
     @messages = @single_chat.messages
-    
+  
     render :index
   end
 
   private 
 
   def chat_params 
-    params.require(:chat).permit(:name)
+    params.require(:chat).permit(:name, messages_attributes: [:id, :content, :_destroy])
+
   end
   
 end

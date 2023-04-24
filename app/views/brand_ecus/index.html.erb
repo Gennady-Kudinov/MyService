@@ -2,6 +2,14 @@
 
 <h1>Brand ecus</h1>
 
+<div>
+  <%= link_to "Ввести новую модификацию ЭБУ", model_ecus_path, class: "button", style: "color: purple" %>
+  <br>
+  <br>
+  <%= link_to "Добавить а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: purple" %>
+  <%= link_to "Добавить софт ЭБУ", sw_idents_path, class: "button", style: "color: purple" %> 
+</div>
+
 <div id="brand_ecus">
   <% @brand_ecus.each do |brand_ecu| %>
     <%= render brand_ecu %>

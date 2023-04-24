@@ -10,7 +10,7 @@
 
 <!--ПОИСК  МАШИНЫ по ВИН --> 
 <%= form_tag cars_path, method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search by make or model" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search by make or vin" %>
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -50,6 +50,7 @@
               <td><%= get_max_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
               <% if client.orders? %> 
+
                 <td>
                   <p><%= link_to "История ордеров", client_orders_path(client)%> </p>
                 </td>
