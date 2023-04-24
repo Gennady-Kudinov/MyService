@@ -4,7 +4,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :make_id, style: "color: blue" %>
+        <%= form.label :Марка_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:make_id, 
                                      Make.all, 
@@ -17,7 +17,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :model_id, style: "color: blue" %>
+        <%= form.label :Модель_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:model_id, 
                                      @car.make&.models || [], 
@@ -39,7 +39,7 @@
 
     <div class="column">
       <div class="field">
-        <%= form.label :Клиент, style: "color: blue"  %>
+        <%= form.label :Гос_Номер, style: "color: blue"  %>
         <div class="control">
           <%= form.collection_select(:client_id, 
                                      Client.all.order(created_at: :desc), 
@@ -54,7 +54,7 @@
         <div class="columns">
           <div class="column">
             <div class="field">
-              <%= form.label :brand_ecu_id, style: "color: blue" %>
+              <%= form.label :Марка_автомобиля_id, style: "color: blue" %>
                 <div class="control">
                   <%= form.collection_select(:brand_ecu_id, 
                                               BrandEcu.all,
@@ -67,7 +67,7 @@
 
           <div class="column">
             <div class="field">
-              <%= form.label :model_ecu_id, style: "color: blue" %>
+              <%= form.label :Модель_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
                   <%= form.collection_select(:model_ecu_id,
                                               @car.brand_ecu&.model_ecus || [],
@@ -80,7 +80,7 @@
 
          <div class="column">
             <div class="field">
-              <%= form.label :soft_ecu_id, style: "color: blue" %>
+              <%= form.label :Модель_Автомобиля_id, style: "color: blue" %>
                 <div class="control">
                   <%= form.collection_select(:soft_ecu_id,
                                               @car.model_ecu&.soft_ecus || [],
@@ -95,7 +95,7 @@
         <div class="columns">
           <div class="column">
             <div class="field">
-              <%= form.label :sw_ident_id, style: "color: blue" %>
+              <%= form.label :ПО_Калибровок_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
                   <%= form.collection_select(:sw_ident_id,
                                               @car.soft_ecu&.sw_idents || [],
