@@ -3,11 +3,20 @@
 <h1>Brand ecus</h1>
 
 <div>
-  <%= link_to "Ввести новую модификацию ЭБУ", model_ecus_path, class: "button", style: "color: purple" %>
-  <br>
-  <br>
-  <%= link_to "Добавить а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: purple" %>
-  <%= link_to "Добавить софт ЭБУ", sw_idents_path, class: "button", style: "color: purple" %> 
+  <%= link_to "New brand ecu", new_brand_ecu_path, class: "button",
+              style: "color: purple; position: static; top: 50px; left: 100px; z-index: 9999;",
+                      title: "Нажмите, чтобы создать новую марку автомобиля для ЭБУ" %>
+
+  <%= link_to "Ввести новую модификацию ЭБУ", new_model_ecu_path, class: "button",
+              style: "color: purple; position: static; top: 50px; left: 600px; z-index: 9999;",
+                      title: "Нажмите, чтобы создать новую модификацию ЭБУ для марки автомобиля" %>
+
+  <%= link_to "Добавить а/м для ЭБУ", new_soft_ecu_path, class: "button",
+              style: "color: purple; position: static; top: 50px; left: 900px; z-index: 9999;",
+                      title: "Нажмите, чтобы создать новую модуль автомобиля для модификации ЭБУ" %>
+
+  <%= link_to "Добавить софт ЭБУ", new_sw_ident_path, class: "button", style: "color: purple",
+              title: "Нажмите, чтобы создать новое ПО SW для модели автомобиля" %>
 </div>
 
 <div id="brand_ecus">
@@ -19,4 +28,4 @@
   <% end %>
 </div>
 
-<%= link_to "New brand ecu", new_brand_ecu_path %>
+<%= link_to "New brand ecu", new_brand_ecu_path, style: "color: red;" %>
