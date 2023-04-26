@@ -113,7 +113,8 @@ class CarsController < ApplicationController
     @licence = Client.find_by_id(car_params[:client_id]).licence
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@model}/Mileage(Пробеги)/#{@licence}"
+    @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
+    FileUtils.mkdir_p "F://BAZA/#{@brand_ecu}/Mileage(Пробеги)/#{@licence}"
   end
 
   def airbag_create
