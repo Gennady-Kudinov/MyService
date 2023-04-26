@@ -1,10 +1,9 @@
 <h1 class="title is-2">Редактирование машины</h1>
 
 <%= render "form", car: @car %>
-
 <br>
-
 <div>
   <%= link_to "Просмотр машины", @car, class: "button mr-4" %>
   <%= link_to "Просмотр всех машин", cars_path, class: "button" %>
+  <%= render partial: "shared/new_model_ecu_link" %>
 </div>

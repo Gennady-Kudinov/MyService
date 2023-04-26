@@ -2,17 +2,28 @@
 <%= link_to "Добавить клиента", new_client_path, class: "button is-dark" %>
 <br><br>
 
-<!--ПОИСК  КЛИЕНТА по ГОС НОМЕРУ --> 
-<%= form_tag clients_path, :method => 'get' do %>
-  <%= text_field_tag sanitize(:search), params[:search], placeholder: "Поиск по гос/номеру" %>
-  <%= submit_tag "Поиск" %>
-<% end %>
+<!--Ссылки для добавления блоков эбу для а/м--> 
+<div class="column is-12">
+    <%= link_to "Добавить Марку автомобиля", brand_ecus_path, class: "button", style: "color: green" %> 
+    <%= link_to "Добавить Модель ЭБУ", model_ecus_path, class: "button", style: "color: green" %>
+    <%= link_to "Добавить Модель а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: green" %>
+    <%= link_to "Добавить SW для ЭБУ", sw_idents_path, class: "button", style: "color: green" %> 
+</div>
 
-<!--ПОИСК  МАШИНЫ по ВИН --> 
-<%= form_tag cars_path, method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Поиск по Vin" %>
-  <%= submit_tag "Search" %>
-<% end %>
+  <div style="display: inline-block;">
+    <!--ПОИСК КЛИЕНТА по ГОС НОМЕРУ -->  
+    <%= form_tag clients_path, :method => 'get' do %> 
+      <%= text_field_tag sanitize(:search), params[:search], placeholder: "Поиск по гос/номеру" %> 
+      <%= submit_tag "Поиск" %> 
+    <% end %>
+  </div>
+  <div style="display: inline-block;">
+    <!--ПОИСК МАШИНЫ по ВИН -->  
+    <%= form_tag cars_path, method: :get do %> 
+      <%= text_field_tag :search, params[:search], placeholder: "Поиск по Vin" %> 
+      <%= submit_tag "Search" %> 
+    <% end %>
+  </div>
 
 <div class="btn-group mb-3">
   <%= link_to 'Скачать базу клиентов архивом .zip', clients_path(format: :zip),

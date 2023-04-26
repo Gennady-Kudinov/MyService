@@ -1,19 +1,21 @@
 <h3 class="title is-2 has-text-centered">Список всех машин </h3>
 
-<%= link_to "Добавить новую машину", new_car_path, class: "button is-primary my-5" %>
+  <div style="display: inline-block;">
+    <%= form_tag cars_path, :method => 'get' do %>
+      <%= text_field_tag sanitize(:search), params[:search], placeholder: "Поиск введите VIN a/м" %>
+      <%= submit_tag "Поиск" %>
+    <% end %>
+  </div>
 
-<%= form_tag cars_path, :method => 'get' do %>
-    <%= text_field_tag sanitize(:search), params[:search] %>
-    <%= submit_tag "Поиск введите VIN a/м" %>
-<% end %>
+  <div style="display: inline-block;">
+    <%= link_to "Добавить новую машину", new_car_path, class: "button is-primary my-5" %>
+  </div>
 
-<% if @cars.present? %>
-  <% @cars.each do |car| %>
-    <div class="box mb-6">
-      <%= render car %> 
-      <%= link_to "Показать машину", car, class: "button is-info" %>
-    </div>
+  <% if @cars.present? %>
+    <% @cars.each do |car| %>
+      <div class="box mb-6">
+        <%= render car %> 
+        <%= link_to "Показать машину", car, class: "button is-info" %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-</div>
-
