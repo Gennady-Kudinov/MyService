@@ -19,14 +19,12 @@
       <%= order_form.text_area :work_description, class: "input", style: "height: 200px; width: 500px; white-space: pre-wrap;" %>
     </div>
 
-
     <div class="field">
         <%= order_form.label :mileage, 'Пробег' %>
         <div class="control">
           <%= order_form.number_field :mileage %>
         </div>
       </div>
-
 
       <div class="field">
         <%= order_form.label :price, 'Стоимость услуг' %>
@@ -36,16 +34,12 @@
       </div>
     </div>
   
-
-
 <div class="field">
   <%= order_form.label :images, 'Фото, Скрин неисправностей при диагностике' %>
   <div class="control">
     <%= order_form.file_field :image, html: { multiple: true }, direct_upload: true %>
   </div>
 </div>
-
-
 
     <label>
       <%= order_form.check_box :remove_image %>

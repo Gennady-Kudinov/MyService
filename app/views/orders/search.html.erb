@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+
+<% if @search_results.any? %>
+  <ul>
+    <% @search_results.each do |file_path| %>
+      <li><%= file_path %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No results found.</p>
+<% end %>

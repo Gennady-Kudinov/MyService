@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @orders = Order.all.where("client_id == #{params[:client_id]}")
   end
 
+  def search
+    @search_results = Dir.glob("**/*#{params[:search]}*")
+  end  
+
   def new
     @order = Order.new
   end
@@ -23,7 +27,11 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @order = Order.find(params[:id])
+    @search_results = Dir.glob("**/*#{params[:search]}*") if params[:search].present?
+  end
+  
 
   def edit
     @client = Client.find params[:client_id]

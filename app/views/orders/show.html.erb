@@ -28,3 +28,18 @@
 </p>
 
 
+<%= form_tag search_orders_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search for a file..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @search_results.present? %>
+  <h2>Search Results</h2>
+  <ul>
+    <% @search_results.each do |file_path| %>
+      <li><%= file_path %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+

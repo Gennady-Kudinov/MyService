@@ -5,19 +5,6 @@ class CarsController < ApplicationController
   def index
       @cars = Car.where(['vin LIKE ?', "%#{params[:search]}%"]).
       order(created_at: :desc).first(30)
-   
-
-   # if params[:search]
-   #   @cars = Car.joins(:make, :model).where("makes.name LIKE ? OR models.name LIKE ?",
-   #     "%#{params[:search]}%", "%#{params[:search]}%")
-  #  else
-   #   @cars = Car.all
-   # end
-
-
-  # @cars = Car.where("vin LIKE ? AND model LIKE ? AND make LIKE ? AND licence LIKE ?", 
-  #  "%#{params[:vin]}%", "%#{params[:model]}%", "%#{params[:make]}%", "%#{params[:licence]}%")
-  #  .order(created_at: :desc).first(30)
   end
 
   def show
@@ -111,17 +98,18 @@ class CarsController < ApplicationController
 
   def mileage_create
     @licence = Client.find_by_id(car_params[:client_id]).licence
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
+   # @make = Make.find_by_id(car_params[:make_id]).name
+   # @model = Model.find_by_id(car_params[:model_id]).name
     @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
     FileUtils.mkdir_p "F://BAZA/#{@brand_ecu}/Mileage(Пробеги)/#{@licence}"
   end
 
   def airbag_create
     @licence = Client.find_by_id(car_params[:client_id]).licence
-    @make = Make.find_by_id(car_params[:make_id]).name
-    @model = Model.find_by_id(car_params[:model_id]).name
-    FileUtils.mkdir_p "F://BAZA/#{@make}/#{@model}/Airbag(подушки)/#{@licence}"
+   # @make = Make.find_by_id(car_params[:make_id]).name
+   # @model = Model.find_by_id(car_params[:model_id]).name
+    @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
+    FileUtils.mkdir_p "F://BAZA/#{@brand_ecu}/Airbag(подушки)/#{@licence}"
   end
 
   def programm_create
