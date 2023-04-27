@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def search
-    @search_results = Dir.glob("**/*#{params[:search]}*")
+    @search_results = Dir.glob("F://**/*#{params[:search]}*")
   end  
 
   def new
@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @search_results = Dir.glob("**/*#{params[:search]}*") if params[:search].present?
+    @search_results = Dir.glob("F:/BAZA/*#{params[:search]}*") if params[:search].present?
     @search_param = params[:search]
   end
   
