@@ -3,7 +3,10 @@
 <% if @search_results.any? %>
   <ul>
     <% @search_results.each do |file_path| %>
-      <li><%= file_path %></li>
+      <li>
+        <%= file_path %>
+        <%= link_to "Copy", copy_file_path(file_path: file_path, search: @search_param), method: :get %>
+      </li>
     <% end %>
   </ul>
 <% else %>

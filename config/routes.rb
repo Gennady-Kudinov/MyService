@@ -49,6 +49,8 @@ Rails.application.routes.draw do
   get '/soft_ecus/:soft_ecu_id/sw_idents', to: 'sw_idents#index'
 
   get 'orders/search', to: 'orders#search', as: 'search_orders'
+ # post 'orders/copy_file', to: 'orders#copy_file', as: 'copy_file'
+  get 'orders/copy_file', to: 'orders#copy_file', as: 'copy_file'
 
 
 

@@ -30,9 +30,17 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @search_results = Dir.glob("**/*#{params[:search]}*") if params[:search].present?
+    @search_param = params[:search]
   end
   
-
+  def copy_file
+    source_file_path = params[:file_path]
+    destination_file_path = "F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}/#{File.basename(source_file_path)}"
+    FileUtils.mkdir_p(File.dirname(destination_file_path))
+    FileUtils.cp(source_file_path, destination_file_path)
+    redirect_to order_path(params[:id], search: params[:search])
+  end
+  
   def edit
     @client = Client.find params[:client_id]
   end
