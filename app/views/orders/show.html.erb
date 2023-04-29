@@ -27,9 +27,8 @@
   <%= image_tag(@order.image.url, alt: 'Image') if @order.image? %>
 </p>
 
-
 <%= form_tag search_orders_path, method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search for a file..." %>
+  <%= text_field_tag :search, params[:search] || @sw_ident, placeholder: "Search..." %>
   <%= submit_tag "Search" %>
 <% end %>
 
