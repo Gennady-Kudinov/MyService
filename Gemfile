@@ -44,7 +44,6 @@ group :development do
   gem "byebug"
 end
 
-
 # пагинация
 gem 'kaminari'
 
