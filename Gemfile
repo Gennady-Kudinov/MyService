@@ -44,3 +44,12 @@ group :development do
   gem "byebug"
 end
 
+# защита от CSRF-атак
+gem 'secure_headers', '~> 6.3'
+# защита от SQL-инъекций
+gem 'rack-attack', '~> 6.5'
+# защита от XSS-атак
+gem 'rails-html-sanitizer', '~> 1.4'
+# защита от DoS-атак
+gem 'rack-protection', '~> 2.1'
+
