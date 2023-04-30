@@ -131,6 +131,18 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -237,7 +249,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    secure_headers (6.5.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -292,6 +303,7 @@ DEPENDENCIES
   image_processing
   importmap-rails
   jbuilder
+  kaminari
   mini_magick
   pry
   puma
@@ -302,7 +314,6 @@ DEPENDENCIES
   rspec-rails
   rubyzip
   sassc-rails
-  secure_headers (~> 6.3)
   sprockets-rails
   sqlite3
   stimulus-rails

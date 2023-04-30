@@ -44,8 +44,12 @@ group :development do
   gem "byebug"
 end
 
+
+# пагинация
+gem 'kaminari'
+
 # защита от CSRF-атак
-gem 'secure_headers', '~> 6.3'
+#gem 'secure_headers', '~> 6.3'
 # защита от SQL-инъекций
 gem 'rack-attack', '~> 6.5'
 # защита от XSS-атак
