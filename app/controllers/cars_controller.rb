@@ -123,6 +123,8 @@ class CarsController < ApplicationController
     @model_ecu = ModelEcu.find_by_id(car_params[:model_ecu_id]).name
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
     @sw_ident = SwIdent.find_by_id(car_params[:sw_ident_id]).name
+
+    @directory_path = "F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
     
       FileUtils.mkdir_p "F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
 
