@@ -34,20 +34,12 @@ class OrdersController < ApplicationController
   end
   
   def copy_file
-      #car = Car.find(params[:car_id])
-      # car = @order.car
-      #@licence = Client.find_by_id(params[:client_id]).licence
-      #@brand_ecu = BrandEcu.find_by_id(params[:brand_ecu_id]).name
-      #@model_ecu = ModelEcu.find_by_id(params[:model_ecu_id]).name
-      #@soft_ecu = SoftEcu.find_by_id(params[:soft_ecu_id]).name
-      #@sw_ident = SwIdent.find_by_id(params[:sw_ident_id]).name
-
       source_file_path = params[:file_path]
       
       destination_file_path = "F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{(@licence || '').
       upcase}/#{File.basename(source_file_path)}"
-      FileUtils.mkdir_p(File.dirname(destination_file_path))
-      FileUtils.cp(source_file_path, destination_file_path)
+      FileUtils.mkdir_p(File.dirname($directory_path))
+      #FileUtils.cp(source_file_path, @directory_path)
     
       order_id = params[:id].presence || @order&.id
        #redirect_to order_path(id: order_id, search: params[:search])

@@ -124,10 +124,9 @@ class CarsController < ApplicationController
     @soft_ecu = SoftEcu.find_by_id(car_params[:soft_ecu_id]).name
     @sw_ident = SwIdent.find_by_id(car_params[:sw_ident_id]).name
 
-    @directory_path = "F://BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
+    @directory_path = File.join("F:/BAZA", @brand_ecu, @model_ecu, @soft_ecu, @sw_ident, @licence.upcase)
+    FileUtils.mkdir_p @directory_path
     
-      FileUtils.mkdir_p "F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}"
-
     @database_file = File.new('F:/BAZA/database.txt', 'a+')
     @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
