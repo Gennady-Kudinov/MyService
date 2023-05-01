@@ -21,7 +21,7 @@
         <div class="field">
           <%= client.label :data, 'Дата и время'%>
           <div class="control">
-            <%= client.datetime_local_field :data, value: :local_datetime %>
+            <%= client.datetime_local_field :data, value: Time.now.strftime('%Y-%m-%dT%H:%M') %>
           </div>
         </div>
 

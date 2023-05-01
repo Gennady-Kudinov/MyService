@@ -12,10 +12,10 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    @model_ecus = @car.brand_ecu&.model_ecus&.order(:name)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @car = Car.new(car_params)
@@ -48,7 +48,7 @@ class CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-
+        
         @works = params.dig(:car, :works)
 
         case @works 
