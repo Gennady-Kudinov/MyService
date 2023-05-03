@@ -80,6 +80,8 @@ class CarsController < ApplicationController
     end
   end
 
+  
+
   private
 
   def set_car

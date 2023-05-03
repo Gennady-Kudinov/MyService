@@ -57,4 +57,9 @@ Rails.application.routes.draw do
 
   get '/orders/:id(.:format)', to: 'orders#show'
 
+
+  resources :cars do
+    resources :orders
+  end
+
 end

@@ -34,12 +34,13 @@ class OrdersController < ApplicationController
   end
   
   def copy_file
+
       source_file_path = params[:file_path]
       
-      destination_file_path = "F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{(@licence || '').
+      @directory_path = "F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{(@licence || '').
       upcase}/#{File.basename(source_file_path)}"
-      FileUtils.mkdir_p(File.dirname($directory_path))
-      #FileUtils.cp(source_file_path, @directory_path)
+      FileUtils.mkdir_p(File.dirname(@directory_path))
+      FileUtils.cp(source_file_path, @directory_path)
     
       order_id = params[:id].presence || @order&.id
        #redirect_to order_path(id: order_id, search: params[:search])
@@ -80,4 +81,7 @@ class OrdersController < ApplicationController
       :mileage
     )
   end
+
+ 
+
 end

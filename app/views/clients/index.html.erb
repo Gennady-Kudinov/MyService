@@ -77,6 +77,13 @@
             <div class="column is-4">
             <%= link_to  "Редактировать данные клиента", edit_client_path(client), class: "button is-warning" %>
           </div>
+
+        <div class="column is-3">
+          <% client.cars.each do |car| %>
+            <%= link_to 'Машина клиента', client_car_path(client, car), class: "button is-info" %> 
+          </div>
+        <% end %>
+
           <div class="column">
             <%= button_to "Удалить", client_path(client), method: :delete, 
               data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
