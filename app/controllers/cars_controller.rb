@@ -18,6 +18,11 @@ class CarsController < ApplicationController
   def edit; end
 
   def create
+        # Найдите ордер, который был выполнен для этой машины и клиента
+        @order = Order.find_by(client_id: params[:client_id], car_id: params[:id])
+        # Свяжите ордер с машиной клиента
+        @car.orders << @order
+
     @car = Car.new(car_params)
    # @car.soft_ecu_id = params[:soft_ecu_id]
     respond_to do |format|
