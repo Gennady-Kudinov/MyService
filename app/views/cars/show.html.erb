@@ -10,5 +10,8 @@
     <div class="column">
       <%= button_to "Удалить", @car, method: :delete, class: "button is-danger" %>  
     </div>
+     <div class="column is-4">
+      <%= link_to 'Открыть ордер', client_order_path, class: "button is-info" %> 
+    </div> 
   </div>
 </div>
