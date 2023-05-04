@@ -18,9 +18,9 @@
     <tr>
       <td> <%= car.client.licence.upcase %></td>
       <td> <%= car.make.name %></td>
-      <td><%= car.model.name %></td>
-      <td><%= car.mileage %></td>
-      <td><%= car.vin %> </td>
+      <td> <%= car.model.name %></td>
+      <td> <%= car.mileage %></td>
+      <td> <%= car.vin %> </td>
       <td> <%= sanitize(car.brand_ecu.name) if car.brand_ecu.present? %></td>
       <td> <%= sanitize(car.model_ecu.name) if car.model_ecu.present? %></td>
       <td> <%= sanitize(car.soft_ecu.name) if car.soft_ecu.present? %></td>

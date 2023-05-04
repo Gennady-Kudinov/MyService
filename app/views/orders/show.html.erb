@@ -26,19 +26,3 @@
   <h1 class="title is-4 mt-4">Изображение</h1>
   <%= image_tag(@order.image.url, alt: 'Image') if @order.image? %>
 </p>
-
-<%= form_tag search_orders_path, method: :get do %>
-  <%= text_field_tag :search, params[:search] || @sw_ident, placeholder: "Search..." %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<% if @search_results.present? %>
-  <h2>Search Results</h2>
-  <ul>
-    <% @search_results.each do |file_path| %>
-      <li><%= file_path %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
