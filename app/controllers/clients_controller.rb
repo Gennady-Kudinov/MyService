@@ -50,6 +50,11 @@ class ClientsController < ApplicationController
     redirect_to clients_path
   end
 
+  def destroy_all
+    Client.destroy_all
+    redirect_to clients_path, notice: "Все клиенты были удалены."
+  end
+
   def save_image(path = '')
     clients = Client.all
 

@@ -99,4 +99,9 @@
       </div>
     <% end %>
   <% end %>    
+
+  <%= button_to "Удалить всех", clients_path, method: :delete,  
+  data: { confirm: "Подтверждаете удаление всех клиентов?" },  
+  class: "button is-danger", id: "delete-all-button" %>
+
 </div>

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :user_signed_in?, :current_user, :superadmin?, :admin?
+  skip_before_action :verify_authenticity_token, only: [:delete_all_clients]
 
   private
 
@@ -28,4 +29,10 @@ class ApplicationController < ActionController::Base
   def admin?
     current_user.admin
   end
+
+  def delete_all_clients
+    send_file "#{Rails.root}/app/assets/javascripts/delete_all_clients.js",
+    type: 'text/javascript', disposition: 'inline'
+  end
+
 end
