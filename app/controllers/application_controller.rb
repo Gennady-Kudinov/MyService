@@ -30,9 +30,20 @@ class ApplicationController < ActionController::Base
     current_user.admin
   end
 
+ # def delete_all_clients
+  #  send_file "#{Rails.root}/app/assets/javascripts/delete_all_clients.js",
+  #  type: 'text/javascript', disposition: 'inline'
+ # end
+
   def delete_all_clients
-    send_file "#{Rails.root}/app/assets/javascripts/delete_all_clients.js",
-    type: 'text/javascript', disposition: 'inline'
+    if params[:turbo_confirm] == "yes"
+      send_file "#{Rails.root}/app/assets/javascripts/delete_all_clients.js",
+        type: 'text/javascript', disposition: 'inline'
+      redirect_to clients_path, notice: "Все клиенты были удалены."
+    else
+      redirect_to clients_path, alert: "Удаление всех клиентов отменено."
+    end
   end
+
 
 end
