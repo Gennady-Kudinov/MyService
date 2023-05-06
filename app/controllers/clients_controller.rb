@@ -51,9 +51,14 @@ class ClientsController < ApplicationController
   end
 
   def destroy_all
-    Client.destroy_all
-    redirect_to clients_path, notice: "Все клиенты были удалены."
+    if params[:turbo_confirm] == "yes"
+      Client.destroy_all
+      redirect_to clients_path, notice: "Все клиенты были удалены."
+    else
+      redirect_to clients_path, alert: "Удаление всех клиентов отменено."
+    end
   end
+
 
   def save_image(path = '')
     clients = Client.all
