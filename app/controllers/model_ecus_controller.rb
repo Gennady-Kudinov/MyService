@@ -34,7 +34,8 @@ class ModelEcusController < ApplicationController
 
     respond_to do |format|
       if @model_ecu.save
-        format.html { redirect_to model_ecu_url(@model_ecu), notice: "Model ecu was successfully created." }
+        format.html { redirect_to new_model_ecu_url(brand_ecu_id: params[:model_ecu][:brand_ecu_id]),
+          notice: "Model_ecu ident was successfully created." }
         format.json { render :show, status: :created, location: @model_ecu }
       else
         format.html { render :new, status: :unprocessable_entity }
