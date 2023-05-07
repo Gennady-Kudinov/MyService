@@ -16,9 +16,9 @@
     <%= form.text_field :name %>
   </div>
 
-   <div>
-    <%= form.label :ID_модели_автомобиля, style: "color: purple; display: block;" %>
-    <%= form.text_field :soft_ecu_id %>
+  <div>
+    <%= form.label :soft_ecu_id, style: "color: purple; display: block;" %>
+    <%= form.text_field :soft_ecu_id, value: params[:soft_ecu_id] %>
   </div>
 
   <div>

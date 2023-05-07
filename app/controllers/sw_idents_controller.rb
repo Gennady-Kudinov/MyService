@@ -34,7 +34,8 @@ class SwIdentsController < ApplicationController
 
     respond_to do |format|
       if @sw_ident.save
-        format.html { redirect_to sw_ident_url(@sw_ident), notice: "Sw ident was successfully created." }
+        format.html { redirect_to new_sw_ident_path(soft_ecu_id: params[:sw_ident][:soft_ecu_id]),
+          notice: "Sw ident was successfully created." }
         format.json { render :show, status: :created, location: @sw_ident }
       else
         format.html { render :new, status: :unprocessable_entity }
