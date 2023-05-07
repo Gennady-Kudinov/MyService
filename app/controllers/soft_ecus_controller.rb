@@ -30,7 +30,8 @@ class SoftEcusController < ApplicationController
   
       respond_to do |format|
         if @soft_ecu.save
-          format.html { redirect_to soft_ecu_url(@soft_ecu), notice: "Model ecu was successfully created." }
+          format.html { redirect_to new_soft_ecu_url(model_ecu_id: params[:soft_ecu][:model_ecu_id]),
+            notice: "Soft ident was successfully created." }
           format.json { render :show, status: :created, location: @soft_ecu }
         else
           format.html { render :new, status: :unprocessable_entity }
