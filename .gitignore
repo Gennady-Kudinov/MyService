@@ -150,3 +150,15 @@ drawSQL-mysql-export-2022-11-04.sql
 db/база старая/20230413141746_add_ecu_columns_to_cars.rb
 db/база старая/development.sqlite3
 F:/BAZA/database.txt
+.DS_Store
+.idea/Servis.iml
+.idea/modules.xml
+.idea/workspace.xml
+.vscode/settings.json
+.idea/vcs.xml
+.idea/misc.xml
+.DS_Store
+.DS_Store
+.DS_Store
+.DS_Store
+.gitignore
