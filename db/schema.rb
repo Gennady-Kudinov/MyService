@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_26_175042) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_190803) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -140,13 +140,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_175042) do
     t.index ["make_id"], name: "index_models_on_make_id"
   end
 
-  create_table "my_files", force: :cascade do |t|
-    t.string "name"
-    t.string "path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.text "problem"
     t.text "work_description"
@@ -186,13 +179,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_175042) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
-
-  create_table "the_files", force: :cascade do |t|
-    t.text "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
