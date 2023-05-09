@@ -3,17 +3,13 @@ class SwIdentsController < ApplicationController
 
   # GET /sw_idents or /sw_idents.json
   def index
-    @sw_idents = SwIdent.all
-
-   # @soft_ecu = SoftEcu.find(params[:soft_ecu_id])
-   # @sw_idents = @soft_ecu.sw_idents
-
-   @sw_idents = SwIdent.where(soft_ecu_id: params[:soft_ecu_id])
-        respond_to do |format|
-          format.html # index.html.erb
-          format.json { render json: @sw_idents }
-        end
-  end
+    @sw_idents = SwIdent.where(soft_ecu_id: params[:soft_ecu_id]).order(:name) # сортировка по имени идентификатора ПО
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @sw_idents }
+    end
+  end  
 
   # GET /sw_idents/1 or /sw_idents/1.json
   def show

@@ -3,14 +3,13 @@ class SoftEcusController < ApplicationController
   
     # GET /soft_ecus or /model_ecus.json
     def index
-        @soft_ecus = SoftEcu.all
-        
-        @soft_ecus = SoftEcu.where(model_ecu_id: params[:model_ecu_id])
-        respond_to do |format|
-          format.html # index.html.erb
-          format.json { render json: @soft_ecus }
-        end
-    end
+      @soft_ecus = SoftEcu.where(model_ecu_id: params[:model_ecu_id]).order(:name) # сортировка по имени софта
+    
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @soft_ecus }
+      end
+    end    
   
     # GET /soft_ecus/1 or /soft_ecus/1.json
     def show; end
