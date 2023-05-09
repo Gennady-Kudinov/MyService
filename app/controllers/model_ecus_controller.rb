@@ -2,19 +2,35 @@ class ModelEcusController < ApplicationController
   before_action :set_model_ecu, only: %i[ show edit update destroy ]
 
   # GET /model_ecus or /model_ecus.json
-  def index
-      @model_ecus = ModelEcu.all
+ # def index
+  #    @model_ecus = ModelEcu.all
 
-      @model_ecus = ModelEcu.where(brand_ecu_id: params[:brand_ecu_id])
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @model_ecus }
-      end
+  #    @model_ecus = ModelEcu.where(brand_ecu_id: params[:brand_ecu_id])
+   #   respond_to do |format|
+   #     format.html # index.html.erb
+   #     format.json { render json: @model_ecus }
+   #   end
 
-        conditions = {}
-        conditions = { model_ecu_id: params[:model_ecu_id] } if params[:model_ecu_id]
+   #     conditions = {}
+   #     conditions = { model_ecu_id: params[:model_ecu_id] } if params[:model_ecu_id]
     
-        @model_ecus = SoftEcu.where(conditions)
+    #    @model_ecus = SoftEcu.where(conditions)
+ # end
+
+  def index
+    @model_ecus = ModelEcu.all.order(:name) # сортировка по имени модели
+  
+    @model_ecus = ModelEcu.where(brand_ecu_id: params[:brand_ecu_id]).order(:name) # сортировка по имени модели
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @model_ecus }
+    end
+  
+    conditions = {}
+    conditions = { model_ecu_id: params[:model_ecu_id] } if params[:model_ecu_id]
+  
+    @model_ecus = SoftEcu.where(conditions).order(:name) # сортировка по имени софта
   end
 
   # GET /model_ecus/1 or /model_ecus/1.json
