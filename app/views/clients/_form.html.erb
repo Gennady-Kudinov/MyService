@@ -1,33 +1,36 @@
-<%= form_for client do |client| %>             
-      <div class="field">
-        <%= client.label :licence, 'Гос Номер а/м' %>
+<%= form_for client, html: { class: "form" } do |client| %>
+    <div class="field">
+      <%= client.label :licence, 'Гос Номер а/м', class: "label", style: "color: red;" %>
         <div class="control">
           <%= client.text_field :licence, class: "input" %>
         </div>
-      </div>
+    </div>
 
-      <div class="field">
-        <%= client.label :phone, 'Номер телефона' %>
-        <div class="control">
-          <%= client.telephone_field :phone %>
-        </div>
+  <div class="field">
+    <%= client.label :phone, 'Номер телефона', class: "label" %>
+    <div class="control">
+      <%= client.telephone_field :phone, class: "input",
+      data: { tooltip: "Введите номер телефона в формате +7 (XXX) XXX-XX-XX" } %>
+    </div>
+  </div>
 
-      <div class="field">
-        <%= client.label :name, 'Имя владельца а/м' %>
-        <div class="control">
-          <%= client.text_field :name, class: "input" %>
-        </div>
+  <div class="field">
+    <%= client.label :name, 'Имя владельца а/м', class: "label" %>
+    <div class="control">
+      <%= client.text_field :name, class: "input" %>
+    </div>
+  </div>
 
-        <div class="field">
-          <%= client.label :data, 'Дата и время'%>
-          <div class="control">
-            <%= client.datetime_local_field :data, value: Time.now.strftime('%Y-%m-%dT%H:%M') %>
-          </div>
-        </div>
+  <div class="field">
+    <%= client.label :data, 'Дата и время', class: "label" %>
+    <div class="control">
+      <%= client.datetime_local_field :data, value: Time.now.strftime('%Y-%m-%dT%H:%M'), class: "input" %>
+    </div>
+  </div>
 
-        <div class="field my-5">
-          <div class="control">
-            <%= client.submit "Добавить клиента", class: "button is-primary" %>
-          </div>
-        </div>
+  <div class="field my-5">
+    <div class="control">
+      <%= client.submit "Добавить клиента", class: "button is-primary" %>
+    </div>
+  </div>
 <% end %>
