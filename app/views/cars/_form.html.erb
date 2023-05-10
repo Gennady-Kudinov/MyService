@@ -1,7 +1,6 @@
 <%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
 
-  <div class="columns mb-6">
-
+  <div class="columns">
     <div class="column">
       <div class="field">
         <%= form.label :Марка_id, style: "color: blue" %>
@@ -136,4 +135,18 @@
       </div>
     </div>
   </div>
+
+  <div class="column">
+    <%= link_to "Добавить Марку автомобиля", brand_ecus_path, class: "button", style: "color: green" %> 
+    <%= link_to "Добавить Модель ЭБУ", model_ecus_path, class: "button", style: "color: green" %>
+    <%= link_to "Добавить Модель а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: green" %>
+    <%= link_to "Добавить SW для ЭБУ", sw_idents_path, class: "button", style: "color: green" %> 
+  </div>
+
+  <div class="column">
+    <%= link_to "Список машин", cars_path, class: "button", style: "color: purple" %>
+    <%= link_to "Ввести новую модель а/м", models_path, class: "button", style: "color: purple" %>
+    <%= link_to "Редактировать марку а/м", makes_path, class: "button", style: "color: purple" %>
+  <div>
+
 <% end %>
