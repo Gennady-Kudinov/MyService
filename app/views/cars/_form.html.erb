@@ -1,7 +1,7 @@
 <%= form_with(model: car, data: { controller: 'dropdown', action: 'change->dropdown#change' }) do |form| %>
 
   <div class="columns">
-    <div class="column">
+    <div class="column is-one-two">
       <div class="field">
         <%= form.label :Марка_id, style: "color: blue" %>
         <div class="control">
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="column">
+    <div class="column is-one-two">
       <div class="field">
         <%= form.label :Модель_id, style: "color: blue" %>
         <div class="control">
@@ -51,7 +51,7 @@
   </div>
 
         <div class="columns"> 
-          <div class="column"> 
+          <div class="column is-one-quarter"> 
             <div class="field"> 
               <%= form.label :Марка_автомобиля_id, style: "color: blue" %> 
               <div class="control"> 
@@ -65,7 +65,7 @@
             </div> 
           </div>
 
-          <div class="column">
+          <div class="column is-one-quarter">
             <div class="field">
               <%= form.label :Модель_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
@@ -78,7 +78,7 @@
             </div>
           </div>
 
-         <div class="column">
+         <div class="column is-one-quarter">
             <div class="field">
               <%= form.label :Модель_Автомобиля_id, style: "color: blue" %>
                 <div class="control">
@@ -93,7 +93,7 @@
         </div>
 
         <div class="columns">
-          <div class="column">
+          <div class="column is-one-quarter">
             <div class="field">
               <%= form.label :ПО_Калибровок_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
