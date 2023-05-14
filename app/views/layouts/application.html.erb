@@ -8,32 +8,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+   
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'cars' %>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script type="text/javascript">
-    (function() {
-          var burger = document.querySelector('.burger');
-          var menu = document.querySelector('#'+burger.dataset.target);
-          burger.addEventListener('click', function() {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-              });
-        })();
-  </script>
-
+    <script type="text/javascript">
+      (function() {
+        var burger = document.querySelector('.burger');
+        var menu = document.querySelector('#'+burger.dataset.target);
+        burger.addEventListener('click', function() {
+          burger.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
+        });
+      })();
+    </script>
   </head>
 
-  <body> 
+ <body> 
     <%= render "layouts/navbar" %> 
-
+    <div class="container content">
       <div class="container py-6">
         <%= yield %>
       </div>
+    </div>
   </body>
-
-
-
 </html>
