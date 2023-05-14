@@ -93,7 +93,7 @@
         </div>
 
         <div class="columns">
-          <div class="column is-one-quarter">
+          <div class="column is-one-fifth">
             <div class="field">
               <%= form.label :ПО_Калибровок_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
@@ -107,7 +107,7 @@
           </div>
         
 
-            <div class="column">
+            <div class="column is-one-fifth">
               <div class="field">
                 <%= form.label :mileage, 'Пробег в км', style: "color: blue" %>
                 <div class="control">
@@ -116,7 +116,7 @@
               </div>
             </div>
 
-            <div class="column">
+            <div class="column is-one-fifth">
               <div class="field">
                 <%= form.label :vin, 'Вин номер', style: "color: blue" %>
                 <div class="control">
@@ -124,17 +124,17 @@
                 </div>
               </div>
             </div>
-        </div> 
+          </div> 
 
-  <div class="columns">
-    <div class="column">
-      <div class="field">
-        <div class="control">
-          <%= form.submit "Добавить"  %>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="column is-centered"> 
+            <div class="column is-three-thirds"> 
+              <div class="field tooltip"> 
+                <div class="control"> 
+                  <%= form.submit "Добавить", class: "button is-fullwidth" %> 
+                </div> 
+              </div> 
+            </div> 
+          </div>
 
   <div class="column">
     <%= link_to "Добавить Марку автомобиля", brand_ecus_path, class: "button", style: "color: green" %> 
