@@ -9,37 +9,37 @@ class ClientsController < ApplicationController
     @client = Client.new
   end
 
-#  def index
- #   respond_to do |format|
- #     format.html do
- #       @clients =
- #         Client.where(['licence LIKE ?', "%#{params[:search]}%"]).order(
- #           created_at: :desc
- #         ).first(3)
- #   end
- #     format.zip { respond_with_zipped_clients }
- #   end
-#  end
-
-def index 
-  if params[:licence].present? 
-    @clients = 
-      Client.where(['licence LIKE ?', "%#{params[:licence]}%"]).order( 
-        created_at: :desc 
-      ).first(3) 
-  else 
-    @clients = 
-      Client.joins(cars: :model).where(['models.name LIKE ?', "%#{params[:search]}%"]).order( 
-        created_at: :desc )
-  end 
- 
-  respond_to do |format| 
-    format.html 
-    format.zip { respond_with_zipped_clients } 
-  end 
-end 
+  def index
+    respond_to do |format|
+      format.html do
+        @clients =
+          Client.where(['licence LIKE ?', "%#{params[:search]}%"]).order(
+            created_at: :desc
+          ).first(3)
+    end
+      format.zip { respond_with_zipped_clients }
+    end
+  end
 
 
+
+ # def index 
+  #  if params[:licence].present? 
+ #     @clients = 
+ #       Client.where(['licence LIKE ?', "%#{params[:licence]}%"]).order( 
+  #        created_at: :desc 
+ #       ).first(3) 
+  #  else 
+  #    @clients = 
+  #      Client.joins(cars: :model).where(['models.name LIKE ?', "%#{params[:search]}%"]).order( 
+  #        created_at: :desc )
+  #  end 
+  
+ #   respond_to do |format| 
+  #    format.html 
+  #    format.zip { respond_with_zipped_clients } 
+ #   end 
+#  end 
 
   def show; end
 
