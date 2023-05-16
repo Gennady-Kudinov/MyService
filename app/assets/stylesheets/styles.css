@@ -1,0 +1,24 @@
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-field {
+  height: 36px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.btn {
+  height: 38px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}

@@ -10,32 +10,26 @@
     <%= link_to "Добавить SW для ЭБУ", sw_idents_path, class: "button", style: "color: green" %> 
 </div>
 
-<div style="display: inline-block;"> 
+<div class="search-box"> 
   <!--ПОИСК КЛИЕНТА по ГОС НОМЕРУ -->   
   <%= form_tag clients_path, :method => 'get' do %>  
-    <%= text_field_tag :licence, params[:licence], placeholder: "Поиск по гос/номеру" %>  
-    <%= submit_tag "Поиск" %>  
+    <%= text_field_tag :licence, params[:licence], placeholder: "Поиск по гос/номеру", class: "search-field" %>  
+    <%= submit_tag "Поиск", class: "btn" %>  
   <% end %> 
-</div> 
-<div style="display: inline-block;"> 
-  <!--ПОИСК МАШИНЫ по ВИН -->   
+<!--ПОИСК МАШИНЫ по ВИН -->   
   <%= form_tag cars_path, method: :get do %>  
-    <%= text_field_tag :search, params[:search], placeholder: "Поиск по Vin" %>  
-    <%= submit_tag "Search" %>  
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск по Vin", class: "search-field" %>  
+    <%= submit_tag "Search", class: "btn" %>  
   <% end %> 
-</div> 
 <!--ПОИСК МОДЕЛИ МАШИНЫ  -->  
-<div style="display: inline-block;"> 
   <%= form_tag clients_path, method: :get do %> 
-    <%= text_field_tag :search, params[:search], placeholder: "Поиск по модели машины" %> 
-    <%= submit_tag "Поиск" %> 
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск по модели машины", class: "search-field" %> 
+    <%= submit_tag "Поиск", class: "btn" %> 
   <% end %> 
-</div>
 <!--ПОИСК ПО sw_ident -->   
-<div style="display: inline-block;">  
   <%= form_tag clients_path, method: :get do %>  
-    <%= text_field_tag :search, params[:search], placeholder: "Поиск по sw_ident" %>  
-    <%= submit_tag "Поиск" %>  
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск по sw_ident", class: "search-field" %>  
+    <%= submit_tag "Поиск", class: "btn" %>  
   <% end %>  
 </div>
 
