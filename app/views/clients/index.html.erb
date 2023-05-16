@@ -31,6 +31,13 @@
     <%= submit_tag "Поиск" %> 
   <% end %> 
 </div>
+<!--ПОИСК ПО sw_ident -->   
+<div style="display: inline-block;">  
+  <%= form_tag clients_path, method: :get do %>  
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск по sw_ident" %>  
+    <%= submit_tag "Поиск" %>  
+  <% end %>  
+</div>
 
 <div class="btn-group mb-3">
   <%= link_to 'Скачать базу клиентов архивом .zip', clients_path(format: :zip),
