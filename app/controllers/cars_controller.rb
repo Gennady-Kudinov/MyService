@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  require 'win32ole'
   before_action :set_car, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, :check_user_admin!  
 
@@ -117,6 +118,11 @@ class CarsController < ApplicationController
     FileUtils.mkdir_p "F:/BAZA/#{@brand_ecu}/Airbag(подушки)/#{@licence}"
   end
 
+  def open_explorer(path)
+    shell = WIN32OLE.new('Shell.Application')
+    shell.ShellExecute('explorer.exe', "/select,\"#{path.gsub('/', '\\')}\"", nil, 'open', 1)
+  end
+
   def programm_create
     @datetime = Time.new
     @licence = Client.find_by_id(car_params[:client_id]).licence
@@ -131,13 +137,15 @@ class CarsController < ApplicationController
 
     @directory_path = File.join("F:/BAZA", @brand_ecu, @model_ecu, @soft_ecu, @sw_ident, @licence.upcase)
     FileUtils.mkdir_p @directory_path
+    sleep(1) # добавляем паузу на 1 секунду
+    open_explorer(@directory_path)
     
     @database_file = File.new('F:/BAZA/database.txt', 'a+')
-    @database_file.puts "#{@licence.upcase}  #{@make}  #{@model}  Тип ЭБУ #{@brand_ecu} Модель ЭБУ #{@model_ecu} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
+    @database_file.puts "#{@licence.upcase}  #{@brand_ecu}  #{@model_ecu} #{@sw_ident} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
     @database_file.close
 
     @id_client = File.new("F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
-    @id_client.puts "<body>#{@licence} #{@make} #{@model} #{@mileage}км. Тип ЭБУ #{@brand_ecu}: Модель ЭБУ #{@model_ecu}: Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
+    @id_client.puts "<body>#{@licence} #{@brand_ecu} #{@model} #{@model_ecu} #{@mileage}км. Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
     @id_client.close
   end
 
