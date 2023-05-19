@@ -148,6 +148,8 @@ class CarsController < ApplicationController
     @licence = Client.find_by_id(car_params[:client_id]).licence
     @mileage = car_params[:mileage]
     @phone = car_params[:phone]
+    @description = car_params[:description]
+    @recommendation = car_params[:recommendation]
     @make = Make.find_by_id(car_params[:make_id]).name
     @model = Model.find_by_id(car_params[:model_id]).name
     @brand_ecu = BrandEcu.find_by_id(car_params[:brand_ecu_id]).name
