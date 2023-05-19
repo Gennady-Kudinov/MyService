@@ -3,7 +3,7 @@ class Client < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   validates :licence, :data, presence: true
-  validates :licence, length: { in: 6..10 }
+  validates :licence, length: { in: 1..10 }
 
   # store_accessor :images, :avatar, :background
 

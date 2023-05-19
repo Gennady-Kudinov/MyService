@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  include ActionView::Helpers::UrlHelper
   require 'win32ole'
   before_action :set_car, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, :check_user_admin!  
@@ -119,8 +120,27 @@ class CarsController < ApplicationController
   end
 
   def open_explorer(path)
-    shell = WIN32OLE.new('Shell.Application')
-    shell.ShellExecute('explorer.exe', "/select,\"#{path.gsub('/', '\\')}\"", nil, 'open', 1)
+    if path
+      shell = WIN32OLE.new('Shell.Application')
+      shell.ShellExecute('explorer.exe', "/select,\"#{path.gsub('/', '\\')}\"", nil, 'open', 1)
+    else
+      link_to "Открыть папку", "file:///F:/BAZA" # обработка случая, когда файл не найден
+    end
+  end
+
+ # def open_explorer(path)
+ #   shell = WIN32OLE.new('Shell.Application')
+ #   shell.ShellExecute('explorer.exe', "/select,\"#{path.gsub('/', '\\')}\"", nil, 'open', 1)
+ # end
+
+  def find_file(sw_ident)
+    path = "F:/BAZA/**/#{sw_ident}/#{@licence}.*"
+    files = Dir.glob(path)
+    if files.any?
+      return files.first
+    else
+      return link_to "Открыть папку", "file:///F:/BAZA"
+    end
   end
 
   def programm_create
@@ -139,6 +159,8 @@ class CarsController < ApplicationController
     FileUtils.mkdir_p @directory_path
     sleep(1) # добавляем паузу на 1 секунду
     open_explorer(@directory_path)
+    sleep(1) # добавляем паузу на 1 секунду
+    open_explorer(@find_file)
     
     @database_file = File.new('F:/BAZA/database.txt', 'a+')
     @database_file.puts "#{@licence.upcase}  #{@brand_ecu}  #{@model_ecu} #{@sw_ident} #{car_params[:mileage]}км.  Сумма #{car_params[:sum]} Телефон #{car_params[:phone]} Дата #{@datetime}"
