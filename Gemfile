@@ -16,6 +16,7 @@ gem 'rubyzip'
 gem 'caxlsx'
 gem 'caxlsx_rails'
 gem 'win32ole'
+gem 'openssl'
 
 # gem 'bootstrap', '~> 5.2.0'
 # добавил булма 
