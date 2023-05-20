@@ -169,7 +169,7 @@ class CarsController < ApplicationController
     @database_file.close
 
     @id_client = File.new("F:/BAZA/#{@brand_ecu}/#{@model_ecu}/#{@soft_ecu}/#{@sw_ident}/#{@licence.upcase}/#{@licence.upcase}.html", 'a+')
-    @id_client.puts "<body>#{@licence} #{@brand_ecu} #{@model} #{@model_ecu} #{@mileage}км. Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
+    @id_client.puts "<body>#{@licence} #{@brand_ecu} #{@model} #{@model_ecu} #{@sw_ident} #{@mileage}км. Сумма #{car_params[:sum]} Телефон #{@phone} Дата #{@datetime}<br />#{@description}<br />#{@recommendation}<br /><body>"
     @id_client.close
   end
 
