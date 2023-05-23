@@ -1,9 +1,20 @@
 class TasksController < ApplicationController
    before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  def index
+ def index
     # список задач текущего пользователя
     @tasks = Task.ordered.where("user_id == ?", current_user.id)
+
+    # проверяем каждую задачу на достижение даты
+    @tasks.each do |task|
+      if task.date == Date.today
+        # воспроизводим звуковой сигнал
+        system("afplay /System/Library/Sounds/Glass.aiff")
+
+        # или показываем всплывающее окно
+        system("osascript -e 'display notification \"#{task.name}\" with title \"Task Alert\"'")
+      end
+    end
   end
 
   def show
