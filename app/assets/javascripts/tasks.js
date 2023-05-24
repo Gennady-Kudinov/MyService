@@ -1,6 +1,6 @@
 
 // app/assets/javascripts/tasks.js
-
+/*
 // ждем, пока загрузится вся страница
 document.addEventListener("DOMContentLoaded", function () {
     // получаем поле ввода даты
@@ -15,4 +15,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // вставляем новое поле ввода после поля ввода даты
     dateField.parentNode.insertBefore(timeField, dateField.nextSibling);
 });
-
+*/

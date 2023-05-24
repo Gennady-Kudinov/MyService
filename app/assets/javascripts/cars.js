@@ -1,4 +1,5 @@
-$(document).on('change', '#car_model_ecu_id', function() {
+/*
+$(document).on('change', '#car_model_ecu_id', function () {
     var modelEcuId = $(this).val();
     if (modelEcuId) {
       $.ajax({
@@ -16,4 +17,4 @@ $(document).on('change', '#car_model_ecu_id', function() {
       $('#car_soft_ecu_id').html('<option value="">Select soft ecu</option>');
     }
   });
-  
+  */

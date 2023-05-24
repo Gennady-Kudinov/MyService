@@ -5,25 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css" rel="stylesheet">
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
-   
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag 'cars' %>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script type="text/javascript">
-      (function() {
-        var burger = document.querySelector('.burger');
-        var menu = document.querySelector('#'+burger.dataset.target);
-        burger.addEventListener('click', function() {
-          burger.classList.toggle('is-active');
-          menu.classList.toggle('is-active');
-        });
-      })();
-    </script>
   </head>
 
  <body> 
@@ -33,6 +19,5 @@
         <%= yield %>
       </div>
     </div>
-    <%= javascript_include_tag 'tasks' %>
   </body>
 </html>
