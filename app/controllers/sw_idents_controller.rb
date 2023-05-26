@@ -12,8 +12,7 @@ class SwIdentsController < ApplicationController
   end  
 
   # GET /sw_idents/1 or /sw_idents/1.json
-  def show
-  end
+  def show; end
 
   # GET /sw_idents/new
   def new
@@ -21,8 +20,7 @@ class SwIdentsController < ApplicationController
   end
 
   # GET /sw_idents/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sw_idents or /sw_idents.json
   def create

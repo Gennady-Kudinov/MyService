@@ -71,7 +71,6 @@ class ClientsController < ApplicationController
     end
   end
 
-
   def save_image(path = '')
     clients = Client.all
 

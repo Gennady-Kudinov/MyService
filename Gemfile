@@ -52,9 +52,9 @@ gem 'kaminari'
 # защита от CSRF-атак
 #gem 'secure_headers', '~> 6.3'
 # защита от SQL-инъекций
-gem 'rack-attack', '~> 6.5'
+gem 'rack-attack'
 # защита от XSS-атак
-gem 'rails-html-sanitizer', '~> 1.4'
+gem 'rails-html-sanitizer'
 # защита от DoS-атак
-gem 'rack-protection', '~> 2.1'
+gem 'rack-protection'
 
