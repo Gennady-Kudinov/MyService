@@ -1,12 +1,8 @@
 class ChatsController < ApplicationController
   after_action :authenticate_user!
 
-  def index
-   
+  def index 
     @chats = Chat.all
-  
-
-  
   end 
 
   def new 
@@ -37,7 +33,6 @@ class ChatsController < ApplicationController
 
   def chat_params 
     params.require(:chat).permit(:name, messages_attributes: [:id, :content, :_destroy])
-
   end
   
 end

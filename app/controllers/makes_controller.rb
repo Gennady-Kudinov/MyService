@@ -8,8 +8,7 @@ class MakesController < ApplicationController
   end
 
   # GET /makes/1 or /makes/1.json
-  def show
-  end
+  def show; end
 
   # GET /makes/new
   def new
@@ -17,8 +16,7 @@ class MakesController < ApplicationController
   end
 
   # GET /makes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /makes or /makes.json
   def create

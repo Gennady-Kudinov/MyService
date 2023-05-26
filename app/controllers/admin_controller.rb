@@ -4,9 +4,7 @@ class AdminController < ApplicationController
    @total_clients = Client.count
   end
 
-  def show
-   
-  end
+  def show; end
 
   def search
     file = Dir.glob("**/*#{@search}*.*")

@@ -7,8 +7,7 @@ class BrandEcusController < ApplicationController
   end
 
   # GET /brand_ecus/1 or /brand_ecus/1.json
-  def show
-  end
+  def show; end
 
   # GET /brand_ecus/new
   def new
@@ -16,8 +15,7 @@ class BrandEcusController < ApplicationController
   end
 
   # GET /brand_ecus/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /brand_ecus or /brand_ecus.json
   def create

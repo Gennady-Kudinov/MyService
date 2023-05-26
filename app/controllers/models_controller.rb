@@ -11,8 +11,7 @@ class ModelsController < ApplicationController
   end
 
   # GET /models/1 or /models/1.json
-  def show
-  end
+  def show; end
 
   # GET /models/new
   def new
@@ -20,8 +19,7 @@ class ModelsController < ApplicationController
   end
 
   # GET /models/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /models or /models.json
   def create
