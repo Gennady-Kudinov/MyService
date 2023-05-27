@@ -65,7 +65,7 @@ class ClientsController < ApplicationController
   def destroy_all
     if params[:turbo_confirm] == "yes"
       Client.destroy_all
-      redirect_to clients_path, notice: "Все клиенты были удалены."
+      redirect_to clients_path, notice: "Все клиенты были удалены.", template: 'clients/index'
     else
       redirect_to clients_path, alert: "Удаление всех клиентов отменено."
     end

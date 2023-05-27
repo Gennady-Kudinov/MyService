@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/upload_file', to: 'files#upload_file' 
   get '/saveimages', to: 'clients#save_image'
   
-  resources :files, only: %i[index]
+  resources :files
 
   resources :chats do 
     resources :messages 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     resources :cars
     resources :orders
   end
-  resources :client, only: %i[index edit new create update]
+  resources :client, only: %i[index edit new create update destroy_all]
 
   controller :sessions do
     get 'login'  =>  :new
@@ -35,8 +35,6 @@ Rails.application.routes.draw do
   resources :articles do
    resources :comments, shallow: true
   end
-
-   resources :the_files
 
    get 'static_pages', to: 'static_pages#index'
 
