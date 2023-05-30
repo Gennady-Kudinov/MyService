@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 
     # проверяем каждую задачу на достижение даты
     @tasks.each do |task|
-      if task.date.strftime("%Y-%m-%d %H:%M") == (Date.today - 1.day).strftime("%Y-%m-%d 11:00")
+      if task.date.present? && task.date.strftime("%Y-%m-%d %H:%M") == (Date.today - 1.day).strftime("%Y-%m-%d 11:00")
         # воспроизводим звуковой сигнал
         system("afplay /System/Library/Sounds/Glass.aiff")
 
@@ -66,4 +66,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:name, :date, :description)
   end
+
 end

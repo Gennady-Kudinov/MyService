@@ -19,5 +19,20 @@
         <%= yield %>
       </div>
     </div>
+
+<script>
+  $(document).ready(function() {
+    $('#client_send_sms_reminder').change(function() {
+      if($(this).is(':checked')) {
+        alert('Оповещение теперь включено!');
+        tasks.enableSmsReminder();
+      } else {
+        alert('Оповещение теперь выключено!');
+        tasks.disableSmsReminder();
+      }
+    });
+  });
+</script>
+
   </body>
 </html>

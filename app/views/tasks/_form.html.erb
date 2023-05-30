@@ -2,7 +2,7 @@
   <div class="field mt-5">
     <div class="control">
      <!-- <%= f.date_field :date, as: :date, html5: true %> -->
-     <%= f.datetime_local_field :data, value: Time.now.strftime('%Y-%m-%dT%H:%M'), class: "label" %>
+     <%= f.datetime_local_field :date, value: Time.now.strftime('%Y-%m-%dT%H:%M'), class: "label" %>
     </div>
   </div>
   <div class="field">
@@ -20,6 +20,10 @@
       <%= link_to "Cancel", tasks_path, class: "button" %> 
     </div>
   </div>
+
+<%= javascript_include_tag 'tasks' %>
+
+
   <div class="field">
     <div class="control">
       <%= f.submit "Добавить", class: "button is-success" %>

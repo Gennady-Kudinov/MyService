@@ -104,7 +104,8 @@ class ClientsController < ApplicationController
       :make,
       :make_id,
       :models,
-      :username
+      :username,
+      :send_sms_reminder
     )
   end
 
