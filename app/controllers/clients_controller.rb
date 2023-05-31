@@ -47,6 +47,22 @@ class ClientsController < ApplicationController
     end
   end
 
+  def send_sms(to, text)
+    require './smsru'
+    sms = SMSru.new('api_id')
+
+    sms.sms_send({
+      to: to,
+      text: text
+    }) do |response|
+      if response && response.code == '100'
+        puts 'Сообщение отправлено, ID: ' + response.ids[0]
+      else
+        puts 'Ошибка отправки сообщения: ' + response.description
+      end
+    end
+  end
+
   def edit; end
 
   def update
