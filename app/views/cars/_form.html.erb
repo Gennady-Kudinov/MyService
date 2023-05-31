@@ -98,14 +98,16 @@
               <%= form.label :ПО_Калибровок_ЭБУ_id, style: "color: blue" %>
                 <div class="control">
                   <%= form.collection_select(:sw_ident_id,
-                                              @car.soft_ecu&.sw_idents || [],
-                                              :id, 
-                                              :name, { prompt: 'Select', selected: @car.sw_ident_id }, 
-                                              { data: { parent_id: 'car_soft_ecu_id', source: 'sw_idents', }}) %>
+                            @car.soft_ecu&.sw_idents || [],
+                            :id,
+                            :name,
+                            { prompt: 'Select', selected: @car.sw_ident_id },
+                            { data: { parent_id: 'car_soft_ecu_id', source: 'sw_idents' },
+                              title: 'Выберите софт для данного типа а/м и ЭБУ',
+                              style: 'color: blue;' }) %>
                 </div>
             </div>
           </div>
-        
 
             <div class="column is-one-fifth">
               <div class="field">
