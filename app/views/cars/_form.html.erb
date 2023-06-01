@@ -3,26 +3,33 @@
   <div class="columns">
     <div class="column is-one-two">
       <div class="field">
-        <%= form.label :Марка_id, style: "color: blue" %>
+        <%= form.label :make_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:make_id, 
                                      Make.all, 
                                      :id,
                                      :name, { prompt: 'Select', selected: @car.make_id }, 
-                                     { data: { source: 'makes' }}) %>
+                                     { data: { source: 'makes' },
+                                       onchange: 'document.getElementById("car_soft_ecu_id").selectedIndex = 0;
+                                       $(\'[data-parent-id="car_soft_ecu_id"]\').empty();
+                                       $.ajax({url: "/soft_ecus?model_ecu_id=" + document.getElementById("car_model_ecu_id").value,
+                                       success: function(data) {$(\'[data-parent-id="car_soft_ecu_id"]\').html(data);}});' }
+                                    ) %>
         </div>
       </div>
     </div>
 
     <div class="column is-one-two">
       <div class="field">
-        <%= form.label :Модель_id, style: "color: blue" %>
+        <%= form.label :model_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:model_id, 
                                      @car.make&.models || [], 
                                      :id, 
                                      :name, { prompt: 'Select', selected: @car.model_id }, 
-                                     { data: { parent_id: 'car_make_id', source: 'models'}}) %>
+                                     { data: { parent_id: 'car_make_id', source: 'models'},
+                                       onchange: 'document.getElementById("car_soft_ecu_id").selectedIndex = 0;
+                                       $(\'[data-parent-id="car_soft_ecu_id"]\').empty();' }) %>
         </div>
       </div>
     </div>
@@ -30,15 +37,19 @@
     <div class="column">
       <div class="field">
         <%= form.label :works, 'Вид работ', style: "color: blue" %>
-          <div class="control">
+        <div class="control">
+          <% if @model.present? %>
+            <%= form.select :works, ["Diagnose", "Programm", "Mileage_km", "Airbag"], selected: @model.works %>
+          <% else %>
             <%= form.select :works, ["Diagnose", "Programm", "Mileage_km", "Airbag"] %>
-          </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
     <div class="column">
       <div class="field">
-        <%= form.label :Гос_Номер, style: "color: blue"  %>
+        <%= form.label :client_id, style: "color: blue"  %>
         <div class="control">
           <%= form.collection_select(:client_id, 
                                      Client.all.order(created_at: :desc), 
@@ -50,105 +61,119 @@
     </div>
   </div>
 
-        <div class="columns"> 
-          <div class="column is-one-quarter"> 
-            <div class="field"> 
-              <%= form.label :Марка_автомобиля_id, style: "color: blue" %> 
-              <div class="control"> 
-              <%= form.collection_select(:brand_ecu_id,  
-                                    BrandEcu.all.sort_by(&:name), # используем метод sort_by для сортировки по имени
-                                    :id,  
-                                    :name, { prompt: 'Select', selected: @car.brand_ecu_id},
-                                    { data: { source: 'brand_ecus' }}) %>
+  <div class="columns"> 
+    <div class="column is-one-quarter"> 
+      <div class="field"> 
+        <%= form.label :brand_ecu_id, style: "color: blue" %> 
+        <div class="control"> 
+          <%= form.collection_select(:brand_ecu_id,  
+                                      BrandEcu.all.sort_by(&:name), # используем метод sort_by для сортировки по имени
+                                      :id,  
+                                      :name, { prompt: 'Select', selected: @car.brand_ecu_id},
+                                      { data: { source: 'brand_ecus' },
+                                        onchange: 'document.getElementById("car_soft_ecu_id").selectedIndex = 0;
+                                        $(\'[data-parent-id="car_soft_ecu_id"]\').empty();
+                                        $(\'[data-parent-id="car_model_ecu_id"]\').empty();
+                                        $.ajax({url: "/model_ecus?brand_ecu_id=" + document.getElementById("car_brand_ecu_id").
+                                        value, success: function(data) {$(\'[data-parent-id="car_model_ecu_id"]\').html(data);}});'
+                                      }) %>
+        </div> 
+      </div> 
+    </div>
 
-              </div> 
-            </div> 
-          </div>
-
-          <div class="column is-one-quarter">
-            <div class="field">
-              <%= form.label :Модель_ЭБУ_id, style: "color: blue" %>
-                <div class="control">
-                  <%= form.collection_select(:model_ecu_id,
-                                              @car.brand_ecu&.model_ecus || [],
-                                              :id, 
-                                              :name, { prompt: 'Select', selected: @car.model_ecu_id }, 
-                                              { data: { parent_id: 'car_brand_ecu_id', source: 'model_ecus', }}) %>
-                </div>
-            </div>
-          </div>
-
-         <div class="column is-one-quarter">
-            <div class="field">
-              <%= form.label :Модель_Автомобиля_id, style: "color: blue" %>
-                <div class="control">
-                  <%= form.collection_select(:soft_ecu_id,
-                                              @car.model_ecu&.soft_ecus || [],
-                                              :id, 
-                                              :name, { prompt: 'Select', selected: @car.soft_ecu_id }, 
-                                              { data: { parent_id: 'car_model_ecu_id', source: 'soft_ecus', }}) %>
-                </div>
-            </div>
-          </div>
+      <div class="column is-one-quarter">
+      <div class="field">
+        <%= form.label :model_ecu_id, style: "color: blue" %>
+        <div class="control">
+          <%= form.collection_select(:model_ecu_id,
+                                      @car.brand_ecu&.model_ecus || [],
+                                      :id, 
+                                      :name, { prompt: 'Select', selected: @car.model_ecu_id }, 
+                                      { data: { parent_id: 'car_brand_ecu_id', source: 'model_ecus'},
+                                        onchange: '$(\'#car_soft_ecu_id\').prop("selectedIndex", 0);
+                                        $(\'[data-parent-id="car_soft_ecu_id"]\').empty();
+                                        $.ajax({url: "/soft_ecus?model_ecu_id=" + document.getElementById("car_model_ecu_id").
+                                        value, success: function(data) {$(\'[data-parent-id="car_soft_ecu_id"]\').html(data);}});' }) %> 
         </div>
+      </div>
+    </div>
 
-        <div class="columns">
-          <div class="column is-one-fifth">
-            <div class="field">
-              <%= form.label :ПО_Калибровок_ЭБУ_id, style: "color: blue" %>
-                <div class="control">
-                  <%= form.collection_select(:sw_ident_id,
-                            @car.soft_ecu&.sw_idents || [],
-                            :id,
-                            :name,
-                            { prompt: 'Select', selected: @car.sw_ident_id },
-                            { data: { parent_id: 'car_soft_ecu_id', source: 'sw_idents' },
-                              title: 'Выберите софт для данного типа а/м и ЭБУ',
-                              style: 'color: blue;' }) %>
-                </div>
-            </div>
-          </div>
+    <div class="column is-one-quarter">
+      <div class="field">
+        <%= form.label :soft_ecu_id, style: "color: blue" %>
+        <div class="control">
+          <%= form.collection_select(:soft_ecu_id,
+                                      @car.model_ecu&.soft_ecus || [],
+                                      :id, 
+                                      :name, { prompt: 'Select', selected: @car.soft_ecu_id }, 
+                                      { data: { parent_id: 'car_model_ecu_id', source: 'soft_ecus'},
+                                        onchange: 'document.getElementById("car_sw_ident_id").selectedIndex = 0;' }) %>
+        </div>
+      </div>
+    </div>
 
-            <div class="column is-one-fifth">
-              <div class="field">
-                <%= form.label :mileage, 'Пробег в км', style: "color: blue" %>
-                <div class="control">
-                  <%= form.text_field :mileage, class: "form-control" %>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-one-fifth">
-              <div class="field">
-                <%= form.label :vin, 'Вин номер', style: "color: blue" %>
-                <div class="control">
-                  <%= form.text_field :vin, class: "form-control" %>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="column is-centered"> 
-            <div class="column is-three-thirds"> 
-              <div class="field tooltip"> 
-                <div class="control"> 
-                  <%= form.submit "Добавить", class: "button is-fullwidth" %> 
-                </div> 
-              </div> 
-            </div> 
-          </div>
-
-  <div class="column">
-    <%= link_to "Добавить Марку автомобиля", brand_ecus_path, class: "button", style: "color: green" %> 
-    <%= link_to "Добавить Модель ЭБУ", model_ecus_path, class: "button", style: "color: green" %>
-    <%= link_to "Добавить Модель а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: green" %>
-    <%= link_to "Добавить SW для ЭБУ", sw_idents_path, class: "button", style: "color: green" %> 
+    <div class="column is-one-quarter">
+      <div class="field">
+        <%= form.label :sw_ident_id, style: "color: blue" %>
+        <div class="control">
+          <%= form.collection_select(:sw_ident_id,
+                                      @car.soft_ecu&.sw_idents || [],
+                                      :id,
+                                      :name,
+                                      { prompt: 'Select', selected: @car.sw_ident_id },
+                                      {
+                                        data: { parent_id: 'car_soft_ecu_id', source: 'sw_idents' },
+                                        title: 'Выберите софт для ЭБУ',
+                                        options: @car.soft_ecu&.sw_idents&.map { |ident| [ident.name, ident.id,
+                                        { title: ident.respond_to?(:description) ? ident.description : '' }] } || []
+                                      }
+                                    ) %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="column">
-    <%= link_to "Список машин", cars_path, class: "button", style: "color: purple" %>
-    <%= link_to "Ввести новую модель а/м", models_path, class: "button", style: "color: purple" %>
-    <%= link_to "Редактировать марку а/м", makes_path, class: "button", style: "color: purple" %>
-  <div>
+  <div class="columns"> <div class="column is-one-fifth"> 
+    <div class="field"> <%= form.label :mileage, 'Пробег в км', style: "color: blue " %> 
+      <div class="control"> 
+          <%= form.text_field :mileage, class: "form-control" %> 
+      </div> 
+    </div> 
+  </div>
+
+    <div class="column is-one-fifth">
+      <div class="field">
+        <%= form.label :vin, 'Вин номер', style: "color: blue" %>
+          <div class="control">
+            <%= form.text_field :vin, class: "form-control" %>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns"> 
+    <div class="column is-centered"> 
+      <div class="column is-three-thirds"> 
+        <div class="field tooltip"> 
+          <div class="control"> 
+            <%= form.submit "Добавить", class: "button is-fullwidth" %> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div>
+
+<div class="column">
+  <%= link_to "Добавить Марку автомобиля", new_make_path, class: "button", style: "color: green" %>
+  <%= link_to "Добавить Модель ЭБУ", model_ecus_path, class: "button", style: "color: green" %>
+  <%= link_to "Добавить Модель а/м для ЭБУ", soft_ecus_path, class: "button", style: "color: green" %>
+  <%= link_to "Добавить ПО для ЭБУ", sw_idents_path, class: "button", style: "color: green" %>
+</div>
+
+<div class="column">
+  <%= link_to "Список машин", cars_path, class: "button", style: "color: Purple" %>
+  <%= link_to "Ввести новую модель а/м", models_path, class: "button", style: "color: Purple" %>
+  <%= link_to "Редактировать марку а/м", makes_path, class: "button", style: "color: Purple" %>
+</div>
 
 <% end %>
