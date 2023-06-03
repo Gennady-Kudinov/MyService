@@ -75,8 +75,8 @@
                                         $(\'[data-parent-id="car_soft_ecu_id"]\').empty();
                                         $(\'[data-parent-id="car_model_ecu_id"]\').empty();
                                         $.ajax({url: "/model_ecus?brand_ecu_id=" + document.getElementById("car_brand_ecu_id").
-                                        value, success: function(data) {$(\'[data-parent-id="car_model_ecu_id"]\').html(data);}});'
-                                      }) %>
+                                        value, success: function(data) {$(\'[data-parent-id="car_model_ecu_id"]\').html(data);}});',
+                                        title: 'Выберите модель а/м' }) %>
         </div> 
       </div> 
     </div>
@@ -93,7 +93,8 @@
                                         onchange: '$(\'#car_soft_ecu_id\').prop("selectedIndex", 0);
                                         $(\'[data-parent-id="car_soft_ecu_id"]\').empty();
                                         $.ajax({url: "/soft_ecus?model_ecu_id=" + document.getElementById("car_model_ecu_id").
-                                        value, success: function(data) {$(\'[data-parent-id="car_soft_ecu_id"]\').html(data);}});' }) %> 
+                                        value, success: function(data) {$(\'[data-parent-id="car_soft_ecu_id"]\').html(data);}});',
+                                        title: 'Выберите ЭБУ который устанавливается в этой модели а/м' }) %> 
         </div>
       </div>
     </div>
@@ -103,11 +104,13 @@
         <%= form.label :soft_ecu_id, style: "color: blue" %>
         <div class="control">
           <%= form.collection_select(:soft_ecu_id,
-                                      @car.model_ecu&.soft_ecus || [],
-                                      :id, 
-                                      :name, { prompt: 'Select', selected: @car.soft_ecu_id }, 
-                                      { data: { parent_id: 'car_model_ecu_id', source: 'soft_ecus'},
-                                        onchange: 'document.getElementById("car_sw_ident_id").selectedIndex = 0;' }) %>
+                            @car.model_ecu&.soft_ecus || [],
+                            :id, 
+                            :name, 
+                            { prompt: 'Select', selected: @car.soft_ecu_id }, 
+                            { data: { parent_id: 'car_model_ecu_id', source: 'soft_ecus' },
+                              onchange: 'document.getElementById("car_sw_ident_id").selectedIndex = 0;',
+                              title: 'Выберите марку в которой устанавливается выбранный ЭБУ' }) %>
         </div>
       </div>
     </div>
