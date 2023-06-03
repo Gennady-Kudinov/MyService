@@ -45,23 +45,24 @@ plugin :tmp_restart
 # Kод на Ruby для проверки ключа и сертификата:
 require 'openssl'
 
-ssl_key_path = ENV.fetch("SSL_KEY_PATH") { 'config/ssl/localhost.key' }
-ssl_cert_path = ENV.fetch("SSL_CERT_PATH") { 'config/ssl/localhost.crt' }
+# задан путь расположения ssl ключей:
+# ssl_key_path = ENV.fetch("SSL_KEY_PATH") { 'config/ssl/localhost.key' }
+# ssl_cert_path = ENV.fetch("SSL_CERT_PATH") { 'config/ssl/localhost.crt' }
 
 # Загрузка ключа
-ssl_key = OpenSSL::PKey::RSA.new(File.read(ssl_key_path))
+# ssl_key = OpenSSL::PKey::RSA.new(File.read(ssl_key_path))
 
 # Загрузка сертификата
-ssl_cert = OpenSSL::X509::Certificate.new(File.read(ssl_cert_path))
+# ssl_cert = OpenSSL::X509::Certificate.new(File.read(ssl_cert_path))
 
 # Проверка соответствия ключа и сертификата
-if ssl_cert.check_private_key(ssl_key)
-  puts "Ключ и сертификат соответствуют друг другу"
-else
-  puts "Ключ и сертификат не соответствуют друг другу"
-end
+#  if ssl_cert.check_private_key(ssl_key)
+#   puts "Ключ и сертификат соответствуют друг другу"
+#  else
+#    puts "Ключ и сертификат не соответствуют друг другу"
+#  end
 
-#ssl_bind '0.0.0.0', '3001', {
+# ssl_bind '0.0.0.0', '3001', {
  #   key: ENV.fetch("SSL_KEY_PATH") { 'config/ssl/localhost.key' },
  #   cert: ENV.fetch("SSL_CERT_PATH") { 'config/ssl/localhost.crt' }
-#}
+# }
