@@ -1,30 +1,18 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit destroy update]
+  before_action :set_client, only: %i[index new create show edit update destroy]
   before_action :check_user_admin!
 
   def index 
-    @client = Client.find params[:client_id]
     @orders = Order.all.where("client_id == #{params[:client_id]}")
   end
 
   def new
    # @order = Order.new
-    @client = Client.find(params[:client_id])
     @order = @client.orders.build
   end
 
   def create
-  #  @client = Client.find_by(id: order_params[:client_id])
-  #  @order = Order.new order_params
-  #  @order.client = @client
-
-  #  if @order.save
-  #    redirect_to clients_path
-  #  else
-  #    render :new
-  #  end
-
-    @client = Client.find(params[:client_id])
     @order = @client.orders.build(order_params)
     if @order.save
       redirect_to client_order_path(@client, @order), notice: "Order was successfully created."
@@ -34,13 +22,9 @@ class OrdersController < ApplicationController
   end
 
   def show
-   # @order = Order.find(params[:id])
-    @client = Client.find(params[:client_id])
-   # @order = @client.orders.find(params[:id])
   end
   
   def edit
-    @client = Client.find params[:client_id]
   end
 
   def update
@@ -62,16 +46,20 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def set_client
+    @client = Client.find(params[:client_id])
+  end
+
   def order_params
     params.require(:order).permit(
       :problem,
       :work_description,
       :price,
       :client_id,
-      :image,
-      :images,
       :remove_image,
-      :mileage
+      :mileage,
+      :images,
+      :image
     )
   end
 end
