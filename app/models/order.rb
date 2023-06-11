@@ -4,8 +4,6 @@ class Order < ApplicationRecord
 
   belongs_to :client
 
-  mount_uploader :image, ImageUploader
-  validates :image, file_size: { less_than: 1.megabytes }
-  # serialize :images, JSON
-# Добавлен поиск файлов
+  has_many_attached :files, dependent: :destroy
+  has_many_attached :images, dependent: :destroy
 end

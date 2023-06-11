@@ -36,7 +36,6 @@ group :development, :test do
 end
 
 # работа с файлами
-gem 'carrierwave'
 gem 'gravatar_image_tag'
 gem 'mini_magick'
 gem 'file_validators'

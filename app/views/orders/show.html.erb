@@ -1,28 +1,39 @@
-<h1 class="title is-3">Просмотр ордера</h1>
+<h1 class="title is-5">Просмотр ордера</h1>
 <%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
 
-<p style="white-space: pre-wrap;">
-  <h1 class="title is-4">Когда производился ремонт</h1>
-  <%= @order.client.created_at %> 
-</p>
+<div class="white-space: pre-wrap">
+  <div class="field text-center">
+      <strong>Файл:</strong>
+        <% @order.files.each do |file| %>
+          <%= link_to file.filename, file %> 
+        <% end %>
 
-<p style="white-space: pre-wrap;">
-  <h1 class="title is-4">Проблема</h1>
-  <%= @order.problem %> 
-</p>
+  <div class="field text-center">
+    <div style="white-space: pre-wrap;">
+      <h1 class="title is-6">Когда производился ремонт</h1>
+      <%= @order.client.created_at %> 
+    </div>
+  </div>
 
-<p>
-  <h1 class="title is-4 mt-4">Выполнено</h1>
-  <%= content_tag :span, @order.work_description, style: "white-space: pre-wrap;" %>
-</p>
+  <div style="white-space: pre-wrap;">
+    <h1 class="title is-6">Проблема</h1>
+    <%= @order.problem %> 
+  </div>
 
+  <div class="title is-6 mt-2">Выполнено</h1>
+    <div>
+      <%= content_tag :span, @order.work_description, style: "white-space: pre-wrap;" %>
+    </div>
+  </div>
 
-<p style="white-space: pre-wrap;">
-  <h1 class="title is-4 mt-4">Цена</h1>
-  <%= @order.price %> 
-</p>
+  <div style="white-space: pre-wrap;">
+    <h1 class="title is-6 mt-4">Цена</h1>
+    <%= @order.price %> 
+  </div>
 
-<p>
-  <h1 class="title is-4 mt-4">Изображение</h1>
-  <%= image_tag(@order.image.url, alt: 'Image') if @order.image? %>
-</p>
+  <div>
+    <% @order.images.each do |image| %>
+      <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
+    <% end %>
+  </div>
+</div>

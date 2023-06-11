@@ -14,24 +14,35 @@ class OrdersController < ApplicationController
 
   def create
     @order = @client.orders.build(order_params)
-    if @order.save
-      redirect_to client_order_path(@client, @order), notice: "Order was successfully created."
-    else
-      render :new
+
+    if @order.persisted?
+      @order.images_will_change!
+    end
+
+    respond_to do |format|
+      if @order.save
+      format.html { redirect_to client_order_url(@client, @order), notice: "Order was successfully created." }
+      format.json { render :show, status: :created, location: @order }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def show
-  end
+  def show; end
   
-  def edit
-  end
+  def edit; end
 
   def update
-    if @order.update(order_params)
-      redirect_to client_orders_path(@order.client_id)
-    else
-      render :edit
+    respond_to do |format|
+      if @order.update(order_params)
+        format.html { redirect_to client_order_url(@client, @order), notice: "Order was successfully updated." }
+        format.json { render :show, status: :ok, location: @order }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -58,8 +69,8 @@ class OrdersController < ApplicationController
       :client_id,
       :remove_image,
       :mileage,
-      :images,
-      :image
+      files: [],
+      images: []
     )
   end
 end

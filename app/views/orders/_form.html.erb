@@ -21,29 +21,27 @@
 
     <div class="field">
       <%= order_form.label :mileage, 'Пробег' %>
-      <div class="control">
-        <%= order_form.number_field :mileage %>
-      </div>
+        <div class="control">
+          <%= order_form.number_field :mileage %>
+        </div>
     </div>
 
     <div class="field">
       <%= order_form.label :price, 'Стоимость услуг' %>
-      <div class="control">
-        <%= order_form.number_field :price, step: 500 %>
-      </div>
+        <div class="control">
+          <%= order_form.number_field :price, step: 500 %>
+        </div>
     </div>
 
-    <div class="field">
-      <%= order_form.label :images, 'Фото, Скрин неисправностей при диагностике' %>
-      <div class="control">
-        <%= order_form.file_field :image, html: { multiple: true }, direct_upload: true %>
-      </div>
+    <div>
+      <%= order_form.label :Файл, style: "display: block; color: red" %>
+      <%= order_form.file_field :files, multiple: true, direct_upload: true %>
     </div>
 
-    <label>
-      <%= order_form.check_box :remove_image %>
-      Удалить картинку
-    </label>
+    <div>
+      <%= order_form.label :Фото, style: "display: block; color: red" %>
+      <%= order_form.file_field :images, multiple: true, direct_upload: true %>
+    </div>
 
     <div class="field mt-3">
       <div class="control">
