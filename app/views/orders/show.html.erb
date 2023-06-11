@@ -1,39 +1,38 @@
-<h1 class="title is-5">Просмотр ордера</h1>
-<%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-5">Просмотр ордера</h1>
+    <%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
 
-<div class="white-space: pre-wrap">
-  <div class="field text-center">
-      <strong>Файл:</strong>
+    <div class="box">
+      <div class="content">
+        <h2 class="title is-6">Файл:</h2>
+
         <% @order.files.each do |file| %>
-          <%= link_to file.filename, file %> 
+          <p><%= link_to file.filename, file %></p>
         <% end %>
 
-  <div class="field text-center">
-    <div style="white-space: pre-wrap;">
-      <h1 class="title is-6">Когда производился ремонт</h1>
-      <%= @order.client.created_at %> 
+        <h2 class="title is-6 mt-4">Когда производился ремонт:</h2>
+        <p><%= @order.client.created_at %></p>
+
+        <h2 class="title is-6 mt-4">Проблема:</h2>
+        <p><%= @order.problem %></p>
+
+        <h2 class="title is-6 mt-4">Выполнено:</h2>
+        <p><%= simple_format(@order.work_description) %></p>
+
+        <h2 class="title is-6 mt-4">Цена:</h2>
+        <p><%= @order.price %></p>
+
+        <h2 class="title is-6 mt-4">Изображения:</h2>
+
+        <% if @order.images.any? %>
+          <% @order.images.each do |image| %>
+            <%= link_to image_tag(image, style:"width:50px; height:50px", class: "mr-2"), image %>
+          <% end %>
+        <% else %>
+          <p>Нет изображений для этого ордера.</p>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div style="white-space: pre-wrap;">
-    <h1 class="title is-6">Проблема</h1>
-    <%= @order.problem %> 
-  </div>
-
-  <div class="title is-6 mt-2">Выполнено</h1>
-    <div>
-      <%= content_tag :span, @order.work_description, style: "white-space: pre-wrap;" %>
-    </div>
-  </div>
-
-  <div style="white-space: pre-wrap;">
-    <h1 class="title is-6 mt-4">Цена</h1>
-    <%= @order.price %> 
-  </div>
-
-  <div>
-    <% @order.images.each do |image| %>
-      <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
-    <% end %>
-  </div>
-</div>
+</section>
