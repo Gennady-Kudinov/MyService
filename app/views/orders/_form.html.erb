@@ -1,4 +1,5 @@
-<%= form_for [client, order], html: { multipart: true } do |order_form| %> 
+<!-- app/views/orders/_form.html.erb -->
+<%= form_for [client, order], html: { multipart: true } do |order_form| %>
 
   <div class="">
     <div class="field">
@@ -37,31 +38,35 @@
       </div>
     </div>
 
-      <table>
+    <table>
       <tbody>
         <% @order.files_attachments.each do |file| %>
           <tr>
-            <td><%= file.filename %></td>
-            <td><%= check_box_tag 'remove_files[]', file.id %></td>
+            <td>
+              <%= check_box_tag 'remove_files[]', file.id, false, id: "file_checkbox_#{file.id}" %>
+              <%= label_tag "file_checkbox_#{file.id}", file.filename %>
+            </td>
           </tr>
         <% end %>
-        
+
         <% @order.images_attachments.each do |image| %>
           <tr>
-            <td><%= image.filename %></td>
-            <td><%= check_box_tag 'remove_images[]', image.id %></td>
+            <td>
+              <%= check_box_tag 'remove_images[]', image.id, false, id: "image_checkbox_#{image.id}" %>
+              <%= label_tag "image_checkbox_#{image.id}", image.filename %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <div style="display: inline-block;">
-      <%= order_form.label :Файл, style: "display: block; color: green" %>
+    <div class="field">
+      <%= order_form.label :Файлы, style: "display: block; color: green" %>
       <%= order_form.file_field :files, multiple: true, direct_upload: true %>
     </div>
 
-    <div style="display: inline-block;">
-      <%= order_form.label :Фото, style: "display: block; color: green" %>
+     <div>
+      <%= order_form.label :Фото, style: "display: block; color: red" %>
       <%= order_form.file_field :images, multiple: true, direct_upload: true %>
     </div>
 
@@ -70,5 +75,6 @@
         <%= order_form.submit "Добавить", class: "button is-primary" %>
       </div>
     </div>
-  
+  </div>
+
 <% end %>

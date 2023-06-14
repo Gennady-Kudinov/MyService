@@ -22,3 +22,18 @@
   box-sizing: border-box;
   margin-left: 10px;
 }
+
+/* Стили для таблицы */
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Стили для чекбоксов */
+input[type="checkbox"] {
+  margin-right: 5px;
+}

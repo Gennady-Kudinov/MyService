@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MyService</title>
+    <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/styles.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css" rel="stylesheet">
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" %>
@@ -19,20 +20,5 @@
         <%= yield %>
       </div>
     </div>
-
-<script>
-  $(document).ready(function() {
-    $('#client_send_sms_reminder').change(function() {
-      if($(this).is(':checked')) {
-        alert('Оповещение теперь включено!');
-        tasks.enableSmsReminder();
-      } else {
-        alert('Оповещение теперь выключено!');
-        tasks.disableSmsReminder();
-      }
-    });
-  });
-</script>
-
   </body>
 </html>
