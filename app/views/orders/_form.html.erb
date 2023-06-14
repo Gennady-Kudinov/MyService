@@ -5,41 +5,63 @@
         <%= order_form.hidden_field :client_id, class: "form-control" , value: params[:client_id] %> 
     </div>
 
-  <div class="field text-center">
-      <%= order_form.label :problem, 'Проблемы' %>
-        <div class="control">
-            <%= order_form.text_area :problem, class: "input", style: "height: 100px; width: 500px; white-space: pre-wrap;"  %>
-        </div>
-  </div>
-
-  <div class="field text-center">
-      <%= order_form.label :work_description, 'Ремонт' %>
-        <div class="control">
-            <%= order_form.text_area :work_description, class: "input", style: "height: 200px; width: 500px; white-space: pre-wrap;" %>
-        </div>
-  </div>
-
-    <div class="field">
-      <%= order_form.label :mileage, 'Пробег' %>
-        <div class="control">
-          <%= order_form.number_field :mileage %>
-        </div>
+    <div class="field text-center">
+        <%= order_form.label :problem, 'Проблемы' %>
+          <div class="control">
+              <%= order_form.text_area :problem, class: "input", style: "height: 100px; width: 500px; white-space: pre-wrap;"  %>
+          </div>
     </div>
 
-    <div class="field">
-      <%= order_form.label :price, 'Стоимость услуг' %>
-        <div class="control">
-          <%= order_form.number_field :price, step: 500 %>
-        </div>
+    <div class="field text-center">
+        <%= order_form.label :work_description, 'Ремонт' %>
+          <div class="control">
+              <%= order_form.text_area :work_description, class: "input", style: "height: 200px; width: 500px; white-space: pre-wrap;" %>
+          </div>
     </div>
 
-    <div>
-      <%= order_form.label :Файл, style: "display: block; color: red" %>
+    <div style="display: inline-block;">
+      <div class="field">
+        <%= order_form.label :mileage, 'Пробег' %>
+          <div class="control">
+            <%= order_form.number_field :mileage %>
+          </div>
+      </div>
+    </div>
+
+    <div style="display: inline-block;">
+      <div class="field">
+        <%= order_form.label :price, 'Стоимость услуг' %>
+          <div class="control">
+            <%= order_form.number_field :price, step: 500 %>
+          </div>
+      </div>
+    </div>
+
+      <table>
+      <tbody>
+        <% @order.files_attachments.each do |file| %>
+          <tr>
+            <td><%= file.filename %></td>
+            <td><%= check_box_tag 'remove_files[]', file.id %></td>
+          </tr>
+        <% end %>
+        
+        <% @order.images_attachments.each do |image| %>
+          <tr>
+            <td><%= image.filename %></td>
+            <td><%= check_box_tag 'remove_images[]', image.id %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div style="display: inline-block;">
+      <%= order_form.label :Файл, style: "display: block; color: green" %>
       <%= order_form.file_field :files, multiple: true, direct_upload: true %>
     </div>
 
-    <div>
-      <%= order_form.label :Фото, style: "display: block; color: red" %>
+    <div style="display: inline-block;">
+      <%= order_form.label :Фото, style: "display: block; color: green" %>
       <%= order_form.file_field :images, multiple: true, direct_upload: true %>
     </div>
 

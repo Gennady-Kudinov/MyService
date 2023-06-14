@@ -1,9 +1,11 @@
+# app/controllers/orders_controller.rb
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit destroy update]
   before_action :set_client, only: %i[index new create show edit update destroy]
   before_action :check_user_admin!
 
-  def index 
+  def index
+    @client = Client.find(params[:client_id])
     @orders = Order.all.where("client_id == #{params[:client_id]}")
   end
 
@@ -34,17 +36,38 @@ class OrdersController < ApplicationController
   
   def edit; end
 
+ 
   def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to client_order_url(@client, @order), notice: "Order was successfully updated." }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+  # Получаем список ранее прикрепленных файлов и изображений
+  existing_files = @order.files_attachments.map(&:blob)
+  existing_images = @order.images_attachments.map(&:blob)
+
+  # Обновляем заказ с новыми параметрами
+  if @order.update(order_params.reject { |key| key['files'] || key['images'] })
+    # Если были загружены новые файлы или изображения, то добавляем их к списку ранее прикрепленных
+    @order.files.attach(params[:order][:files]) if params[:order][:files]
+    @order.images.attach(params[:order][:images]) if params[:order][:images]
+
+    # Добавляем ранее прикрепленные файлы и изображения к списку вложений
+    @order.files.attach(existing_files) if existing_files.any?
+    @order.images.attach(existing_images) if existing_images.any?
+
+    # Удаляем выбранные для удаления файлы и изображения
+    if params[:remove_files] && params[:remove_files].any?
+      @order.files_attachments.where(id: params[:remove_files]).each(&:destroy)
     end
+
+    if params[:remove_images] && params[:remove_images].any?
+      @order.images_attachments.where(id: params[:remove_images]).each(&:destroy)
+    end
+
+    redirect_to client_order_url(@client, @order), notice: "Order was successfully updated."
+  else
+    render :edit, status: :unprocessable_entity
   end
+end
+
+
 
   def destroy
     @order.destroy
@@ -70,7 +93,8 @@ class OrdersController < ApplicationController
       :remove_image,
       :mileage,
       files: [],
-      images: []
+      images: [],
+      remove_files: [] # добавляем параметр для удаления файлов
     )
   end
 end
