@@ -38,15 +38,33 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
-      respond_to do |format|
-        if @article.update(article_params)
-          format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
-          format.json { render :show, status: :ok, location: @article }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @article.errors, status: :unprocessable_entity }
-        end
+    # Получаем список ранее прикрепленных файлов и изображений
+    existing_files = @article.files_attachments.map(&:blob)
+    existing_images = @article.images_attachments.map(&:blob)
+
+    # Обновляем статью с новыми параметрами
+    if @article.update(article_params.reject { |key| key['files'] || key['images'] })
+      # Если были загружены новые файлы или изображения, то добавляем их к списку ранее прикрепленных
+      @article.files.attach(params[:article][:files]) if params[:article][:files]
+      @article.images.attach(params[:article][:images]) if params[:article][:images]
+
+      # Добавляем ранее прикрепленные файлы и изображения к списку вложений
+      @article.files.attach(existing_files) if existing_files.any?
+      @article.images.attach(existing_images) if existing_images.any?
+
+      # Удаляем выбранные для удаления файлы и изображения
+      if params[:remove_files].present? && params[:remove_files].any?
+        @article.files_attachments.where(id: params[:remove_files]).each(&:destroy)
       end
+
+      if params[:remove_images].present? && params[:remove_images].any?
+        @article.images_attachments.where(id: params[:remove_images]).each(&:destroy)
+      end
+
+      redirect_to article_url(@article), notice: "Article was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   # DELETE /articles/1 or /articles/1.json
@@ -67,6 +85,13 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:name, :title, :text, :id, files: [], images: [])
+      params.require(:article).permit(:name,
+        :title,
+        :text,
+        :id,
+        :remove_image,
+        files: [],
+        images: [],
+        remove_files: [])
     end
 end
