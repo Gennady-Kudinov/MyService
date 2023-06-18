@@ -7,8 +7,6 @@ class Car < ApplicationRecord
   belongs_to :soft_ecu, optional: true
   belongs_to :sw_ident, optional: true
 
-  has_many :orders
-
   attribute :works, :string
   attribute :programm, :string
   attribute :mileage_km, :string

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_18_051336) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -152,8 +152,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_051336) do
     t.string "image"
     t.integer "mileage", default: 0
     t.json "images"
-    t.integer "car_id"
-    t.index ["car_id"], name: "index_orders_on_car_id"
     t.index ["client_id"], name: "index_orders_on_client_id"
   end
 
@@ -208,7 +206,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_051336) do
   add_foreign_key "messages", "users"
   add_foreign_key "model_ecus", "brand_ecus"
   add_foreign_key "models", "makes"
-  add_foreign_key "orders", "cars"
   add_foreign_key "orders", "clients"
   add_foreign_key "soft_ecus", "model_ecus"
   add_foreign_key "sw_idents", "soft_ecus"
