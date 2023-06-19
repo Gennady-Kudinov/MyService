@@ -35,43 +35,41 @@ class OrdersController < ApplicationController
   def show; end
   
   def edit; end
-
  
   def update
-  # Получаем список ранее прикрепленных файлов и изображений
-  existing_files = @order.files_attachments.map(&:blob)
-  existing_images = @order.images_attachments.map(&:blob)
+    # Получаем список ранее прикрепленных файлов и изображений
+    existing_files = @order.files_attachments.map(&:blob)
+    existing_images = @order.images_attachments.map(&:blob)
 
-  # Обновляем заказ с новыми параметрами
-  if @order.update(order_params.reject { |key| key['files'] || key['images'] })
-    # Если были загружены новые файлы или изображения, то добавляем их к списку ранее прикрепленных
-    @order.files.attach(params[:order][:files]) if params[:order][:files]
-    @order.images.attach(params[:order][:images]) if params[:order][:images]
+    # Обновляем заказ с новыми параметрами
+    if @order.update(order_params.reject { |key| key['files'] || key['images'] })
+      # Если были загружены новые файлы или изображения, то добавляем их к списку ранее прикрепленных
+      @order.files.attach(params[:order][:files]) if params[:order][:files]
+      @order.images.attach(params[:order][:images]) if params[:order][:images]
 
-    # Добавляем ранее прикрепленные файлы и изображения к списку вложений
-    @order.files.attach(existing_files) if existing_files.any?
-    @order.images.attach(existing_images) if existing_images.any?
+      # Добавляем ранее прикрепленные файлы и изображения к списку вложений
+      @order.files.attach(existing_files) if existing_files.any?
+      @order.images.attach(existing_images) if existing_images.any?
 
-    # Удаляем выбранные для удаления файлы и изображения
-    if params[:remove_files] && params[:remove_files].any?
-      @order.files_attachments.where(id: params[:remove_files]).each(&:destroy)
+      # Удаляем выбранные для удаления файлы и изображения
+      if params[:remove_files] && params[:remove_files].any?
+        @order.files_attachments.where(id: params[:remove_files]).each(&:destroy)
+      end
+
+      if params[:remove_images] && params[:remove_images].any?
+        @order.images_attachments.where(id: params[:remove_images]).each(&:destroy)
+      end
+
+      redirect_to client_order_url(@client, @order), notice: "Order was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
-
-    if params[:remove_images] && params[:remove_images].any?
-      @order.images_attachments.where(id: params[:remove_images]).each(&:destroy)
-    end
-
-    redirect_to client_order_url(@client, @order), notice: "Order was successfully updated."
-  else
-    render :edit, status: :unprocessable_entity
   end
-end
-
-
 
   def destroy
     @order.destroy
-    redirect_to client_orders_path(@order)
+     # redirect_to client_orders_path(@order)
+    redirect_to new_client_order_path(@client)
   end
 
   private
