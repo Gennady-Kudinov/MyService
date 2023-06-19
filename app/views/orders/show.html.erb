@@ -1,7 +1,8 @@
 <section class="section">
   <div class="container">
     <h1 class="title is-5">Просмотр ордера</h1>
-    <%= link_to 'Вернуться', client_orders_path, class: "button is-info mb-3" %>
+    
+    <%= link_to 'Вернуться к списку заказов', client_orders_path, class: "button is-info mb-3" %>
 
     <div class="box">
       <div class="content">
@@ -32,6 +33,13 @@
         <% else %>
           <p>Нет изображений для этого ордера.</p>
         <% end %>
+
+         <footer class="card-footer">
+          <%= link_to 'Редактировать', edit_client_order_path(@order.client, @order), class: "card-footer-item button is-warning" %>
+          <%= link_to 'Удалить', client_order_path(@order.client, @order), method: :delete,
+            data: { turbo_method: :delete, turbo_confirm: 'Вы уверены, что хотите удалить этот заказ?' },
+            class: "card-footer-item button is-danger" %>
+        </footer>
       </div>
     </div>
   </div>

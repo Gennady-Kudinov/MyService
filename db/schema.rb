@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_174023) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -57,7 +57,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
     t.string "licence"
     t.string "vin"
     t.decimal "mileage"
-    t.integer "ecm_id"
     t.integer "sum"
     t.integer "model_id", null: false
     t.integer "make_id", null: false
@@ -69,7 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
     t.integer "soft_ecu_id"
     t.integer "sw_ident_id"
     t.index ["client_id"], name: "index_cars_on_client_id"
-    t.index ["ecm_id"], name: "index_cars_on_ecm_id"
     t.index ["licence"], name: "index_cars_on_licence"
     t.index ["make_id"], name: "index_cars_on_make_id"
     t.index ["model_id"], name: "index_cars_on_model_id"
@@ -90,7 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
     t.date "data", default: "2022-10-21"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "send_sms_reminder"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -151,7 +148,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
     t.boolean "status", default: false
     t.string "image"
     t.integer "mileage", default: 0
-    t.json "images"
     t.index ["client_id"], name: "index_orders_on_client_id"
   end
 
@@ -195,7 +191,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_151851) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cars", "brand_ecus"
   add_foreign_key "cars", "clients"
-  add_foreign_key "cars", "ecms"
   add_foreign_key "cars", "makes"
   add_foreign_key "cars", "model_ecus"
   add_foreign_key "cars", "models"
