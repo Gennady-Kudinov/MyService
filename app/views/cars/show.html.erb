@@ -11,11 +11,13 @@
       <%= button_to "Удалить", @car, method: :delete, class: "button is-danger" %>  
     </div>
 
-          <div class="column is-3">
-            <% order = @client.orders.first %>
-            <% if order.present? %>
-              <%= link_to 'Открыть ордер', client_order_path(@client, order), class: "button is-info" %>
-            <% end %>
-          </div>
+    <div class="buttons">
+      <% if @client.orders.present? %>
+        <% order = @client.orders %>
+        <%= link_to 'Создать ордер', new_client_order_path(@client), class: "button is-primary" %>
+      <% else %>
+        <%= link_to 'Создать ордер 2', new_client_order_path(@client), class: "button is-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
