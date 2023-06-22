@@ -56,7 +56,7 @@ class CarsController < ApplicationController
         when 'Diagnose'
           puts 'method1'
         when 'Programm'
-          # puts programm_create
+          puts programm_create
         when 'Mileage_km'
           puts mileage_create
         when 'Airbag'
