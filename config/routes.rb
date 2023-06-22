@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
  
   resources :cars
+  get '/view_car_orders/:id', to: 'cars#view_car_orders', as: 'view_car_orders'
+  get '/view_car_order/:id', to: 'cars#view_car_order', as: 'view_car_order'
+  post '/set_car_order/:id', to: 'cars#set_car_order', as: 'set_car_order'
     
   get 'models', to: 'models#new'
   resources :tasks   
