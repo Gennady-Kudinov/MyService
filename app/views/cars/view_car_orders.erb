@@ -1,0 +1,7 @@
+<% if @orders.present? %>
+  <% @orders.each do |order| %>
+    <p><%= link_to "Ордер.#{order.id}", client_order_path(Client.find(order.client_id), order) %></p>
+  <% end  %>
+<% else %>
+  <h3>Cписок ордеров на машину пуст</h3>
+<% end %>

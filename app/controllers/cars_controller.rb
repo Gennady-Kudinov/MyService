@@ -22,6 +22,28 @@ class CarsController < ApplicationController
 
   def edit; end
 
+
+  def view_car_order
+    car = Car.find(params[:id])
+    @order = car.orders.build
+  end
+
+  def view_car_orders
+    car = Car.find(params[:id])
+    @orders = car.orders
+  end
+  def set_car_order
+    car   = Car.find(params[:id])
+    order = car.orders.build(car_order_params)
+    order.client_id = car.client_id
+    order.save!
+    redirect_to car_path(car)
+  end
+
+  def car_order_params
+    params.require(:order).permit(:problem, :work_description, :mileage, :price, :files, :images)
+  end
+
   def create
     @car = Car.new(car_params)
    # @car.soft_ecu_id = params[:soft_ecu_id]
