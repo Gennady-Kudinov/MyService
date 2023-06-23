@@ -12,6 +12,12 @@
           <p><%= link_to file.filename, file %></p>
         <% end %>
 
+        <h2 class="title is-6 mt-4">Ордер на машину: </h2>
+        <p>
+          <%= @order.car.make.name %>
+          <%= @order.car.model.name %>
+        </p>
+
         <h2 class="title is-6 mt-4">Когда производился ремонт:</h2>
         <p><%= @order.client.created_at %></p>
 
