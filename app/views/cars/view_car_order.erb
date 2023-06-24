@@ -1,4 +1,6 @@
-<%= form_for @order, url: set_car_order_path(@order.car_id) do |order_form| %>
+app/views/cars/view_car_order.erb
+<div class="center-block">
+  <%= form_for @order, url: set_car_order_path(@order.car_id) do |order_form| %>
 
   <div class="">
 
@@ -51,4 +53,5 @@
     </div>
   </div>
 
-<% end %>
+  <% end %>
+</div>

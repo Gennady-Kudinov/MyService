@@ -68,9 +68,6 @@
               <td><%= mileage_km(client) %></p></td>
               <td><%= get_max_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
-              view_car_order_path
-              client_orders_path(client)
-              new_client_order_path(client)
               <% if client.orders? %> 
                 <td>
                   <p><%= link_to "История ордеров", client_orders_path(client)%> </p>

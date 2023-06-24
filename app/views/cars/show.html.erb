@@ -16,10 +16,10 @@
       <%= link_to  'Ордеры', view_car_orders_path(@car), class: 'button is-primary' %>
     </div>
 
-    <div class="column is-3" style="width: 10%">
+    <div class="column is-3" style="width: 20%">
       <% if @client.orders.present? %>
         <% order = @client.orders %>
-        <%= link_to 'Создать ордер', view_car_order_path, class: 'button is-primary' %>
+        <%= link_to 'Добавить ордер', view_car_order_path, class: 'button is-primary' %>
       <% else %>
         <%= link_to 'Создать ордер 2', new_client_order_path(@client), class: "button is-primary" %>
       <% end %>
