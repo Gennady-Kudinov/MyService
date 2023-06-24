@@ -34,28 +34,6 @@
       </div>
     </div>
 
-    <table>
-      <tbody>
-      <%# @order.files_attachments.each do |file| %>
-<!--        <tr>-->
-<!--          <td>-->
-            <%#= check_box_tag 'remove_files[]', file.id, false, id: "file_checkbox_#{file.id}" %>
-            <%#= label_tag "file_checkbox_#{file.id}", file.filename %>
-<!--          </td>-->
-<!--        </tr>-->
-      <%# end %>
-
-      <%# @order.images_attachments.each do |image| %>
-<!--        <tr>-->
-<!--          <td>-->
-            <%#= check_box_tag 'remove_images[]', image.id, false, id: "image_checkbox_#{image.id}" %>
-            <%#= label_tag "image_checkbox_#{image.id}", image.filename %>
-<!--          </td>-->
-<!--        </tr>-->
-      <%# end %>
-      </tbody>
-    </table>
-
     <div class="field">
       <%= order_form.label :Файлы, style: "display: block; color: green" %>
       <%= order_form.file_field :files, multiple: true, direct_upload: true %>

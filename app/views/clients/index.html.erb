@@ -68,14 +68,16 @@
               <td><%= mileage_km(client) %></p></td>
               <td><%= get_max_mileage(client) %></p></td>
               <td><%= link(client) %></p></td>
+              view_car_order_path
+              client_orders_path(client)
+              new_client_order_path(client)
               <% if client.orders? %> 
-
                 <td>
                   <p><%= link_to "История ордеров", client_orders_path(client)%> </p>
                 </td>
               <% else %> 
                 <td>
-                  <p><%= link_to "Добавить новый  ордер", new_client_order_path(client) %> </p>
+                  <p><%= "Откройте а/м клиента" %> </p>
                 </td> 
               <% end %> 
             </tr>
@@ -97,12 +99,6 @@
               data: { turbo_method: :delete, turbo_confirm: "Подтверждаете удаление?" }, 
               class: "button is-danger" %>
           </div>
-
-          <div class="column is-3">
-            <% client.orders.each do |order| %>
-              <%= link_to 'Открыть ордер', client_order_path(client, order), class: "button is-light" %> 
-            <% end %>         
-          </div> 
         </div>
       </div>
     <% end %>
