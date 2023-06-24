@@ -41,7 +41,7 @@ class CarsController < ApplicationController
   end
 
   def car_order_params
-    params.require(:order).permit(:problem, :work_description, :mileage, :price, :files, :images)
+    params.require(:order).permit(:problem, :work_description, :mileage, :price, files: [], images: [])
   end
 
   def create
