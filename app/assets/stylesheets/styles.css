@@ -38,8 +38,8 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
+/* ширина блока, чтобы форма была не слишком широкой */
 .center-block {
   margin: 0 auto;
   width: 600px;
-  /* ширина блока, чтобы форма была не слишком широкой */
 }
