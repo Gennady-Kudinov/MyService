@@ -65,6 +65,10 @@ Rails.application.routes.draw do
 
   delete '/clients', to: 'clients#destroy_all'
 
-
+  resources :users do
+      collection do
+      get :online_users
+    end
+  end 
 
 end

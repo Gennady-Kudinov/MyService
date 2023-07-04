@@ -38,11 +38,18 @@ class UsersController < ApplicationController
   def destroy; end
 end
 
-private
-
-def set_user
-  @user = User.find(params[:id])
+def online_users
+  @online_users = User.where(online: true)
 end
+
+private
+def set_user
+  @user = User.find(session[:user_id])
+end
+
+#def set_user
+#  @user = User.find(params[:id])
+#end
 
 def clear_session 
   session.delete(:errors_msg)
