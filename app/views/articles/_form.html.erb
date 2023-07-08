@@ -35,6 +35,11 @@
     <%= form.text_area :text, class: "input", style: "height: 200px; width: 500px; white-space: pre-wrap;" %>
   </div>
 
+  <div>
+    <%= form.label :video, style: "display: block; color: purple" %>
+    <%= form.file_field :video %>
+  </div>
+
     <table>
       <tbody>
         <% @article.files_attachments.each do |file| %>

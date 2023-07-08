@@ -4,13 +4,14 @@ class ArticlesController < ApplicationController
   
   # GET /articles or /articles.json
   def index
-    @articles = Article.all.order(
-      created_at: :desc
-    )
+    # articles_controller.rb
+    @articles = Article.all.order(created_at: :desc)
   end
 
   # GET /articles/1 or /articles/1.json
-  def show; end
+  def show
+    @article = Article.find(params[:id])
+  end
 
   # GET /articles/new
   def new
@@ -89,6 +90,7 @@ class ArticlesController < ApplicationController
         :title,
         :text,
         :id,
+        :video,
         :remove_image,
         files: [],
         images: [],

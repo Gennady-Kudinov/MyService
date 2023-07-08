@@ -1,3 +1,4 @@
+app/wievs/articles/_article.html.erb
 <div id="<%= dom_id article %>">
 
   <p>
@@ -12,10 +13,10 @@
     <%= article.name %>
   </p>
 
-  <pre>
+  <p>
     <strong>Название темы:</strong>
-    <%= article.title %>
-  </pre>
+    <%= simple_format(article.title) %>
+  </p>
 
   <pre>
     <strong>Текст:</strong>
@@ -26,5 +27,12 @@
   <% article.images.each do |image| %>
     <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
   <% end %>
+
+  <p>
+    <%= turbo_frame_tag [dom_id(article)], "video", data: { turbo_permanent: true } do %>
+      <strong>Video:</strong>
+      <%= video_tag(url_for(article.video), width: 300, controls: true) if article.video.attached? %>
+    <% end %>
+  </p>
 
 </div>
