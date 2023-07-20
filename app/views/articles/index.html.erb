@@ -1,10 +1,11 @@
+app/views/articles/index.html.erb
 <p style="color: green"><%= notice %></p>
 
 <div id="articles">
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
-      <%= link_to "Показать сообщение", article, class: "button is-primary" %>
+      <%#= link_to "Показать сообщение", article, class: "button is-primary" %>
     </p>
   <% end %>
 </div>
