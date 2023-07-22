@@ -1,4 +1,4 @@
-app/wievs/articles/_article.html.erb
+app/wievs/articles/_article.html.erb ====================================================================
 <div id="<%= dom_id article %>">
 
   <p>
@@ -21,6 +21,7 @@ app/wievs/articles/_article.html.erb
   <pre>
     <strong>Текст:</strong>
     <%= article.text %>
+  </pre>
 
     <strong>Изображение:</strong>
     <div class="image-gallery">
@@ -35,6 +36,4 @@ app/wievs/articles/_article.html.erb
     <% end %>
 
     <%= link_to "Показать сообщение", article, class: "button is-primary" %>
-  </pre>
-
 </div>
