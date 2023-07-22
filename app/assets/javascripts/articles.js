@@ -18,3 +18,12 @@ $(document).on('ajax:complete', '.new_article', function (event) {
     progressBar.css('width', '100%');
     progressBar.addClass('bg-success');
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var imageGallery = document.querySelector('.image-gallery');
+    var images = imageGallery.getElementsByTagName('a');
+
+    for (var i = 0; i < images.length; i++) {
+        images[i].classList.add('horizontal');
+    }
+});

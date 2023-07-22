@@ -23,9 +23,11 @@ app/wievs/articles/_article.html.erb
     <%= article.text %>
 
     <strong>Изображение:</strong>
-    <% article.images.each do |image| %>
-      <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
-    <% end %>
+    <div class="image-gallery">
+      <% article.images.each do |image| %>
+        <%= link_to image_tag(image, style:"width:150px; height:150px"), image %>
+      <% end %>
+    </div>
 
     <%= turbo_frame_tag [dom_id(article)], "video", data: { turbo_permanent: true } do %>
       <strong>Video:</strong>
