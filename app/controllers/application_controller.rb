@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_path unless current_user
   end
 
+  #def check_user_admin!
+  #  redirect_to root_path unless current_user.admin
+  #end
+
   def check_user_admin!
-    redirect_to root_path unless current_user.admin
+    redirect_to root_path unless current_user && current_user.admin
   end
 
   def current_user
